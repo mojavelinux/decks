@@ -1,7 +1,7 @@
 Bake your HTML5 website with Awestruct, publish with git
 ========================================================
 Dan Allen <dan.j.allen@gmail.com>
-v1.0, Nov 29, 2012
+v1.0, Nov 30, 2012
 :description: Presentation abstract for RWX 2012
 :copywrite: CC BY-SA 2.0
 :website: http://continuousdeliveryexperience.com/conference/fort_lauderdale/2012/11/session?id=26960
