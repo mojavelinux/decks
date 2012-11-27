@@ -1,0 +1,520 @@
+//
+// asciidoc -b bootstrap -a toc outline.asciidoc
+//
+Drop the angled brackets. Write **(Ascii)Doc**s with pleasure!
+==============================================================
+Dan Allen <dan.j.allen@gmail.com>
+v1.0, Nov 29, 2012
+:title: Drop the angled brackets. Write (Ascii)Docs with pleasure!
+:description: Slides for my presentation about authoring with AsciiDoc delivered at RWX 2012.
+// AsciiDoc was created by Stuart Rackham, hailing from New Zealand
+:copyright: CC BY-SA 2.0
+:website: http://www.methods.co.nz/asciidoc
+//:backend: html5
+:linkcss: true
+//:backend: deckjs
+//:deckjs_theme: neon
+//:deckjs_transition: fade
+:backend: dzslides
+:dzslides_style: stormy
+:dzslides_transition: fade
+:dzslides_fonts: Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides_highlight: monokai
+:syntax: no-highlight
+
+++++
+<style>
+section pre code {
+  font-size: .75em;
+}
+</style>
+++++
+
+== ~slide~
+
+[role="stmt"]
+Writing in *DocBook* is just, *inhumane*
+
+== ~slide~
+
+[role="stmt"]
+Just let me *write*, dammit!
+
+== ~slide~
+
+....
+                                           +yyyyyyyyyyyyyyyyyyyyyyo-            
+                                          `yNNNNNNNNNNNNNNNNNNNNNMMMNo`         
+                                        -:::::::::::::::::::::::`.:dMMN-        
+                                      oNMMMMMMMMMMMMMMMMMMMMMMMMMd/ sMMN`       
+                                     oMMm+:::::::::::::::::::::+MMM: NMM-       
+                                     sMMs                       MMMo NMM-       
+                                     sMMs                       MMMo NMM-       
+                                     sMMs `mMMMMMMMMMMMMMMMMMd  MMMo NMM-       
+                                     sMMs  `++++++++++++++++/`  MMMo NMM-       
+                                     sMMs `mMMMMMMMMMMMMMMMMMd  MMMo NMM-       
+                                     sMMs  .+++++++++++++++++`  MMMo NMM-       
+                                     sMMs `dmmmmmmmmmmmmmmmmmh  MMMo NMM-       
+                                     sMMs  ://///////////////.  MMMo NMM-       
+                                     sMMs `hmmmmmmmmmmmmmmmmms  MMMo NMM-       
+                                     sMMs  //////////////////-  MMMo NMM-       
+                                     sMMs `yddddddddddddddddds  MMMo NMM-       
+                                     sMMs  /yyyyyyyyyyyyyyyys/  MMMo NMM-       
+                                     sMMs `ohhhhhhhhhhhhhhhhho  MMMo NMM-       
+                                     sMMs                       MMMo dMN.       
+                                     sMMs                       MMMo  .`        
+                                     :MMMdhhhhhhhhhhhhhhhhhhhhhdMMN.            
+                                      .shmmmmmmmmmmmmmmmmmmmmmmmho.
+                              
+ 
+ 
+ 
+       .o.                           o8o   o8o  oooooooooo.                       
+      .888.                          `"'   `"'  `888'   `Y8b                      
+     .8"888.      .oooo.o  .ooooo.  oooo  oooo   888      888  .ooooo.   .ooooo.  
+    .8' `888.    d88(  "8 d88' `"Y8 `888  `888   888      888 d88' `88b d88' `"Y8 
+   .88ooo8888.   `"Y88b.  888        888   888   888      888 888   888 888       
+  .8'     `888.  o.  )88b 888   .o8  888   888   888     d88' 888   888 888   .o8 
+ o88o     o8888o 8""888P' `Y8bod8P' o888o o888o o888bood8P'   `Y8bod8P' `Y8bod8P'
+....
+
+[role="topic"]
+== What is AsciiDoc?
+
+[role="middle"]
+A 'lightweight', yet *powerful* text-based markup language and document generator +
+ +
+[incremental]#...'that's got it all'!#
+
+[NOTES]
+====
+Comparable to Markdown, yet far more complete
+====
+
+== ~slide~
+
+[role="incremental middle pull-right"]
+* Readable
+* Agile
+* Comprehensive
+* Extensible
+* Professional
+
+// markdown == child, docbook == adult w/ garb, asciidoc == adult w/ jeans & t-shirt
+
+[NOTES]
+====
+* Just as capable as DocBook
+* Mild punctuation
+* Simple editing (move around sections easily)
+* Processing pipeline, templates
+* HTML, DocBook, PDF, ePub, slides and more
+====
+
+== Output formats (i.e., backends)
+
+[role="incremental"]
+* HTML [detail]#HTML 4, XHTML 1.1, HTML 5#
+* DocBook
+* PDF [detail]#fop, dblatex#
+* ePub
+* man
+* ODF
+* slides [detail]#deck.js, dzslides#
+* ...and more
+
+[role="topic"]
+== Who's using it?
+
+* Github!
+* Git
+* Authors [detail]#git-scribe, Atlas#
+* https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources[Neo4j]
+* https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial[JBoss Developer Framework]
+* CouchDB
+//* CDI Specificiation
+
+// screenshot of AsciiDoc as option on GitHub for readme, wiki or gist
+// blog entry title from author using AsciiDoc
+// mailinglist post subject for CDI spec conversion
+
+== Testimonial
+
+["quote", "Anders Nawroth, Neo4j"]
+____
+I'm amazed by AsciiDoc :-) It handles a lot of use cases well, and 
+some other cases are still possible at least.
+____
+
+[role="topic"]
+== Lightweight markup siblings
+
+* Markdown
+* Textile
+* reStructuredText
+* MediaWiki
+* Org-mode
+
+// put these in different font faces
+
+== ~slide~
+
+[quote, Most developers on github]
+____
+I use Markdown to write my documention.
+____
+
+== ~slide~
+
+[role="stmt"]
+Markdown : *1st-grader* $$::$$ +
+Asciidoc : *PhD student*
+
+// Markdown is to a 1st-grader as AsciiDoc is to a PhD student ;)
+
+[role="topic source lhs"]
+== Compare AsciiDoc...
+
+----
+Article Title
+=============
+John Doe <john.doe@example.com>
+v1.0, 2012-12-01
+
+This is the optional preamble (an untitled section body). Useful for
+writing simple sectionless documents consisting only of a preamble.
+
+NOTE: The abstract, preface, appendix, bibliography, glossary and
+index section titles are significant ('specialsections').
+----
+
+[role="topic source"]
+== ...to DocBook
+
+[syntax="language-xml"]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article lang="en">
+    <articleinfo>
+        <title>Article Title</title>
+        <date>2012-12-01</date>
+        <author>
+            <firstname>John</firstname>
+            <surname>Doe</surname>
+            <email>john.doe@example.com</email>
+        </author>
+        <authorinitials>JD</authorinitials>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>2012-12-01</date>
+                <authorinitials>JD</authorinitials>
+            </revision>
+        </revhistory>
+    </articleinfo>
+    <simpara>
+        This is the optional preamble (an untitled section body). Useful for
+        writing simple sectionless documents consisting only of a preamble.
+    </simpara> 
+    <note>
+        <simpara>
+            The abstract, preface, appendix, bibliography, glossary and index
+            section titles are significant (<emphasis>specialsections</emphasis>).
+        </simpara>
+    </note>
+</article>
+----
+
+[role="topic source"]
+== ...to Markdown
+
+----
+# Article Title
+
+This is the optional preamble (an untitled section body). Useful for
+writing simple sectionless documents consisting only of a preamble.
+
+> **Note**
+>
+> The abstract, preface, appendix, bibliography, glossary and index
+> section titles are significant (*specialsections*).
+----
+
+[role="follow-up"]
+Hmm, can't really cover all the requirements :(
+
+[role="topic"]
+== Let's try it!
+
+ifdef::backend-dzslides[]
+++++
+<iframe src="http://andrewk.webfactional.com/asciidoc.php" style="width: 100%; height: 100%;"></iframe>
+++++
+endif::backend-dzslides[]
+
+ifndef::backend-dzslides[]
+http://andrewk.webfactional.com/asciidoc.php
+endif::backend-dzslides[]
+
+[role="topic source"]
+== Heading variants: Underline
+
+----
+Title or Level 1
+================
+
+Level 2
+~~~~~~~
+
+Level 3
+^^^^^^^
+
+Level 4
++++++++
+----
+
+[role="topic source"]
+== Heading variants: Prefix
+
+----
+= Title or Level 1
+
+== Level 2
+
+=== Level 3
+
+==== Level 4
+----
+
+[role="topic source"]
+== Heading variants: Symmetric
+
+----
+= Title or Level 1 =
+
+== Level 2 ==
+
+=== Level 3 ===
+
+==== Level 4 ====
+----
+
+[role="topic source"]
+== Text formatting
+
+----
+This paragraph contains 'emphasized', *strong*, `monospaced` text.
+
+This paragraph has fancy `single-quoted' and ``double-quoted'' text.
+
+To get [underline]#underlined# text, you can use a inline role (i.e., class) named underline.
+
+x*x can be written as x^2 and you swim in H~2~O.
+
+We break at the end of this line +
+to keep the text from overflowing.
+
+.Look at me!
+
+This paragraph has it's own title.
+----
+
+[role="topic source"]
+== Blocks
+
+.Literal block
+----
+....
+Renders as pre-formatted, monospaced text
+....
+----
+
+.Source block
+[subs="macros"]
+----
+.Optional title
+pass:[----]
+public interface Document {}
+pass:[----]
+----
+
+.Sidebar block
+----
+.Optional title
+****
+Stuff in here is set off with a different background.
+****
+----
+
+.Quote block
+----
+[quote, Linus Torvalds, comp.os.minix (1991)]
+____
+I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu) for 386(486) AT clones.
+____
+----
+
+[role="topic source"]
+== Lists
+
+.Unordered list
+----
+* Linux
+** Fedora
+** Ubuntu
+* Mac OSX
+* Windoze
+----
+
+.Ordered list
+----
+. Wake up
+. Go to work
+. Write docs!
+.. Open your text editor
+.. Experience the joy of text
+. Eat cake
+----
+
+.Definition list
+----
+AsciiDoc:: advanced text-based document generation
+DocBook:: keeps a programmer busy for hours
+----
+
+[role="topic source"]
+== Links, images & includes
+
+.Links
+----
+http://methods.co.nz/asciidoc
+
+http://methods.co.nz/asciidoc[AsciiDoc project]
+
+[[anchor]]Deep link
+
+<<anchor,Go to deep link>>
+----
+
+.Inline image
+----
+image:images/logo.png[Logo]
+----
+
+.Block image
+----
+image::images/logo.png[Logo]
+----
+
+.Block image with caption
+----
+.Screenshot
+image::images/screenshot.png[Screenshot]
+----
+
+.Include file
+----
+pass:[include::footer.adoc[]]
+----
+
+[role="topic source"]
+== Tables
+
+.Basic table
+----
+.Optional caption
+[options="header"]
+|====================
+|Col 1 |Col 2  |Col 3
+|1     |Item 1 |a
+|2     |Item 2 |b
+|3     |Item 3 |c
+|====================
+----
+
+.Table from CSV
+----
+.Contacts
+[grid="rows",format="csv"]
+[options="header",cols="^,<,<,<,>"]
+|==========================
+ID,First,Last,Address,Phone
+1,Allen,Dan,Denver,3035551212
+2,Doe,John,"Washington, D.C.",2025551212
+|==========================
+----
+
+== Advanced capabilities
+
+[role="incremental middle pull-right"]
+* Attributes (i.e., variables)
+* Code callouts
+* Block in a list item
+* Footnotes and indexes
+* Macros & filters
+* Chunking
+* Backend-specific markup
+
+== Full examples
+
+* Java EE Tutorial
+* TicketMonster Tutorial
+* AsciiDoc Manual
+* This presentation
+
+// (for DocBook, can look at CDI and Bean Validation specs)
+
+[role="topic"]
+== Migration-friendly
+
+* AsciiDoc -> DocBook (built-in)
+* DocBook -> AsciiDoc (docbook2asciidoc)
+
+[role="topic"]
+== Drawbacks
+
+* Less widely supported than Markdown
+* Written in Python, not easy to embed*
+* Arbitrary and inconsistent commands
+
+$$*$$ Work is underway on a Ruby port
+
+[role="topic recap final"]
+== Final recap
+
+++++
+<hgroup>
+  <h2>It's all about the text</h2>
+  <h3>Frag the XML and just write docs!</h3>
+</hgroup>
+++++
+
+[role="topic ending", hrole="name"]
+== Enjoy writing docs (again)!
+
+[role="footer"]
+methods.co.nz/asciidoc
+
+////
+
+== Resources
+
+* http://methods.co.cz/asciidoc[AsciiDoc project]
+* https://community.jboss.org/message/721016[AsciiDoc is the way forward]
+* http://www.apeth.net/matt/iosbooktoolchain.html[AsciiDoc and the Joy of Text]
+* http://srackham.wordpress.com/2010/08/23/publishing-ebooks-with-asciidoc/[Publishing eBooks with AsciiDoc]
+* https://github.com/oreillymedia/docbook2asciidoc[docbook2asciidoc]
+* http://csrp.iut-blagnac.fr/jmiwebsite/slidy2/slidy2_doc
+* http://kaczanowscy.pl/tomek/2010-09/a-perfect-environment-for-docbook
+* http://kaczanowscy.pl/tomek/2011-09/nice-presentations-in-no-time-with-asciidoc-and-slidy
+* http://powerman.name/doc/asciidoc[AsciiDoc Cheat Sheet]
+* http://xed.ch/help/asciidoc.html [Another AsciiDoc Cheat Sheet]
+* https://github.com/schacon/git-scribe[git-scribe]
+* http://andrewk.webfactional.com/asciidoc.php
+* https://github.com/oreillymedia/docbook2asciidoc
+* https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
+* http://johnmacfarlane.net/pandoc/try[Try Pandoc]
+
+////
