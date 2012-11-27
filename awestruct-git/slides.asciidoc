@@ -1,6 +1,6 @@
 Bake your HTML5 website with *Awestruct* and publish it with git
 ================================================================
-Dan Allen <dan.j.allen@gmail.com>
+Dan Allen & Jason Porter
 v1.0, Nov 29, 2012
 :title: Bake your HTML5 website with Awestruct and publish it with git
 :copywrite: CC BY-SA 2.0
