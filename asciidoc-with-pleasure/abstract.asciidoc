@@ -1,0 +1,13 @@
+Drop the angled brackets. Write (Ascii)Docs with pleasure!
+==========================================================
+Dan Allen <dan.j.allen@gmail.com>
+v1.0, Nov 29, 2012
+:description: Presentation abstract for RWX 2012
+:copywrite: CC BY-SA 2.0
+:website: http://continuousdeliveryexperience.com/conference/fort_lauderdale/2012/11/session?id=26856
+
+Writing documentation is already hard enough. Why do we make it more difficult by burying the content in an XML syntax like DocBook or wrestling with finicky WSYWIG editors?
+
+What if you could just write? Forget about the layout and styling and just let the thoughts flow? That's the idea behind the lightweight markup languages such as AsciiDoc. With AsciiDoc, the bulk of document is the content, embellished with subtle and intuitive semantic notations. AsciiDoc is designed for humans, yet machine parsable. It can even meet the most advanced publishing requirements.
+
+Come learn how to write documentation with pleasure using AsciiDoc and still be able to produce beautiful HTML, DocBook and PDF documents--and even presentation slides! Like this one.
