@@ -1,6 +1,3 @@
-//
-// asciidoc -b bootstrap -a toc outline.asciidoc
-//
 Drop the angled brackets. Write **(Ascii)Doc**s with pleasure!
 ==============================================================
 Dan Allen <dan.j.allen@gmail.com>
