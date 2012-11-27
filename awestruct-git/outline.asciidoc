@@ -1,0 +1,559 @@
+Bake your HTML5 website with *Awestruct* and publish it with git
+================================================================
+Dan Allen <dan.j.allen@gmail.com>
+v1.0, Nov 29, 2012
+:title: Bake your HTML5 website with Awestruct and publish it with git
+:copywrite: CC BY-SA 2.0
+:website: http://awestruct.org
+:backend: html5
+:imagesdir: images
+:linkcss:
+:backend: dzslides
+:dzslides_style: stormy
+:dzslides_transition: fade
+:dzslides_highlight: monokai
+:dzslides_fonts: Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+
+== Awestruct
+
+image::awestruct-logo.png[role="pull-right"]
+
+A dynamic static site-baking tool
+
+== Awestruct's goal
+
+[role="stmt"]
+Awestruct makes it easy to create *non-trivial* static *websites*
+
+== HTML5
+
+image::html5-logo.png[role="pull-left"]
+
+The cornerstone of the Open Web Platform
+
+== ~slide~
+
+[role="stmt"]
+*Static* is the new *dynamic*
+
+== git
+
+image::git-logo.png[]
+
+--distributed-even-if-your-workflow-isnt
+
+== ~slide~
+
+[role="stmt"]
+From *black box* to *open book*
+
+//graphic of black box -> open book
+// this plays into what I'm saying
+
+== In a nutshell
+
+[role="incremental middle pull-right"]
+* Lightweight
+* Collaborative
+* Hacker's dream
+
+== The baking process
+
+image::baking-process.jpg[caption="The baking process"]
+
+////
+config + templates + pages -> extension pipeline -> website
+////
+
+[role="topic"]
+== Project layout
+
+// show file tree with incremental labels
+
+* _config
+** site.yml
+* _ext
+** pipeline.rb
+* _layouts
+** base.html.haml
+* _site
+* index.html.haml
+
+[role="topic source"]
+== Content page structure
+
+.about.md
+----
+---
+layout: base
+title: About
+---
+## Who are we?
+
+We are hackers.
+----
+
+// can talk about page structure (front-matter, content)
+
+[role="topic source"]
+== Layout page structure
+
+._layouts/base.html.haml
+----
+!!!5
+%html
+  %head
+    %title= site.title
+  %body
+    .container
+      ~ content
+----
+
+[NOTES]
+====
+~ inserts special character to preserve whitespace)
+====
+
+[role="topic"]
+== Markup of choice
+
+[role="incremental"]
+* Markdown
+* AsciiDoc
+* reStructuredText
+* Textile
+* erb
+* Haml
+* HTML
+* ...and more
+
+[role="topic source"]
+== Site properties
+
+._config/site.yml
+----
+title: My Site
+----
+
+._layouts/base.html.haml
+----
+%title= site.title
+----
+
+== ~slide~
+
+[role="incremental middle pull-right"]
+* aggregate compiler
+* file monitor (dev mode)
+* layouts (templates, partials)
+* profiles
+* extensions
+
+[role="topic"]
+== Available Extensions
+
+[role="incremental"]
+* Posts (i.e., Blog)
+** Paginator, Tagger, TagCloud, Atomizer
+* Comments
+* Indexifier
+* Sitemap
+* Minify
+* Google Analytics
+* ...crazy things the Arquillian team creates
+
+// turn these into visuals, like:
+
+////
+------------------------------------------------------------
+
+
+     /blog/2012/12/01/tidy-urls/--index.html--
+
+
+                 extension Awestruct::Extensions::Indexifier
+------------------------------------------------------------
+
+A blog post
+by Dan Allen
+#awestruct #rwx
+
+~~~~~~~~~~~
+~~~~~~~~
+~~~~~~~~~~
+~~~~~
+
+Another blog post
+by Dan Allen
+#git #rwx
+
+~~~~~~~~~~~
+~~~~~~~~
+~~~~~~~~~~
+~~~~~
+
+<<  <   2   >  >>
+
+                      extension Awestruct::Extensions::Posts
+                                                   Paginator
+                                                      Tagger
+------------------------------------------------------------
+////
+
+[role="topic"]
+== Extension possibilities
+
+[role="incremental middle pull-right"]
+* fetch data
+* assign variables
+* manipulate pages
+* synthetic pages
+* helper utilities
+
+== ~slide~
+
+image::generator-pipeline.png[caption="Generator pipeline", role="auto-width"]
+
+[NOTES]
+====
+The extension pipeline runs immediately before the final URL assignment to
+pages and generating the final output pages.
+====
+
+[role="topic source"]
+== Extension
+
+// flesh out sample code
+
+._ext/my_extension.rb
+----
+class MyExtension
+  def execute(site)
+    site.pages.each do |page|
+      ...
+    end
+  end
+end
+----
+
+[NOTES]
+====
+An extension class only need implement a single method, execute(site). Each
+extension in the pipeline will be called, in-order, and passed the site object.
+====
+
+[role="topic source"]
+== Transformer
+
+// flesh out sample code
+
+._ext/my_transformer.rb
+----
+class MyTransformer
+  def transform(site, page, input)
+     ...
+  end
+end
+----
+
+[role="topic source"]
+== Configuring the pipeline
+
+----
+require 'my_extension'
+require 'my_transformer'
+
+Awestruct::Extensions::Pipeline.new do
+  extension MyExtension.new
+  transformer MyTransformer.new
+  ...
+end
+----
+
+[NOTES]
+====
+The _ext/ directory is automatically added to the $LOAD_PATH so that
+site-supplied extensions may easily be loaded.
+====
+
+[role="topic"]
+== Awestruct cohorts
+
+// who else is doing this stuff?
+
+* Jekyll (+ Octopress)
+//* gist.io
+* Middleman
+* Punch
+* ruhoh
+* Frank
+* Nesta
+//* PieCrust
+* Apache CMS
+* ...and many more!
+
+// visuals for a few examples, then a list
+// platform in small text
+
+[role="topic source"]
+== Install (Ruby)
+
+----
+$ gem install awestruct rb-inotify
+----
+
+[role="topic source"]
+== Install (JRuby)
+
+----
+$ jgem install awestruct rb-inotify
+----
+
+[role="topic source"]
+== Bootstrap
+
+----
+$ mkdir mysite
+$ cd mysite
+$ awestruct -i -f bootstrap
+----
+
+.Bux fix!
+----
+$ echo "NONE" > .awestruct_ignore
+----
+
+image::bootstrap-left-logo.png[role="pull-right"]
+
+[role="topic source"]
+== Build & preview (Dev Mode)
+
+----
+$ awestruct -d
+----
+
+[role="follow-up"]
+browse to http://localhost:4242 +
+changes to files will be picked up automatically
+
+[role="topic source"]
+== Force clean
+
+----
+$ awestruct -d --force
+----
+
+[role="follow-up"]
+Purges _site directory
+
+[role="topic intro"]
+== Build a blog *demo*
+
+// include::setup-blog-demo.asciidoc[]
+
+== ~slide~
+
+[role="stmt"]
+and blog like a *hacker*!
+
+[NOTES]
+====
+* Sharable
+* forkable
+* patchable
+* publishable
+====
+
+[role="topic intro"]
+== Compile CoffeeScript *demo*
+
+[role="topic source"]
+== Add tooltips to links
+
+.index.html.haml
+----
+%a{:href=>post.url, :title=>'Go to post', :rel=>'tooltip'}= post.title
+----
+
+[role="topic source"]
+== Activate tooltip component in CoffeeScript 
+
+.javascripts/site.coffee
+----
+$ ->
+  $('*[rel=tooltip]').tooltip placement: 'right'
+  $('h2.title a').hover (-> $(@).css fontStyle: 'italic'),
+    (-> $(@).css fontStyle: 'normal')
+----
+
+== ~slide~
+
+[role="stmt"]
+Get *dynamic* by *scraping* the web
+
+[role="topic source"]
+== CoffeeScript to fetch news feed
+  
+.javascripts/site.coffee
+----
+this.fetchNews = (url, loc, num = 10) ->
+  $.jGFeed url, ((feeds) -> $.each(feeds.entries,
+    (idx, entry) -> $(loc).append
+      """<li><a href="\#{entry.link}">\#{entry.title}</li>""")), num
+----
+
+[role="topic source"]
+== Load scripts
+
+.index.html.haml
+----
+%script{:type=>'text/javascript',
+  :src=>'//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.4/bootstrap.min.js'}
+%script{:type=>'text/javascript',
+  :src=>"#{site.base_url}/javascripts/jquery-jgfeed.js"}
+%script{:type=>'text/javascript',
+  :src=>"#{site.base_url}/javascripts/site.js"}
+----
+
+Note the use of a CDN to grab the bootstrap script +
+Note that site.coffeescript has been compiled to site.js
+
+[role="topic source"]
+== Fetch news
+
+.index.html.haml
+----
+:javascript
+  fetchNews('http://therichwebexperience.com/s/rss/rich.rss', '#news');
+----
+
+[role="topic intro"]
+== Qualified URL extension *demo*
+
+// TODO
+
+[role="topic source"]
+== Make it SASSy
+
+.stylesheets/screen.scss
+----
+$iconSpritePath: url("http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/img/glyphicons-halflings.png");
+$iconWhiteSpritePath: url("http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/img/glyphicons-halflings-white.png");
+
+// NFJS colors
+$navbarBackground: #303030;
+$navbarBackgroundHighlight: #6771DB;
+$navbarBrandColor: #FFCC66;
+$navbarLinkColor: #D9E0FF;
+----
+
+[role="topic intro"]
+== *Deploy* to GitHub pages
+
+// include::github-pages-deploy-demo.asciidoc[]
+
+[role="topic"]
+== Polishing
+
+[role="incremental"]
+* https://help.github.com/articles/setting-up-a-custom-domain-with-pages[CNAME for custom URL]
+* https://help.github.com/articles/custom-404-pages[custom 404 page]
+* Setup build in CI environment
+
+[NOTES]
+====
+github pages autogenerator is just for a single page (markdown -> html)
+====
+
+[role="topic"]
+== Who's onboard?
+
+// sample 3 as screenshots, then continue with list
+
+* http://torquebox.org[TorqueBox]
+* http://arquillian.org[Arquillian]
+* http://ceylon-lang.org[Ceylon]
+* http://immutant.org[Immutant]
+* http://jboss.org/jdf[JBoss Developer Framework (JDF)]
+* http://www.bleathem.ca/blog/tags/RichFaces[RichFaces]
+* http://forge.jboss.org[JBoss Forge]
+//* http://aeshell.github.com[Æsh]
+* http://beanvalidation.org[Bean Validation]
+
+[NOTES]
+====
+CDI is planned
+====
+
+[role="topic intro"]
+== *arquillian* case study
+
+== ~slide~
+
+image::arquillian-site-screenshot.png[caption="arquillian.org"]
+
+[role="topic"]
+== Dynamic features
+
+[role="incremental"]
+* auto-generated release blogs
+* contributor identities
+* ...
+
+// more visual
+
+[role="topic"]
+== Gotchas
+
+[role="incremental"]
+* Internet-dependent build (fetch data)
+* Internet-dependent preview (CDN)
+* GH pages sends 24hr no-fetch cache header
+* Haml sometimes hard to debug
+
+[role="topic recap final"]
+== Final recap
+
+++++
+<hgroup>
+  <h2>Fast, cheap, customizable, collaborative & secure</h2>
+  <h3>Blog like a hacker!</h3>
+</hgroup>
+++++
+
+== ~slide~
+
+[role="stmt"]
+Thank the *browser* for making this possible
+
+== ~slide~
+
+image::awestruct-expression.jpg[caption="Are you {:awestruct}?", crole="invert"]
+
+[role="topic ending", hrole="name"]
+== Get {:awestuct}!
+
+[role="footer"]
+awestruct.org
+
+////
+== Resources
+
+* http://awestruct.org
+* http://github.com/awestruct
+* http://pages.github.com/
+* https://help.github.com/categories/20/articles
+* http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html
+* http://oli.jp/2011/github-pages-workflow/
+* http://www.jmesnil.net/weblog/2012/08/02/i-am-awestructed/
+* https://help.github.com/articles/using-jekyll-with-pages
+* http://erjjones.github.com/blog/Part-two-how-I-built-my-blog/
+
+== Issues
+
+* asset-url(), image-url(), etc don't handle use of non-root context path correctly
+* assignment of posts_archive in Posts extension has syntax error
+* coffee-script interpolator does not honor coffeescript's own interpolation
+* engine.rb#set_urls() should prepend the site.base_url
+* .awestruct_ignore can't be empty
+////

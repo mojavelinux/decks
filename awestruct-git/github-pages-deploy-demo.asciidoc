@@ -1,0 +1,85 @@
+Deploy Awestruct Site to GitHub Pages
+=====================================
+Dan Allen
+:backend: html5
+:theme: default
+:toc2:
+
+== Create repository
+
+* Sign in to GitHub
+* Create a new repository
++
+[horizontal]
+name:: mysite
+description:: An Awestruct demo site
+
+== Checkout repository and create gh-pages branch
+
+----
+$ git clone git@github.com:mojavelinux/mysite.git mysite-seed
+$ cd mysite-seed
+$ git checkout --orphan gh-pages
+$ echo "GitHub pages placeholder" > index.html
+$ git add index.html
+$ git commit -m "Seed gh-pages branch"
+$ git push origin gh-pages
+$ cd ..
+$ git rm -rf mysite-seed
+----
+
+== Add deploy profile
+
+._config/site.yml
+----
+profiles:
+  production:
+    base_url: http://mojavelinux.github.com/mysite
+    deploy:
+      host: github_pages
+      # use master branch to deploy to username.github.com
+      # use gh-pages branch to deploy to other repository
+      branch: gh-pages
+----
+
+== Check-in website source to master branch
+
+----
+$ cd mysite
+$ git init .
+$ touch .nojekyll
+$ cat > .gitignore << LINES
+/.awestruct/
+/.sass-cache/
+/_site/
+/_tmp/
+LINES
+$ git add .
+$ git commit -m "Initial commit"
+$ git remote add origin git@github.com:mojavelinux/mysite.git
+$ git push -u origin master
+$ git fetch
+$ git checkout -b gh-pages -t origin/gh-pages
+$ git checkout master
+$ awestruct -P production --force -g --deploy
+----
+
+== Edit & publish workflow
+
+* Add or edit a file
+* Deploy changes
++
+----
+$ git add .
+$ git commit -m "Description of change"
+$ git push
+$ awestruct -P production --force -g --deploy
+----
+
+.Publish process
+* Remove _site
+* Bake website into _site
+* Switch to gh-pages branch
+* Check-in website updates
+* Push gh-pages branch to origin
+* Switch to master branch

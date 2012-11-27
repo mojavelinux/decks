@@ -1,0 +1,192 @@
+Setup a Blog with Awestruct
+===========================
+Dan Allen
+:backend: html5
+:theme: default
+:toc2:
+
+== Enable the Posts extension
+
+._ext/pipeline.rb
+----
+extension Awestruct::Extensions::Posts.new('/blog')
+----
+
+== Create the blog directory
+
+----
+$ mkdir blog
+----
+
+== Draft a post in Textile
+
+.blog/2012-11-27-welcome-to-rwx-2012.textile
+----
+---
+layout: post
+title: Welcome to RWX 2012
+author: Dan
+---
+Welcome to sunny Ft. Lauderdale for RWX 2012!
+----
+
+== Draft another post in Textile
+
+.blog/2012-11-28-are-you-awestruct.textile
+----
+---
+layout: post
+title: Are you awestruct?
+author: Dan
+---
+What will it take to impress your hacker instinct?
+----
+
+== Draft a post in Markdown
+
+.blog/2012-11-30-thats-a-wrap.md
+----
+---
+layout: post
+title: That's a wrap?
+author: Dan
+---
+Go enjoy the beach!
+----
+
+== Create the layout for a post
+
+._layouts/post.html.haml
+----
+---
+layout: base
+---
+#content
+  .post
+    %h2.title
+      %a{:href=>page.url}= page.title
+    %h4= page.date.strftime("%A, %B %e, %Y")
+    ~ page.content
+----
+
+== Show all posts
+
+.index.html.haml
+----
+---
+layout: base
+---
+#content
+  - for post in site.posts
+    .post
+      %h2.title
+        %a{:href=>post.url}= post.title
+      %h4= post.date.strftime("%A, %B %e, %Y")
+      ~ post.content
+----
+
+== Tidy the URLs
+
+._ext/pipeline.rb
+----
+extension Awestruct::Extensions::Indexifier.new
+----
+
+Add the Indexifier extension 'after' the Posts extension.
+
+== Enable the Pagination extension
+
+._ext/pipeline.rb
+----
+extension Awestruct::Extensions::Paginator.new(:posts, '/index', :per_page => 2)
+----
+
+Add the Paginator extension 'after' the Posts extension.
+
+== Show paginated posts
+
+.index.html.haml
+----
+#content
+  - for post in page.posts
+----
+
+After changing +site.posts+ to +page.posts+, notice one entry is missing.
+
+== Add pagination links
+
+.index.html.haml
+----
+.pagination
+  %ul
+    %li
+      - if page.posts.previous_page
+        %a{:href=>page.posts.previous_page.url}
+          %span.icon-step-backward
+    %li
+      - if page.posts.next_page
+        %a{:href=>page.posts.next_page.url}
+          %span.icon-step-forward
+----
+
+== Add an Atom feed
+
+._ext/pipeline.rb
+----
+extension Awestruct::Extensions::Atomizer.new(:posts, '/feed.atom')
+----
+
+Add the Atomizer extension 'after' the Indexifier extension.
+
+== Create an archive page
+
+.blog/index.html.haml
+----
+---
+layout: base
+---
+%h1 Blog Archive
+- for year, posts_by_year in site.posts_archive.posts
+  %h2= year
+  - for month, posts_by_month in posts_by_year
+    -#%h3= month
+    %h3= posts_by_month.first[1].first.date.strftime('%B')
+    %ul
+      - for date, posts_by_date in posts_by_month
+        - for post in posts_by_date
+          %li 
+            = post.date.strftime('%A, %B %e')
+            %a{:href=>post.url}= post.title
+----
+
+Requires a patch to Awestruct atm.
+
+== Add archive and feed links to navbar
+
+._layouts/base.html.haml
+----
+%li
+  %a{ :href=>"#{site.base_url}/blog" } Archive
+%li
+  %a{ :href=>"#{site.base_url}/feed.atom" } Feed
+----
+
+== Add Google Analytics
+
+._ext/pipeline.rb
+----
+helper Awestruct::Extensions::GoogleAnalytics
+----
+
+Add helpers 'after' the extensions.
+
+._layouts/base.html.haml
+
+----
+- if site.google_analytics
+  = google_analytics_async
+----
+
+== Partials
+
+Not yet implemented.

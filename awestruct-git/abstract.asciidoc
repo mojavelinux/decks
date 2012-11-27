@@ -1,0 +1,11 @@
+Bake your HTML5 website with Awestruct, publish with git
+========================================================
+Dan Allen <dan.j.allen@gmail.com>
+v1.0, Nov 29, 2012
+:description: Presentation abstract for RWX 2012
+:copywrite: CC BY-SA 2.0
+:website: http://continuousdeliveryexperience.com/conference/fort_lauderdale/2012/11/session?id=26960
+
+Static is the new dynamic. With the ever increasing capabilities of HTML5-based browsers, we can give the server a rest and put security problems behind us by publishing static HTML5 documents and shifting the dynamic behavior to the client. Not only does that let you blog out of static hosting sites like github pages, it also means you can put more processing power into the author tools.
+
+In this session, you'll be introduced to Awestruct, a Ruby-based tool for building and publishing static websites. You'll discover how you can leverage a wide range of lightweight markup languages such as HAML, Textile, Markdown, SASS and CoffeeScript to keep your source terse and DRY. We'll use Awestruct's extension pipeline to setup a blog, add comments to your site or add analytic tracking scripts to your pages, then build and publish the site to github pages in a single command. Just because the pages are static doesn't mean they can't be dynamic too.
