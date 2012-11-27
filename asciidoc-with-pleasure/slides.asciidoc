@@ -452,7 +452,7 @@ ID,First,Last,Address,Phone
 * Footnotes and indexes
 * Macros & filters
 * Chunking
-* Backend-specific markup
+* Custom backends
 
 == Full examples
 
@@ -476,7 +476,7 @@ ID,First,Last,Address,Phone
 * Written in Python, not easy to embed*
 * Arbitrary and inconsistent commands
 
-$$*$$ Work is underway on a Ruby port
+$$*$$ Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
 
 [role="topic recap final"]
 == Final recap
@@ -502,6 +502,7 @@ methods.co.nz/asciidoc
 * https://community.jboss.org/message/721016[AsciiDoc is the way forward]
 * http://www.apeth.net/matt/iosbooktoolchain.html[AsciiDoc and the Joy of Text]
 * http://srackham.wordpress.com/2010/08/23/publishing-ebooks-with-asciidoc/[Publishing eBooks with AsciiDoc]
+* http://gslsrc.net/l01_asciidoc_website.html[Building a website using AsciiDoc]
 * https://github.com/oreillymedia/docbook2asciidoc[docbook2asciidoc]
 * http://csrp.iut-blagnac.fr/jmiwebsite/slidy2/slidy2_doc
 * http://kaczanowscy.pl/tomek/2010-09/a-perfect-environment-for-docbook
@@ -513,5 +514,7 @@ methods.co.nz/asciidoc
 * https://github.com/oreillymedia/docbook2asciidoc
 * https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
 * http://johnmacfarlane.net/pandoc/try[Try Pandoc]
+* https://github.com/runemadsen/asciidoc[AsciiDoc Ruby port] (renderer only)
+* https://github.com/erebor/asciidoctor[asciidoctor] (A pure Ruby port of AsciiDoc)
 
 ////
