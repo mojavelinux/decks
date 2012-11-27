@@ -62,11 +62,14 @@ Go enjoy the beach!
 layout: base
 ---
 #content
-  .post
-    %h2.title
-      %a{:href=>page.url}= page.title
-    %h4= page.date.strftime("%A, %B %e, %Y")
-    ~ page.content
+  %article
+    %header.page-header
+      %h1.title
+        %a{:href=>page.qurl}= page.title
+      .meta
+        %time= page.date.strftime("%B %e, %Y")
+    .content
+      ~ page.content
 ----
 
 == Show all posts
@@ -78,11 +81,14 @@ layout: base
 ---
 #content
   - for post in site.posts
-    .post
-      %h2.title
-        %a{:href=>post.url}= post.title
-      %h4= post.date.strftime("%A, %B %e, %Y")
-      ~ post.content
+    %article
+      %header.page-header
+        %h1.title
+          %a{:href=>post.qurl, :title=>'Click to go to post', :rel=>'tooltip'}= post.title
+        .meta
+          %time= post.date.strftime("%B %e, %Y")
+      .content
+        ~ post.content
 ----
 
 == Tidy the URLs
@@ -145,21 +151,22 @@ Add the Atomizer extension 'after' the Indexifier extension.
 ---
 layout: base
 ---
-%h1 Blog Archive
+.page-header
+  %h1 Blog Archive
 - for year, posts_by_year in site.posts_archive.posts
-  %h2= year
   - for month, posts_by_month in posts_by_year
-    -#%h3= month
-    %h3= posts_by_month.first[1].first.date.strftime('%B')
-    %ul
+    %h2 
+      = year
+      %small= posts_by_month.first[1].first.date.strftime('%B')
+    %ul.unstyled
       - for date, posts_by_date in posts_by_month
         - for post in posts_by_date
           %li 
-            = post.date.strftime('%A, %B %e')
+            = post.date.strftime('%b %e')
             %a{:href=>post.url}= post.title
 ----
 
-Requires a patch to Awestruct atm.
+WARNING: Requires a patch to Posts extension
 
 == Add archive and feed links to navbar
 

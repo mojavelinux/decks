@@ -13,6 +13,7 @@ v1.0, Nov 29, 2012
 :dzslides_transition: fade
 :dzslides_highlight: monokai
 :dzslides_fonts: Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:syntaxoff: syntax="no-highlight"
 
 == Awestruct
 
@@ -83,6 +84,7 @@ config + templates + pages -> extension pipeline -> website
 == Content page structure
 
 .about.md
+[syntax="markdown"]
 ----
 ---
 layout: base
@@ -91,14 +93,39 @@ title: About
 ## Who are we?
 
 We are hackers.
+
+## What do we like?
+
+We like code we don't have to escape.
+
+    <xml>
+      <hell>Just frag it and use yaml</hell>
+    </xml>
 ----
 
-// can talk about page structure (front-matter, content)
+[NOTES]
+====
+talk about page structure (front-matter, content)
+====
+
+[role="topic"]
+== Markup of choice
+
+[role="incremental"]
+* Markdown (Kramdown) [detail]#.md#
+* AsciiDoc [detail]#.adoc#
+* reStructuredText [detail]#.rst#
+* Textile [detail]#.textile#
+* erb [detail]#.html.erb#
+* Haml [detail]#.html.haml#
+* HTML [detail]#.html#
+* ...and more
 
 [role="topic source"]
 == Layout page structure
 
 ._layouts/base.html.haml
+[{syntaxoff}]
 ----
 !!!5
 %html
@@ -114,28 +141,17 @@ We are hackers.
 ~ inserts special character to preserve whitespace)
 ====
 
-[role="topic"]
-== Markup of choice
-
-[role="incremental"]
-* Markdown
-* AsciiDoc
-* reStructuredText
-* Textile
-* erb
-* Haml
-* HTML
-* ...and more
-
 [role="topic source"]
 == Site properties
 
 ._config/site.yml
+[{syntaxoff}]
 ----
 title: My Site
 ----
 
 ._layouts/base.html.haml
+[{syntaxoff}]
 ----
 %title= site.title
 ----
@@ -210,22 +226,13 @@ by Dan Allen
 * synthetic pages
 * helper utilities
 
-== ~slide~
-
-image::generator-pipeline.png[caption="Generator pipeline", role="auto-width"]
-
-[NOTES]
-====
-The extension pipeline runs immediately before the final URL assignment to
-pages and generating the final output pages.
-====
-
 [role="topic source"]
 == Extension
 
 // flesh out sample code
 
 ._ext/my_extension.rb
+[syntax="ruby"]
 ----
 class MyExtension
   def execute(site)
@@ -248,6 +255,7 @@ extension in the pipeline will be called, in-order, and passed the site object.
 // flesh out sample code
 
 ._ext/my_transformer.rb
+[syntax="ruby"]
 ----
 class MyTransformer
   def transform(site, page, input)
@@ -276,6 +284,16 @@ The _ext/ directory is automatically added to the $LOAD_PATH so that
 site-supplied extensions may easily be loaded.
 ====
 
+== ~slide~
+
+image::generator-pipeline.png[caption="Generator pipeline", role="auto-width"]
+
+[NOTES]
+====
+The extension pipeline runs immediately before the final URL assignment to
+pages and generating the final output pages.
+====
+
 [role="topic"]
 == Awestruct cohorts
 
@@ -298,6 +316,7 @@ site-supplied extensions may easily be loaded.
 [role="topic source"]
 == Install (Ruby)
 
+[{syntaxoff}]
 ----
 $ gem install awestruct rb-inotify
 ----
@@ -305,6 +324,7 @@ $ gem install awestruct rb-inotify
 [role="topic source"]
 == Install (JRuby)
 
+[{syntaxoff}]
 ----
 $ jgem install awestruct rb-inotify
 ----
@@ -312,6 +332,7 @@ $ jgem install awestruct rb-inotify
 [role="topic source"]
 == Bootstrap
 
+[{syntaxoff}]
 ----
 $ mkdir mysite
 $ cd mysite
@@ -319,6 +340,7 @@ $ awestruct -i -f bootstrap
 ----
 
 .Bux fix!
+[{syntaxoff}]
 ----
 $ echo "NONE" > .awestruct_ignore
 ----
@@ -328,6 +350,7 @@ image::bootstrap-left-logo.png[role="pull-right"]
 [role="topic source"]
 == Build & preview (Dev Mode)
 
+[{syntaxoff}]
 ----
 $ awestruct -d
 ----
@@ -339,6 +362,7 @@ changes to files will be picked up automatically
 [role="topic source"]
 == Force clean
 
+[{syntaxoff}]
 ----
 $ awestruct -d --force
 ----
@@ -371,6 +395,7 @@ and blog like a *hacker*!
 == Add tooltips to links
 
 .index.html.haml
+[{syntaxoff}]
 ----
 %a{:href=>post.url, :title=>'Go to post', :rel=>'tooltip'}= post.title
 ----
@@ -379,10 +404,11 @@ and blog like a *hacker*!
 == Activate tooltip component in CoffeeScript 
 
 .javascripts/site.coffee
+[syntax="coffeescript"]
 ----
 $ ->
   $('*[rel=tooltip]').tooltip placement: 'right'
-  $('h2.title a').hover (-> $(@).css fontStyle: 'italic'),
+  $('h1.title a').hover (-> $(@).css fontStyle: 'italic'),
     (-> $(@).css fontStyle: 'normal')
 ----
 
@@ -395,6 +421,7 @@ Get *dynamic* by *scraping* the web
 == CoffeeScript to fetch news feed
   
 .javascripts/site.coffee
+[syntax="coffeescript"]
 ----
 this.fetchNews = (url, loc, num = 10) ->
   $.jGFeed url, ((feeds) -> $.each(feeds.entries,
@@ -406,6 +433,7 @@ this.fetchNews = (url, loc, num = 10) ->
 == Load scripts
 
 .index.html.haml
+[{syntaxoff}]
 ----
 %script{:type=>'text/javascript',
   :src=>'//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.4/bootstrap.min.js'}
@@ -422,6 +450,7 @@ Note that site.coffeescript has been compiled to site.js
 == Fetch news
 
 .index.html.haml
+[{syntaxoff}]
 ----
 :javascript
   fetchNews('http://therichwebexperience.com/s/rss/rich.rss', '#news');
@@ -436,9 +465,11 @@ Note that site.coffeescript has been compiled to site.js
 == Make it SASSy
 
 .stylesheets/screen.scss
+[{syntaxoff}]
 ----
-$iconSpritePath: url("http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/img/glyphicons-halflings.png");
-$iconWhiteSpritePath: url("http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/img/glyphicons-halflings-white.png");
+$bootstrapUrl: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1";
+$iconSpritePath: url("#{$bootstrapUrl}/img/glyphicons-halflings.png");
+$iconWhiteSpritePath: url("#{$bootstrapUrl}/img/glyphicons-halflings-white.png");
 
 // NFJS colors
 $navbarBackground: #303030;
@@ -468,7 +499,7 @@ github pages autogenerator is just for a single page (markdown -> html)
 [role="topic"]
 == Who's onboard?
 
-// sample 3 as screenshots, then continue with list
+// sample 3 as screenshots, then continue with list (as table?)
 
 * http://torquebox.org[TorqueBox]
 * http://arquillian.org[Arquillian]
@@ -486,7 +517,7 @@ CDI is planned
 ====
 
 [role="topic intro"]
-== *arquillian* case study
+== case study *arquillian*
 
 == ~slide~
 
