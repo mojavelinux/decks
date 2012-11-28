@@ -4,28 +4,24 @@ Dan Allen <dan.j.allen@gmail.com>
 v1.0, Nov 29, 2012
 :title: Drop the angled brackets. Write (Ascii)Docs with pleasure!
 :description: Slides for my presentation about authoring with AsciiDoc delivered at RWX 2012.
-// AsciiDoc was created by Stuart Rackham, hailing from New Zealand
 :copyright: CC BY-SA 2.0
-:website: http://www.methods.co.nz/asciidoc
+:website: http://methods.co.nz/asciidoc
 :imagesdir: images
-//:backend: html5
-:linkcss: true
-//:backend: deckjs
-//:deckjs_theme: neon
-//:deckjs_transition: fade
 :backend: dzslides
-:dzslides_style: stormy
-:dzslides_transition: fade
-:dzslides_fonts: Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
-:dzslides_highlight: monokai
+:linkcss: true
+:dzslides-style: stormy
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: monokai
+// disable syntax highlighting unless turned on explicitly
 :syntax: no-highlight
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 Writing in *DocBook* is just, *inhumane*
 
-== ~slide~
+== ||
 
 [quote, Stuart Rackham]
 ____
@@ -41,13 +37,13 @@ tags, consulting reference manuals and fixing syntax errors, than I was writing
 the documentation.
 ====
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 Just let me *write*, dammit!
 
 [role="terminal"]
-== ~slide~
+== ||
 
 ....
                                            +yyyyyyyyyyyyyyyyyyyyyyo-            
@@ -95,10 +91,11 @@ A 'lightweight', yet *powerful* text-based markup language and document generato
 
 [NOTES]
 ====
+AsciiDoc was created by Stuart Rackham, hailing from New Zealand
 Comparable to Markdown, yet far more complete
 ====
 
-== ~slide~
+== ||
 
 [role="incremental middle pull-right"]
 * Readable
@@ -107,8 +104,6 @@ Comparable to Markdown, yet far more complete
 * Extensible
 * Professional
 
-// markdown == child, docbook == adult w/ garb, asciidoc == adult w/ jeans & t-shirt
-
 [NOTES]
 ====
 * Just as capable as DocBook
@@ -116,9 +111,9 @@ Comparable to Markdown, yet far more complete
 * Processing pipeline, templates
 ====
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 {sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
 
 == Output formats (i.e., backends)
@@ -135,7 +130,7 @@ image::export-icon.png[role="pull-right"]
 * slides [detail]#deck.js, dzslides#
 * ...and more
 
-[role="topic"]
+[{topic}]
 == Who's using it?
 
 * Github!
@@ -143,8 +138,7 @@ image::export-icon.png[role="pull-right"]
 * Authors [detail]#git-scribe, Atlas#
 * https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources[Neo4j]
 * https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial[JBoss Developer Framework]
-* CouchDB
-//* CDI Specificiation
+* https://github.com/jboss/cdi[CDI Specificiation]
 
 // screenshot of AsciiDoc as option on GitHub for readme, wiki or gist
 // blog entry title from author using AsciiDoc
@@ -158,7 +152,7 @@ I'm amazed by AsciiDoc :-) It handles a lot of use cases well, and
 some other cases are still possible at least.
 ____
 
-[role="topic"]
+[{topic}]
 == Lightweight markup siblings
 
 * Markdown
@@ -169,7 +163,7 @@ ____
 
 // put these in different font faces
 
-[role="topic intro"]
+[{intro}]
 == *Side* by{nbsp}**side**
 
 [role="topic source lhs"]
@@ -188,10 +182,10 @@ NOTE: The abstract, preface, appendix, bibliography, glossary and
 index section titles are significant ('specialsections').
 ----
 
-[role="topic source"]
+[{source}]
 == ...to DocBook
 
-[syntax="language-xml"]
+[syntax="xml"]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
@@ -227,14 +221,14 @@ index section titles are significant ('specialsections').
 </article>
 ----
 
-== ~slide~
+== ||
 
 [quote, Most developers on github]
 ____
 I use Markdown to write my documention.
 ____
 
-[role="topic source"]
+[{source}]
 == ...to Markdown
 
 ----
@@ -249,37 +243,30 @@ writing simple sectionless documents consisting only of a preamble.
 > section titles are significant (*specialsections*).
 ----
 
-[role="follow-up"]
+[{followup}]
 Hmm, can't really cover all the requirements :(
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 Markdown : *1st-grader* $$::$$ +
 Asciidoc : *PhD student*
 
-// Markdown is to a 1st-grader as AsciiDoc is to a PhD student ;)
+// idea for graphic: markdown == child, docbook == adult w/ garb, asciidoc == adult w/ jeans & t-shirt
 
-//[role="topic"]
+//[{topic}]
 //== Let's try it!
 //
-//ifdef::backend-dzslides[]
-//++++
-//<iframe src="http://andrewk.webfactional.com/asciidoc.php" style="width: 100%; height: 100%;"></iframe>
-//++++
-//endif::backend-dzslides[]
-//
-//ifndef::backend-dzslides[]
-//http://andrewk.webfactional.com/asciidoc.php
-//endif::backend-dzslides[]
+//ifdef::backend-dzslides[<iframe src="http://andrewk.webfactional.com/asciidoc.php" style="width: 100%; height: 100%;"></iframe>]
+//ifndef::backend-dzslides[http://andrewk.webfactional.com/asciidoc.php]
 
-[role="topic intro"]
+[{intro}]
 == *Markup* tour
 
-[role="topic source"]
+[{source}]
 == Heading variants: Underline
 
-[subs="macros"]
+[{macros-on}]
 ----
 Title (Level 0)
 ===============
@@ -297,7 +284,7 @@ Level 4
 pass:[+++++++]
 ----
 
-[role="topic source"]
+[{source}]
 == Heading variants: Prefix
 
 ----
@@ -312,7 +299,7 @@ pass:[+++++++]
 ===== Level 4
 ----
 
-[role="topic source"]
+[{source}]
 == Heading variants: Symmetric
 
 ----
@@ -327,7 +314,7 @@ pass:[+++++++]
 ===== Level 4 =====
 ----
 
-[role="topic source"]
+[{source}]
 == Text formatting
 
 ----
@@ -346,7 +333,7 @@ to keep the text from overflowing.
 This paragraph has it's own title. footnote:[A title can help a paragraph stand out.]
 ----
 
-[role="topic source"]
+[{source}]
 == Blocks
 
 .Literal block
@@ -357,7 +344,7 @@ Renders as pre-formatted, monospaced text
 ----
 
 .Source block
-[subs="macros"]
+[{macros-on}]
 ----
 .Optional caption
 pass:[----]
@@ -381,7 +368,7 @@ I'm doing a (free) operating system (just a hobby, won't be big and professional
 ____
 ----
 
-[role="topic source"]
+[{source}]
 == Lists
 
 .Unordered list
@@ -395,6 +382,7 @@ ____
 
 .Another unordered list
 ----
+.Vendors
 - Asus
 - Lenovo
 - Samsung
@@ -416,7 +404,7 @@ AsciiDoc:: advanced text-based document generation
 DocBook:: keeps a programmer busy for hours
 ----
 
-[role="topic source"]
+[{source}]
 == Links, images & includes
 
 .Links
@@ -446,13 +434,13 @@ image::images/logo.png[Logo]
 image::images/screenshot.png[Screenshot]
 ----
 
-[subs="macros"]
+[{macros-on}]
 .Include file
 ----
 pass:[include::footer.adoc[]]
 ----
 
-[role="topic source"]
+[{source}]
 == Admonitions
 
 .One-liner
@@ -488,7 +476,7 @@ They can show you how to use stuff.
 ====
 ----
 
-[role="topic source"]
+[{source}]
 == Tables
 
 .Basic table
@@ -515,7 +503,7 @@ ID,First,Last,Address,Phone
 |==========================
 ----
 
-[role="topic"]
+[{topic}]
 == Syntax highlighting
 
 [role="incremental"]
@@ -538,12 +526,12 @@ ID,First,Last,Address,Phone
 * AsciiDoc -> DocBook (built-in)
 * DocBook -> AsciiDoc (docbook2asciidoc)
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 Drop the *<>*, but not the *semantics*
 
-[role="topic source"]
+[{source}]
 == Custom markup
 
 .Definition
@@ -565,7 +553,7 @@ Drop the *<>*, but not the *semantics*
 My home directory is filename:/home/dallen/.
 ----
 
-[role="topic intro"]
+[{intro}]
 == *Example* showcase
 
 == Full examples
@@ -573,11 +561,11 @@ My home directory is filename:/home/dallen/.
 * Java EE Tutorial
 * TicketMonster Tutorial
 * AsciiDoc Manual
-* This presentation
+* *This presentation*
 
 // (for DocBook, can look at CDI and Bean Validation specs)
 
-[role="topic"]
+[{topic}]
 == Drawbacks
 
 * Less widely supported than Markdown
@@ -600,7 +588,7 @@ $$*$$ Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
 == Enjoy writing docs (again)!
 
 [role="footer"]
-methods.co.nz/asciidoc
+{website}
 
 ////
 
