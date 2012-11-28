@@ -1,4 +1,11 @@
 * prepare the full document examples
+* asciidoc --help syntax | more
+* how to get started
+** GitHub / Gist
+** Try AsciiDoc
+** download, extract, run
 * beef up the comparison (show lists for example)
 * add intro slides
 * example for NOTE, INFO, etc
+* custom macro example (filename-macro.conf)
+* add Karsten's post to resources
