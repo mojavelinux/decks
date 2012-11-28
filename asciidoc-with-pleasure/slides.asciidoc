@@ -20,14 +20,6 @@ v1.0, Nov 29, 2012
 :dzslides_highlight: monokai
 :syntax: no-highlight
 
-++++
-<style>
-section pre code {
-  font-size: .75em;
-}
-</style>
-++++
-
 == ~slide~
 
 [role="stmt"]
@@ -35,9 +27,26 @@ Writing in *DocBook* is just, *inhumane*
 
 == ~slide~
 
+[quote, Stuart Rackham]
+____
+I found I was spending more time *fixing syntax errors* than I was writing the
+documentation.
+____
+
+[NOTES]
+====
+DocBook is a complex language, the markup is difficult to read and even more
+difficult to write directly -- I found I was spending more time typing markup
+tags, consulting reference manuals and fixing syntax errors, than I was writing
+the documentation.
+====
+
+== ~slide~
+
 [role="stmt"]
 Just let me *write*, dammit!
 
+[role="terminal"]
 == ~slide~
 
 ....
@@ -76,7 +85,6 @@ Just let me *write*, dammit!
  o88o     o8888o 8""888P' `Y8bod8P' o888o o888o o888bood8P'   `Y8bod8P' `Y8bod8P'
 ....
 
-[role="topic"]
 == What is AsciiDoc?
 
 [role="middle"]
@@ -108,6 +116,11 @@ Comparable to Markdown, yet far more complete
 * Processing pipeline, templates
 ====
 
+== ~slide~
+
+[role="stmt"]
+{sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
+
 == Output formats (i.e., backends)
 
 image::export-icon.png[role="pull-right"]
@@ -121,11 +134,6 @@ image::export-icon.png[role="pull-right"]
 * ODF
 * slides [detail]#deck.js, dzslides#
 * ...and more
-
-== ~slide~
-
-[role="stmt"]
-{sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
 
 [role="topic"]
 == Who's using it?
@@ -161,20 +169,8 @@ ____
 
 // put these in different font faces
 
-== ~slide~
-
-[quote, Most developers on github]
-____
-I use Markdown to write my documention.
-____
-
-== ~slide~
-
-[role="stmt"]
-Markdown : *1st-grader* $$::$$ +
-Asciidoc : *PhD student*
-
-// Markdown is to a 1st-grader as AsciiDoc is to a PhD student ;)
+[role="topic intro"]
+== *Side* by{nbsp}**side**
 
 [role="topic source lhs"]
 == Compare AsciiDoc...
@@ -231,6 +227,13 @@ index section titles are significant ('specialsections').
 </article>
 ----
 
+== ~slide~
+
+[quote, Most developers on github]
+____
+I use Markdown to write my documention.
+____
+
 [role="topic source"]
 == ...to Markdown
 
@@ -249,6 +252,14 @@ writing simple sectionless documents consisting only of a preamble.
 [role="follow-up"]
 Hmm, can't really cover all the requirements :(
 
+== ~slide~
+
+[role="stmt"]
+Markdown : *1st-grader* $$::$$ +
+Asciidoc : *PhD student*
+
+// Markdown is to a 1st-grader as AsciiDoc is to a PhD student ;)
+
 //[role="topic"]
 //== Let's try it!
 //
@@ -261,6 +272,9 @@ Hmm, can't really cover all the requirements :(
 //ifndef::backend-dzslides[]
 //http://andrewk.webfactional.com/asciidoc.php
 //endif::backend-dzslides[]
+
+[role="topic intro"]
+== *Markup* tour
 
 [role="topic source"]
 == Heading variants: Underline
@@ -329,8 +343,7 @@ We break at the end of this line +
 to keep the text from overflowing.
 
 .Look at me!
-
-This paragraph has it's own title.
+This paragraph has it's own title. footnote:[A title can help a paragraph stand out.]
 ----
 
 [role="topic source"]
@@ -346,7 +359,7 @@ Renders as pre-formatted, monospaced text
 .Source block
 [subs="macros"]
 ----
-.Optional title
+.Optional caption
 pass:[----]
 public interface Document {}
 pass:[----]
@@ -354,7 +367,7 @@ pass:[----]
 
 .Sidebar block
 ----
-.Optional title
+.Optional caption
 ****
 Stuff in here is set off with a different background.
 ****
@@ -378,6 +391,13 @@ ____
 ** Ubuntu
 * Mac OSX
 * Windoze
+----
+
+.Another unordered list
+----
+- Asus
+- Lenovo
+- Samsung
 ----
 
 .Ordered list
@@ -426,9 +446,46 @@ image::images/logo.png[Logo]
 image::images/screenshot.png[Screenshot]
 ----
 
+[subs="macros"]
 .Include file
 ----
 pass:[include::footer.adoc[]]
+----
+
+[role="topic source"]
+== Admonitions
+
+.One-liner
+----
+NOTE: Just a quick note that you should pay attention.
+----
+
+.Two-liner
+----
+[NOTE]
+Perhaps this one is to your liking?
+----
+
+.More expressive
+----
+[IMPORTANT]
+====
+Get the full rich web experience!
+
+* HTML5
+* CSS3
+* JavaScript
+====
+----
+
+.Plain example
+----
+.Optional caption
+====
+Examples are good.
+
+They can show you how to use stuff.
+====
 ----
 
 [role="topic source"]
@@ -458,6 +515,13 @@ ID,First,Last,Address,Phone
 |==========================
 ----
 
+[role="topic"]
+== Syntax highlighting
+
+[role="incremental"]
+* Baked in [detail]#source-highlight, pygments#
+* Dynamic [detail]#highlight.js, rainbow.js, prettify.js#
+
 == Advanced capabilities
 
 [role="incremental middle pull-right"]
@@ -469,6 +533,41 @@ ID,First,Last,Address,Phone
 * Chunking
 * Custom backends
 
+== Migration-friendly
+
+* AsciiDoc -> DocBook (built-in)
+* DocBook -> AsciiDoc (docbook2asciidoc)
+
+== ~slide~
+
+[role="stmt"]
+Drop the *<>*, but not the *semantics*
+
+[role="topic source"]
+== Custom markup
+
+.Definition
+----
+[macros]
+(?su)(?<!\S)[\\]?(?P<name>filename):(?P<target>[\w/])=
+
+[filename-inlinemacro]
+\ifdef::basebackend-docbook[]
+<filename{target@.*/$: class="directory"}{role? role="{role}"}>{target}</filename>
+\endif::basebackend-docbook[]
+\ifdef::basebackend-html[]
+<tt>{target}</tt>
+\endif::basebackend-html[]
+----
+
+.Usage
+----
+My home directory is filename:/home/dallen/.
+----
+
+[role="topic intro"]
+== *Example* showcase
+
 == Full examples
 
 * Java EE Tutorial
@@ -477,17 +576,6 @@ ID,First,Last,Address,Phone
 * This presentation
 
 // (for DocBook, can look at CDI and Bean Validation specs)
-
-== ~slide~
-
-[role="stmt"]
-Drop the *<>*, but not the *semantics*
-
-[role="topic"]
-== Migration-friendly
-
-* AsciiDoc -> DocBook (built-in)
-* DocBook -> AsciiDoc (docbook2asciidoc)
 
 [role="topic"]
 == Drawbacks
@@ -519,6 +607,7 @@ methods.co.nz/asciidoc
 == Resources
 
 * http://methods.co.cz/asciidoc[AsciiDoc project]
+* http://teach.github.com/articles/book-authoring-using-git-and-github[Book Authoring Using Git and GitHub]
 * https://community.jboss.org/message/721016[AsciiDoc is the way forward]
 * http://www.apeth.net/matt/iosbooktoolchain.html[AsciiDoc and the Joy of Text]
 * http://srackham.wordpress.com/2010/08/23/publishing-ebooks-with-asciidoc/[Publishing eBooks with AsciiDoc]
@@ -536,5 +625,8 @@ methods.co.nz/asciidoc
 * http://johnmacfarlane.net/pandoc/try[Try Pandoc]
 * https://github.com/runemadsen/asciidoc[AsciiDoc Ruby port] (renderer only)
 * https://github.com/erebor/asciidoctor[asciidoctor] (A pure Ruby port of AsciiDoc)
+
+* http://www.jboss.org/jdf/examples/get-started/
+* file:///home/dallen/projects/mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html
 
 ////
