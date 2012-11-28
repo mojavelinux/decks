@@ -265,9 +265,13 @@ Hmm, can't really cover all the requirements :(
 [role="topic source"]
 == Heading variants: Underline
 
+[subs="macros"]
 ----
-Title or Level 1
-================
+Title (Level 0)
+===============
+
+Level 1
+pass:[-------]
 
 Level 2
 ~~~~~~~
@@ -276,33 +280,37 @@ Level 3
 ^^^^^^^
 
 Level 4
-+++++++
+pass:[+++++++]
 ----
 
 [role="topic source"]
 == Heading variants: Prefix
 
 ----
-= Title or Level 1
+= Title (Level 0)
 
-== Level 2
+== Level 1
 
-=== Level 3
+=== Level 2
 
-==== Level 4
+==== Level 3
+
+===== Level 4
 ----
 
 [role="topic source"]
 == Heading variants: Symmetric
 
 ----
-= Title or Level 1 =
+= Title (Level 0) =
 
-== Level 2 ==
+== Level 1 ==
 
-=== Level 3 ===
+=== Level 2 ===
 
-==== Level 4 ====
+==== Level 3 ====
+
+===== Level 4 =====
 ----
 
 [role="topic source"]
