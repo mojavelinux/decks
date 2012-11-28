@@ -7,6 +7,7 @@ v1.0, Nov 29, 2012
 // AsciiDoc was created by Stuart Rackham, hailing from New Zealand
 :copyright: CC BY-SA 2.0
 :website: http://www.methods.co.nz/asciidoc
+:imagesdir: images
 //:backend: html5
 :linkcss: true
 //:backend: deckjs
@@ -81,7 +82,8 @@ Just let me *write*, dammit!
 [role="middle"]
 A 'lightweight', yet *powerful* text-based markup language and document generator +
  +
-[incremental]#...'that's got it all'!#
+ +
+[incremental pull-right]#...'that's got it all'! {nbsp} {nbsp}#
 
 [NOTES]
 ====
@@ -102,13 +104,13 @@ Comparable to Markdown, yet far more complete
 [NOTES]
 ====
 * Just as capable as DocBook
-* Mild punctuation
 * Simple editing (move around sections easily)
 * Processing pipeline, templates
-* HTML, DocBook, PDF, ePub, slides and more
 ====
 
 == Output formats (i.e., backends)
+
+image::export-icon.png[role="pull-right"]
 
 [role="incremental"]
 * HTML [detail]#HTML 4, XHTML 1.1, HTML 5#
@@ -119,6 +121,11 @@ Comparable to Markdown, yet far more complete
 * ODF
 * slides [detail]#deck.js, dzslides#
 * ...and more
+
+== ~slide~
+
+[role="stmt"]
+{sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
 
 [role="topic"]
 == Who's using it?
@@ -242,18 +249,18 @@ writing simple sectionless documents consisting only of a preamble.
 [role="follow-up"]
 Hmm, can't really cover all the requirements :(
 
-[role="topic"]
-== Let's try it!
-
-ifdef::backend-dzslides[]
-++++
-<iframe src="http://andrewk.webfactional.com/asciidoc.php" style="width: 100%; height: 100%;"></iframe>
-++++
-endif::backend-dzslides[]
-
-ifndef::backend-dzslides[]
-http://andrewk.webfactional.com/asciidoc.php
-endif::backend-dzslides[]
+//[role="topic"]
+//== Let's try it!
+//
+//ifdef::backend-dzslides[]
+//++++
+//<iframe src="http://andrewk.webfactional.com/asciidoc.php" style="width: 100%; height: 100%;"></iframe>
+//++++
+//endif::backend-dzslides[]
+//
+//ifndef::backend-dzslides[]
+//http://andrewk.webfactional.com/asciidoc.php
+//endif::backend-dzslides[]
 
 [role="topic source"]
 == Heading variants: Underline
@@ -462,6 +469,11 @@ ID,First,Last,Address,Phone
 * This presentation
 
 // (for DocBook, can look at CDI and Bean Validation specs)
+
+== ~slide~
+
+[role="stmt"]
+Drop the *<>*, but not the *semantics*
 
 [role="topic"]
 == Migration-friendly
