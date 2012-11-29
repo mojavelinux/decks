@@ -148,18 +148,22 @@ image::export-icon.png[role="pull-right"]
 * ...and more
 
 [{topic}]
-== Who's using it?
+== Who's onboard?
 
 [role="incremental scatter"]
-* Github!
-* Authors [detail]#git-scribe, Atlas#
 * https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources[Neo4j]
-* https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial[JBoss Developer Framework]
 * https://github.com/jboss/cdi[CDI Specificiation]
+* https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial[JBoss Developer Framework]
+* https://github.com/diwakergupta/thrift-missing-guide[Apache Thrift]
+* Authors [detail]#git-scribe, Atlas#
+* *GitHub!*
 
-// screenshot of AsciiDoc as option on GitHub for readme, wiki or gist
-// blog entry title from author using AsciiDoc
-// mailinglist post subject for CDI spec conversion
+// http://docs.neo4j.org/chunked/milestone/index.html
+// http://docs.neo4j.org/chunked/milestone/cypher-cookbook-similar-favorites.html
+
+== ||
+
+image::asciidoc-github.png[caption="AsciiDoc support on GitHub"]
 
 == Testimonial
 
@@ -654,6 +658,8 @@ Also acronym-macro.conf
 [NOTES]
 ====
 
+vim, gedit syntax highlighting support
+
 .Java EE Workshop
 * callouts in code (generate app w/ Forge)
 * attributes for link references
@@ -682,6 +688,18 @@ Also acronym-macro.conf
 TIP: view docbook with yelp
 
 ====
+
+[{topic}]
+== Getting started
+
+[role="split"]
+* Online
+** http://andrewk.webfactional.com/asciidoc.php[Try AsciiDoc]
+** GitHub / Gist
+* Local
+** Python > 2.4
+** unzip distribution zip
+** add folder to your PATH
 
 [{topic}]
 == Drawbacks
@@ -732,5 +750,6 @@ TIP: view docbook with yelp
 * http://johnmacfarlane.net/pandoc/try[Try Pandoc]
 * https://github.com/runemadsen/asciidoc[AsciiDoc Ruby port] (renderer only)
 * https://github.com/erebor/asciidoctor[asciidoctor] (A pure Ruby port of AsciiDoc)
+* http://docs.neo4j.org/chunked/milestone/cypher-cookbook-similar-favorites.html[Neo4j interactive documentation]
 
 ////
