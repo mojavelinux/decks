@@ -16,7 +16,8 @@ v1.0, Nov 29, 2012
 // disable syntax highlighting unless turned on explicitly
 :syntax: no-highlight
 
-== ||
+[{topic}]
+== mojavelinux.github.com/decks/asciidoc-with-pleasure
 
 image::qrcode.png[role="middle stretch-y"]
 
