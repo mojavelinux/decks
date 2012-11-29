@@ -31,7 +31,11 @@ v1.0, Nov 29, 2012
 [{topic}]
 == mojavelinux.github.com/decks/asciidoc-with-pleasure
 
-image::qrcode.png[role="middle stretch-y"]
+//image::qrcode.png[role="middle stretch-y"]
+['qrcode', size=10, alt="http://mojavelinux.github.com/decks/asciidoc-with-pleasure", role="middle stretch-y"]
+----
+http://mojavelinux.github.com/decks/asciidoc-with-pleasure
+----
 
 == ||
 
