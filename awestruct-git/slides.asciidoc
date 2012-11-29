@@ -5,14 +5,13 @@ v1.0, Nov 29, 2012
 :title: Bake your HTML5 website with Awestruct and publish it with git
 :copywrite: CC BY-SA 2.0
 :website: http://awestruct.org
-:backend: html5
 :imagesdir: images
-:linkcss:
 :backend: dzslides
-:dzslides_style: stormy
-:dzslides_transition: fade
-:dzslides_highlight: monokai
-:dzslides_fonts: Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:linkcss:
+:dzslides-style: stormy
+:dzslides-transition: fade
+:dzslides-highlight: monokai
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
 :syntaxoff: syntax="no-highlight"
 
 == Awestruct
@@ -23,7 +22,7 @@ A dynamic static site-baking tool
 
 == Awestruct's goal
 
-[role="stmt"]
+[{statement}]
 Awestruct makes it easy to create *non-trivial* static *websites*
 
 == HTML5
@@ -32,9 +31,9 @@ image::html5-logo.png[role="pull-left"]
 
 The cornerstone of the Open Web Platform
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 *Static* is the new *dynamic*
 
 == git
@@ -43,9 +42,9 @@ image::git-logo.png[]
 
 --distributed-even-if-your-workflow-isnt
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 From *black box* to *open book*
 
 //graphic of black box -> open book
@@ -66,7 +65,7 @@ image::baking-process.jpg[caption="The baking process"]
 config + templates + pages -> extension pipeline -> website
 ////
 
-[role="topic"]
+[{topic}]
 == Project layout
 
 // show file tree with incremental labels
@@ -80,7 +79,7 @@ config + templates + pages -> extension pipeline -> website
 * _site
 * index.html.haml
 
-[role="topic source"]
+[{source}]
 == Content page structure
 
 .about.md
@@ -108,10 +107,10 @@ We like code we don't have to escape.
 talk about page structure (front-matter, content)
 ====
 
-[role="topic"]
+[{topic}]
 == Markup of choice
 
-[role="incremental"]
+[{stepwise}]
 * Markdown (Kramdown) [detail]#.md#
 * AsciiDoc [detail]#.adoc#
 * reStructuredText [detail]#.rst#
@@ -121,7 +120,7 @@ talk about page structure (front-matter, content)
 * HTML [detail]#.html#
 * ...and more
 
-[role="topic source"]
+[{source}]
 == Layout page structure
 
 ._layouts/base.html.haml
@@ -141,7 +140,7 @@ talk about page structure (front-matter, content)
 ~ inserts special character to preserve whitespace)
 ====
 
-[role="topic source"]
+[{source}]
 == Site properties
 
 ._config/site.yml
@@ -156,7 +155,7 @@ title: My Site
 %title= site.title
 ----
 
-== ~slide~
+== ||
 
 [role="incremental middle pull-right"]
 * aggregate compiler
@@ -165,10 +164,10 @@ title: My Site
 * profiles
 * extensions
 
-[role="topic"]
+[{topic}]
 == Available Extensions
 
-[role="incremental"]
+[{stepwise}]
 * Posts (i.e., Blog)
 ** Paginator, Tagger, TagCloud, Atomizer
 * Comments
@@ -216,7 +215,7 @@ by Dan Allen
 ------------------------------------------------------------
 ////
 
-[role="topic"]
+[{topic}]
 == Extension possibilities
 
 [role="incremental middle pull-right"]
@@ -226,7 +225,7 @@ by Dan Allen
 * synthetic pages
 * helper utilities
 
-[role="topic source"]
+[{source}]
 == Extension
 
 // flesh out sample code
@@ -249,7 +248,7 @@ An extension class only need implement a single method, execute(site). Each
 extension in the pipeline will be called, in-order, and passed the site object.
 ====
 
-[role="topic source"]
+[{source}]
 == Transformer
 
 // flesh out sample code
@@ -264,7 +263,7 @@ class MyTransformer
 end
 ----
 
-[role="topic source"]
+[{source}]
 == Configuring the pipeline
 
 ----
@@ -284,7 +283,7 @@ The _ext/ directory is automatically added to the $LOAD_PATH so that
 site-supplied extensions may easily be loaded.
 ====
 
-== ~slide~
+== ||
 
 image::generator-pipeline.png[caption="Generator pipeline", role="auto-width"]
 
@@ -294,7 +293,7 @@ The extension pipeline runs immediately before the final URL assignment to
 pages and generating the final output pages.
 ====
 
-[role="topic"]
+[{topic}]
 == Awestruct cohorts
 
 // who else is doing this stuff?
@@ -313,7 +312,7 @@ pages and generating the final output pages.
 // visuals for a few examples, then a list
 // platform in small text
 
-[role="topic source"]
+[{source}]
 == Install (Ruby)
 
 [{syntaxoff}]
@@ -321,7 +320,7 @@ pages and generating the final output pages.
 $ gem install awestruct rb-inotify
 ----
 
-[role="topic source"]
+[{source}]
 == Install (JRuby)
 
 [{syntaxoff}]
@@ -329,7 +328,7 @@ $ gem install awestruct rb-inotify
 $ jgem install awestruct rb-inotify
 ----
 
-[role="topic source"]
+[{source}]
 == Bootstrap
 
 [{syntaxoff}]
@@ -347,7 +346,7 @@ $ echo "NONE" > .awestruct_ignore
 
 image::bootstrap-left-logo.png[role="pull-right"]
 
-[role="topic source"]
+[{source}]
 == Build & preview (Dev Mode)
 
 [{syntaxoff}]
@@ -355,11 +354,11 @@ image::bootstrap-left-logo.png[role="pull-right"]
 $ awestruct -d
 ----
 
-[role="follow-up"]
+[{followup}]
 browse to http://localhost:4242 +
 changes to files will be picked up automatically
 
-[role="topic source"]
+[{source}]
 == Force clean
 
 [{syntaxoff}]
@@ -367,17 +366,17 @@ changes to files will be picked up automatically
 $ awestruct -d --force
 ----
 
-[role="follow-up"]
+[{followup}]
 Purges _site directory
 
-[role="topic intro"]
+[{intro}]
 == Build a blog *demo*
 
 // include::setup-blog-demo.asciidoc[]
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 and blog like a *hacker*!
 
 [NOTES]
@@ -388,10 +387,10 @@ and blog like a *hacker*!
 * publishable
 ====
 
-[role="topic intro"]
+[{intro}]
 == Compile CoffeeScript *demo*
 
-[role="topic source"]
+[{source}]
 == Add tooltips to links
 
 .index.html.haml
@@ -400,7 +399,7 @@ and blog like a *hacker*!
 %a{:href=>post.url, :title=>'Go to post', :rel=>'tooltip'}= post.title
 ----
 
-[role="topic source"]
+[{source}]
 == Activate tooltip component in CoffeeScript 
 
 .javascripts/site.coffee
@@ -412,12 +411,12 @@ $ ->
     (-> $(@).css fontStyle: 'normal')
 ----
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 Get *dynamic* by *scraping* the web
 
-[role="topic source"]
+[{source}]
 == CoffeeScript to fetch news feed
   
 .javascripts/site.coffee
@@ -429,7 +428,7 @@ this.fetchNews = (url, loc, num = 10) ->
       """<li><a href="\#{entry.link}">\#{entry.title}</li>""")), num
 ----
 
-[role="topic source"]
+[{source}]
 == Load scripts
 
 .index.html.haml
@@ -446,7 +445,7 @@ this.fetchNews = (url, loc, num = 10) ->
 Note the use of a CDN to grab the bootstrap script +
 Note that site.coffeescript has been compiled to site.js
 
-[role="topic source"]
+[{source}]
 == Fetch news
 
 .index.html.haml
@@ -456,12 +455,12 @@ Note that site.coffeescript has been compiled to site.js
   fetchNews('http://therichwebexperience.com/s/rss/rich.rss', '#news');
 ----
 
-[role="topic intro"]
+[{intro}]
 == Qualified URL extension *demo*
 
 // TODO
 
-[role="topic source"]
+[{source}]
 == Make it SASSy
 
 .stylesheets/screen.scss
@@ -478,15 +477,15 @@ $navbarBrandColor: #FFCC66;
 $navbarLinkColor: #D9E0FF;
 ----
 
-[role="topic intro"]
+[{intro}]
 == *Deploy* to GitHub pages
 
 // include::github-pages-deploy-demo.asciidoc[]
 
-[role="topic"]
+[{topic}]
 == Polishing
 
-[role="incremental"]
+[{stepwise}]
 * https://help.github.com/articles/setting-up-a-custom-domain-with-pages[CNAME for custom URL]
 * https://help.github.com/articles/custom-404-pages[custom 404 page]
 * Setup build in CI environment
@@ -496,7 +495,7 @@ $navbarLinkColor: #D9E0FF;
 github pages autogenerator is just for a single page (markdown -> html)
 ====
 
-[role="topic"]
+[{topic}]
 == Who's onboard?
 
 // sample 3 as screenshots, then continue with list (as table?)
@@ -516,27 +515,27 @@ github pages autogenerator is just for a single page (markdown -> html)
 CDI is planned
 ====
 
-[role="topic intro"]
+[{intro}]
 == case study *arquillian*
 
-== ~slide~
+== ||
 
 image::arquillian-site-screenshot.png[caption="arquillian.org"]
 
-[role="topic"]
+[{topic}]
 == Dynamic features
 
-[role="incremental"]
+[{stepwise}]
 * auto-generated release blogs
 * contributor identities
 * ...
 
 // more visual
 
-[role="topic"]
+[{topic}]
 == Gotchas
 
-[role="incremental"]
+[{stepwise}]
 * Internet-dependent build (fetch data)
 * Internet-dependent preview (CDN)
 * GH pages sends 24hr no-fetch cache header
@@ -552,12 +551,12 @@ image::arquillian-site-screenshot.png[caption="arquillian.org"]
 </hgroup>
 ++++
 
-== ~slide~
+== ||
 
-[role="stmt"]
+[{statement}]
 Thank the *browser* for making this possible
 
-== ~slide~
+== ||
 
 image::awestruct-expression.jpg[caption="Are you {:awestruct}?", crole="invert"]
 
