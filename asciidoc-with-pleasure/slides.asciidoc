@@ -40,7 +40,7 @@ http://mojavelinux.github.com/decks/asciidoc-with-pleasure
 == ||
 
 [{statement}]
-Writing in *DocBook* is just, *inhumane*
+Writing in *DocBook* is just... *inhumane*
 
 == ||
 
@@ -190,7 +190,7 @@ ____
 // put these in different font faces
 
 [{intro}]
-== *Showdown*
+== *Side* by *side*
 
 [role="topic source lhs"]
 == Compare AsciiDoc...
@@ -264,7 +264,9 @@ Document sections start at level 1 and can nest up to four levels deep.
     ...
     <chapter id="_first_section">
         <title>First section</title>
-        <simpara>Document sections start at level 1 and can nest up to four levels deep.</simpara>
+        <simpara>
+            Document sections start at level 1 and can nest up to four levels deep.
+        </simpara>
         <itemizedlist>
             <listitem>
                 <simpara>Item 1</simpara>
@@ -596,8 +598,8 @@ ID,First,Last,Address,Phone
 == Syntax highlighting
 
 [{stepwise}]
-* Baked in [detail]#source-highlight, pygments#
-* Dynamic [detail]#highlight.js, rainbow.js, prettify.js#
+* Baked-in [detail]#source-highlight, pygments#
+* Client-side [detail]#highlight.js, rainbow.js, prettify.js#
 
 == Advanced capabilities
 
