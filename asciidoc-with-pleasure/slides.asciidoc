@@ -138,8 +138,8 @@ image::export-icon.png[role="pull-right"]
 [{topic}]
 == Who's using it?
 
+[role="incremental scatter"]
 * Github!
-* Git
 * Authors [detail]#git-scribe, Atlas#
 * https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources[Neo4j]
 * https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial[JBoss Developer Framework]
@@ -151,6 +151,7 @@ image::export-icon.png[role="pull-right"]
 
 == Testimonial
 
+// https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
 ["quote", "Anders Nawroth, Neo4j"]
 ____
 I'm amazed by AsciiDoc :-) It handles a lot of use cases well, and 
@@ -631,7 +632,7 @@ Also acronym-macro.conf
 * http://mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html[Java EE Tutorial]
 * http://www.jboss.org/jdf/examples/get-started[JDF TicketMonster Tutorial]
 * CDI Specification
-* *This presentation*
+* *This presentation!*
 
 [NOTES]
 ====
@@ -684,21 +685,16 @@ TIP: view docbook with yelp
 * http://srackham.wordpress.com/2010/08/23/publishing-ebooks-with-asciidoc/[Publishing eBooks with AsciiDoc]
 * http://gslsrc.net/l01_asciidoc_website.html[Building a website using AsciiDoc]
 * https://github.com/oreillymedia/docbook2asciidoc[docbook2asciidoc]
-* http://csrp.iut-blagnac.fr/jmiwebsite/slidy2/slidy2_doc
-* http://kaczanowscy.pl/tomek/2010-09/a-perfect-environment-for-docbook
-* http://kaczanowscy.pl/tomek/2011-09/nice-presentations-in-no-time-with-asciidoc-and-slidy
+* http://csrp.iut-blagnac.fr/jmiwebsite/slidy2/slidy2_doc[AsciiDoc Slidy backend enhancements]
+* http://kaczanowscy.pl/tomek/2010-09/a-perfect-environment-for-docbook[A perfect environment for DocBook]
+* http://kaczanowscy.pl/tomek/2011-09/nice-presentations-in-no-time-with-asciidoc-and-slidy[Nice presentations in no time with AsciiDoc and Slidy]
 * http://powerman.name/doc/asciidoc[AsciiDoc Cheat Sheet]
 * http://xed.ch/help/asciidoc.html [Another AsciiDoc Cheat Sheet]
 * https://github.com/schacon/git-scribe[git-scribe]
-* http://andrewk.webfactional.com/asciidoc.php
-* https://github.com/oreillymedia/docbook2asciidoc
-* https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
+* http://andrewk.webfactional.com/asciidoc.php[Try AsciiDoc!]
+* https://github.com/oreillymedia/docbook2asciidoc[docbook2asciidoc converter]
 * http://johnmacfarlane.net/pandoc/try[Try Pandoc]
 * https://github.com/runemadsen/asciidoc[AsciiDoc Ruby port] (renderer only)
 * https://github.com/erebor/asciidoctor[asciidoctor] (A pure Ruby port of AsciiDoc)
-
-.Create bookmarks for these
-* http://www.jboss.org/jdf/examples/get-started/
-* file:///home/dallen/projects/mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html
 
 ////
