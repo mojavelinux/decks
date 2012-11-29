@@ -340,6 +340,21 @@ pass:[+++++++]
 ----
 
 [{source}]
+== Heading variants: Symmetric
+
+----
+= Title (Level 0) =
+
+== Level 1 ==
+
+=== Level 2 ===
+
+==== Level 3 ====
+
+===== Level 4 =====
+----
+
+[{source}]
 == Heading variants: Prefix
 
 ----
@@ -354,20 +369,10 @@ pass:[+++++++]
 ===== Level 4
 ----
 
-[{source}]
-== Heading variants: Symmetric
-
-----
-= Title (Level 0) =
-
-== Level 1 ==
-
-=== Level 2 ===
-
-==== Level 3 ====
-
-===== Level 4 =====
-----
+[NOTES]
+====
+I prefer using prefix, except underline for the title
+====
 
 [{source}]
 == Text formatting
@@ -592,7 +597,7 @@ ID,First,Last,Address,Phone
 * Attributes (i.e., variables)
 * Code callouts
 * Block in a list item
-* Footnotes and indexes
+* Footnotes, indexes, bibliography
 * Macros & filters
 * Chunking
 * Custom backends
@@ -641,20 +646,38 @@ Also acronym-macro.conf
 
 [{stepwise-alt}]
 * http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc User Guide]
-* http://mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html[Java EE Tutorial]
+* http://mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html[Java EE Workshop]
 * http://www.jboss.org/jdf/examples/get-started[JDF TicketMonster Tutorial]
-* CDI Specification
+* https://github.com/jboss/cdi/tree/master/spec[CDI Specification]
 * *This presentation!*
 
 [NOTES]
 ====
-* javaeeworkshop.asciidoc
-** callouts in code
-** attributes for link references
-* ticket-monster.asciidoc
-** online html
-** includes
-** pdf
+
+.Java EE Workshop
+* callouts in code (generate app w/ Forge)
+* attributes for link references
+* source code / syntax highlighting (+ don't have to escape XML)
+* output styling: html (+ toc), pdf
+* view as DocBook using yelp
+
+.Ticket Monster
+* shear size (~ 30,000 words, 214 pages, 80 images)
+* rendered on jdf site
+* anchors (Introduction.ascidoc)
+* includes
+* comment on the unnecessary spacing and tokens
+* pdf
+
+.CDI Specification
+* converted using docbook2asciidoc
+* :numbered: headings
+* anchor references (resolve as names in yelp and pdf)
+* index entries (events.asciidoc)
+
+.This presentation
+* linkcss and data-uri for single document html
+* css classes (as roles)
 
 TIP: view docbook with yelp
 
@@ -665,6 +688,7 @@ TIP: view docbook with yelp
 
 * Less widely supported than Markdown
 * Written in Python, not easy to embed &dagger;
+* Uses a regex-based parser
 * Arbitrary and inconsistent commands
 
 &dagger; Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
