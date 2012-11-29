@@ -679,6 +679,7 @@ TIP: view docbook with yelp
 * http://teach.github.com/articles/book-authoring-using-git-and-github[Book Authoring Using Git and GitHub]
 * https://community.jboss.org/message/721016[AsciiDoc is the way forward]
 * http://www.apeth.net/matt/iosbooktoolchain.html[AsciiDoc and the Joy of Text]
+* https://plus.google.com/107540063390223378173/posts/FJmvfoAx1pu[AsciiDoc vs DocBook: Semantics]
 * http://srackham.wordpress.com/2010/08/23/publishing-ebooks-with-asciidoc/[Publishing eBooks with AsciiDoc]
 * http://gslsrc.net/l01_asciidoc_website.html[Building a website using AsciiDoc]
 * https://github.com/oreillymedia/docbook2asciidoc[docbook2asciidoc]

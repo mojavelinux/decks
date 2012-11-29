@@ -1,18 +1,8 @@
-* prepare the full document examples
-* how to get started
+* prepare notes for full document examples
+* screenshot of AsciiDoc as option on GitHub for readme, wiki or gist
+* add how to get started
 ** GitHub / Gist (screenshot)
 ** Try AsciiDoc
 ** download, extract, run
 ** asciidoc --help syntax | more
-* beef up the comparison (show lists for example)
-* add Karsten's post to resources
-* example custom macros
-** filename-macro.conf
-** acronym-macro.conf
-* javaeeworkshop.asciidoc
-** callouts in code
-** attributes for link references
-* ticket-monster.asciidoc
-** online html
-** includes
-** pdf
+* don't use hgroup for takeaway
