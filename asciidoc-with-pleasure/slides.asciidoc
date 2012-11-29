@@ -18,6 +18,10 @@ v1.0, Nov 29, 2012
 
 == ||
 
+image::qrcode.png[role="middle stretch-y"]
+
+== ||
+
 [{statement}]
 Writing in *DocBook* is just, *inhumane*
 
@@ -97,7 +101,7 @@ Comparable to Markdown, yet far more complete
 
 == ||
 
-[role="incremental middle pull-right"]
+[{stepwise-alt}]
 * Readable
 * Agile
 * Comprehensive
@@ -120,7 +124,7 @@ Comparable to Markdown, yet far more complete
 
 image::export-icon.png[role="pull-right"]
 
-[role="incremental"]
+[{stepwise}]
 * HTML [detail]#HTML 4, XHTML 1.1, HTML 5#
 * DocBook
 * PDF [detail]#fop, dblatex#
@@ -251,6 +255,12 @@ Document sections start at level 1 and can nest up to four levels deep.
 </book>
 ----
 
+[NOTES]
+====
+DocBook becomes a distraction to the task of writing the documentation. Your
+focus is on the tags and how to manage them rather than the text.
+====
+
 == ||
 
 [quote, Most developers on github]
@@ -290,12 +300,6 @@ Markdown : *1st-grader* $$::$$ +
 Asciidoc : *PhD student*
 
 // idea for graphic: markdown == child, docbook == adult w/ garb, asciidoc == adult w/ jeans & t-shirt
-
-//[{topic}]
-//== Let's try it!
-//
-//ifdef::backend-dzslides[<iframe src="http://andrewk.webfactional.com/asciidoc.php" style="width: 100%; height: 100%;"></iframe>]
-//ifndef::backend-dzslides[http://andrewk.webfactional.com/asciidoc.php]
 
 [{intro}]
 == AsciiDoc *markup* tour
@@ -564,13 +568,13 @@ ID,First,Last,Address,Phone
 [{topic}]
 == Syntax highlighting
 
-[role="incremental"]
+[{stepwise}]
 * Baked in [detail]#source-highlight, pygments#
 * Dynamic [detail]#highlight.js, rainbow.js, prettify.js#
 
 == Advanced capabilities
 
-[role="incremental middle pull-right"]
+[{stepwise-alt}]
 * Attributes (i.e., variables)
 * Code callouts
 * Block in a list item
@@ -611,12 +615,17 @@ Drop the *<>*, but not the *semantics*
 My home directory is filename:/home/dallen/.
 ----
 
+[NOTES]
+====
+Also acronym-macro.conf
+====
+
 [{intro}]
 == *Example* showcase
 
 == ||
 
-[role="middle incremental pull-right"]
+[{stepwise-alt}]
 * http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc User Guide]
 * http://mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html[Java EE Tutorial]
 * http://www.jboss.org/jdf/examples/get-started[JDF TicketMonster Tutorial]
@@ -646,7 +655,7 @@ TIP: view docbook with yelp
 
 &dagger; Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
 
-[role="topic recap final"]
+[{recap-final}]
 == Final recap
 
 ++++
@@ -656,7 +665,7 @@ TIP: view docbook with yelp
 </hgroup>
 ++++
 
-[role="topic ending", hrole="name"]
+[{ending}, hrole="name"]
 == Enjoy writing docs (again)!
 
 [role="footer"]
