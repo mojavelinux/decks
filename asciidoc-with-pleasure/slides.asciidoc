@@ -1,6 +1,6 @@
 Drop the angled brackets. Write **(Ascii)Doc**s with pleasure!
 ==============================================================
-Dan Allen <dan.j.allen@gmail.com>
+Dan Allen, @mojavelinux <dan.j.allen@gmail.com>
 v1.0, Nov 29, 2012
 :title: Drop the angled brackets. Write (Ascii)Docs with pleasure!
 :description: Slides for my presentation about authoring with AsciiDoc delivered at RWX 2012.
