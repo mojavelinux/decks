@@ -87,7 +87,7 @@ Just let me *write*, dammit!
 
 == What is AsciiDoc?
 
-[role="middle"]
+[{middle}]
 A 'lightweight', yet *powerful* text-based markup language and document generator +
  +
  +
@@ -386,8 +386,8 @@ Renders as pre-formatted, monospaced text
 ....
 ----
 
-.Source block
 [{macros-on}]
+.Source block
 ----
 .Optional caption
 pass:[----]
@@ -583,7 +583,7 @@ ID,First,Last,Address,Phone
 * Chunking
 * Custom backends
 
-== Migration-friendly
+== Toolchain-friendly
 
 * AsciiDoc -> DocBook (built-in)
 * DocBook -> AsciiDoc (docbook2asciidoc)
