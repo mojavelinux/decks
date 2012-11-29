@@ -190,7 +190,7 @@ ____
 // put these in different font faces
 
 [{intro}]
-== *Side* by{nbsp}**side**
+== *Showdown*
 
 [role="topic source lhs"]
 == Compare AsciiDoc...
