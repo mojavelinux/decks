@@ -1,3 +1,15 @@
+//
+// Export to...
+//
+// dzslides with embedded assets:
+// asciidoc slides.asciidoc
+//
+// dzslides with embedded assets:
+// asciidoc -a data-uri -a linkcss! slides.asciidoc
+//
+// HTML5:
+// asciidoc -b html5 -o outline.html slides.asciidoc
+//
 Drop the angled brackets. Write **(Ascii)Doc**s with pleasure!
 ==============================================================
 Dan Allen, @mojavelinux <dan.j.allen@gmail.com>
