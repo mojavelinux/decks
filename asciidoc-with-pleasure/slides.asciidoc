@@ -170,8 +170,8 @@ ____
 == Compare AsciiDoc...
 
 ----
-Article Title
-=============
+Document Title
+==============
 John Doe <john.doe@example.com>
 v1.0, 2012-12-01
 
@@ -180,6 +180,13 @@ writing simple sectionless documents consisting only of a preamble.
 
 NOTE: The abstract, preface, appendix, bibliography, glossary and
 index section titles are significant ('specialsections').
+
+== First section
+
+Document sections start at level 1 and can nest up to four levels deep.
+
+* Item 1
+* Item 2
 ----
 
 [{source}]
@@ -188,11 +195,11 @@ index section titles are significant ('specialsections').
 [syntax="xml"]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
     "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
-<article lang="en">
-    <articleinfo>
-        <title>Article Title</title>
+<book lang="en">
+    <bookinfo>
+        <title>Document Title</title>
         <date>2012-12-01</date>
         <author>
             <firstname>John</firstname>
@@ -207,18 +214,41 @@ index section titles are significant ('specialsections').
                 <authorinitials>JD</authorinitials>
             </revision>
         </revhistory>
-    </articleinfo>
-    <simpara>
-        This is the optional preamble (an untitled section body). Useful for
-        writing simple sectionless documents consisting only of a preamble.
-    </simpara> 
-    <note>
+    </bookinfo>
+    <preface>
         <simpara>
-            The abstract, preface, appendix, bibliography, glossary and index
-            section titles are significant (<emphasis>specialsections</emphasis>).
-        </simpara>
-    </note>
-</article>
+            This is the optional preamble (an untitled section body). Useful for
+            writing simple sectionless documents consisting only of a preamble.
+        </simpara> 
+        <note>
+            <simpara>
+                The abstract, preface, appendix, bibliography, glossary and index
+                section titles are significant (<emphasis>specialsections</emphasis>).
+            </simpara>
+        </note>
+    <preface>
+    ...
+----
+
+[{source}]
+== ...to DocBook (con't)
+
+[syntax="xml"]
+----
+    ...
+    <chapter id="_first_section">
+        <title>First section</title>
+        <simpara>Document sections start at level 1 and can nest up to four levels deep.</simpara>
+        <itemizedlist>
+            <listitem>
+                <simpara>Item 1</simpara>
+            </listitem>
+            <listitem>
+                <simpara>Item 2</simpara>
+            </listitem>
+        </itemizedlist>
+    </chapter>
+</book>
 ----
 
 == ||
@@ -232,7 +262,7 @@ ____
 == ...to Markdown
 
 ----
-# Article Title
+# Document Title
 
 This is the optional preamble (an untitled section body). Useful for
 writing simple sectionless documents consisting only of a preamble.
@@ -241,6 +271,13 @@ writing simple sectionless documents consisting only of a preamble.
 >
 > The abstract, preface, appendix, bibliography, glossary and index
 > section titles are significant (*specialsections*).
+
+## First section
+
+Document sections start at level 1 and can nest up to four levels deep.
+
+* Item 1
+* Item 2
 ----
 
 [{followup}]
@@ -261,7 +298,7 @@ Asciidoc : *PhD student*
 //ifndef::backend-dzslides[http://andrewk.webfactional.com/asciidoc.php]
 
 [{intro}]
-== *Markup* tour
+== AsciiDoc *markup* tour
 
 [{source}]
 == Heading variants: Underline
@@ -336,6 +373,8 @@ This paragraph has it's own title. footnote:[A title can help a paragraph stand 
 [{source}]
 == Blocks
 
+[{stepwise}]
+--
 .Literal block
 ----
 ....
@@ -367,10 +406,19 @@ ____
 I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu) for 386(486) AT clones.
 ____
 ----
+--
+
+[NOTES]
+====
+Only 4 consecutive delimeters are required. I recommend using the minimum
+rather than formatting them to match the line length.
+====
 
 [{source}]
 == Lists
 
+[{stepwise}]
+--
 .Unordered list
 ----
 * Linux
@@ -403,10 +451,13 @@ ____
 AsciiDoc:: advanced text-based document generation
 DocBook:: keeps a programmer busy for hours
 ----
+--
 
 [{source}]
 == Links, images & includes
 
+[{stepwise}]
+--
 .Links
 ----
 http://methods.co.nz/asciidoc
@@ -439,10 +490,13 @@ image::images/screenshot.png[Screenshot]
 ----
 pass:[include::footer.adoc[]]
 ----
+--
 
 [{source}]
 == Admonitions
 
+[{stepwise}]
+--
 .One-liner
 ----
 NOTE: Just a quick note that you should pay attention.
@@ -475,10 +529,13 @@ Examples are good.
 They can show you how to use stuff.
 ====
 ----
+--
 
 [{source}]
 == Tables
 
+[{stepwise}]
+--
 .Basic table
 ----
 .Optional caption
@@ -502,6 +559,7 @@ ID,First,Last,Address,Phone
 2,Doe,John,"Washington, D.C.",2025551212
 |==========================
 ----
+--
 
 [{topic}]
 == Syntax highlighting
@@ -556,23 +614,37 @@ My home directory is filename:/home/dallen/.
 [{intro}]
 == *Example* showcase
 
-== Full examples
+== ||
 
-* Java EE Tutorial
-* TicketMonster Tutorial
-* AsciiDoc Manual
+[role="middle incremental pull-right"]
+* http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc User Guide]
+* http://mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html[Java EE Tutorial]
+* http://www.jboss.org/jdf/examples/get-started[JDF TicketMonster Tutorial]
+* CDI Specification
 * *This presentation*
 
-// (for DocBook, can look at CDI and Bean Validation specs)
+[NOTES]
+====
+* javaeeworkshop.asciidoc
+** callouts in code
+** attributes for link references
+* ticket-monster.asciidoc
+** online html
+** includes
+** pdf
+
+TIP: view docbook with yelp
+
+====
 
 [{topic}]
 == Drawbacks
 
 * Less widely supported than Markdown
-* Written in Python, not easy to embed*
+* Written in Python, not easy to embed &dagger;
 * Arbitrary and inconsistent commands
 
-$$*$$ Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
+&dagger; Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
 
 [role="topic recap final"]
 == Final recap
@@ -614,6 +686,7 @@ $$*$$ Work is underway on a https://github.com/runemadsen/asciidoc[Ruby port]
 * https://github.com/runemadsen/asciidoc[AsciiDoc Ruby port] (renderer only)
 * https://github.com/erebor/asciidoctor[asciidoctor] (A pure Ruby port of AsciiDoc)
 
+.Create bookmarks for these
 * http://www.jboss.org/jdf/examples/get-started/
 * file:///home/dallen/projects/mojavelinux.github.com/asciidoc-examples/javaeeworkshop.html
 
