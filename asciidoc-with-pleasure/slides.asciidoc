@@ -603,7 +603,7 @@ Drop the *<>*, but not the *semantics*
 
 [filename-inlinemacro]
 \ifdef::basebackend-docbook[]
-<filename{target@.*/$: class="directory"}{role? role="{role}"}>{target}</filename>
+<filename{target@.*/$: class="directory"}>{target}</filename>
 \endif::basebackend-docbook[]
 \ifdef::basebackend-html[]
 <tt>{target}</tt>
