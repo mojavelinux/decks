@@ -16,20 +16,25 @@ v1.0, Nov 29, 2012
 
 == Awestruct
 
-image::awestruct-logo.png[role="pull-right"]
+image::awestruct-logo.png[]
 
-A dynamic static site-baking tool
+[role="text-right"]
+A static site-baking tool
 
 == Awestruct's goal
 
 [{statement}]
-Awestruct makes it easy to create *non-trivial* static *websites*
+Awestruct makes it easy to create *non-trivial* +static+ *websites*
 
 == HTML5
 
 image::html5-logo.png[role="pull-left"]
 
 The cornerstone of the Open Web Platform
+
+== ||
+
+image::html5css3js.png[{middle}]
 
 == ||
 
@@ -54,8 +59,9 @@ From *black box* to *open book*
 
 [role="incremental middle pull-right"]
 * Lightweight
+* Automated
 * Collaborative
-* Hacker's dream
+* A hacker's dream
 
 == The baking process
 
@@ -164,6 +170,11 @@ title: My Site
 * profiles
 * extensions
 
+[NOTES]
+====
+compiler is important to emphasize / expand on; leverages existing stuff
+====
+
 [{topic}]
 == Available Extensions
 
@@ -175,7 +186,7 @@ title: My Site
 * Sitemap
 * Minify
 * Google Analytics
-* ...crazy things the Arquillian team creates
+* ...crazy things the Arquillian team dreams up
 
 // turn these into visuals, like:
 
@@ -216,13 +227,14 @@ by Dan Allen
 ////
 
 [{topic}]
-== Extension possibilities
+== What else could an extension do?
 
 [role="incremental middle pull-right"]
 * fetch data
 * assign variables
 * manipulate pages
 * synthetic pages
+* indexed data
 * helper utilities
 
 [{source}]
@@ -266,6 +278,8 @@ end
 [{source}]
 == Configuring the pipeline
 
+._ext/pipeline.rb
+[syntax="ruby"]
 ----
 require 'my_extension'
 require 'my_transformer'
@@ -294,10 +308,9 @@ pages and generating the final output pages.
 ====
 
 [{topic}]
-== Awestruct cohorts
+== Who else is baking?
 
-// who else is doing this stuff?
-
+[role="scatter"]
 * Jekyll (+ Octopress)
 //* gist.io
 * Middleman
@@ -341,7 +354,7 @@ $ awestruct -i -f bootstrap
 .Bux fix!
 [{syntaxoff}]
 ----
-$ echo "NONE" > .awestruct_ignore
+$ rm -f .awestruct_ignore
 ----
 
 image::bootstrap-left-logo.png[role="pull-right"]
@@ -355,8 +368,9 @@ $ awestruct -d
 ----
 
 [{followup}]
-browse to http://localhost:4242 +
-changes to files will be picked up automatically
+Head over to http://localhost:4242 to see your progress!
+
+Changes to files are picked up automatically.
 
 [{source}]
 == Force clean
@@ -403,7 +417,6 @@ and blog like a *hacker*!
 == Activate tooltip component in CoffeeScript 
 
 .javascripts/site.coffee
-[syntax="coffeescript"]
 ----
 $ ->
   $('*[rel=tooltip]').tooltip placement: 'right'
@@ -435,21 +448,20 @@ this.fetchNews = (url, loc, num = 10) ->
 [{syntaxoff}]
 ----
 %script{:type=>'text/javascript',
-  :src=>'//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.4/bootstrap.min.js'}
+  :src=>'//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.4/bootstrap.min.js'} <1>
 %script{:type=>'text/javascript',
   :src=>"#{site.base_url}/javascripts/jquery-jgfeed.js"}
 %script{:type=>'text/javascript',
-  :src=>"#{site.base_url}/javascripts/site.js"}
+  :src=>"#{site.base_url}/javascripts/site.js"} <2>
 ----
-
-Note the use of a CDN to grab the bootstrap script +
-Note that site.coffeescript has been compiled to site.js
+<1> Note the use of a CDN to grab the bootstrap script +
+<2> site.coffeescript has been compiled to site.js
 
 [{source}]
 == Fetch news
 
 .index.html.haml
-[{syntaxoff}]
+[syntax="javascript"]
 ----
 :javascript
   fetchNews('http://therichwebexperience.com/s/rss/rich.rss', '#news');
@@ -483,11 +495,11 @@ $navbarLinkColor: #D9E0FF;
 // include::github-pages-deploy-demo.asciidoc[]
 
 [{topic}]
-== Polishing
+== Site polishing
 
 [{stepwise}]
 * https://help.github.com/articles/setting-up-a-custom-domain-with-pages[CNAME for custom URL]
-* https://help.github.com/articles/custom-404-pages[custom 404 page]
+* https://help.github.com/articles/custom-404-pages[Custom 404 page]
 * Setup build in CI environment
 
 [NOTES]
@@ -500,6 +512,7 @@ github pages autogenerator is just for a single page (markdown -> html)
 
 // sample 3 as screenshots, then continue with list (as table?)
 
+[role="split"]
 * http://torquebox.org[TorqueBox]
 * http://arquillian.org[Arquillian]
 * http://ceylon-lang.org[Ceylon]
@@ -527,8 +540,11 @@ image::arquillian-site-screenshot.png[caption="arquillian.org"]
 
 [{stepwise}]
 * auto-generated release blogs
-* contributor identities
-* ...
+* contributor list and identities
+* upcoming events
+* module info & history pages
+* CI build status
+* Issue tracker activity
 
 // more visual
 
@@ -536,10 +552,12 @@ image::arquillian-site-screenshot.png[caption="arquillian.org"]
 == Gotchas
 
 [{stepwise}]
-* Internet-dependent build (fetch data)
-* Internet-dependent preview (CDN)
-* GH pages sends 24hr no-fetch cache header
+* Internet-dependent:
+** build (fetching data)
+** preview (CDN)
 * Haml sometimes hard to debug
+* Stale cache in dev mode
+* GH pages sends 24hr no-fetch cache header
 
 [role="topic recap final"]
 == Final recap
@@ -560,7 +578,7 @@ Thank the *browser* for making this possible
 
 image::awestruct-expression.jpg[caption="Are you {:awestruct}?", crole="invert"]
 
-[role="topic ending", hrole="name"]
+[{ending}, hrole="name"]
 == Get {:awestuct}!
 
 [role="footer"]
