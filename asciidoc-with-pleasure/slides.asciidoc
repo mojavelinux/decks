@@ -242,18 +242,7 @@ Document sections start at level 1 and can nest up to four levels deep.
         </revhistory>
     </bookinfo>
     <preface>
-        <simpara>
-            This is the optional preamble (an untitled section body). Useful for
-            writing simple sectionless documents consisting only of a preamble.
-        </simpara> 
-        <note>
-            <simpara>
-                The abstract, preface, appendix, bibliography, glossary and index
-                section titles are significant (<emphasis>specialsections</emphasis>).
-            </simpara>
-        </note>
-    <preface>
-    ...
+        ...
 ----
 
 [{source}]
@@ -261,15 +250,38 @@ Document sections start at level 1 and can nest up to four levels deep.
 
 [syntax="xml"]
 ----
-    ...
+        ...
+        <simpara>
+            This is the optional preamble (an untitled section body).
+            Useful for writing simple sectionless documents consisting
+            only of a preamble.
+        </simpara> 
+        <note>
+            <simpara>
+                The abstract, preface, appendix, bibliography, glossary
+                and index section titles are significant
+                (<emphasis>specialsections</emphasis>).
+            </simpara>
+        </note>
+    </preface>
     <chapter id="_first_section">
         <title>First section</title>
         <simpara>
-            Document sections start at level 1 and can nest up to four levels deep.
+            Document sections start at level 1 and can nest up to
+            four levels deep.
         </simpara>
         <itemizedlist>
             <listitem>
                 <simpara>Item 1</simpara>
+                ...
+----
+
+[{source}]
+== ...to DocBook (and going)
+
+[syntax="xml"]
+----
+                ...
             </listitem>
             <listitem>
                 <simpara>Item 2</simpara>
@@ -423,7 +435,13 @@ pass:[----]
 public interface Document {}
 pass:[----]
 ----
+--
 
+[{source}]
+== Blocks (con't)
+
+[{stepwise}]
+--
 .Sidebar block
 ----
 .Optional caption
@@ -468,6 +486,13 @@ rather than formatting them to match the line length.
 - Lenovo
 - Samsung
 ----
+--
+
+[{source}]
+== Lists (con't)
+
+[{stepwise}]
+--
 
 .Ordered list
 ----
@@ -487,7 +512,7 @@ DocBook:: keeps a programmer busy for hours
 --
 
 [{source}]
-== Links, images & includes
+== Links & images
 
 [{stepwise}]
 --
@@ -517,6 +542,13 @@ image::images/logo.png[Logo]
 .Screenshot
 image::images/screenshot.png[Screenshot]
 ----
+--
+
+[{source}]
+== Includes
+
+[{stepwise}]
+--
 
 [{macros-on}]
 .Include file
@@ -547,9 +579,7 @@ Perhaps this one is to your liking?
 ====
 Get the full rich web experience!
 
-* HTML5
-* CSS3
-* JavaScript
+* HTML 5, CSS 3 & JavaScript
 ====
 ----
 
@@ -557,12 +587,17 @@ Get the full rich web experience!
 ----
 .Optional caption
 ====
-Examples are good.
-
-They can show you how to use stuff.
+Examples are good. They show you how to use stuff.
 ====
 ----
 --
+
+[{topic}]
+== Source highlighting
+
+[{stepwise}]
+* Baked-in [detail]#source-highlight, pygments#
+* Client-side [detail]#highlight.js, rainbow.js, prettify.js#
 
 [{source}]
 == Tables
@@ -594,13 +629,6 @@ ID,First,Last,Address,Phone
 ----
 --
 
-[{topic}]
-== Syntax highlighting
-
-[{stepwise}]
-* Baked-in [detail]#source-highlight, pygments#
-* Client-side [detail]#highlight.js, rainbow.js, prettify.js#
-
 == Advanced capabilities
 
 [{stepwise-alt}]
@@ -611,43 +639,6 @@ ID,First,Last,Address,Phone
 * Macros & filters
 * Chunking
 * Custom backends
-
-== Toolchain-friendly
-
-* AsciiDoc -> DocBook (built-in)
-* DocBook -> AsciiDoc (docbook2asciidoc)
-
-== ||
-
-[{statement}]
-Drop the *<>*, but not the *semantics*
-
-[{source}]
-== Custom markup
-
-.Definition
-----
-[macros]
-(?su)(?<!\S)[\\]?(?P<name>filename):(?P<target>[\w/])=
-
-[filename-inlinemacro]
-\ifdef::basebackend-docbook[]
-<filename{target@.*/$: class="directory"}>{target}</filename>
-\endif::basebackend-docbook[]
-\ifdef::basebackend-html[]
-<tt>{target}</tt>
-\endif::basebackend-html[]
-----
-
-.Usage
-----
-My home directory is filename:/home/dallen/.
-----
-
-[NOTES]
-====
-Also acronym-macro.conf
-====
 
 [{intro}]
 == *Example* showcase
@@ -693,6 +684,43 @@ vim, gedit syntax highlighting support
 
 TIP: view docbook with yelp
 
+====
+
+== Toolchain-friendly
+
+* AsciiDoc -> DocBook (built-in)
+* DocBook -> AsciiDoc (docbook2asciidoc)
+
+== ||
+
+[{statement}]
+Drop the *<>*, but not the *semantics*
+
+[{source}]
+== Custom markup
+
+.Definition
+----
+[macros]
+(?su)(?<!\S)[\\]?(?P<name>filename):(?P<target>[\w/])=
+
+[filename-inlinemacro]
+\ifdef::basebackend-docbook[]
+<filename{target@.*/$: class="directory"}>{target}</filename>
+\endif::basebackend-docbook[]
+\ifdef::basebackend-html[]
+<tt>{target}</tt>
+\endif::basebackend-html[]
+----
+
+.Usage
+----
+My home directory is filename:/home/dallen/.
+----
+
+[NOTES]
+====
+Also acronym-macro.conf
 ====
 
 [{topic}]
