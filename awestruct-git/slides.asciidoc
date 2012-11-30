@@ -393,7 +393,7 @@ $ awestruct -d --force
 Purges _site directory
 
 [{intro}]
-== Build a blog *demo*
+== link:demos/setup-blog-demo.html[Build a blog *demo*]
 
 // include::setup-blog-demo.asciidoc[]
 
@@ -499,7 +499,7 @@ $navbarLinkColor: #D9E0FF;
 ----
 
 [{intro}]
-== *Deploy* to GitHub pages
+== link:demos/github-pages-deploy-demo.html[Deploy to GitHub pages *demo*]
 
 // include::github-pages-deploy-demo.asciidoc[]
 

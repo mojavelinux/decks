@@ -5,6 +5,8 @@ Dan Allen
 :theme: default
 :toc2:
 
+Replace `username` with your GitHub username and `mysite` with the name of your website repository.
+
 == Create repository
 
 * Sign in to GitHub
@@ -17,7 +19,7 @@ description:: An Awestruct demo site
 == Checkout repository and create gh-pages branch
 
 ----
-$ git clone git@github.com:mojavelinux/mysite.git mysite-seed
+$ git clone git@github.com:username/mysite.git mysite-seed
 $ cd mysite-seed
 $ git checkout --orphan gh-pages
 $ echo "GitHub pages placeholder" > index.html
@@ -34,7 +36,7 @@ $ git rm -rf mysite-seed
 ----
 profiles:
   production:
-    base_url: http://mojavelinux.github.com/mysite
+    base_url: http://username.github.com/mysite
     deploy:
       host: github_pages
       # use master branch to deploy to username.github.com
@@ -56,7 +58,7 @@ $ cat > .gitignore << LINES
 LINES
 $ git add .
 $ git commit -m "Initial commit"
-$ git remote add origin git@github.com:mojavelinux/mysite.git
+$ git remote add origin git@github.com:username/mysite.git
 $ git push -u origin master
 $ git fetch
 $ git checkout -b gh-pages -t origin/gh-pages

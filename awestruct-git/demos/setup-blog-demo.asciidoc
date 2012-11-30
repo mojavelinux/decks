@@ -172,7 +172,7 @@ layout: base
             %a{:href=>post.url}= post.title
 ----
 
-WARNING: Requires a patch to Posts extension
+WARNING: Currently requires a patch to the Posts extension
 
 == Add archive and feed links to navbar
 
