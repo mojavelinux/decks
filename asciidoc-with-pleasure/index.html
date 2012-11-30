@@ -639,8 +639,7 @@ section.source div.title {
 
 section pre code {
   font-family: "DejaVu Sans Mono", "Droid Sans Mono", Menlo, Monaco, "Courier New", monospace;
-  /*font-size: 1em;*/
-  font-size: .75em; /* for asciidoc presentation, may need more control here */
+  font-size: 1em;
   line-height: 1.2;
   background: rgba(255,255,255,.075);
   border: 1px solid rgba(255,255,255,.2);
@@ -3875,32 +3874,42 @@ Document sections start at level 1 and can nest up to four levels deep.
         &lt;/revhistory&gt;
     &lt;/bookinfo&gt;
     &lt;preface&gt;
-        &lt;simpara&gt;
-            This is the optional preamble (an untitled section body). Useful for
-            writing simple sectionless documents consisting only of a preamble.
-        &lt;/simpara&gt;
-        &lt;note&gt;
-            &lt;simpara&gt;
-                The abstract, preface, appendix, bibliography, glossary and index
-                section titles are significant (&lt;emphasis&gt;specialsections&lt;/emphasis&gt;).
-            &lt;/simpara&gt;
-        &lt;/note&gt;
-    &lt;preface&gt;
-    ...</code></pre>
+        ...</code></pre>
 </div>
 </section>
 <section class="topic source">
 <h2>&#8230;to DocBook (con&#8217;t)</h2>
 <div class="listing">
-<pre class="xml"><code>    ...
+<pre class="xml"><code>        ...
+        &lt;simpara&gt;
+            This is the optional preamble (an untitled section body).
+            Useful for writing simple sectionless documents consisting
+            only of a preamble.
+        &lt;/simpara&gt;
+        &lt;note&gt;
+            &lt;simpara&gt;
+                The abstract, preface, appendix, bibliography, glossary
+                and index section titles are significant
+                (&lt;emphasis&gt;specialsections&lt;/emphasis&gt;).
+            &lt;/simpara&gt;
+        &lt;/note&gt;
+    &lt;/preface&gt;
     &lt;chapter id="_first_section"&gt;
         &lt;title&gt;First section&lt;/title&gt;
         &lt;simpara&gt;
-            Document sections start at level 1 and can nest up to four levels deep.
+            Document sections start at level 1 and can nest up to
+            four levels deep.
         &lt;/simpara&gt;
         &lt;itemizedlist&gt;
             &lt;listitem&gt;
                 &lt;simpara&gt;Item 1&lt;/simpara&gt;
+                ...</code></pre>
+</div>
+</section>
+<section class="topic source">
+<h2>&#8230;to DocBook (and going)</h2>
+<div class="listing">
+<pre class="xml"><code>                ...
             &lt;/listitem&gt;
             &lt;listitem&gt;
                 &lt;simpara&gt;Item 2&lt;/simpara&gt;
@@ -4034,6 +4043,11 @@ Renders as pre-formatted, monospaced text
 public interface Document {}
 ----</code></pre>
 </div>
+</div>
+</section>
+<section class="topic source">
+<h2>Blocks (con&#8217;t)</h2>
+<div class="incremental">
 <div class="listing">
 <div class="title">Sidebar block</div>
 <pre class="no-highlight"><code>.Optional caption
@@ -4073,6 +4087,11 @@ rather than formatting them to match the line length.</p>
 - Lenovo
 - Samsung</code></pre>
 </div>
+</div>
+</section>
+<section class="topic source">
+<h2>Lists (con&#8217;t)</h2>
+<div class="incremental">
 <div class="listing">
 <div class="title">Ordered list</div>
 <pre class="no-highlight"><code>. Wake up
@@ -4090,7 +4109,7 @@ DocBook:: keeps a programmer busy for hours</code></pre>
 </div>
 </section>
 <section class="topic source">
-<h2>Links, images &amp; includes</h2>
+<h2>Links &amp; images</h2>
 <div class="incremental">
 <div class="listing">
 <div class="title">Links</div>
@@ -4115,6 +4134,11 @@ http://methods.co.nz/asciidoc[AsciiDoc project]
 <pre class="no-highlight"><code>.Screenshot
 image::images/screenshot.png[Screenshot]</code></pre>
 </div>
+</div>
+</section>
+<section class="topic source">
+<h2>Includes</h2>
+<div class="incremental">
 <div class="listing">
 <div class="title">Include file</div>
 <pre class="no-highlight"><code>include::footer.adoc[]</code></pre>
@@ -4139,21 +4163,28 @@ Perhaps this one is to your liking?</code></pre>
 ====
 Get the full rich web experience!
 
-* HTML5
-* CSS3
-* JavaScript
+* HTML 5, CSS 3 &amp; JavaScript
 ====</code></pre>
 </div>
 <div class="listing">
 <div class="title">Plain example</div>
 <pre class="no-highlight"><code>.Optional caption
 ====
-Examples are good.
-
-They can show you how to use stuff.
+Examples are good. They show you how to use stuff.
 ====</code></pre>
 </div>
 </div>
+</section>
+<section class="topic">
+<h2>Source highlighting</h2>
+<ul class="incremental">
+<li>
+Baked-in <span class="detail">source-highlight, pygments</span>
+</li>
+<li>
+Client-side <span class="detail">highlight.js, rainbow.js, prettify.js</span>
+</li>
+</ul>
 </section>
 <section class="topic source">
 <h2>Tables</h2>
@@ -4182,17 +4213,6 @@ ID,First,Last,Address,Phone
 </div>
 </div>
 </section>
-<section class="topic">
-<h2>Syntax highlighting</h2>
-<ul class="incremental">
-<li>
-Baked-in <span class="detail">source-highlight, pygments</span>
-</li>
-<li>
-Client-side <span class="detail">highlight.js, rainbow.js, prettify.js</span>
-</li>
-</ul>
-</section>
 <section>
 <ul class="incremental middle pull-right">
 <li>
@@ -4217,43 +4237,6 @@ Chunking
 Custom backends
 </li>
 </ul>
-</section>
-<section>
-<ul>
-<li>
-AsciiDoc &#8594; DocBook (built-in)
-</li>
-<li>
-DocBook &#8594; AsciiDoc (docbook2asciidoc)
-</li>
-</ul>
-</section>
-<section>
-<p class="statement">Drop the <strong>&lt;&gt;</strong>, but not the <strong>semantics</strong></p>
-</section>
-<section class="topic source">
-<h2>Custom markup</h2>
-<div class="listing">
-<div class="title">Definition</div>
-<pre class="no-highlight"><code>[macros]
-(?su)(?&lt;!\S)[\\]?(?P&lt;name&gt;filename):(?P&lt;target&gt;[\w/])=
-
-[filename-inlinemacro]
-ifdef::basebackend-docbook[]
-&lt;filename{target@.*/$: class="directory"}&gt;{target}&lt;/filename&gt;
-endif::basebackend-docbook[]
-ifdef::basebackend-html[]
-&lt;tt&gt;{target}&lt;/tt&gt;
-endif::basebackend-html[]</code></pre>
-</div>
-<div class="listing">
-<div class="title">Usage</div>
-<pre class="no-highlight"><code>My home directory is filename:/home/dallen/.</code></pre>
-</div>
-<details>
-  <details><summary>Notes</summary></details>
-<p>Also acronym-macro.conf</p>
-</details>
 </section>
 <section class="topic intro">
 <h2><strong>Example</strong> showcase</h2>
@@ -4346,6 +4329,43 @@ css classes (as roles)
 <td class="content">view docbook with yelp</td>
 </tr></table>
 </div>
+</details>
+</section>
+<section>
+<ul>
+<li>
+AsciiDoc &#8594; DocBook (built-in)
+</li>
+<li>
+DocBook &#8594; AsciiDoc (docbook2asciidoc)
+</li>
+</ul>
+</section>
+<section>
+<p class="statement">Drop the <strong>&lt;&gt;</strong>, but not the <strong>semantics</strong></p>
+</section>
+<section class="topic source">
+<h2>Custom markup</h2>
+<div class="listing">
+<div class="title">Definition</div>
+<pre class="no-highlight"><code>[macros]
+(?su)(?&lt;!\S)[\\]?(?P&lt;name&gt;filename):(?P&lt;target&gt;[\w/])=
+
+[filename-inlinemacro]
+ifdef::basebackend-docbook[]
+&lt;filename{target@.*/$: class="directory"}&gt;{target}&lt;/filename&gt;
+endif::basebackend-docbook[]
+ifdef::basebackend-html[]
+&lt;tt&gt;{target}&lt;/tt&gt;
+endif::basebackend-html[]</code></pre>
+</div>
+<div class="listing">
+<div class="title">Usage</div>
+<pre class="no-highlight"><code>My home directory is filename:/home/dallen/.</code></pre>
+</div>
+<details>
+  <details><summary>Notes</summary></details>
+<p>Also acronym-macro.conf</p>
 </details>
 </section>
 <section class="topic">
