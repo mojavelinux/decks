@@ -18,6 +18,7 @@ v1.0, Nov 29, 2012
 :description: Slides for my presentation about authoring with AsciiDoc delivered at RWX 2012.
 :copyright: CC BY-SA 2.0
 :website: http://methods.co.nz/asciidoc
+:slidesurl: mojavelinux.github.com/decks/asciidoc-with-pleasure
 :imagesdir: images
 :backend: dzslides
 :linkcss: true
@@ -29,10 +30,10 @@ v1.0, Nov 29, 2012
 :syntax: no-highlight
 
 [{topic}]
-== mojavelinux.github.com/decks/asciidoc-with-pleasure
+== {slidesurl}
 
 //image::qrcode.png[role="middle stretch-y"]
-['qrcode', size=10, alt="http://mojavelinux.github.com/decks/asciidoc-with-pleasure", role="middle stretch-y"]
+['qrcode', size=10, alt="http://{slidesurl}", role="middle stretch-y"]
 ----
 http://mojavelinux.github.com/decks/asciidoc-with-pleasure
 ----
