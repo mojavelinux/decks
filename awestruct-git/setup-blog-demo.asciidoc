@@ -91,6 +91,12 @@ layout: base
         ~ post.content
 ----
 
+== Preview!
+
+----
+awestruct -d
+----
+
 == Tidy the URLs
 
 ._ext/pipeline.rb
@@ -188,12 +194,18 @@ helper Awestruct::Extensions::GoogleAnalytics
 Add helpers 'after' the extensions.
 
 ._layouts/base.html.haml
-
 ----
 - if site.google_analytics
   = google_analytics_async
 ----
 
-== Partials
+Add analytics key to the configuration:
 
-Not yet implemented.
+._config/site.yml
+----
+google_analytics: UA-00000000-1
+----
+
+//== Partials
+//
+//Not yet implemented.
