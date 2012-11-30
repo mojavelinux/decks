@@ -5,6 +5,7 @@ v1.0, Nov 29, 2012
 :title: Bake your HTML5 website with Awestruct and publish it with git
 :copywrite: CC BY-SA 2.0
 :website: http://awestruct.org
+:slidesurl: mojavelinux.github.com/decks/awestruct-git
 :imagesdir: images
 :backend: dzslides
 :linkcss:
@@ -13,6 +14,14 @@ v1.0, Nov 29, 2012
 :dzslides-highlight: monokai
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
 :syntaxoff: syntax="no-highlight"
+
+[{topic}]
+== {slidesurl}
+
+['qrcode', size=20, alt="{slidesurl}", role="middle stretch-y"]
+----
+http://mojavelinux.github.com/decks/awestruct-git
+----
 
 == Awestruct
 
@@ -544,7 +553,7 @@ image::arquillian-site-screenshot.png[caption="arquillian.org"]
 * upcoming events
 * module info & history pages
 * CI build status
-* Issue tracker activity
+* issue tracker activity
 
 // more visual
 
@@ -576,7 +585,7 @@ Thank the *browser* for making this possible
 
 == ||
 
-image::awestruct-expression.jpg[caption="Are you {:awestruct}?", crole="invert"]
+image::awestruct-expression-crop.jpg[caption="Are you {:awestruct}?", crole="invert"]
 
 [{ending}, hrole="name"]
 == Get {:awestuct}!
