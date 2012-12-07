@@ -17,7 +17,7 @@ v1.0, Nov 29, 2012
 :title: Drop the angled brackets. Write (Ascii)Docs with pleasure!
 :description: Slides for my presentation about authoring with AsciiDoc delivered at RWX 2012.
 :copyright: CC BY-SA 2.0
-:website: http://methods.co.nz/asciidoc
+:website: http://asciidoc.org
 :slidesurl: mojavelinux.github.com/decks/asciidoc-with-pleasure
 :imagesdir: images
 :backend: dzslides
@@ -33,17 +33,17 @@ v1.0, Nov 29, 2012
 == {slidesurl}
 
 //image::qrcode.png[role="middle stretch-y"]
-['qrcode', size=10, alt="http://{slidesurl}", role="middle stretch-y"]
+['qrcode', target='presentation-qrcode.png', size=20, alt='http://{slidesurl}', role='middle stretch-y']
 ----
 http://mojavelinux.github.com/decks/asciidoc-with-pleasure
 ----
 
-== ||
+== \\
 
 [{statement}]
 Writing in *DocBook* is just... *inhumane*
 
-== ||
+== \\
 
 [quote, Stuart Rackham]
 ____
@@ -59,13 +59,13 @@ tags, consulting reference manuals and fixing syntax errors, than I was writing
 the documentation.
 ====
 
-== ||
+== \\
 
 [{statement}]
 Just let me *write*, dammit!
 
 [role="terminal"]
-== ||
+== \\
 
 ....
                                            +yyyyyyyyyyyyyyyyyyyyyyo-            
@@ -117,7 +117,7 @@ AsciiDoc was created by Stuart Rackham, hailing from New Zealand
 Comparable to Markdown, yet far more complete
 ====
 
-== ||
+== \\
 
 [{stepwise-alt}]
 * Readable
@@ -133,7 +133,7 @@ Comparable to Markdown, yet far more complete
 * Processing pipeline, templates
 ====
 
-== ||
+== \\
 
 [{statement}]
 {sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
@@ -159,14 +159,19 @@ image::export-icon.png[role="pull-right"]
 * https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources[Neo4j]
 * https://github.com/jboss/cdi[CDI Specificiation]
 * https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial[JBoss Developer Framework]
-* https://github.com/diwakergupta/thrift-missing-guide[Apache Thrift]
+* https://github.com/aerogear/aerogear.org/tree/master/docs/guides[AeroGear]
 * Authors [detail]#git-scribe, Atlas#
 * *GitHub!*
 
 // http://docs.neo4j.org/chunked/milestone/index.html
 // http://docs.neo4j.org/chunked/milestone/cypher-cookbook-similar-favorites.html
+// https://github.com/inverse-inc/packetfence/tree/devel/docs[PacketFence]
+// https://github.com/hudson/hudson-book[The Hudson Book]
+// https://github.com/sonatype/nexus-book[Repository Management with Nexus]
+// https://github.com/sonatype/maven-reference-en[Maven The Complete Reference]
+// https://github.com/sonatype/maven-example-en[Maven by Example]
 
-== ||
+== \\
 
 image::asciidoc-github.png[caption="AsciiDoc support on GitHub"]
 
@@ -298,7 +303,7 @@ DocBook becomes a distraction to the task of writing the documentation. Your
 focus is on the tags and how to manage them rather than the text.
 ====
 
-== ||
+== \\
 
 [quote, Most developers on github]
 ____
@@ -330,7 +335,7 @@ Document sections start at level 1 and can nest up to four levels deep.
 [{followup}]
 Hmm, can't really cover all the requirements :(
 
-== ||
+== \\
 
 [{statement}]
 Markdown : *1st-grader* $$::$$ +
@@ -519,9 +524,9 @@ DocBook:: keeps a programmer busy for hours
 --
 .Links
 ----
-http://methods.co.nz/asciidoc
+http://asciidoc.org
 
-http://methods.co.nz/asciidoc[AsciiDoc project]
+http://asciidoc.org[AsciiDoc project]
 
 [[anchor]]Deep link
 
@@ -644,7 +649,7 @@ ID,First,Last,Address,Phone
 [{intro}]
 == *Example* showcase
 
-== ||
+== \\
 
 [{stepwise-alt}]
 * http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc User Guide]
@@ -692,7 +697,7 @@ TIP: view docbook with yelp
 * AsciiDoc -> DocBook (built-in)
 * DocBook -> AsciiDoc (docbook2asciidoc)
 
-== ||
+== \\
 
 [{statement}]
 Drop the *<>*, but not the *semantics*
@@ -766,7 +771,7 @@ Also acronym-macro.conf
 
 == Resources
 
-* http://methods.co.cz/asciidoc[AsciiDoc project]
+* http://asciidoc.org[AsciiDoc project]
 * http://teach.github.com/articles/book-authoring-using-git-and-github[Book Authoring Using Git and GitHub]
 * https://community.jboss.org/message/721016[AsciiDoc is the way forward]
 * http://www.apeth.net/matt/iosbooktoolchain.html[AsciiDoc and the Joy of Text]
