@@ -18,7 +18,7 @@ v1.0, Nov 29, 2012
 [{topic}]
 == {slidesurl}
 
-['qrcode', size=20, alt="{slidesurl}", role="middle stretch-y"]
+['qrcode', target='presentation-qrcode.png', size=20, alt='{slidesurl}', role='middle stretch-y']
 ----
 http://mojavelinux.github.com/decks/awestruct-git
 ----
@@ -41,11 +41,11 @@ image::html5-logo.png[role="pull-left"]
 
 The cornerstone of the Open Web Platform
 
-== ||
+== \\
 
 image::html5css3js.png[{middle}]
 
-== ||
+== \\
 
 [{statement}]
 *Static* is the new *dynamic*
@@ -56,7 +56,7 @@ image::git-logo.png[]
 
 --distributed-even-if-your-workflow-isnt
 
-== ||
+== \\
 
 [{statement}]
 From *black box* to *open book*
@@ -170,7 +170,7 @@ title: My Site
 %title= site.title
 ----
 
-== ||
+== \\
 
 [role="incremental middle pull-right"]
 * aggregate compiler
@@ -306,7 +306,7 @@ The _ext/ directory is automatically added to the $LOAD_PATH so that
 site-supplied extensions may easily be loaded.
 ====
 
-== ||
+== \\
 
 image::generator-pipeline.png[caption="Generator pipeline", role="auto-width"]
 
@@ -397,7 +397,7 @@ Purges _site directory
 
 // include::setup-blog-demo.asciidoc[]
 
-== ||
+== \\
 
 [{statement}]
 and blog like a *hacker*!
@@ -433,7 +433,7 @@ $ ->
     (-> $(@).css fontStyle: 'normal')
 ----
 
-== ||
+== \\
 
 [{statement}]
 Get *dynamic* by *scraping* the web
@@ -524,13 +524,16 @@ github pages autogenerator is just for a single page (markdown -> html)
 [role="split"]
 * http://torquebox.org[TorqueBox]
 * http://arquillian.org[Arquillian]
-* http://ceylon-lang.org[Ceylon]
 * http://immutant.org[Immutant]
-* http://jboss.org/jdf[JBoss Developer Framework (JDF)]
+* http://netty.io[Netty]
+* http://ceylon-lang.org[Ceylon]
+* http://boxgrinder.org[BoxGrinder]
+* http://jboss.org/jdf[JDF] [detail]#JBoss Developer Framework#
 * http://www.bleathem.ca/blog/tags/RichFaces[RichFaces]
 * http://forge.jboss.org[JBoss Forge]
-//* http://aeshell.github.com[Æsh]
+* http://aeshell.github.com[Æsh]
 * http://beanvalidation.org[Bean Validation]
+* *...and counting!*
 
 [NOTES]
 ====
@@ -540,7 +543,7 @@ CDI is planned
 [{intro}]
 == case study *arquillian*
 
-== ||
+== \\
 
 image::arquillian-site-screenshot.png[caption="arquillian.org"]
 
@@ -578,12 +581,12 @@ image::arquillian-site-screenshot.png[caption="arquillian.org"]
 </hgroup>
 ++++
 
-== ||
+== \\
 
 [{statement}]
 Thank the *browser* for making this possible
 
-== ||
+== \\
 
 image::awestruct-expression-crop.jpg[caption="Are you {:awestruct}?", crole="invert"]
 
