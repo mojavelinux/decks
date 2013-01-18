@@ -2041,29 +2041,6 @@ slides <span class="detail">deck.js, dzslides</span>
 </li>
 </ul>
 </section>
-<section class="topic">
-<h2>Who&#8217;s onboard?</h2>
-<ul class="incremental scatter">
-<li>
-<a href="https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources">Neo4j</a>
-</li>
-<li>
-<a href="https://github.com/jboss/cdi">CDI Specificiation</a>
-</li>
-<li>
-<a href="https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial">JBoss Developer Framework</a>
-</li>
-<li>
-<a href="https://github.com/diwakergupta/thrift-missing-guide">Apache Thrift</a>
-</li>
-<li>
-Authors <span class="detail">git-scribe, Atlas</span>
-</li>
-<li>
-<strong>GitHub!</strong>
-</li>
-</ul>
-</section>
 <section>
 <figure>
 <img alt="asciidoc-github.png" src="data:image/png;base64,
@@ -3825,7 +3802,7 @@ Org-mode
 </ul>
 </section>
 <section class="topic intro">
-<h2><strong>Showdown!</strong></h2>
+<h2><strong style="font-size: .8em;">Showdown!</strong></h2>
 </section>
 <section class="topic source lhs">
 <h2>Compare AsciiDoc&#8230;</h2>
@@ -4341,77 +4318,28 @@ DocBook &#8594; AsciiDoc (docbook2asciidoc)
 <section>
 <p class="statement">Drop the <strong>&lt;&gt;</strong>, but not the <strong>semantics</strong></p>
 </section>
-<section class="topic source">
-<h2>Custom markup</h2>
-<div class="listing">
-<div class="title">Definition</div>
-<pre class="no-highlight"><code>[macros]
-(?su)(?&lt;!\S)[\\]?(?P&lt;name&gt;filename):(?P&lt;target&gt;[\w/])=
-
-[filename-inlinemacro]
-ifdef::basebackend-docbook[]
-&lt;filename{target@.*/$: class="directory"}&gt;{target}&lt;/filename&gt;
-endif::basebackend-docbook[]
-ifdef::basebackend-html[]
-&lt;tt&gt;{target}&lt;/tt&gt;
-endif::basebackend-html[]</code></pre>
-</div>
-<div class="listing">
-<div class="title">Usage</div>
-<pre class="no-highlight"><code>My home directory is filename:/home/dallen/.</code></pre>
-</div>
-<details>
-  <details><summary>Notes</summary></details>
-<p>Also acronym-macro.conf</p>
-</details>
-</section>
 <section class="topic">
-<h2>Getting started</h2>
-<ul class="split">
+<h2>Who&#8217;s onboard?</h2>
+<ul class="incremental scatter">
 <li>
-Online
-<ul>
-<li>
-<a href="http://andrewk.webfactional.com/asciidoc.php">Try AsciiDoc</a>
+<a href="https://github.com/neo4j/neo4j/tree/master/manual/src/main/resources">Neo4j</a>
 </li>
 <li>
-GitHub / Gist
-</li>
-</ul>
+<a href="https://github.com/jboss/cdi">CDI Specificiation</a>
 </li>
 <li>
-Local
-<ul>
-<li>
-Python &gt; 2.4
+<a href="https://github.com/jboss-jdf/ticket-monster/tree/master/tutorial">JBoss Developer Framework</a>
 </li>
 <li>
-unzip distribution zip
+<a href="https://github.com/diwakergupta/thrift-missing-guide">Apache Thrift</a>
 </li>
 <li>
-add folder to your PATH
+Authors <span class="detail">git-scribe, Atlas</span>
+</li>
+<li>
+<strong>GitHub!</strong>
 </li>
 </ul>
-</li>
-</ul>
-</section>
-<section class="topic">
-<h2>Drawbacks</h2>
-<ul>
-<li>
-Less widely supported than Markdown
-</li>
-<li>
-Written in Python, not easy to embed &dagger;
-</li>
-<li>
-Uses a regex-based parser
-</li>
-<li>
-Arbitrary and inconsistent commands
-</li>
-</ul>
-<p>&dagger; Work is underway on a <a href="https://github.com/runemadsen/asciidoc">Ruby port</a></p>
 </section>
 <section class="topic recap final">
 <h2>Final recap</h2>
