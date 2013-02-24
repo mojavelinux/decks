@@ -323,6 +323,8 @@ pages and generating the final output pages.
 * Jekyll (+ Octopress)
 //* gist.io
 * Middleman
+//* nanoc
+//* http://stasis.me[stasis]
 * Punch
 * ruhoh
 * Frank
@@ -525,7 +527,6 @@ github pages autogenerator is just for a single page (markdown -> html)
 * http://torquebox.org[TorqueBox]
 * http://arquillian.org[Arquillian]
 * http://immutant.org[Immutant]
-* http://netty.io[Netty]
 * http://ceylon-lang.org[Ceylon]
 * http://boxgrinder.org[BoxGrinder]
 * http://jboss.org/jdf[JDF] [detail]#JBoss Developer Framework#
@@ -608,6 +609,7 @@ awestruct.org
 * http://www.jmesnil.net/weblog/2012/08/02/i-am-awestructed/
 * https://help.github.com/articles/using-jekyll-with-pages
 * http://erjjones.github.com/blog/Part-two-how-I-built-my-blog/
+* http://www.mzlinux.org/?q=node/415[Massive list of static site generators]
 
 == Issues
 
