@@ -1,5 +1,6 @@
 = Slide Decks
 Dan Allen <http://twitter.com/mojavelinux[@mojavelinux]>
+:title: Dan Allen's Slide Decks
 :description: A collection of HTML 5-based presentation slide decks from my past speaking engagements.
 :stylesheet: /home/dallen/projects/asciidoctor/themes.asciidoctor.org/stylesheets/rubygems.css
 :linkcss!:
