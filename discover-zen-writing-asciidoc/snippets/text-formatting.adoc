@@ -1,0 +1,10 @@
+A paragraph is just a paragraph. No special syntax required.
+
+This paragraph contains _emphasized_, *strong*, `monospaced` text.
+
+This paragraph has `smart single quotes' and ``smart double quotes''.
+
+The square of x can be written as x^2^.
+
+We break at the end of this line +
+to keep the text from overflowing.
