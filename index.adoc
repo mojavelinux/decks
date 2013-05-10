@@ -1,5 +1,8 @@
 = Slide Decks
 Dan Allen <http://twitter.com/mojavelinux[@mojavelinux]>
+:stylesheet: /home/dallen/projects/asciidoctor/themes.asciidoctor.org/stylesheets/rubygems.css
+:linkcss!:
+:docinfo:
 
 A collection of my HTML 5-based presentation slide decks from past events.
 
