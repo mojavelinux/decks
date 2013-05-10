@@ -6,7 +6,7 @@ v1.0, 2013-05-07
 :copyright: CC BY-SA 2.0
 :website: http://arquillian.org
 :backend: dzslides
-:imagesdir: ./images
+:imagesdir: images
 :sectids!:
 :dzslides-style: watermelon
 :dzslides-transition: fade

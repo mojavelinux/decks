@@ -7,7 +7,7 @@ v1.0.pre, May 08, 2013
 :copyright: CC BY-SA 2.0
 :website: http://asciidoctor.org
 :backend: dzslides
-:imagesdir: ./images
+:imagesdir: images
 :dzslides-style: stormy
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300|Cedarville+Cursive
