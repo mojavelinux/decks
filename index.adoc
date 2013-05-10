@@ -4,8 +4,11 @@ Dan Allen <http://twitter.com/mojavelinux[@mojavelinux]>
 :stylesheet: /home/dallen/projects/asciidoctor/themes.asciidoctor.org/stylesheets/rubygems.css
 :linkcss!:
 :docinfo:
+:sectids!:
 
 A collection of HTML 5-based presentation slide decks from my past speaking engagements.
+
+== {empty}
 
 Rich Web Experience, Nov 2012::
 
