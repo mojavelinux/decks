@@ -1,0 +1,15 @@
+= Slide Decks
+Dan Allen <http://twitter.com/mojavelinux[@mojavelinux]>
+
+A collection of my HTML 5-based presentation slide decks from past events.
+
+RWX 2012::
+
+  * link:asciidoc-with-pleasure/rwx2012/index.html[Drop the angled brackets. Write (Ascii)Docs with pleasure!] [ https://github.com/mojavelinux/decks/blob/master/asciidoc-with-pleasure/slides.asciidoc[source] ]
+  * link:awestruct-git/rwx2012/index.html[Bake your HTML5 website with Awestruct and publish it with git] [ https://github.com/mojavelinux/decks/blob/master/awestruct-git/slides.asciidoc[source] ]
+
+Colorado JUGs, May 2013::
+
+  * link:discover-zen-writing-asciidoc/cojugs201305/index.html[Discover the zen of writing (Ascii)Docs] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/discover-zen-writing-asciidoc.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/discover-zen-writing-asciidoc/slides.adoc[source] ]
+  * link:java-enterprise-testing/cojugs201305/index.html[Reducing Java Enterprise Testing to Child's Play] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/java-enterprise-testing.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/java-enterprise-testing/slides.adoc[source] ]
+
