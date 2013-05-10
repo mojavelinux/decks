@@ -1,10 +1,11 @@
 = Slide Decks
 Dan Allen <http://twitter.com/mojavelinux[@mojavelinux]>
+:description: A collection of HTML 5-based presentation slide decks from my past speaking engagements.
 :stylesheet: /home/dallen/projects/asciidoctor/themes.asciidoctor.org/stylesheets/rubygems.css
 :linkcss!:
 :docinfo:
 
-A collection of my HTML 5-based presentation slide decks from past events.
+A collection of HTML 5-based presentation slide decks from my past speaking engagements.
 
 Rich Web Experience, Nov 2012::
 
