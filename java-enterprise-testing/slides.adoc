@@ -1,0 +1,341 @@
+= Reducing *Java Enterprise Testing* to *Child's Play*
+Dan Allen
+v1.0, 2013-05-07
+:title: Reducing Java Enterprise Testing to Child's Play
+:corpname: Red Hat, Inc.
+:copyright: CC BY-SA 2.0
+:website: http://arquillian.org
+:backend: dzslides
+:imagesdir: ./images
+:sectids!:
+:dzslides-style: watermelon
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300|Covered+By+Your+Grace
+:dzslides-highlight: monokai
+:arquillian: pass:quotes[[ike]#arquillian#]
+:arquillian_cap: pass:quotes[[ike]#Arquillian#]
+ifdef::asciidoctor[]
+:source-highlighter: highlightjs
+:language: no-highlight
+include::attributes.conf[]
+endif::asciidoctor[]
+
+[{intro}]
+== *Testing*$$...$$
+
+== :slide:
+
+[role="graffiti incremental"]
+* Testing is too hard
+* Testing is no fun
+* Testing is sloooow
+* There's no time to test
+* Testing *sucks!*
+
+== :slide:
+
+[role="graffiti"]
+_Think again_
+
+[role="incremental replace"]
+== :slide:
+
+You can't fix what you can't *run*
+
+You can't fix what you can't *debug*
+
+You can't fix what you can't *test*
+
+You can't *develop* if you can't *test*
+
+[{intro}]
+== Testing is *development*
+
+== :slide:
+
+[, Jeremy Norris]
+____
+The purpose of automated testing is to _enable change_.
+
+Verifying correctness is just a nice side-effect.
+____
+
+== :slide:
+
+_Not testing_ is *painful* & *time consuming*
+
+[role="follow-up"]
+Testing eliminates this pain and sacrifice
+
+== :slide:
+
+[role="graffiti"]
+Testing _rulez!_
+
+[{recap}]
+== Testing lens recap
+
+[role="hgroup"]
+--
+[float]
+== Develop by testing
+[float]
+=== Don't waste time being stuck
+--
+
+[{intro}]
+== Our *philosophy*
+
+== :slide:
+
+[role="count"]
+1
+
+Tests should be *portable* across compatible environments
+
+== :slide:
+
+[role="count"]
+2
+
+Tests should be executable from *the IDE* and *the build tool*
+
+== :slide
+
+[role="count"]
+3
+
+The test platform should *reuse* existing frameworks and tools
+
+== :slide:
+
+[caption=""]
+.{empty}
+image::testing-band-gap.png[]
+
+== :slide:
+
+[caption=""]
+.Bring your tests to the runtime...
+image::invasion.png[]
+
+[role="no-transition"]
+== :slide:
+
+[caption=""]
+.$$...$$so [ike]_you_ rule your code, not the bugs!
+image::invasion.png[]
+
+== :slide:
+
+{arquillian} - the enterprise test platform
+
+[role="follow-up"]
+[ike invert]#&target; arquillian.org#
+
+== :slide:
+
+Designed for *humans*
+
+[role="follow-up"]
+IDE friendly &#9786;
+
+== :slide:
+
+Can be *fully automated*
+
+[role="follow-up"]
+Continuous integration, FTW! &infin;
+
+== :slide:
+
+Provides a *component model* for testing
+
+[role="follow-up"]
+Dependency injection, yeah! &rarrfs;
+
+== :slide:
+
+*Isolates* the code under test
+
+[role="follow-up"]
+Tame that classpath &pitchfork;
+
+[{intro}]
+== test *continuum*
+
+== :slide:
+
+[caption=""]
+.{empty}
+image::testing_continuum.svg[]
+
+== :slide:
+
+[role="middle right incremental"]
+* Test runner
+* Container adapter
+* {plus} Test enricher
+* {empty}
++
+'''
+* *In-container testing*
+
+[{notes}]
+====
+this is the secret to making Java enterprise testing child's play
+====
+
+[{source}]
+== Arquillian "Hello, World!" Test
+
+[source,java]
+--
+include::snippets/GreeterTest.java[]
+--
+
+[{topic}, hrole="middle"]
+== *Run As$$...$$* [sans small]#># *JUnit Test*
+
+== Select container
+
+[caption=""]
+.{empty}
+image::1-select-container.svg[]
+
+== Start or connect to container
+
+[caption=""]
+.{empty}
+image::2-start-container.svg[]
+
+== Package test archive
+
+[caption=""]
+.{empty}
+image::3-package-test-archive.svg[]
+
+== Run test inside the container
+
+[caption=""]
+.{empty}
+image::4-run-test-in-container.svg[]
+
+== Collect test results
+
+[caption=""]
+.{empty}
+image::5-collect-test-results.svg[]
+
+== Stop or disconnect from container
+
+[caption=""]
+.{empty}
+image::6-disconnect-container.svg[]
+
+== :slide:
+
+{arquillian} - the *extensible* test platform
+
+[{notes}]
+====
+* test runners
+* container adapters
+* test enrichers
+* integrations
+====
+
+[{topic}]
+== {arquillian_cap} *Persistence*
+
+[role="stretch-x"]
+image::incontainer_runmode.png[]
+
+[{topic}]
+== {arquillian_cap} *Drone*
+
+[role="stretch-x"]
+image::client_runmode.png[]
+
+[{topic}]
+== {arquillian_cap} *Warp*
+
+[role="stretch-x"]
+image::warp_runmode.png[]
+
+== :slide:
+
+*Reject* complex, *jacked up* test suites
+
+[{recap}]
+== Test continuum recap
+
+[role="hgroup"]
+--
+[float]
+== You work in the IDE
+[float]
+=== CI servers work the build
+--
+
+[{intro}]
+== Test to *learn*
+
+[{notes}]
+====
+Tests are the new "Hello, World!"
+====
+
+== :slide:
+
+[caption="", role="relax-x"]
+.Question everything
+image::sci-4-3.png[]
+
+== :slide:
+
+{arquillian} - a *learning* test platform
+
+[{intro}]
+== Write *real* tests
+
+[role="incremental replace"]
+== :slide:
+
+Real tests increase *certainty*
+
+Real tests build *confidence*
+
+Real tests increase *robustness*
+
+== :slide:
+
+Testing with _mocks_ only proves you know how to write mocks
+
+[{recap}]
+== Learning recap
+
+[role="hgroup"]
+--
+[float]
+== Use tests to learn
+[float]
+=== Keeps knowlege in the system
+--
+
+[{recap-final}]
+== Final recap
+
+[{middle}]
+*Java enterprise testing* + {arquillian} = +
+_child's play_
+
+[{ending}]
+== Thanks!
+
+[{ending}, hrole="name"]
+== Dan Allen
+
+[role="footer"]
+Twitter or GitHub: +
+@mojavelinux

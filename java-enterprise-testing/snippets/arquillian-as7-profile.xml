@@ -1,0 +1,18 @@
+<profile>
+  <id>arquillian-jbossas-managed</id>
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.spec</groupId>
+      <artifactId>jboss-javaee-6.0</artifactId>
+      <version>1.0.0.Final</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.as</groupId>
+      <artifactId>jboss-as-arquillian-container-managed</artifactId>
+      <version>7.1.1.Final</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</profile>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3055"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   width="800"
+   height="500"
+   sodipodi:docname="testing_continuum.svg">
+  <metadata
+     id="metadata3061">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3059" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="841"
+     id="namedview3057"
+     showgrid="false"
+     inkscape:zoom="1.09"
+     inkscape:cx="332.2028"
+     inkscape:cy="247.4799"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3055" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="axis"
+     transform="translate(0,-1117)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="lines"
+     transform="translate(0,-1117)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="text"
+     transform="translate(0,-1117)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="legend"
+     transform="translate(0,-1117)">
+    <g
+       id="g3893">
+      <path
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="path3066"
+         d="m 86,1165 0,360 635,0"
+         style="fill:none;stroke:#797979;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3837"
+         d="M 119,1475 669,1237"
+         style="fill:none;stroke:#000000;stroke-width:5.99453401999999969;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3839"
+         d="m 119,1492 550,-18.5"
+         style="fill:none;stroke:#ff4342;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         transform="matrix(0,-1,1,0,0,0)"
+         sodipodi:linespacing="100%"
+         id="text3841"
+         y="66.099998"
+         x="-1457.86"
+         style="font-size:60px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+         xml:space="preserve"><tspan
+           y="66.099998"
+           x="-1457.86"
+           id="tspan3843"
+           sodipodi:role="line">Complexity</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+         x="93.279999"
+         y="1563.12"
+         id="text3820"
+         sodipodi:linespacing="100%"><tspan
+           id="tspan3824"
+           sodipodi:role="line"
+           x="93.279999"
+           y="1563.12">Unit Tests</tspan></text>
+      <text
+         sodipodi:linespacing="100%"
+         id="text3828"
+         y="1563.12"
+         x="291.28"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+         xml:space="preserve"><tspan
+           y="1563.12"
+           x="291.28"
+           sodipodi:role="line"
+           id="tspan3830">IntegrationTests</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+         x="550"
+         y="1563.12"
+         id="text3832"
+         sodipodi:linespacing="100%"><tspan
+           id="tspan3834"
+           sodipodi:role="line"
+           x="550"
+           y="1563.12">System Tests</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+         x="49.551998"
+         y="1604.484"
+         id="text3860"
+         sodipodi:linespacing="100%"><tspan
+           style="font-size:28px"
+           id="tspan3864"
+           sodipodi:role="line"
+           x="49.551998"
+           y="1604.484">*graph is conceptual</tspan></text>
+      <g
+         transform="translate(0,-28)"
+         id="g3872">
+        <text
+           xml:space="preserve"
+           style="font-size:34px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           x="627.50403"
+           y="1396.66"
+           id="text3836"
+           sodipodi:linespacing="100%"><tspan
+             id="tspan3838"
+             sodipodi:role="line"
+             x="627.50403"
+             y="1396.66">Integration</tspan></text>
+        <text
+           sodipodi:linespacing="100%"
+           id="text3852"
+           y="1444.558"
+           x="626.72803"
+           style="font-size:34px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#797979;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           xml:space="preserve"><tspan
+             y="1444.558"
+             x="626.72803"
+             sodipodi:role="line"
+             id="tspan3856">Test</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 558,1389 59.00256,0"
+           id="path3868"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path3870"
+           d="m 558,1434 59.00742,0"
+           style="fill:none;stroke:#ff4342;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,474 @@
+[[zen-of-writing]]
+= Discover the 'zen' of writing **[subtle]##(##Ascii[subtle]##)##Doc**s
+Dan Allen <@mojavelinux>
+v1.0.pre, May 08, 2013
+:corpname: Red Hat, Inc.
+:title: Discover the zen of writing (Ascii)Docs
+:copyright: CC BY-SA 2.0
+:website: http://asciidoctor.org
+:backend: dzslides
+:imagesdir: ./images
+:dzslides-style: stormy
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300|Cedarville+Cursive
+:dzslides-highlight: monokai
+ifdef::asciidoctor[]
+:source-highlighter: highlightjs
+:language: no-highlight
+include::attributes.conf[]
+endif::asciidoctor[]
+
+////
+TODO:
+
+- add link to sample asciidoc/markdown/docbook documents
+- use labeled list (perhaps horizontal) to make DocBook even more verbose
+- rework or rethink "Inside Out" slide
+////
+
+[{intro}]
+== [small]*Writing*$$...$$
+
+[{intro}]
+== Write to *write*
+
+== :slide:
+
+[{statement}]
+Word processors are *sabotaging* +
+your writing
+
+[{notes}]
+--
+* "Word processors are the real writer's block."
+--
+
+== :slide:
+
+[{statement}]
+``Just let me *write*, dammit!''
+
+== :slide:
+
+[, Stuart Rackham (the father of AsciiDoc) on DocBook]
+____
+I was spending more time *fixing syntax errors* than I was writing the documentation.
+____
+
+== :slide:
+
+// TODO relocate this slide?
+
+[, Donald E. Knuth]
+____
+The enjoyment of one's tools is an essential ingredient of successful work.
+____
+
+[{intro}]
+== Get back to the *content*
+
+[{notes}]
+--
+* "Content is king!"
+* "Use what you know."
+--
+
+[{topic}]
+== Lightweight markup languages
+
+[{stepwise}]
+* Markdown
+* Textile
+* MediaWiki
+* reStructuredText
+* Org-mode
+* *AsciiDoc*
+
+// http://en.wikipedia.org/wiki/Lightweight_markup_language
+
+[{terminal}]
+== :slide:
+
+....
+                                           +yyyyyyyyyyyyyyyyyyyyyyo-            
+                                          `yNNNNNNNNNNNNNNNNNNNNNMMMNo`         
+                                        -:::::::::::::::::::::::`.:dMMN-        
+                                      oNMMMMMMMMMMMMMMMMMMMMMMMMMd/ sMMN`       
+                                     oMMm+:::::::::::::::::::::+MMM: NMM-       
+                                     sMMs                       MMMo NMM-       
+                                     sMMs                       MMMo NMM-       
+                                     sMMs `mMMMMMMMMMMMMMMMMMd  MMMo NMM-       
+                                     sMMs  `++++++++++++++++/`  MMMo NMM-       
+                                     sMMs `mMMMMMMMMMMMMMMMMMd  MMMo NMM-       
+                                     sMMs  .+++++++++++++++++`  MMMo NMM-       
+                                     sMMs `dmmmmmmmmmmmmmmmmmh  MMMo NMM-       
+                                     sMMs  ://///////////////.  MMMo NMM-       
+                                     sMMs `hmmmmmmmmmmmmmmmmms  MMMo NMM-       
+                                     sMMs  //////////////////-  MMMo NMM-       
+                                     sMMs `yddddddddddddddddds  MMMo NMM-       
+                                     sMMs  /yyyyyyyyyyyyyyyys/  MMMo NMM-       
+                                     sMMs `ohhhhhhhhhhhhhhhhho  MMMo NMM-       
+                                     sMMs                       MMMo dMN.       
+                                     sMMs                       MMMo  .`        
+                                     :MMMdhhhhhhhhhhhhhhhhhhhhhdMMN.            
+                                      .shmmmmmmmmmmmmmmmmmmmmmmmho.
+                              
+ 
+ 
+ 
+       .o.                           o8o   o8o  oooooooooo.                       
+      .888.                          `"'   `"'  `888'   `Y8b                      
+     .8"888.      .oooo.o  .ooooo.  oooo  oooo   888      888  .ooooo.   .ooooo.  
+    .8' `888.    d88(  "8 d88' `"Y8 `888  `888   888      888 d88' `88b d88' `"Y8 
+   .88ooo8888.   `"Y88b.  888        888   888   888      888 888   888 888       
+  .8'     `888.  o.  )88b 888   .o8  888   888   888     d88' 888   888 888   .o8 
+ o88o     o8888o 8""888P' `Y8bod8P' o888o o888o o888bood8P'   `Y8bod8P' `Y8bod8P'
+....
+
+[{intro}]
+== ``It's just 'text', mate.''
+
+[{notes}]
+--
+* "AsciiDoc is easy to read in raw form."
+* "It's also easy to proof and edit."
+* "Only requires a text editor--your favorite text editor--to read and write"
+--
+
+== What is AsciiDoc?
+
+[{middle}]
+A [light]'lightweight', yet *powerful* text-based markup language and document generator.
+
+== :slide:
+
+[{statement}]
+{sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
+
+[{notes}]
+--
+* "Mild punctuation, strong impact."
+--
+
+[{source}]
+== ``Looks like what it means''
+
+[source, asciidoc]
+----
+A paragraph is just a paragraph. No special syntax required.
+
+This paragraph contains _emphasized_, *strong*, `monospaced` text.
+
+This paragraph has `smart single quotes' and ``smart double quotes''.
+
+The square of x can be written as x^2.
+
+We break at the end of this line +
+to keep the text from overflowing.
+----
+
+== :slide:
+
+[{no-caption}, role="elevate"]
+.AsciiDoc processing
+image::asciidoc-processor.png[]
+
+== Output formats (i.e., backends)
+
+image::export-icon.png[role="pull-left"]
+
+[{stepwise-alt}]
+* HTML 5
+* DocBook 4.5
+* PDF [detail]#fop, dblatex#
+* eBook [detail]#ePub 2, mobi#
+* slides [detail]#deck.js, dzslides, reveal.js#
+* man page
+* + custom backends
+
+== Asciidoctor
+
+[{statement}]
+*[script]##&Aopf;##sciidoctor* +
+A modern, open source implementation of AsciiDoc [ruby]#in Ruby#
+
+[role="corner"]
+image::rubygems.png[Ruby gem]
+
+== :slide:
+
+[{no-caption}]
+.{empty}
+image::asciidoctor-org-writers-guide.png[]
+
+[{intro}]
+== *Side* by *side*
+
+// TODO center this slide?
+
+[role="topic source lhs"]
+== Let's compare AsciiDoc...
+
+[source, asciidoc]
+----
+include::snippets/sample-asciidoc.adoc[]
+----
+
+[{notes}]
+--
+* "It's plain text...I *know* this."
+--
+
+[{source}]
+== ...to DocBook
+
+[source, xml]
+----
+include::snippets/sample-docbook.xml[lines=1..22]
+    ...
+----
+
+[{source}]
+== ...to DocBook (con't)
+
+[source, xml]
+----
+    ...
+include::snippets/sample-docbook.xml[lines=23..44]
+            ...
+----
+
+[{source}]
+== ...to DocBook (and going)
+
+[source, xml]
+----
+            ...
+include::snippets/sample-docbook.xml[lines=45..-1]
+----
+
+[{notes}]
+--
+* "I looked across the room, asked 'Are you writing in DocBook?'"
+* "'How did you know?'"
+* "'Because I can only pick out about 5 works in a see of syntax highlighted XML'"
+--
+
+== :slide:
+
+[, Dag Wieers]
+____
+DocBook is nice, but (like XML) it is *not meant for editing* nor for merging changes (by humans).
+____
+
+[{notes}]
+--
+* "Let me rephrase that for Dag."
+--
+
+== :slide:
+
+[{statement}]
+Writing *DocBook* is just... *inhumane*
+
+[{notes}]
+--
+* "AsciiDoc gets us back to what's important, _writing_."
+--
+
+== :slide:
+
+[, Most developers on github]
+____
+But I use Markdown to write my documention.
+____
+
+[role="topic source lhs"]
+== Let's compare AsciiDoc...
+
+[source, asciidoc]
+----
+include::snippets/sample-asciidoc.adoc[]
+----
+
+[{source}]
+== ...to Markdown
+
+[source, markdown]
+----
+include::snippets/sample-markdown.md[]
+----
+
+[{stepwise}]
+--
+[{followup}]
+Hmm, can't seem to cover all the requirements :(
+--
+
+== :slide:
+
+[{statement}]
+Markdown : *1st-grader*
+[center connector]#::#
+Asciidoc : *PhD student*
+
+== Testimonial
+
+[, "Anders Nawroth, Neo4j"]
+____
+I'm amazed by AsciiDoc :-)
+It handles a lot of use cases well, and some other cases are still possible at least.
+____
+
+// https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
+
+//[{intro}]
+//== AsciiDoc to *X*
+
+[{intro}]
+== *Preview* [push1]#the big picture#
+
+== :slide:
+
+[{no-caption}, role="elevate"]
+.AsciiDoc processing
+image::asciidoc-processor.png[]
+
+== :slide:
+
+[{no-caption}, role="relax-y"]
+.Editing AsciiDoc with live preview
+image::live-preview.png[]
+
+[{intro}]
+== AsciiDoc on *Java*
+
+== :slide:
+
+[{no-caption}, role="elevate"]
+.Asciidoctor Java integration 
+image::asciidoctor-java.png[]
+
+== :slide:
+
+[{no-caption}, role="elevate"]
+.Asciidoctor Java build plugins
+image::asciidoctor-java-usage.png[]
+
+[{topic}]
+== Who's on board?
+
+[role="incremental scatter"]
+* https://github.com/git/git/tree/master/Documentation[Git] [detail]#User guide, man pages#
+* https://github.com/neo4j/neo4j/tree/master/manual/src[Neo4j] [detail]#Manual, refcards#
+* https://github.com/cdi-spec/cdi/tree/master/spec[CDI] [detail]#Specification#
+* https://github.com/FooBarWidget/passenger/tree/master/doc[Phusion Passenger] [detail]#User guides#
+* http://www.nofluffjuststuff.com/home/magazine_subscribe[NFJS] [detail]#Magazine#
+* Authors [detail]#Books, articles#
+* Publishers [detail]#O'Reilly, MakerPress#
+* *GitHub!*
+
+== :slide:
+
+[{no-caption}, crole="band"]
+.GitHub supports AsciiDoc!
+image::asciidoc-github.png[]
+
+[{intro}]
+== '``Pull-requestable''' docs
+
+== :slide:
+
+[{no-caption}, crole="band"]
+.Fork and edit this file
+image::pull-requestable-docs.png[]
+
+[{intro}]
+== *Evolving* [push4_7_5]#AsciiDoc#
+
+== :slide:
+
+[role="scatter"]
+* UI Buttons [detail]#btn:Save[]#
+* Keystrokes [detail]#Ctrl+Alt+T#
+* Menu selections [detail]#"File > Open..."#
+* Font Icons [detail]#&bigstar;#
+* Revision markup [detail]#$$[del]#strikeout#$$#
+* Simplified toolchain
+
+[{intro}]
+== [block]*Scaling* your docs
+
+[{notes}]
+--
+* work inside out: evolve your document
+* back to basics: it's just text mate
+* forward to publishing: drop the <>, but not the semantics
+--
+
+////
+[{intro}]
+== Work inside out
+
+== :slide:
+
+[role="middle"]
+image::inside-out.png[Work inside out]
+
+[{notes}]
+--
+* "Work inside out."
+--
+////
+
+== :slide:
+
+[{statement}]
+Drop the [sans]*</>*, but not the *semantics*
+
+[{notes}]
+--
+* "You can drop those damn angled brackets, but you don't have to drop the semantics."
+* "You get to work with a syntax a human can actually edit, _efficiently."
+
+//
+
+* "At any point, you can convert it to DocBook as a common exchange format.
+* "DocBook is the "no lock-in" exit path for AsciiDoc."
+* "You decide AsciiDoc doesn’t work out, you can bail on it without losing a word."
+* "What's to lose?"
+--
+
+[{topic}]
+== Zen is...
+
+--
+[role="incremental scatter"]
+* readable
+* concise
+* comprehensive
+* extensible
+* convertible
+--
+
+[{notes}]
+--
+* "AsciiDoc is easy to read in raw form."
+* "It's also easy to proof and edit."
+* "The punctuation was chosen to look like what it means."
+* "Only requires a text editor to read or write."
+--
+
+[{intro}]
+== ``It's just 'text', mate''
+
+[{ending}, hrole="name"]
+== Enjoy writing zen!
+
+[role="footer"]
+{website}
+
+== :slide:
+
+[{middle}]
+image::nfjs-magazine-cover.jpg[]

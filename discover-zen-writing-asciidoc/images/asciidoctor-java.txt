@@ -1,0 +1,13 @@
++--------+   +-------------+    +--------+
+|{io}    |---+ Asciidoctor +--->|{io}    |
+|        |   |  Java API   |    |        |
+|AsciiDoc|   +-------------+    |  HTML  |
+|document|   |   !JRuby!   |    |document|
+|  .ad   |   | asciidoctor |    | .html  |
+|        |   |     gem cRED|    |        |
++---+----+   +-------------+    +--------+
+    :                               ^
+    |    Transparently invokes      |
+    |  Ruby based Asciidoctor API   |
+    |      to convert document      |
+    +-------------------------------+

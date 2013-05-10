@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book lang="en">
+    <bookinfo>
+        <title>Document Title</title>
+        <date>2013-01-01</date>
+        <author>
+            <firstname>Doc</firstname>
+            <surname>Writer</surname>
+            <email>doc@asciidoc.org</email>
+        </author>
+        <authorinitials>DW</authorinitials>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>2013-01-01</date>
+                <authorinitials>DW</authorinitials>
+                <revremark>Initial version</revremark>
+            </revision>
+        </revhistory>
+    </bookinfo>
+    <preface>
+        <title></title>
+        <simpara>
+           <ulink url="http://asciidoc.org">AsciiDoc</ulink> is a
+           lightweight markup language. 
+        </simpara>
+        <simpara>
+            This is the optional preamble (an untitled section body).
+            Useful for writing simple sectionless documents consisting
+            only of a preamble.
+        </simpara> 
+        <note>
+            <simpara>
+                The abstract, preface, appendix, bibliography, glossary
+                and index section titles are significant
+                (<emphasis>specialsections</emphasis>).
+            </simpara>
+        </note>
+    </preface>
+    <chapter id="_first_section">
+        <title>First section</title>
+        <simpara>
+            Document sections start at <emphasis role="strong">level
+            1</emphasis> and can nest four levels deep.
+        </simpara>
+        <itemizedlist>
+            <listitem>
+                <simpara>Item 1</simpara>
+            </listitem>
+            <listitem>
+                <simpara>Item 2</simpara>
+            </listitem>
+        </itemizedlist>
+    </chapter>
+</book>
