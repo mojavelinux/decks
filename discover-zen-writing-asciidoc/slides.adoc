@@ -337,12 +337,12 @@ image::pull-requestable-docs.png[]
 == :slide:
 
 [.scatter]
-* UI Buttons [detail]#btn:Save[]#
-* Keystrokes [detail]#Ctrl+Alt+T#
-* Menu selections [detail]#"File > Open..."#
-* Font Icons [detail]#&bigstar;#
-* Revision markup [detail]#$$[del]#strikeout#$$#
 * Simplified toolchain
+* Font-based Icons [detail]#&bigstar;#
+* UI Buttons [detail]#btn:[Save]#
+* Menu selections [detail]#menu:File[Open...]#
+* Keystrokes [detail]#kbd:[Ctrl+Alt+T]#
+* Revision markup [detail]#$$[-]#strikeout#$$#
 
 [.topic.intro]
 == [block]*Scaling* your docs
@@ -390,14 +390,12 @@ Drop the [sans]*</>*, but not the *semantics*
 [.topic]
 == Zen is...
 
---
-[.incremental.scatter]
+[.incremental.middle.pull-right]
 * readable
 * concise
 * comprehensive
-* extensible
 * convertible
---
+* extensible
 
 [NOTE.speaker]
 --
