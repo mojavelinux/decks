@@ -26,10 +26,10 @@ TODO:
 - rework or rethink "Inside Out" slide
 ////
 
-[.intro]
+[.topic.intro]
 == [small]*Writing*...
 
-[.intro]
+[.topic.intro]
 == Write to *write*
 
 == :slide:
@@ -60,7 +60,7 @@ your writing
 "The enjoyment of one's tools is an essential ingredient of successful work."
 -- Donald E. Knuth
 
-[.intro]
+[.topic.intro]
 == Get back to the *content*
 
 [NOTE.speaker]
@@ -89,7 +89,7 @@ your writing
 include::snippets/asciidoc-asciiart.adoc[]
 ....
 
-[.intro]
+[.topic.intro]
 == ``It's just 'text', mate.''
 
 [NOTE.speaker]
@@ -155,7 +155,7 @@ image::rubygems.png[Ruby gem]
 [{blank-title}]
 image::asciidoctor-org-writers-guide.png[]
 
-[.intro]
+[.topic.intro]
 == *Side* by *side*
 
 // TODO center this slide?
@@ -270,10 +270,10 @@ It handles a lot of use cases well, and some other cases are still possible at l
 
 // https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
 
-//[.intro]
+//[.topic.intro]
 //== AsciiDoc to *X*
 
-[.intro]
+[.topic.intro]
 == *Preview* [push1]#the big picture#
 
 == :slide:
@@ -288,7 +288,7 @@ image::asciidoc-processor.png[]
 .Editing AsciiDoc with live preview
 image::live-preview.png[]
 
-[.intro]
+[.topic.intro]
 == AsciiDoc on *Java*
 
 == :slide:
@@ -322,7 +322,7 @@ image::asciidoctor-java-usage.png[]
 .GitHub supports AsciiDoc!
 image::asciidoc-github.png[]
 
-[.intro]
+[.topic.intro]
 == '``Pull-requestable''' docs
 
 == :slide:
@@ -331,7 +331,7 @@ image::asciidoc-github.png[]
 .Fork and edit this file
 image::pull-requestable-docs.png[]
 
-[.intro]
+[.topic.intro]
 == *Evolving* [push4_7_5]#AsciiDoc#
 
 == :slide:
@@ -344,7 +344,7 @@ image::pull-requestable-docs.png[]
 * Revision markup [detail]#$$[del]#strikeout#$$#
 * Simplified toolchain
 
-[.intro]
+[.topic.intro]
 == [block]*Scaling* your docs
 
 [NOTE.speaker]
@@ -355,7 +355,7 @@ image::pull-requestable-docs.png[]
 --
 
 ////
-[.intro]
+[.topic.intro]
 == Work inside out
 
 == :slide:
@@ -407,7 +407,7 @@ Drop the [sans]*</>*, but not the *semantics*
 * "Only requires a text editor to read or write."
 --
 
-[.intro]
+[.topic.intro]
 == ``It's just 'text', mate''
 
 [.topic.ending, hrole="name"]
