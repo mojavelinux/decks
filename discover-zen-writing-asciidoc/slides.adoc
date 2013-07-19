@@ -1,25 +1,20 @@
 [[zen-of-writing]]
 = Discover the 'zen' of writing **[subtle]##(##Ascii[subtle]##)##Doc**s
-Dan Allen <@mojavelinux>
-v1.0.pre, June 04, 2013
-:corpname: Red Hat, Inc.
+Dan Allen <http://github.com/mojavelinux>
+v1.0.0, Jul 17, 2013
 :title: Discover the zen of writing (Ascii)Docs
+:corpname: Red Hat, Inc.
 :copyright: CC BY-SA 2.0
 :website: http://asciidoctor.org
-:backend: dzslides
-:imagesdir: images
-:dzslides-style: stormy
-:dzslides-transition: fade
-:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300|Cedarville+Cursive
-:dzslides-highlight: monokai
-ifdef::asciidoctor[]
-:source-highlighter: highlight.js
-:language: no-highlight
 include::attributes.conf[]
-endif::asciidoctor[]
 
 ////
 TODO:
+
+- add mobile screenshot of Asciidoctor website (or other Asciidoctor-styled sample app)
+- add AsciiDoc on JavaScript slide to cover Opal, show off docgist or graphgist
+- add slide to cover stylesheet factory, "Asciidoctor Foundation"
+- add slide for *this* presentation
 
 - add link to sample asciidoc/markdown/docbook documents
 - use labeled list (perhaps horizontal) to make DocBook even more verbose
@@ -32,7 +27,7 @@ TODO:
 [.topic.intro]
 == Write to *write*
 
-== :slide:
+== !
 
 [.statement]
 Word processors are *sabotaging* +
@@ -43,22 +38,20 @@ your writing
 * "Word processors are the real writer's block."
 --
 
-== :slide:
+== !
 
 [.statement]
 ``Just let me *write*, dammit!''
 
-== :slide:
+== !
 
 "I was spending more time *fixing syntax errors* than I was writing the documentation."
--- Stuart Rackham (the creator of AsciiDoc) on DocBook]
+-- Stuart Rackham (the creator of AsciiDoc) on DocBook
 
-== :slide:
+== !
 
-// TODO relocate this slide?
-
-"The enjoyment of one's tools is an essential ingredient of successful work."
--- Donald E. Knuth
+"I'm still not smart enough to be able to use WYSIWYG document editors."
+-- Tomáš Šedovič
 
 [.topic.intro]
 == Get back to the *content*
@@ -77,13 +70,13 @@ your writing
 * Textile
 * MediaWiki
 * reStructuredText
-* Org-mode
+//* Org-mode
 * *AsciiDoc*
 
 // http://en.wikipedia.org/wiki/Lightweight_markup_language
 
 [.terminal]
-== :slide:
+== !
 
 ....
 include::snippets/asciidoc-asciiart.adoc[]
@@ -104,7 +97,7 @@ include::snippets/asciidoc-asciiart.adoc[]
 [.middle]
 A [light]'lightweight', yet *powerful* text-based markup language and document generator.
 
-== :slide:
+== !
 
 [.statement]
 {sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
@@ -122,12 +115,6 @@ A [light]'lightweight', yet *powerful* text-based markup language and document g
 include::snippets/text-formatting.adoc[]
 ----
 
-== :slide:
-
-[.elevate, {caption-off}]
-.AsciiDoc processing
-image::asciidoc-processor.png[]
-
 == Output formats (i.e., backends)
 
 image::export-icon.png[role="pull-left"]
@@ -138,8 +125,14 @@ image::export-icon.png[role="pull-left"]
 * PDF [detail]#fop, dblatex#
 * eBook [detail]#ePub 2, mobi#
 * slides [detail]#deck.js, dzslides, reveal.js#
-* man page
-* + custom backends
+* man pages
+* custom backends
+
+== !
+
+[.elevate, {caption-off}]
+.AsciiDoc processing
+image::asciidoc-processor.png[]
 
 == Asciidoctor
 
@@ -150,7 +143,20 @@ A modern, open source implementation of AsciiDoc [ruby]#in Ruby#
 [.corner]
 image::rubygems.png[Ruby gem]
 
-== :slide:
+[.topic]
+== Built on Asciidoctor
+
+[.scatter.incremental]
+* Java integration
+* Maven plugin
+* Gradle plugin
+* Asciidoclet
+* Guard plugin
+* JavaScript port
+* Stylesheet factory
+* Asciidoctor website =>
+
+== !
 
 [{blank-title}]
 image::asciidoctor-org-writers-guide.png[]
@@ -183,7 +189,7 @@ include::snippets/sample-docbook.xml[lines=1..22]
 ----
 
 [.topic.source]
-== ...to DocBook (con't)
+== ...to DocBook (and going...)
 
 [source, xml]
 ----
@@ -193,7 +199,7 @@ include::snippets/sample-docbook.xml[lines=23..44]
 ----
 
 [.topic.source]
-== ...to DocBook (and going)
+== ...to DocBook (at last!)
 
 [source, xml]
 ----
@@ -208,7 +214,7 @@ include::snippets/sample-docbook.xml[lines=45..-1]
 * "'Because I can only pick out about 5 works in a see of syntax highlighted XML'"
 --
 
-== :slide:
+== !
 
 "DocBook is nice, but (like XML) it is *not meant for editing* nor for merging changes (by humans)."
 -- Dag Wieers
@@ -218,7 +224,7 @@ include::snippets/sample-docbook.xml[lines=45..-1]
 * "Let me rephrase that for Dag."
 --
 
-== :slide:
+== !
 
 [.statement]
 Writing *DocBook* is just... *inhumane*
@@ -228,10 +234,23 @@ Writing *DocBook* is just... *inhumane*
 * "AsciiDoc gets us back to what's important, _writing_."
 --
 
-== :slide:
+== !
+
+"The enjoyment of one's tools is an essential ingredient of successful work."
+-- Donald E. Knuth
+
+== Testimonial
+
+"I'm amazed by AsciiDoc :-)
+It handles a lot of use cases well, and some other cases are still possible at least."
+-- Anders Nawroth, Neo4j project
+
+// https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
+
+== !
 
 "But I use Markdown to write my documention."
--- Most developers on github
+-- Most developers on GitHub
 
 [.topic.source.lhs]
 == Let's compare AsciiDoc...
@@ -249,74 +268,51 @@ include::snippets/sample-asciidoc.adoc[]
 include::snippets/sample-markdown.md[]
 ----
 
+////
 [.incremental]
 --
 [.followup]
 Hmm, can't seem to cover all the requirements :(
 --
+////
 
-== :slide:
+[.topic.source]
+== Oh, Markdown
+
+[.followup]
+You can't seem to cover all the requirements :(
+
+[.followup]
+You're also mixing content and presentation.
+
+== !
 
 [.statement]
 Markdown : *1st-grader*
 [center connector]#::#
 Asciidoc : *PhD student*
 
-== Testimonial
-
-"I'm amazed by AsciiDoc :-)
-It handles a lot of use cases well, and some other cases are still possible at least."
--- Anders Nawroth, Neo4j project
-
-// https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
-
 //[.topic.intro]
 //== AsciiDoc to *X*
+
+[.topic]
+== Who's doing AsciiDoc?
+
+[.scatter.incremental]
+* https://github.com/git/git/tree/master/Documentation[Git] [detail]#User guide, man pages#
+* https://github.com/neo4j/neo4j/tree/master/manual/src[Neo4j] [detail]#Manual, refcards#
+* https://github.com/cdi-spec/cdi/tree/master/spec[CDI] [detail]#Specification#
+//* https://github.com/FooBarWidget/passenger/tree/master/doc[Phusion Passenger] [detail]#User guides#
+* http://static.springsource.org/spring-xd/docs/1.0.0.M1/reference/html[Spring XD] [detail]#Manual#
+* http://www.nofluffjuststuff.com/home/magazine_subscribe[NFJS] [detail]#Magazine#
+* Authors [detail]#Books, articles#
+* Publishers [detail]#O'Reilly (Atlas)#
+* *GitHub!*
 
 [.topic.intro]
 == *Preview* [push1]#the big picture#
 
-== :slide:
-
-[.elevate, {caption-off}]
-.AsciiDoc processing
-image::asciidoc-processor.png[]
-
-== :slide:
-
-[.relax-y, {caption-off}]
-.Editing AsciiDoc with live preview
-image::live-preview.png[]
-
-[.topic.intro]
-== AsciiDoc on *Java*
-
-== :slide:
-
-[.elevate, {caption-off}]
-.Asciidoctor Java integration 
-image::asciidoctor-java.png[]
-
-== :slide:
-
-[.elevate, {caption-off}]
-.Asciidoctor Java build plugins
-image::asciidoctor-java-usage.png[]
-
-[.topic]
-== Who's on board?
-
-[.incremental.scatter]
-* https://github.com/git/git/tree/master/Documentation[Git] [detail]#User guide, man pages#
-* https://github.com/neo4j/neo4j/tree/master/manual/src[Neo4j] [detail]#Manual, refcards#
-* https://github.com/cdi-spec/cdi/tree/master/spec[CDI] [detail]#Specification#
-* https://github.com/FooBarWidget/passenger/tree/master/doc[Phusion Passenger] [detail]#User guides#
-* http://www.nofluffjuststuff.com/home/magazine_subscribe[NFJS] [detail]#Magazine#
-* Authors [detail]#Books, articles#
-* Publishers [detail]#O'Reilly, MakerPress#
-* *GitHub!*
-
-== :slide:
+== !
 
 [{caption-off}, crole="band"]
 .GitHub supports AsciiDoc!
@@ -325,21 +321,49 @@ image::asciidoc-github.png[]
 [.topic.intro]
 == '``Pull-requestable''' docs
 
-== :slide:
+== !
 
 [{caption-off}, crole="band"]
 .Fork and edit this file
 image::pull-requestable-docs.png[]
 
+== !
+
+[.elevate, {caption-off}]
+.AsciiDoc processing
+image::asciidoc-processor.png[]
+
+== !
+
+[.relax-y, {caption-off}]
+.Editing AsciiDoc with live preview
+image::live-preview.png[]
+
+[.topic.intro]
+== AsciiDoc on *Java*
+
+== !
+
+[.elevate, {caption-off}]
+.Asciidoctor Java integration 
+image::asciidoctor-java.png[]
+
+== !
+
+[.elevate, {caption-off}]
+.Asciidoctor Java build plugins
+image::asciidoctor-java-usage.png[]
+
 [.topic.intro]
 == *Evolving* [push4_7_5]#AsciiDoc#
 
-== :slide:
+== !
 
 [.scatter]
 * Simplified toolchain
-* Font-based Icons [detail]#&bigstar;#
-* UI Buttons [detail]#btn:[Save]#
+* Responsive styles
+* Font-based icons [detail]#&bigstar;#
+* UI buttons [detail]#btn:[Save]#
 * Menu selections [detail]#menu:File[Open...]#
 * Keystrokes [detail]#kbd:[Ctrl+Alt+T]#
 * Revision markup [detail]#$$[-]#strikeout#$$#
@@ -358,7 +382,7 @@ image::pull-requestable-docs.png[]
 [.topic.intro]
 == Work inside out
 
-== :slide:
+== !
 
 [.middle]
 image::inside-out.png[Work inside out]
@@ -369,7 +393,7 @@ image::inside-out.png[Work inside out]
 --
 ////
 
-== :slide:
+== !
 
 [.statement]
 Drop the [sans]*</>*, but not the *semantics*
@@ -414,7 +438,7 @@ Drop the [sans]*</>*, but not the *semantics*
 [.footer]
 {website}
 
-== :slide:
+== !
 
 [.middle]
 image::nfjs-magazine-cover.jpg[]

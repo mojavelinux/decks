@@ -8,7 +8,7 @@ This is the optional preamble (an untitled section body), useful for
 writing simple sectionless documents consisting only of a preamble.
 
 NOTE: The abstract, preface, appendix, bibliography, glossary and
-index section titles are significant ('specialsections').
+index section titles are significant (_specialsections_).
 
 == First section
 
@@ -16,3 +16,6 @@ Document sections start at *level 1* and can nest four levels deep.
 
 * Item 1
 * Item 2
+
+[source,ruby]
+puts 'Hello, World!'
