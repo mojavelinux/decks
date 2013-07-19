@@ -1,44 +1,43 @@
+ifeval::["{qualifier}" == "continuous-dev"]
+= Unlock Continuous *Enterprise Development* using *Real Tests*
+Dan Allen
+v1.0, 2013-07-15
+:title: Unlock Continuous Enterprise Development using Real Tests
+endif::[]
+ifeval::["{qualifier}" != "continuous-dev"]
 = Reducing *Java Enterprise Testing* to *Child's Play*
 Dan Allen
 v1.0, 2013-05-07
 :title: Reducing Java Enterprise Testing to Child's Play
+endif::[]
 :corpname: Red Hat, Inc.
 :copyright: CC BY-SA 2.0
 :website: http://arquillian.org
-:backend: dzslides
-:imagesdir: images
-:sectids!:
-:dzslides-style: watermelon
-:dzslides-transition: fade
-:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300|Covered+By+Your+Grace
-:dzslides-highlight: monokai
 :arquillian: pass:quotes[[ike]#arquillian#]
-:arquillian_cap: pass:quotes[[ike]#Arquillian#]
-ifdef::asciidoctor[]
-:source-highlighter: highlightjs
-:language: no-highlight
+:arquillian_proper: pass:quotes[[ike]#Arquillian#]
+:hidecaption: caption=""
+:hidetitle: title="", caption=""
 include::attributes.conf[]
-endif::asciidoctor[]
 
-[{intro}]
+[.topic.intro]
 == *Testing*$$...$$
 
-== :slide:
+== !
 
-[role="graffiti incremental"]
+[.graffiti.incremental]
 * Testing is too hard
 * Testing is no fun
 * Testing is sloooow
 * There's no time to test
 * Testing *sucks!*
 
-== :slide:
+== !
 
-[role="graffiti"]
-_Think again_
+[.graffiti]
+_Think again!_
 
-[role="incremental replace"]
-== :slide:
+[.incremental.replace]
+== !
 
 You can't fix what you can't *run*
 
@@ -48,10 +47,10 @@ You can't fix what you can't *test*
 
 You can't *develop* if you can't *test*
 
-[{intro}]
+[.topic.intro]
 == Testing is *development*
 
-== :slide:
+== !
 
 [, Jeremy Norris]
 ____
@@ -60,22 +59,22 @@ The purpose of automated testing is to _enable change_.
 Verifying correctness is just a nice side-effect.
 ____
 
-== :slide:
+== !
 
 _Not testing_ is *painful* & *time consuming*
 
-[role="follow-up"]
+[.follow-up]
 Testing eliminates this pain and sacrifice
 
-== :slide:
+== !
 
-[role="graffiti"]
+[.graffiti]
 Testing _rulez!_
 
-[{recap}]
+[.topic.recap]
 == Testing lens recap
 
-[role="hgroup"]
+[.hgroup]
 --
 [float]
 == Develop by testing
@@ -83,96 +82,94 @@ Testing _rulez!_
 === Don't waste time being stuck
 --
 
-[{intro}]
+[.topic.intro]
 == Our *philosophy*
 
-== :slide:
+== !
 
-[role="count"]
+[.count]
 1
 
 Tests should be *portable* across compatible environments
 
-== :slide:
+== !
 
-[role="count"]
+[.count]
 2
 
 Tests should be executable from *the IDE* and *the build tool*
 
-== :slide
+== !
 
-[role="count"]
+[.count]
 3
 
 The test platform should *reuse* existing frameworks and tools
 
-== :slide:
+== !
 
-[caption=""]
-.{empty}
+[{hidetitle}]
 image::testing-band-gap.png[]
 
-== :slide:
+== !
 
-[caption=""]
+[{hidecaption}]
 .Bring your tests to the runtime...
 image::invasion.png[]
 
-[role="no-transition"]
-== :slide:
+[.no-transition]
+== !
 
-[caption=""]
+[{hidecaption}]
 .$$...$$so [ike]_you_ rule your code, not the bugs!
 image::invasion.png[]
 
-== :slide:
+== !
 
 {arquillian} - the enterprise test platform
 
-[role="follow-up"]
+[.follow-up]
 [ike invert]#&target; arquillian.org#
 
-== :slide:
+== !
 
 Designed for *humans*
 
-[role="follow-up"]
+[.follow-up]
 IDE friendly &#9786;
 
-== :slide:
+== !
 
 Can be *fully automated*
 
-[role="follow-up"]
+[.follow-up]
 Continuous integration, FTW! &infin;
 
-== :slide:
+== !
 
 Provides a *component model* for testing
 
-[role="follow-up"]
+[.follow-up]
 Dependency injection, yeah! &rarrfs;
 
-== :slide:
+== !
 
 *Isolates* the code under test
 
-[role="follow-up"]
+[.follow-up]
 Tame that classpath &pitchfork;
 
-[{intro}]
+[.topic.intro]
 == test *continuum*
 
-== :slide:
+== !
 
-[caption=""]
-.{empty}
+[{hidetitle}]
 image::testing_continuum.svg[]
 
-== :slide:
+== !
 
-[role="middle right incremental"]
+[middle.right.incremental]
 * Test runner
 * Container adapter
 * {plus} Test enricher
@@ -181,12 +178,12 @@ image::testing_continuum.svg[]
 '''
 * *In-container testing*
 
-[{notes}]
+[NOTE.speaker]
 ====
 this is the secret to making Java enterprise testing child's play
 ====
 
-[{source}]
+[.topic.source]
 == Arquillian "Hello, World!" Test
 
 [source,java]
@@ -194,50 +191,44 @@ this is the secret to making Java enterprise testing child's play
 include::snippets/GreeterTest.java[]
 --
 
-[{topic}, hrole="middle"]
+[.topic, hrole="middle"]
 == *Run As$$...$$* [sans small]#># *JUnit Test*
 
 == Select container
 
-[caption=""]
-.{empty}
-image::1-select-container.svg[]
+[{hidetitle}]
+image::1-select-container.png[]
 
 == Start or connect to container
 
-[caption=""]
-.{empty}
-image::2-start-container.svg[]
+[{hidetitle}]
+image::2-start-container.png[]
 
 == Package test archive
 
-[caption=""]
-.{empty}
+[{hidetitle}]
 image::3-package-test-archive.svg[]
 
 == Run test inside the container
 
-[caption=""]
-.{empty}
+[{hidetitle}]
 image::4-run-test-in-container.svg[]
 
 == Collect test results
 
-[caption=""]
-.{empty}
+[{hidetitle}]
 image::5-collect-test-results.svg[]
 
 == Stop or disconnect from container
 
-[caption=""]
-.{empty}
-image::6-disconnect-container.svg[]
+[{hidetitle}]
+image::6-disconnect-container.png[]
 
-== :slide:
+== !
 
 {arquillian} - the *extensible* test platform
 
-[{notes}]
+[NOTE.speaker]
 ====
 * test runners
 * container adapters
@@ -245,32 +236,32 @@ image::6-disconnect-container.svg[]
 * integrations
 ====
 
-[{topic}]
-== {arquillian_cap} *Persistence*
+[.topic]
+== {arquillian_proper} *Persistence*
 
-[role="stretch-x"]
+[.stretch-x]
 image::incontainer_runmode.png[]
 
-[{topic}]
-== {arquillian_cap} *Drone*
+[.topic]
+== {arquillian_proper} *Drone*
 
-[role="stretch-x"]
+[.stretch-x]
 image::client_runmode.png[]
 
-[{topic}]
-== {arquillian_cap} *Warp*
+[.topic]
+== {arquillian_proper} *Warp*
 
-[role="stretch-x"]
+[.stretch-x]
 image::warp_runmode.png[]
 
-== :slide:
+== !
 
 *Reject* complex, *jacked up* test suites
 
-[{recap}]
+[.topic.recap]
 == Test continuum recap
 
-[role="hgroup"]
+[.hgroup]
 --
 [float]
 == You work in the IDE
@@ -278,29 +269,108 @@ image::warp_runmode.png[]
 === CI servers work the build
 --
 
-[{intro}]
+ifdef::longform[]
+[.topic]
+== *Communicate* with tests
+
+== !
+
+""
+Tests are a form of _documentation_.
+""
+
+== !
+
+[.expression]
+_Eureka!_
+
+== !
+
+Tests help us *communicate*.
+
+[.follow-up]
+They tell stories
+
+== !
+
+[{hidetitle}]
+image::glassfish-jaxrs-cdi-bug.png[]
+
+== !
+
+[{hidetitle}]
+image::hibernate-bug.png[]
+
+== !
+
+[.middle.stretch-x]
+image::bug-report-reminder.png[]
+
+== !
+
+[, Hibernate website]
+""
+JIRA bug reports without accompanying test cases illustrating and reproducing the reported bugs are generally given far lower priority.
+
+...don't just zip up your 10,000 line enterprise application and attach it.
+""
+
+== !
+
+[.middle.stretch-x]
+image::arquillian-identifies-container-bug.png[]
+
+== !
+
+"Arquillian allowed me to write a simple, repeatable test that _conclusively_ isolated the issue."
+-- Craig Ringer
+
+== !
+
+[.middle.pull-left]
+Tests should be:
+
+[.middle.pull-right]
+* Open
+* Transparent
+* Shared
+
+[.topic.recap]
+== Communication recap
+
+[.hgroup]
+--
+[float]
+== Explaining is hard
+[float]
+=== Show, don't tell
+--
+
+endif::longform[]
+
+[.topic.intro]
 == Test to *learn*
 
-[{notes}]
+[NOTE.speaker]
 ====
 Tests are the new "Hello, World!"
 ====
 
-== :slide:
+== !
 
-[caption="", role="relax-x"]
+[.relax-x, {hidecaption}]
 .Question everything
 image::sci-4-3.png[]
 
-== :slide:
+== !
 
 {arquillian} - a *learning* test platform
 
-[{intro}]
+[.topic.intro]
 == Write *real* tests
 
-[role="incremental replace"]
-== :slide:
+[.incremental.replace]
+== !
 
 Real tests increase *certainty*
 
@@ -308,14 +378,14 @@ Real tests build *confidence*
 
 Real tests increase *robustness*
 
-== :slide:
+== !
 
 Testing with _mocks_ only proves you know how to write mocks
 
-[{recap}]
+[.topic.recap]
 == Learning recap
 
-[role="hgroup"]
+[.hgroup]
 --
 [float]
 == Use tests to learn
@@ -323,19 +393,19 @@ Testing with _mocks_ only proves you know how to write mocks
 === Keeps knowlege in the system
 --
 
-[{recap-final}]
+[.topic.recap.final]
 == Final recap
 
-[{middle}]
+[.middle]
 *Java enterprise testing* + {arquillian} = +
 _child's play_
 
-[{ending}]
+[.topic.ending]
 == Thanks!
 
-[{ending}, hrole="name"]
+[.topic.ending, hrole="name"]
 == Dan Allen
 
-[role="footer"]
+[.footer]
 Twitter or GitHub: +
 @mojavelinux
