@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en" class="aspect-16-9">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Asciidoctor 0.1.4.preview.3, dzslides backend">
+<title>Easier Documentation, Simpler Websites &amp; Faster Collaboration</title>
+<meta name="author" content="Dan Allen,Sarah White">
+<meta name="copyright" content="CC BY-SA 2.0">
+<meta name="presdate" content="2013-07-23">
+<link href="http://fonts.googleapis.com/css?family=Neuton:400,700,800,400italic" rel="stylesheet">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+<style>
+/* Asciidoctor style for highlight.js */
+pre code {
+  display: block; padding: 0.5em;
+  color: #333;
+  background: #f8f8ff
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #998;
+  font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .nginx .title,
+pre .subst,
+pre .request,
+pre .status {
+  color: #990073;
+}
+
+pre .number,
+pre .hexcolor,
+pre .ruby .constant {
+  color: #080;
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+  color: #d32323;
+}
+
+pre .title,
+pre .id {
+  color: #900;
+  font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .clojure .title,
+pre .subst {
+  font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .vhdl .literal,
+pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+  color: #099;
+  font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .lisp .body {
+  color: #080;
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .lisp .keyword,
+pre .tex .special,
+pre .prompt {
+  color: #990073
+}
+
+pre .built_in,
+pre .lisp .title,
+pre .clojure .built_in {
+  color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}
+
+pre .asciidoc .header {
+  color: #800;
+}
+
+pre .asciidoc .blockquote {
+  color: #888;
+}
+
+pre .asciidoc .bullet,
+pre .asciidoc .link_url {
+  color: #080;
+}
+
+pre .asciidoc .link_url {
+  text-decoration: underline;
+}
+
+pre .asciidoc .link_label,
+pre .asciidoc .attribute {
+  color: #099;
+}
+
+pre .asciidoc .label,
+pre .asciidoc .strong {
+  font-weight: bold;
+}
+
+pre .asciidoc .emphasis {
+  font-style: italic;
+}
+
+pre .asciidoc .code {
+  color: #d14;
+}
+</style>
+<style>
+/*
+ Theme: Asciidoctor
+ Fonts: Neuton
+*/
+html, .view body {
+  background: #ededed url(../../images/noise.png) repeat;
+  counter-reset: slideidx;
+  font-family: 'Neuton', sans-serif;
+}
+
+body, .view section {
+  background: #ffffff;
+  font-size: 17px;
+  line-height: 1;
+}
+
+section, .view head > title {
+}
+
+.view section:after {
+  counter-increment: slideidx;
+  content: counter(slideidx, decimal-leading-zero);
+  position: absolute;
+  bottom: -1.5em;
+  right: .5em;
+  color: #222;
+  font-size: 3em;
+}
+
+.view head > title {
+  color: #000;
+  font-weight: 800;
+  text-align: center;
+  margin: .5em 0 .25em;
+  line-height: 1;
+  font-size: 3em;
+}
+
+.view section[aria-selected] {
+  border: 5px #FFFFFF solid;
+}
+
+section:not(.title) {
+  padding: 50px;
+}
+
+section.title h1 {
+  font-size: 6em;
+  color: #1D2326;
+  position: relative;
+  top: 40%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0 50px; /* quick hack to fix overruns */
+}
+
+section.title footer {
+  font-weight: 200;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 30px 50px;
+}
+
+section[class=topic] h2 {
+  color: #222222;
+  font-size: 2.5em;
+  margin-bottom: .5em;
+  margin-top: -.5em;
+}
+
+section.intro, section.terminal {
+  background-color: #111111;
+}
+
+section.intro h1,
+section.intro h2 {
+  color: #FEFEFE;
+  text-transform: lowercase;
+  line-height: .7em;
+  text-align: left;
+  font-size: 4.4em;
+}
+
+section.intro.alt h1,
+section.intro.alt h2 {
+  text-align: right;
+}
+
+section.intro h1 strong,
+section.intro h2 strong {
+  color: #4EA2B9;
+  font-size: 1.51em;
+  line-height: .8em;
+}
+
+section.terminal pre.literal {
+  color: #D5EE5E;
+}
+
+section.secret {
+  background-color: #222222;
+}
+
+section.secret p {
+  color: #DDDCC5;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+section.secret strong {
+  color: #136E9E;
+  font-size: 2em;
+  display: block;
+  line-height: .8em;
+}
+
+section.recap > h1,
+section.recap > h2 {
+  margin: 0;
+  text-transform: uppercase;
+  color: #005498;
+  font-size: 2em;
+  border: 15px solid #005498;
+  border-radius: 20px;
+  position: absolute;
+  right: -25px;
+  top: 5px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+section.recap hgroup h2 {
+  color: #222222;
+  text-transform: uppercase;
+  font-size: 4.4em;
+}
+
+section.recap hgroup h3 {
+  color: #BA3925;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+section.recap hgroup .invert h2 {
+  font-size: 3em;
+}
+
+section.recap hgroup .invert h3 {
+  font-size: 4.4em;
+}
+
+section.question p {
+  text-align: right;
+  font-size: 3em;
+}
+
+section.question p strong {
+  display: block;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: .8em;
+}
+
+section.ending {
+  background-color: #1A6074;
+}
+
+section.ending > h2 {
+  color: #ffffff;
+  font-size: 4em;
+  text-transform: lowercase;
+}
+
+section.ending > h2.name {
+  text-transform: none;
+  top: 40%;
+}
+
+section.ending h2.name [class^="icon-"] {
+  color: #222;
+  font-size: 0.6em;
+  display: inline-block;
+  margin-left: -4px;
+  margin-right: -10px;
+  position: relative;
+  bottom: 5px;
+}
+
+section.ending footer,
+section.ending p.footer {
+  position: absolute;
+  left: 0;
+  background-color: #F5F5F5;
+  width: 100%;
+  padding: 10px;
+  font-size: 3.2em;
+  text-align: center;
+  color: #1A6074;
+  font-weight: bold;
+  top: 60%;
+  height: 20%;
+  margin: 0;
+}
+
+section.ending p.footer .icon-twitter {
+  font-size: 0.8em;
+  position: relative;
+  top: 3px;
+}
+
+.aspect-16-10 section.ending footer,
+.aspect-16-10 section.ending p.footer {
+  height: 26%;
+}
+
+h1 {
+  font-size: 4.4em;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h3 {
+}
+
+a {
+  /*
+  color: inherit;
+  text-decoration: none;
+  */
+  color: #005498;
+  font-weight: normal;
+}
+
+kbd.keyseq {
+  color: #555555;
+}
+kbd:not(.keyseq) {
+  display: inline-block;
+  color: #222222;
+  font-size: 0.75em;
+  line-height: 1.4;
+  background-color: #F7F7F7;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+  margin: -0.15em 0.15em 0 0.15em;
+  padding: 0.2em 0.6em 0.2em 0.5em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+kbd kbd:first-child { margin-left: 0; }
+
+kbd kbd:last-child { margin-right: 0; }
+
+section ul {
+  list-style: none;
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1A6074;
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+section ul.variants {
+  margin-top: 150px; /* half height (250px) - 100px to account for padding */
+}
+
+section ul.split > li {
+  width: 50%;
+}
+
+section ul.split > li:nth-of-type(2n),
+section ul.scatter > li:nth-of-type(2n) {
+  float: right;
+}
+
+section ul.split > li:nth-of-type(2n - 1),
+section ul.scatter > li:nth-of-type(2n - 1) {
+  float: left;
+}
+
+section ul.scatter > li:nth-of-type(2n) {
+  clear: left;
+  text-align: right;
+}
+
+section ul.scatter > li:nth-of-type(2n - 1) {
+  clear: right;
+}
+
+section dt {
+  font-size: 3em;
+  color: #BA3925;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+
+section dd {
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: 2em;
+  font-size: 2em;
+}
+
+section dt:nth-of-type(2n),
+section dd:nth-of-type(2n) {
+  text-align: right;
+}
+
+section p {
+  color: #222222;
+  font-weight: 700;
+  font-size: 3.5em;
+}
+
+section p.expression {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8em;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  -webkit-transform-origin: 0% 15%;
+  -moz-transform-origin: 0% 15%;
+  -o-transform-origin: 0% 15%;
+  transform-origin: 0% 15%;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+}
+
+section p.follow-up {
+  color: #222222;
+  font-weight: 700;
+  font-size: 2em;
+  margin-top: -.5em;
+  padding-left: 3px;
+}
+
+section p.point {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 2.8em;
+  text-align: right;
+  font-weight: 700;
+}
+
+section em, section i {
+  color: #BA3925;
+  font-style: normal;
+}
+
+section strong {
+  color: #BA3925;
+}
+
+section del {
+  color: #6A6A61;
+}
+
+section p del span {
+  color: #222222;
+  font-weight: 700;
+}
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: -10px 2em 0 2em;
+  border-left: 5px solid #BA3925;
+}
+
+blockquote:before {
+  color: #BA3925;
+  content: '\201C';
+  font-size: 5em;
+  float: left;
+  margin-left: -.8em;
+}
+
+section blockquote p {
+  color: #333;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: .5em;
+  font-style: italic;
+  font-size: 3.0em;
+  font-weight: normal;
+}
+
+blockquote p em {
+  font-style: italic;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0.1em;
+}
+
+blockquote cite {
+  font-size: 1.5em;
+  display: block;
+  line-height: 1.8;
+  color: #005498;
+  font-style: normal;
+  margin-top: .25em;
+}
+
+blockquote cite:before {
+  content: '\2014 \00A0';
+}
+
+figcaption {
+  font-size: 3em;
+  color: #000000;
+  font-weight: 700;
+  text-align: right;
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  width: 100%;
+}
+
+figcaption.invert {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000;
+}
+
+section.title footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40px;
+  background-color: #F5F5F5;
+  border-top: 1px solid #DDDDDD;
+}
+
+section.title footer span {
+  color: #4d4d4d;
+  font-size: .8em;
+}
+
+section.source {
+  padding: 30px !important;
+}
+
+section.source h2 {
+  margin: 0 .5em .5em 0;
+  color: #7A2518;
+  /*color: #222;*/
+  text-align: right;
+}
+
+section.source.lhs h2 {
+  text-align: left;
+}
+
+section.source div.title {
+  /*color: #7A2518;*/
+  color: #333;
+  font-weight: 700;
+  font-size: 1.25em;
+  margin-bottom: .3em;
+  padding-left: 1px;
+}
+
+section *:not(pre) > code {
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  color: #6D180B;
+  border: 1px solid #CCC;
+  background-color: #F2F2F2;
+  white-space: nowrap;
+  padding: 1px 3px 0;
+  font-size: 0.8em;
+  border-radius: 4px;
+}
+
+section pre code, section pre.literal {
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  font-size: .9em;
+  line-height: 1.3;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  overflow-y: auto;
+  /*max-height: 375px;*/
+  /*
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  background: #F2F2F2;
+  */
+  border: 0 dotted #ccc;
+  border-width: 1px 0; 
+  background: transparent;
+  white-space: pre-wrap;
+}
+
+section pre.literal {
+  font-size: 0.65em;
+  line-height: 1.1;
+}
+
+.middle,
+.statement,
+section.intro > h1,
+section.intro > h2,
+section.recap > hgroup, 
+section.ending > h2,
+section > dl,
+section > ul.graffiti,
+section > p {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+section p.statement strong {
+  font-size: 2.5em;
+  line-height: .75em;
+}
+
+section p.statement .icon-caret-right {
+  font-size: 1.25em;
+  position: relative;
+  bottom: 8px;
+}
+
+img.middle {
+  display: block;
+  margin: 0 auto;
+}
+
+img.stretch-x {
+  width: 100%;
+}
+
+img.stretch-y {
+  height: 100%;
+}
+
+img.scale{
+  max-height: 97.5%;
+  width: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.auto-width {
+  width: auto !important;
+}
+
+span.detail {
+  font-size: .8em;
+  color: #3e999f;
+  opacity: 0.5;
+  font-weight: normal;
+}
+
+.mild {
+  color: #005498;
+}
+
+/* Incremental elements */
+
+/* By default, visible */
+.incremental > * {
+  opacity: .5;
+}
+
+/* The current item */
+.incremental > *[aria-selected] {
+  opacity: 1;
+}
+
+/* The items to-be-selected */
+.incremental > *[aria-selected] ~ * {
+  opacity: 0;
+}
+
+.view .incremental {
+  visibility: visible;
+}
+
+.view .incremental * {
+  opacity: 1 !important;
+}
+
+/* The progressbar, at the bottom of the slides, show the global
+   progress of the presentation. */
+#progress-bar {
+  height: 2px;
+  background: #AAA;
+}
+
+/* TODO: merge the overrides below into the sheet */
+section.title h1 {
+  font-size: 4em;
+}
+
+section.title h1 strong {
+  font-size: 3em;
+  font-style: italic;
+}
+
+section.intro h1 strong,
+section.intro h2 strong {
+  font-size: 3.5em;
+}
+
+section p {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+section p.middle,
+section p.statement {
+  font-size: 3em;
+}
+
+section p.follow-up {
+  margin-top: 0;
+}
+
+section > p {
+  position: static;
+  top: 0;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+section pre:nth-of-type(2):not(.continue) code {
+  font-size: .8em;
+  line-height: 1.4;
+}
+
+section ul {
+  text-transform: none;
+  text-align: left;
+/*  font-size: 1.5em;*/
+  line-height: 1.1;
+}
+
+section ul ul {
+  font-size: .8em;
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+
+section.fit {
+  padding: 50px 0;
+  -moz-transition: none;
+}
+
+section.fit > img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.colist td {
+  color: #333;
+  padding: 4px 4px 4px 0;
+}
+
+.admonitionblock {
+  margin-bottom: 1em;
+}
+
+.admonitionblock td.icon, .admonitionblock td.content {
+  font-size: 1.5em;
+  padding: 5px 10px 5px 0px;
+}
+
+ol {
+  margin-left: 1.5em;
+  font-size: 1.5em;
+  margin-bottom: .5em;
+}
+
+.conum {
+  display: inline-block;
+  color: white !important;
+  background-color: #222222;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 18px;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  position: relative;
+  top: -2px;
+  letter-spacing: 1px;
+}
+.colist .conum {
+  top: -1px;
+}
+.conum * { color: white !important; }
+.conum + b { display: none; }
+.conum:after { content: attr(data-value); }
+.conum:not([data-value]):empty { display: none; }
+
+.icon-note:before{content:"\f05a";}
+.icon-tip:before{content:"\f0eb";}
+.icon-important:before{content:"\f071";}
+</style>
+<style>section:not(.topic) > h2 { display: none;}</style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+details {
+  display: none;
+}
+/* default aspect is 4:3 */
+body {
+  width: 800px;
+  height: 600px;
+  margin-left: -400px;
+  margin-top: -300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  display: none;
+}
+.aspect-16-10 body {
+  height: 500px; 
+  margin-top: -250px;
+}
+.aspect-16-9 body {
+  height: 450px; 
+  margin-top: -225px;
+}
+.view body {
+  position: static;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: visible;
+  overflow-x: hidden;
+  /* undo Dz.onresize */
+  transform: none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  -o-transform: none !important;
+  -ms-transform: none !important;
+}
+.view head, .view head > title {
+  display: block;
+}
+section {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.view section {
+  pointer-events: auto;
+  position: static;
+  width: 800px;
+  height: 600px;
+  margin: -150px -200px;
+  float: left;
+  transform: scale(.4);
+  -moz-transform: scale(.4);
+  -webkit-transform: scale(.4);
+  -o-transform: scale(.4);
+  -ms-transform: scale(.4);
+}
+.view.aspect-16-10 section {
+  height: 500px;
+  margin-top: -125px;
+  margin-bottom: -125px;
+}
+.view.aspect-16-9 section {
+  height: 450px;
+  margin-top: -112px;
+  margin-bottom: -113px;
+}
+.view section > * {
+  pointer-events: none;
+}
+section[aria-selected] {
+  pointer-events: auto;
+}
+html {
+  overflow: hidden;
+}
+html.view {
+  overflow: visible;
+}
+body.loaded {
+  display: block;
+}
+.incremental {
+  visibility: hidden;
+}
+.incremental[active] {
+  visibility: visible;
+}
+#progress-bar {
+  bottom: 0;
+  position: absolute;
+  -moz-transition: width 400ms linear 0s;
+  -webkit-transition: width 400ms linear 0s;
+  -ms-transition: width 400ms linear 0s;
+  transition: width 400ms linear 0s;
+}
+.view #progress-bar {
+  display: none;
+}
+figure {
+  width: 100%;
+  height: 100%;
+}
+figure > * {
+  position: absolute;
+}
+figure > img, figure > video, figure > embed {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slide flipping */
+
+/* Previous */
+section {
+  opacity: 0;
+}
+.view section {
+  opacity: 1;
+}
+/* Current */
+section[aria-selected] {
+  opacity: 1;
+}
+/* Next */
+section[aria-selected] ~ section {
+  opacity: 0;
+}
+.view section[aria-selected] ~ section {
+  opacity: 1;
+}
+</style>
+<style>
+/* Fade slide transition */
+/* opacity is set by core styles */
+section {
+  -moz-transition: opacity 450ms ease-out 0ms;
+  -webkit-transition: opacity 450ms ease-out 0ms;
+  -ms-transition: opacity 450ms ease-out 0ms;
+  transition: opacity 450ms ease-out 0ms;
+}
+</style>
+</head>
+<body>
+<section class="title"><h1><em>Easier</em> Documentation, <em>Simpler</em> Websites &amp; <em>Faster</em> Collaboration</h1><footer><span class="author">Dan Allen</span> <span class="email"><a href="https://twitter.com/mojavelinux">@mojavelinux</a></span><span class="divider">&nbsp;&middot;&nbsp;</span><span class="author">Sarah White</span> <span class="email"><a href="https://twitter.com/carbonfray">@carbonfray</a></span></footer></section>
+<section class="topic intro"><h2>Topic <strong>intro</strong></h2></section><section><blockquote><p>Every minute an editor spends managing presentational tweaks is one they can’t spend on critical stories.</p><br><cite>Jeff Eaton</cite></blockquote></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Install Awestruct</p></section>
+<section class="topic source"><h2>Check Your Ruby version</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ ruby --version
+# ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-linux]</code></pre></div></section>
+<section class="topic source"><h2>Install RVM</h2><div class="listingblock"><div class="title">Linux</div><pre class="highlight"><code class="bash">$ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3</code></pre></div><div class="listingblock"><div class="title">OSX</div><pre class="highlight"><code class="bash">$ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3</code></pre></div><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">On Mac, you&#8217;ll first need to install XCode from the MacApp store or the OSX system CD.</td></tr></table></div><div class="literalblock"><div class="title">Windows (<a href="https://github.com/vertiginous/pik">pik</a>)</div><pre class="literal">&gt; gem install pik
+&gt; pik_install C:\bin
+&gt; pik add C:\ruby\IronRuby-091\bin
+&gt; pik install ruby</pre></div><div class="admonitionblock tip"><table><tr><td class="icon"><i class="icon-tip"></i></td><td class="content">If you want to use Ruby 2.0, replace <code>1.9.3</code> with <code>2.0.0</code>.</td></tr></table></div></section>
+<section class="topic source"><h2>Create and use a new Ruby gemset</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rvm use 1.9.3@writeadapt --create</code></pre></div><div class="admonitionblock tip"><table><tr><td class="icon"><i class="icon-tip"></i></td><td class="content">If you want to use Ruby 2.0, replace <code>1.9.3</code> with <code>2.0.0</code>.</td></tr></table></div></section>
+<section class="topic source"><h2>Install Awestruct</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ gem install awestruct</code></pre></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal" style="max-height: 305px">Fetching: tilt-1.4.1.gem (100%)
+Successfully installed tilt-1.4.1
+Fetching: haml-4.0.3.gem (100%)
+
+HEADS UP! Haml 4.0 has many improvements, but also has changes that may break
+your application:
+
+* Support for Ruby 1.8.6 dropped
+* Support for Rails 2 dropped
+* Sass filter now always outputs &lt;style&gt; tags
+* Data attributes are now hyphenated, not underscored
+* html2haml utility moved to the html2haml gem
+* Textile and Maruku filters moved to the haml-contrib gem
+
+For more info see:
+
+http://rubydoc.info/github/haml/haml/file/CHANGELOG.md
+
+Successfully installed haml-4.0.3
+Fetching: mini_portile-0.5.1.gem (100%)
+Successfully installed mini_portile-0.5.1
+Fetching: nokogiri-1.6.0.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed nokogiri-1.6.0
+Fetching: sass-3.2.9.gem (100%)
+Successfully installed sass-3.2.9
+Fetching: chunky_png-1.2.8.gem (100%)
+Successfully installed chunky_png-1.2.8
+Fetching: fssm-0.2.10.gem (100%)
+Successfully installed fssm-0.2.10
+Fetching: compass-0.12.2.gem (100%)
+Successfully installed compass-0.12.2
+Fetching: compass-960-plugin-0.10.4.gem (100%)
+Successfully installed compass-960-plugin-0.10.4
+Fetching: bootstrap-sass-2.3.2.0.gem (100%)
+Successfully installed bootstrap-sass-2.3.2.0
+Fetching: zurb-foundation-4.2.3.gem (100%)
+Successfully installed zurb-foundation-4.2.3
+Fetching: mime-types-1.23.gem (100%)
+Successfully installed mime-types-1.23
+Fetching: rest-client-1.6.7.gem (100%)
+Successfully installed rest-client-1.6.7
+Fetching: git-1.2.5.gem (100%)
+Successfully installed git-1.2.5
+Fetching: ruby-s3cmd-0.1.5.gem (100%)
+Successfully installed ruby-s3cmd-0.1.5
+Fetching: rb-fsevent-0.9.3.gem (100%)
+Successfully installed rb-fsevent-0.9.3
+Fetching: ffi-1.9.0.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed ffi-1.9.0
+Fetching: rb-inotify-0.9.0.gem (100%)
+Successfully installed rb-inotify-0.9.0
+Fetching: rb-kqueue-0.2.0.gem (100%)
+Successfully installed rb-kqueue-0.2.0
+Fetching: listen-1.2.2.gem (100%)
+Successfully installed listen-1.2.2
+Fetching: rack-1.5.2.gem (100%)
+Successfully installed rack-1.5.2
+Fetching: awestruct-0.5.2.gem (100%)
+Successfully installed awestruct-0.5.2
+22 gems installed</pre></div></div></section>
+<section class="topic source"><h2>Check version of Awestruct</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ awestruct --version</code></pre></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal">WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Awestruct: 0.5.2
+http://awestruct.org/</pre></div></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Setup a new Awestruct project</p></section>
+<section class="topic source"><h2>Create a project folder and switch to it</h2><div class="listingblock"><div class="title">Make empty project directory</div><pre class="highlight"><code class="bash">$ mkdir writeadapt</code></pre></div><div class="listingblock"><div class="title">Switch to new directory</div><pre class="highlight"><code class="bash">$ cd writeadapt</code></pre></div><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">Don&#8217;t forget to switch to the new directory or else the website will be generated in the wrong location.</td></tr></table></div></section>
+<section class="topic source"><h2>Generate website structure</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ awestruct -i -f foundation</code></pre></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal" style="max-height: 305px">WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Create directory: /path/to/writeadapt/_config
+Create directory: /path/to/writeadapt/_layouts
+Create directory: /path/to/writeadapt/_ext
+Create file: /path/to/writeadapt/_ext/pipeline.rb
+Create file: /path/to/writeadapt/.awestruct_ignore
+Create file: /path/to/writeadapt/Rakefile
+Create file: /path/to/writeadapt/Gemfile
+Create directory: /path/to/writeadapt/stylesheets
+directory _site/stylesheets/
+directory javascripts/foundation/
+directory javascripts/vendor/
+   create stylesheets/_normalize.scss
+   create stylesheets/_settings.scss
+   create stylesheets/app.scss
+   create humans.txt
+   create robots.txt
+   create MIT-LICENSE.txt
+   create javascripts/foundation/foundation.orbit.js
+   create javascripts/foundation/...
+   create javascripts/foundation/foundation.reveal.js
+   create javascripts/vendor/custom.modernizr.js
+   create javascripts/vendor/jquery.js
+   create javascripts/vendor/zepto.js
+   create javascripts/foundation/foundation.js
+   create index.html
+   create _site/stylesheets/app.css
+
+Now you're awestruct!
+
+To generate and run your site in development mode, execute:
+
+  awestruct -d
+
+or, simply:
+
+  rake
+
+then visit your site at: http://localhost:4242
+
+Create file: /path/to/writeadapt/_config/site.yml
+Create file: /path/to/writeadapt/_layouts/base.html.haml
+Create file: /path/to/writeadapt/index.html.haml</pre></div></div></section>
+<section class="topic source"><h2>Awestruct project file tree</h2><div class="literalblock"><pre class="literal"> .awestruct/
+ `-- debug.log
+ .awestruct_ignore
+ _config/
+ `-- site.yml
+ _ext/
+ `-- pipeline.rb
+ Gemfile
+ humans.txt
+ index.html.haml
+ javascripts/
+ |-- foundation/
+ |   |-- foundation.alerts.js
+ |   |-- ...
+ |   |-- foundation.js
+ |   |-- ...
+ |   `-- foundation.topbar.js
+ `-- vendor/
+     |-- custom.modernizr.js
+     |-- jquery.js
+     `-- zepto.js
+ _layouts/
+ `-- base.html.haml
+ Rakefile
+ robots.txt
+ _site/
+ stylesheets/
+ |-- app.scss
+ |-- _normalize.scss
+ `-- _settings.scss</pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Install Rake and Bundler</p></section>
+<section class="topic source"><h2>Install Rake and Bundler Gems</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ gem install rake bundler</code></pre></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal">Fetching: rake-10.1.0.gem (100%)
+Successfully installed rake-10.1.0
+Fetching: bundler-1.3.5.gem (100%)
+Successfully installed bundler-1.3.5
+2 gems installed</pre></div></div></section>
+<section class="topic source"><h2>Ensure environment is setup correctly</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake setup</code></pre></div></section>
+<section class="topic source"><h2>Generate and preview website</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake</code></pre></div><div class="admonitionblock note"><table><tr><td class="icon"><i class="icon-note"></i></td><td class="content">The <code>rake</code> command with no arguments is a shortcut for <code>rake preview</code>.</td></tr></table></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal">WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Using profile: development
+Generating site: http://localhost:4242
+[Listen warning]:
+The blocking parameter of Listen::Listener#start is deprecated.
+Please use Listen::Adapter#start for a non-blocking listener and Listen::Listener#start! for a blocking one.
+[2013-01-01 00:00:00] INFO  WEBrick 1.3.1
+[2013-01-01 00:00:00] INFO  ruby 2.0.0 (2013-05-14) [x86_64-linux]
+[2013-01-01 00:00:00] INFO  WEBrick::HTTPServer#start: pid=10485 port=4242</pre></div><p class="follow-up">Visit <a href="http://localhost:4242">http://localhost:4242</a> in your web browser</p></div></section>
+<section class="topic source"><h2>Halt the preview server</h2><div class="openblock"><div class="title">Press key combo</div><p><kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></kbd></p></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal">...
+[2013-01-01 00:00:00] INFO  going to shutdown ...
+[2013-01-01 00:00:00] INFO  WEBrick::HTTPServer#start done.</pre></div></div></section>
+<section class="topic source"><h2>Structure of generated site</h2><div class="literalblock"><pre class="literal">_site/
+|-- humans.txt
+|-- index.html
+|-- javascripts/
+|   |-- foundation/
+|   |   |-- foundation.alerts.js
+|   |   |-- ...
+|   |   |-- foundation.js
+|   |   |-- ...
+|   |   `-- foundation.topbar.js
+|   `-- vendor/
+|       |-- custom.modernizr.js
+|       |-- jquery.js
+|       `-- zepto.js
+|-- robots.txt
+`-- stylesheets/
+    `-- app.css</pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Setup Git repository for project</p></section>
+<section class="topic source"><h2>Initialize new git repository</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git init .</code></pre></div><div class="openblock incremental"><div class="literalblock"><div class="title">Console output</div><pre class="literal">Initialized empty Git repository in ...</pre></div></div></section>
+<section class="topic source"><h2>Instruct git to ignore generated files</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ cat &gt; .gitignore &lt;&lt; LINES
+/.awestruct/
+/.ruby-*
+/.sass-cache/
+/_site/
+/_tmp/
+/Gemfile.lock
+LINES</code></pre></div><div class="openblock incremental"><div class="literalblock"><div class="title">Contents of <code>.gitignore</code></div><pre class="literal">/.awestruct/
+/.ruby-*/
+/.sass-cache/
+/_site/
+/_tmp/
+/Gemfile.lock</pre></div></div></section>
+<section class="topic source"><h2>Disable Jekyll</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ touch .nojekyll</code></pre></div></section>
+<section class="topic source"><h2>Add all non-ignored files to the git repository</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git add .</code></pre></div></section>
+<section class="topic source"><h2>Commit the changes to make the snapshot</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git commit -m 'Initial import of website sources'</code></pre></div><div class="literalblock"><div class="title">Console output</div><pre class="literal"> 30 files changed, 18757 insertions(+)
+ create mode 100644 .awestruct_ignore
+ create mode 100644 .gitignore
+ create mode 100644 .nojekyll
+ create mode 100644 Gemfile
+ create mode 100644 Rakefile
+ create mode 100644 _config/site.yml
+ create mode 100644 _ext/pipeline.rb
+ create mode 100644 _layouts/base.html.haml
+ create mode 100644 humans.txt
+ create mode 100644 index.html.haml
+ create mode 100644 javascripts/foundation/foundation.alerts.js
+ create mode 100644 javascripts/foundation/...
+ create mode 100644 javascripts/foundation/foundation.topbar.js
+ create mode 100644 javascripts/vendor/custom.modernizr.js
+ create mode 100644 javascripts/vendor/jquery.js
+ create mode 100644 javascripts/vendor/zepto.js
+ create mode 100644 robots.txt
+ create mode 100644 stylesheets/_normalize.scss
+ create mode 100644 stylesheets/_settings.scss
+ create mode 100644 stylesheets/app.scss</pre></div><div class="admonitionblock tip"><table><tr><td class="icon"><i class="icon-tip"></i></td><td class="content">Changes are now tracked by git.
+You can rollback at any time.</td></tr></table></div></section>
+<section class="topic"><h2>Create repository on GitHub</h2><p>See <a href="https://help.github.com/articles/create-a-repo#make-a-new-repository-on-github">Make a new repository on GitHub</a> &#8658;</p></section>
+<section class="topic source"><h2>Connect git repository to GitHub remote</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git remote add origin https://github.com/&lt;username&gt;/writeadapt-&lt;username&gt;
+$ git push origin master</code></pre></div><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">Replace <code>&lt;username&gt;</code> with your GitHub username.</td></tr></table></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Configure website metadata</p></section>
+<section class="topic source"><h2>Configure site identity</h2><div class="listingblock"><div class="title"><code>_config/site.yml</code></div><pre class="highlight"><code class="yaml">name: Write__Adapt__
+title: WriteAdapt - For People Who Love Content
+org: Strategy Media
+author: The Octocat
+author_url: https://github.com/octocat
+base_url: ''
+ctx_path: ''</code></pre></div></section>
+<section class="topic source"><h2>Additional configuration to customize processor</h2><div class="listingblock"><div class="title"><code>_config/site.yml</code></div><pre class="highlight"><code class="yaml"># append
+interpolate: false <i class="conum">1</i>
+haml:
+  :ugly: true <i class="conum">2</i></code></pre></div><div class="colist arabic"><table><tr><td><i class="conum">1</i></td><td>Disables interpolation of Ruby variable expressions in content (e.g., <code>#{name}</code>)</td></tr><tr><td><i class="conum">2</i></td><td>Disables pretty printing (indentation) of HTML output</td></tr></table></div></section>
+<section class="topic source"><h2>Clean and preview site to see changes</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake clean
+$ rake</code></pre></div><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">The clean step is required since a change to the configuration file, <code>_config/site.yml</code>, does not force pages to be regenerated automatically.</td></tr></table></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Activate AsciiDoc content</p></section>
+<section class="topic source"><h2>Enable Asciidoctor gem, set version</h2><div class="listingblock"><div class="title"><code>Gemfile</code></div><pre class="highlight"><code class="ruby">gem 'asciidoctor', '&gt;= 0.1.4.pre'</code></pre></div></section>
+<section class="topic source"><h2>Update gems</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ bundle install</code></pre></div><div class="literalblock"><div class="title">Console output</div><pre class="literal" style="max-height: 305px">Fetching gem metadata from https://rubygems.org/...
+Resolving dependencies...
+Using rake (10.1.0)
+Installing asciidoctor (0.1.4.preview.2)
+Using sass (3.2.9)
+Using bootstrap-sass (2.3.2.0)
+Using chunky_png (1.2.8)
+Using fssm (0.2.10)
+Using compass (0.12.2)
+Using compass-960-plugin (0.10.4)
+Using git (1.2.5)
+Using tilt (1.4.1)
+Using haml (4.0.3)
+Installing json (1.8.0)
+Using rb-fsevent (0.9.3)
+Using ffi (1.9.0)
+Using rb-inotify (0.9.0)
+Using rb-kqueue (0.2.0)
+Using listen (1.2.2)
+Using mini_portile (0.5.1)
+Using nokogiri (1.6.0)
+Using rack (1.5.2)
+Using mime-types (1.23)
+Using rest-client (1.6.7)
+Using ruby-s3cmd (0.1.5)
+Using zurb-foundation (4.2.3)
+Using awestruct (0.5.2)
+Using bundler (1.3.5)
+Your bundle is updated!</pre></div></section>
+<section class="topic source"><h2>Configure Asciidoctor</h2><div class="listingblock"><div class="title"><code>_config/site.yml</code></div><pre class="highlight"><code class="yaml"># append
+asciidoctor:
+  :safe: safe
+  :attributes:
+    sitename: WriteAdapt
+    base_url: ''
+    ctx_path: ''
+    idprefix: ''
+    idseparator: '-'
+    sectanchors: ''
+    icons: font</code></pre></div></section>
+<section class="topic source"><h2>Create a page in AsciiDoc format</h2><div class="listingblock"><div class="title"><code>about.adoc</code></div><pre class="highlight"><code class="asciidoc">= About {sitename} <i class="conum">1</i>
+Your Name
+:awestruct-layout: base <i class="conum">2</i>
+
+{sitename} was founded by {author} during a conference workshop.
+It's quickly becoming much bigger than this humble beginning.
+
+This page is written in http://asciidoc.org[AsciiDoc].
+It's transformed by http://awestruct.org[Awestruct] and http://asciidoctor.org[Asciidoctor] into a webpage for this static website.</code></pre></div><div class="colist arabic"><table><tr><td><i class="conum">1</i></td><td>Becomes main heading on the page</td></tr><tr><td><i class="conum">2</i></td><td>Specifies the layout to use to frame this content</td></tr></table></div></section>
+<section class="topic source"><h2>Add About link to navbar</h2><div class="listingblock"><div class="title"><code>_layouts/base.html.haml</code></div><pre class="highlight"><code class="haml">        %li.divider
+          %li
+            %a{:href=&gt;"#{site.ctx_path}/about.html"} About</code></pre></div></section>
+<section class="topic source"><h2>Clean and preview site to see changes</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake clean preview</code></pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Configure theme for website and AsciiDoc content</p></section>
+<section class="topic source"><h2>Clone Asciidoctor stylesheet factory as a submodule</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git submodule add -b embedded-stylesheets \
+https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git \
+stylesheets/_themes</code></pre></div></section>
+<section class="topic source"><h2>Import theme into main stylesheet</h2><ol class="arabic"><li>Delete all content in <code>stylesheets/app.scss</code></li><li>Populate the file with the content in the listing below</li></ol><div class="listingblock"><div class="title"><code>stylesheets/app.scss</code></div><pre class="highlight"><code class="css">@import "_themes/sass/foundation-embedded.scss";</code></pre></div><div class="admonitionblock tip"><table><tr><td class="icon"><i class="icon-tip"></i></td><td class="content">Alternative themes for the first line include <code>asciidoctor-embedded</code> and <code>rocket-panda-embedded</code>.</td></tr></table></div></section>
+<section class="topic source"><h2>Add extra styles needed for website layout</h2><div class="listingblock"><div class="title"><code>stylesheets/app.scss</code></div><pre class="highlight"><code class="css">@import "foundation/components/buttons";
+@import "foundation/components/top-bar";
+@import "foundation/components/inline-lists";
+$pagination-link-unavailable-font-color: #e9e9e9;
+@import "foundation/components/pagination";
+
+$footer-bg: $body-font-color !default;
+$footer-font-color: invert($body-font-color) !default;
+.top-bar a {
+  text-decoration: none;
+}
+h1 em {
+  letter-spacing: 1px;
+}
+body &gt; footer {
+  background: $footer-bg;
+  padding: $panel-padding;
+  color: $footer-font-color;
+}</code></pre></div></section>
+<section class="topic source"><h2>Load SASS functions for themes</h2><div class="listingblock"><div class="title">Add line to top of <code>_ext/pipeline.rb</code></div><pre class="highlight"><code class="ruby">require './stylesheets/_themes/lib/functions.rb'</code></pre></div></section>
+<section class="topic source"><h2>Remove unnecessary files</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rm stylesheets/{_normalize.scss,_settings.scss}</code></pre></div><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">Also remove the normalize.css link from <code>_layouts/base.html.haml</code>.</td></tr></table></div></section>
+<section class="topic source"><h2>Assign id to main content</h2><div class="listingblock"><div class="title">Edit <code>_layouts/base.html.haml</code></div><pre class="highlight"><code class="haml">  #content.row
+    .large-12.columns
+      ~ content</code></pre></div></section>
+<section class="topic source"><h2>Revise main heading on home page</h2><div class="listingblock"><div class="title">Edit <code>index.html.haml</code></div><pre class="highlight"><code class="haml">.row
+  .large-12.columns
+    %h1 Welcome to #{Asciidoctor.render site.name, :doctype =&gt; :inline}!</code></pre></div><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">Make sure to remove the <code>%hr</code> under the <code>%h1</code>.</td></tr></table></div></section>
+<section class="topic source"><h2>Format site name in nav bar</h2><div class="listingblock"><div class="title">Edit <code>_layouts/base.html.haml</code></div><pre class="highlight"><code class="haml">      %li.name
+        %h1
+          %a(href="#{site.ctx_path}/")=Asciidoctor.render(site.name, :doctype =&gt; :inline)</code></pre></div></section>
+<section class="topic source"><h2>Clean and preview site to see changes</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake clean preview</code></pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Convert a Markdown page to AsciiDoc</p></section>
+<section class="topic source"><h2>Formatting</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">**bold**
+
+*italic*
+
+`literal`
+
+`_posts`</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">*bold*
+
+_italic_
+
++literal+ (or `literal`)
+
+[path]+_posts+</code></pre></div></section>
+<section class="topic source"><h2>Document header</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">---
+layout: docs
+title: Writing posts
+prev_section: defining-frontmatter
+next_section: creating-pages
+permalink: /docs/writing-posts/
+---</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">= Writing posts
+:awestruct-layout: base
+:showtitle:
+:prev_section: defining-frontmatter
+:next_section: creating-pages</code></pre></div></section>
+<section class="topic source"><h2>Section titles (optional)</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">## The Posts Folder</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">== The Posts Folder</code></pre></div></section>
+<section class="topic source"><h2>Admonitions</h2><div class="listingblock"><div class="title">HTML embedded in Markdown</div><pre class="highlight"><code class="html">&lt;div class="note"&gt;
+  &lt;h5&gt;ProTip™: Show line numbers&lt;/h5&gt;
+  &lt;p&gt;
+    You can make code snippets include line-numbers by adding the word
+    &lt;code&gt;linenos&lt;/code&gt; to the end of the opening highlight tag like
+    this: &lt;code&gt;{% raw %}{% highlight ruby linenos %}{% endraw %}&lt;/code&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">[TIP, caption='ProTip(TM)']
+.Show line numbers
+You can make code snippets include line-numbers by adding the word
+`linenos` to the end of the opening highlight tag like this:
+`{% raw %}{% highlight ruby linenos %}{% endraw %}`</code></pre></div></section>
+<section class="topic source"><h2>Relative links</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">[directory structure](../structure)</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">link:../structure[directory structure]</code></pre></div></section>
+<section class="topic source"><h2>External links</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">[Markdown](http://daringfireball.net/projects/markdown/)</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">http://daringfireball.net/projects/markdown[Markdown]</code></pre></div></section>
+<section class="topic source"><h2>File links</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">[get the PDF]({% raw %}{{ site.url }}{% endraw %}/assets/mydoc.pdf)</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">link:{ctx_path}/assets/mydoc.pdf[get the PDF]</code></pre></div><div class="admonitionblock note"><table><tr><td class="icon"><i class="icon-note"></i></td><td class="content">The location of <code>ctx_path</code> must be set in the Awestruct configuration.</td></tr></table></div></section>
+<section class="topic source"><h2>Full example with links</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">As explained on the [directory structure](../structure) page, the `_posts`
+folder is where your blog posts will live. These files can be either
+[Markdown](http://daringfireball.net/projects/markdown/) or
+[Textile](http://textile.sitemonks.com/) formatted text files, and as long as
+they have [YAML front-matter](../frontmatter), they will be converted from their
+source format into an HTML page that is part of your static site.</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">As explained on the link:../structure[directory structure] page, the `_posts`
+folder is where your blog posts will live. These files can be either
+http://daringfireball.net/projects/markdown/[Markdown] or
+http://textile.sitemonks.com/[Textile] formatted text files, and as long as
+they have link:../frontmatter[YAML front-matter], they will be converted from
+their source format into an HTML page that is part of your static site.</code></pre></div></section>
+<section class="topic source"><h2>Images</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">![Helpful screenshot]({% raw %}{{ site.url }}{% endraw %}/assets/screenshot.jpg)</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">image::screenshots.jpg[Helpful screenshot]</code></pre></div><div class="admonitionblock note"><table><tr><td class="icon"><i class="icon-note"></i></td><td class="content">The location of <code>imagesdir</code> must be set in the Awestruct configuration.</td></tr></table></div></section>
+<section class="topic source"><h2>Smart quotes</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">One of Jekyll’s best aspects is that it is “blog aware”.</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">One of Jekyll's best aspects is that it is ``blog aware''.</code></pre></div></section>
+<section class="topic source"><h2>Source code</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">{% highlight bash %}
+YEAR-MONTH-DAY-title.MARKUP
+{% endhighlight %}</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">[source,bash]
+YEAR-MONTH-DAY-title.MARKUP</code></pre></div></section>
+<section class="topic source"><h2>Source code with callouts</h2><div class="listingblock"><div class="title">Markdown</div><pre class="highlight"><code class="no-highlight">{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to {|format| format.html # show.html.erb
+  }
+end
+{% endhighlight %}</code></pre></div><div class="listingblock"><div class="title">AsciiDoc</div><pre class="highlight"><code class="asciidoc">[source,ruby]
+def show
+  @widget = Widget(params[:id])
+  respond_to {|format| format.html #&lt;1&gt;
+  }
+end
+
+&lt;1&gt; show.html.erb</code></pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Activate posts extension</p></section>
+<section class="topic source"><h2>Create the posts directory in the project root</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ mkdir posts</code></pre></div></section>
+<section class="topic source"><h2>Enable the Posts extensions and Partial helper</h2><div class="listingblock"><div class="title"><code>_ext/pipeline.rb</code> (partial)</div><pre class="highlight"><code class="ruby">Awestruct::Extensions::Pipeline.new do
+
+  helper Awestruct::Extensions::Partial
+
+  extension Awestruct::Extensions::Posts.new '/posts'
+
+  extension Awestruct::Extensions::Paginator.new :posts, '/index',
+      :page_name =&gt; 'posts/page/', :per_page =&gt; 5
+
+  extension Awestruct::Extensions::Atomizer.new :posts, '/feed.xml',
+      :num_entries =&gt; 10
+
+end</code></pre></div></section>
+<section class="topic source"><h2>Create a directory for partials in the project root</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ mkdir _partials</code></pre></div></section>
+<section class="topic source"><h2>Create a partial to layout a post</h2><div class="listingblock"><div class="title"><code>_partials/post.html.haml</code></div><pre class="highlight"><code class="haml">- author_url = page.post.author_url || site.author_url
+- post_url = "#{site.ctx_path}#{page.post.url}"
+%article.post
+  %header.post-head
+    %h1.title
+      %a{:href=&gt;post_url}=page.post.title
+    %h4
+      %em by
+      %a.author{:href=&gt;author_url}
+        %img{:src=&gt;"#{author_url}.png"}(width=24 height=24)
+        =page.post.author || site.author
+      on
+      %time.pubdate{:datetime=&gt;page.post.date.strftime('%FT%T%:z')}
+        =page.post.date.strftime '%B %e, %Y'
+  .post-body
+    =page.post.content</code></pre></div></section>
+<section class="topic source"><h2>Create the base layout for a post</h2><div class="listingblock"><div class="title"><code>_layout/post.html.haml</code></div><pre class="highlight"><code class="haml">---
+layout: base
+---
+=partial 'post.html.haml', :post =&gt; page</code></pre></div></section>
+<section class="topic source"><h2>Create the layout for pagination</h2><div class="listingblock"><div class="title"><code>_partials/pagination.html.haml</code></div><pre class="highlight"><code class="haml" style="max-height: 335px">- paginator = page.paginator
+.pagination-centered
+  %ul.pagination
+    - if paginator.previous_page
+      %li.arrow
+        %a{:href=&gt;"#{site.ctx_path}#{paginator.previous_page.url}"}
+          %i.icon-step-backward
+    - else
+      %li.arrow.unavailable
+        %a{:href=&gt;'#'}
+          %i.icon-step-backward
+    %li #{paginator.current_page_index + 1} of #{paginator.pages.size}
+    - if paginator.next_page
+      %li.arrow
+        %a{:href=&gt;"#{site.ctx_path}#{paginator.next_page.url}"}
+          %i.icon-step-forward
+    - else
+      %li.arrow.unavailable
+        %a{:href=&gt;'#'}
+          %i.icon-step-forward</code></pre></div></section>
+<section class="topic source"><h2>Show all posts on front page</h2><div class="listingblock"><div class="title">Edit <code>index.html.haml</code></div><pre class="highlight"><code class="haml">---
+layout: base
+---
+.row
+  .large-12.columns
+    %h1 Welcome to #{Asciidoctor.render site.name, :doctype =&gt; :inline}!
+
+.row
+  .large-12.columns.posts
+    - page.posts.each do |post|
+      =partial 'post.html.haml', :post =&gt; post, :listing =&gt; true
+    =partial 'pagination.html.haml', :paginator =&gt; page.posts</code></pre></div></section>
+<section class="topic source"><h2>Create a new post</h2><div class="listingblock"><div class="title"><code>posts/docs-workshop-oscon-2013.adoc</code></div><pre class="highlight"><code class="asciidoc">= Docs Workshop at OSCON 2013
+Author Name
+2013-07-22
+:awestruct-tags: [conference, oscon]
+
+Content of first post, reporting from OSCON!</code></pre></div><div class="admonitionblock tip"><table><tr><td class="icon"><i class="icon-tip"></i></td><td class="content">The default layout for a post is <code>post</code>, so you don&#8217;t have to specify it in the AsciiDoc header.</td></tr></table></div></section>
+<section class="topic source"><h2>Add Atom feed site</h2><div class="listingblock"><div class="title">Edit <code>_layouts/base.html.haml</code></div><pre class="highlight"><code class="haml">%link{:rel=&gt;'alternate',
+      :type=&gt;'application/atom+xml',
+      :href=&gt;"#{site.ctx_path}/feed.xml"}</code></pre></div></section>
+<section class="topic source"><h2>Clean and preview site to see changes</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake clean preview</code></pre></div></section>
+<section class="topic source"><h2>Enable Tagger extension</h2><div class="listingblock"><div class="title">Add declaration <em>below</em> Paginator in <code>_ext/pipeline.rb</code></div><pre class="highlight"><code class="ruby">extension Awestruct::Extensions::Tagger.new :posts, '/index',
+    'posts/tag', :per_page =&gt; 5</code></pre></div></section>
+<section class="topic source"><h2>Add tag links below post</h2><div class="listingblock"><div class="title">Append to <code>_partials/post.html.haml</code></div><pre class="highlight"><code class="haml">  %footer.post-footer
+    - if page.post.tags
+      .tags
+        %i.label.icon-tags
+        =" #{page.post.tag_links}"</code></pre></div></section>
+<section class="topic source"><h2>Clean and preview site to see changes</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake clean preview</code></pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Deploy to GitHub Pages</p></section>
+<section class="topic source"><h2>Commit and push any outstanding changes</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git commit . -m 'Enhancements'
+$ git push origin master</code></pre></div></section>
+<section class="topic source"><h2>Create the publish branch, gh-pages</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git checkout --orphan gh-pages
+$ rm -rf *
+$ rm -rf .awestruct* .sass-* .gitignore .gitmodules .ruby-* .nojekyll
+$ git rm --cached *
+$ echo "GitHub Pages placeholder" &gt; index.html
+$ git add index.html
+$ git commit -m "Seed publish branch for GitHub Pages"</code></pre></div></section>
+<section class="topic source"><h2>Push the publish branch</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git push origin gh-pages</code></pre></div><div class="admonitionblock note"><table><tr><td class="icon"><i class="icon-note"></i></td><td class="content">By pushing the <strong>gh-pages</strong> branch, you also activated GitHub Pages to publish your website.</td></tr></table></div><p class="follow-up">View your website at:
+<a href="http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;/">http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;/</a> &#8658;</p></section>
+<section class="topic source"><h2>Setup the Awestruct GitHub Pages deployer</h2><div class="listingblock"><div class="title">Switch to the <code>master</code> branch</div><pre class="highlight"><code class="bash">$ git checkout master
+$ git submodule update</code></pre></div><div class="listingblock"><div class="title">Append to <code>_config/site.yml</code></div><pre class="highlight"><code class="yaml">profiles:
+  development:
+    deploy:
+      dummy:
+  production:
+    base_url: http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;
+    ctx_path: /writeadapt-&lt;username&gt;
+    asciidoctor:
+      :attributes:
+        base_url: http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;
+        ctx_path: /writeadapt-&lt;username&gt;
+        # necessary to set imagesdir to absolute path to prevent Awestruct from botching Atom feed
+        imagesdir: http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;/images
+    deploy:
+      host: github_pages
+      branch: gh-pages</code></pre></div></section>
+<section class="topic source"><h2>Commit deployer configuration</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ git commit _config/site.yml -m "Add profile for GitHub Pages deployment"
+$ git push origin master</code></pre></div></section>
+<section class="topic source"><h2>Deploy to GitHub Pages</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ rake clean deploy</code></pre></div><p class="follow-up">View your website again at:<br>
+<a href="http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;">http://&lt;username&gt;.github.io/writeadapt-&lt;username&gt;</a><br></p><div class="admonitionblock important"><table><tr><td class="icon"><i class="icon-important"></i></td><td class="content">Your Awestruct-based website is now live, and available worldwide!</td></tr></table></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Chunked content</p></section>
+<section class="topic source"><h2>Define excerpt for post</h2><div class="listingblock"><pre class="highlight"><code class="asciidoc">:excerpt: Excerpt of post.
+:awestruct-excerpt: {excerpt}
+
+{excerpt}</code></pre></div></section>
+<section class="topic source"><h2>Use post excerpt</h2><div class="listingblock"><div class="title">Revise <code>_partials/post.html.haml</code></div><pre class="highlight"><code class="haml">  .post-body
+    - if page.listing
+      %p=page.post.excerpt || summarize(html_to_text(page.post.content), 100)
+      %p
+        %a.small.secondary.button{:href=&gt;post_url} Read more...
+    - else
+      =page.post.content</code></pre></div></section><section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br>
+Adding different types of content</p></section>
+<section class="topic source"><h2>Edit <code>_config/site.yml</code> to configure AsciiDoc source highlighter</h2><div class="listingblock"><pre class="highlight"><code class="yaml">asciidoctor:
+  :safe: safe
+  :attributes:
+    sitename: WriteAdapt
+    base_url: ''
+    ctx_path: ''
+    idprefix: ''
+    idseparator: '-'
+    sectanchors: ''
+    icons: font
+    source-highlighter: coderay
+    coderay-css: style</code></pre></div></section>
+<section class="topic source"><h2>Add CodeRay gem to Gemfile</h2><div class="listingblock"><div class="title"><code>Gemfile</code> (partial)</div><pre class="highlight"><code class="ruby">gem 'coderay'</code></pre></div></section>
+<section class="topic source"><h2>Install new gems</h2><div class="listingblock"><pre class="highlight"><code class="bash">$ bundle install</code></pre></div></section>
+<section class="topic source"><h2>Add source code to page</h2><div class="listingblock"><pre class="highlight"><code class="asciidoc">[source,ruby]
+----
+require 'asciidoctor'
+
+puts Asciidoctor.render('Write__Adapt__', :doctype =&gt; :inline)
+----</code></pre></div></section>
+<section class="topic ending"><h2 class="name">Dan Allen&#160;&middot;&#160;Sarah White</h2><p class="footer"><em class="icon-twitter">&#8203;</em> @mojavelinux
+<em class="icon-twitter">&#8203;</em> @carbonfray</p></section>
+<script>
+//   __  __  __       .  __   ___  __
+//  |  \  / /__` |    | |  \ |__  /__`
+//  |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+//
+var Dz = {
+  remoteWindows: [],
+  idx: -1,
+  step: 0,
+  html: null,
+  slides: null,
+  progressBar : null,
+  params: {
+    autoplay: "1"
+  }
+};
+
+Dz.init = function() {
+  document.body.className = "loaded";
+  this.slides = Array.prototype.slice.call($$("body > section"));
+  this.progressBar = $("#progress-bar");
+  if (!this.progressBar) {
+    this.progressBar = document.createElement('div');
+    this.progressBar.id = 'progress-bar';
+    document.body.appendChild(this.progressBar);
+  }
+  this.html = document.body.parentNode;
+  this.setupParams();
+  this.onhashchange();
+  this.setupTouchEvents();
+  this.onresize();
+  this.setupView();
+}
+
+Dz.setupParams = function() {
+  var p = window.location.search.substr(1).split('&');
+  p.forEach(function(e, i, a) {
+    var keyVal = e.split('=');
+    Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+  });
+// Specific params handling
+  if (!+this.params.autoplay)
+    $$.forEach($$("video"), function(v){ v.controls = true });
+}
+
+Dz.onkeydown = function(aEvent) {
+  // skip keystrokes in a content editable region
+  if (aEvent.target.isContentEditable) {
+    return;
+  }
+
+  // Don't intercept keyboard shortcuts
+  if (aEvent.altKey
+    || aEvent.ctrlKey
+    || aEvent.metaKey
+    || aEvent.shiftKey) {
+    return;
+  }
+  if ( aEvent.keyCode == 37 // left arrow
+    || aEvent.keyCode == 38 // up arrow
+    || aEvent.keyCode == 33 // page up
+    || aEvent.keyCode == 8 // backspace
+    || aEvent.keyCode == 75 // k
+  ) {
+    aEvent.preventDefault();
+    this.back();
+  }
+  else if ( aEvent.keyCode == 39 // right arrow
+    || aEvent.keyCode == 40 // down arrow
+    || aEvent.keyCode == 34 // page down
+    || aEvent.keyCode == 32 // space
+    || aEvent.keyCode == 74 // j
+  ) {
+    aEvent.preventDefault();
+    this.forward();
+  }
+  else if (aEvent.keyCode == 35) { // end
+    aEvent.preventDefault();
+    this.goEnd();
+  }
+  else if (aEvent.keyCode == 36) { // home
+    aEvent.preventDefault();
+    this.goStart();
+  }
+  else if (aEvent.keyCode == 80) { // p
+    aEvent.preventDefault();
+    this.toggleContent();
+  }
+  else if (aEvent.keyCode == 70) { // f
+    aEvent.preventDefault();
+    this.goFullscreen();
+  }
+  else if (aEvent.keyCode == 79) { // o
+    aEvent.preventDefault();
+    this.toggleView();
+  }
+}
+
+/* Touch Events */
+
+Dz.setupTouchEvents = function() {
+  var orgX, newX;
+  var tracking = false;
+
+  var db = document.body;
+  db.addEventListener("touchstart", start.bind(this), false);
+  db.addEventListener("touchmove", move.bind(this), false);
+
+  function start(aEvent) {
+    aEvent.preventDefault();
+    tracking = true;
+    orgX = aEvent.changedTouches[0].pageX;
+  }
+
+  function move(aEvent) {
+    if (!tracking) return;
+    newX = aEvent.changedTouches[0].pageX;
+    if (orgX - newX > 100) {
+      tracking = false;
+      this.forward();
+    } else {
+      if (orgX - newX < -100) {
+        tracking = false;
+        this.back();
+      }
+    }
+  }
+}
+
+Dz.setupView = function() {
+  document.body.addEventListener("click", function ( e ) {
+    if (!Dz.html.classList.contains("view")) return;
+    if (!e.target || e.target.nodeName != "SECTION") return;
+
+    Dz.html.classList.remove("view");
+    Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+  }, false);
+}
+
+/* Adapt the size of the slides to the window */
+
+Dz.onresize = function() {
+  var db = document.body;
+  var sx = db.clientWidth / window.innerWidth;
+  var sy = db.clientHeight / window.innerHeight;
+  var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+  db.style.MozTransform = transform;
+  db.style.WebkitTransform = transform;
+  db.style.OTransform = transform;
+  db.style.msTransform = transform;
+  db.style.transform = transform;
+}
+
+Dz.getDetails = function(aIdx) {
+  var s = $("section:nth-of-type(" + aIdx + ")");
+  var d = s.$("details");
+  return d ? d.innerHTML : "";
+}
+
+Dz.getAspect = function() {
+  var match = document.documentElement.className.match(/\baspect-([0-9]+)-([0-9]+)\b/)
+  if (match)
+    return match[1] + ":" + match[2];
+  return "4:3";
+}
+
+Dz.onmessage = function(aEvent) {
+  var argv = aEvent.data.split(" "), argc = argv.length;
+  argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+  var win = aEvent.source;
+  if (argv[0] === "REGISTER" && argc === 1) {
+    this.remoteWindows.push(win);
+    this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+    this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    return;
+  }
+  if (argv[0] === "BACK" && argc === 1)
+    this.back();
+  if (argv[0] === "FORWARD" && argc === 1)
+    this.forward();
+  if (argv[0] === "START" && argc === 1)
+    this.goStart();
+  if (argv[0] === "END" && argc === 1)
+    this.goEnd();
+  if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+    this.toggleContent();
+  if (argv[0] === "SET_CURSOR" && argc === 2)
+    window.location.hash = "#" + argv[1];
+  if (argv[0] === "GET_CURSOR" && argc === 1)
+    this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+  if (argv[0] === "GET_NOTES" && argc === 1)
+    this.postMsg(win, "NOTES", this.getDetails(this.idx));
+  if (argv[0] === "GET_ASPECT" && argc === 1)
+    this.postMsg(win, "ASPECT", this.getAspect());
+}
+
+Dz.toggleContent = function() {
+  // If a Video is present in this new slide, play it.
+  // If a Video is present in the previous slide, stop it.
+  var s = $("section[aria-selected]");
+  if (s) {
+    var video = s.$("video");
+    if (video) {
+      if (video.ended || video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  }
+}
+
+Dz.setCursor = function(aIdx, aStep) {
+  // If the user change the slide number in the URL bar, jump
+  // to this slide.
+  aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+  window.location.hash = "#" + aIdx + aStep;
+}
+
+Dz.onhashchange = function() {
+  var cursor = window.location.hash.split("#"),
+      newidx = 1,
+      newstep = 0;
+  if (cursor.length == 2) {
+    newidx = ~~cursor[1].split(".")[0];
+    newstep = ~~cursor[1].split(".")[1];
+    if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+      newstep = 0;
+      newidx++;
+    }
+  }
+  this.setProgress(newidx, newstep);
+  if (newidx != this.idx) {
+    this.setSlide(newidx);
+  }
+  if (newstep != this.step) {
+    this.setIncremental(newstep);
+  }
+  for (var i = 0; i < this.remoteWindows.length; i++) {
+    this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+  }
+}
+
+Dz.back = function() {
+  if (this.idx == 1 && this.step == 0) {
+    return;
+  }
+  if (this.step == 0) {
+    this.setCursor(this.idx - 1,
+                   this.slides[this.idx - 2].$$('.incremental > *').length);
+  } else {
+    this.setCursor(this.idx, this.step - 1);
+  }
+}
+
+Dz.forward = function() {
+  if (this.idx >= this.slides.length &&
+      this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      return;
+  }
+  if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+    this.setCursor(this.idx + 1, 0);
+  } else {
+    this.setCursor(this.idx, this.step + 1);
+  }
+}
+
+Dz.goStart = function() {
+  this.setCursor(1, 0);
+}
+
+Dz.goEnd = function() {
+  var lastIdx = this.slides.length;
+  var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+  this.setCursor(lastIdx, lastStep);
+}
+
+Dz.toggleView = function() {
+  this.html.classList.toggle("view");
+
+  if (this.html.classList.contains("view")) {
+    $("section[aria-selected]").scrollIntoView(true);
+  }
+}
+
+Dz.setSlide = function(aIdx) {
+  this.idx = aIdx;
+  var old = $("section[aria-selected]");
+  var next = $("section:nth-of-type("+ this.idx +")");
+  if (old) {
+    var oldIncremental = old.$('.incremental > *[aria-selected]')
+    if (oldIncremental) {
+      oldIncremental.removeAttribute('aria-selected');
+    }
+    old.removeAttribute("aria-selected");
+    var video = old.$("video");
+    if (video) {
+      video.pause();
+    }
+  }
+  if (next) {
+    next.setAttribute("aria-selected", "true");
+    var video = next.$("video");
+    if (video && !!+this.params.autoplay) {
+      video.play();
+    }
+  } else {
+    // That should not happen
+    this.idx = -1;
+    // console.warn("Slide doesn't exist.");
+  }
+}
+
+Dz.setIncremental = function(aStep) {
+  this.step = aStep;
+  var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+  if (old) {
+    old.removeAttribute('aria-selected');
+  }
+  var incrementals = $$('.incremental');
+  if (this.step <= 0) {
+    $$.forEach(incrementals, function(aNode) {
+      aNode.removeAttribute('active');
+    });
+    return;
+  }
+  var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+  if (next) {
+    next.setAttribute('aria-selected', true);
+    next.parentNode.setAttribute('active', true);
+    var found = false;
+    $$.forEach(incrementals, function(aNode) {
+      if (aNode != next.parentNode)
+        if (found)
+          aNode.removeAttribute('active');
+        else
+          aNode.setAttribute('active', true);
+      else
+        found = true;
+    });
+  } else {
+    setCursor(this.idx, 0);
+  }
+  return next;
+}
+
+Dz.goFullscreen = function() {
+  var html = $('html'),
+      requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+  if (requestFullscreen) {
+    requestFullscreen.apply(html);
+  }
+}
+
+Dz.setProgress = function(aIdx, aStep) {
+  var slide = $("section:nth-of-type("+ aIdx +")");
+  if (!slide)
+    return;
+  var steps = slide.$$('.incremental > *').length + 1,
+      slideSize = 100 / (this.slides.length - 1),
+      stepSize = slideSize / steps;
+  this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+}
+
+Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+  aMsg = [aMsg];
+  for (var i = 2; i < arguments.length; i++)
+    aMsg.push(encodeURIComponent(arguments[i]));
+  aWin.postMessage(aMsg.join(" "), "*");
+}
+
+function init() {
+  Dz.init();
+  window.onkeydown = Dz.onkeydown.bind(Dz);
+  window.onresize = Dz.onresize.bind(Dz);
+  window.onhashchange = Dz.onhashchange.bind(Dz);
+  window.onmessage = Dz.onmessage.bind(Dz);
+}
+
+window.onload = init;
+
+// Helpers
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function (oThis) {
+
+    // closest thing possible to the ECMAScript 5 internal IsCallable
+    // function 
+    if (typeof this !== "function")
+    throw new TypeError(
+      "Function.prototype.bind - what is trying to be fBound is not callable"
+    );
+
+    var aArgs = Array.prototype.slice.call(arguments, 1),
+        fToBind = this,
+        fNOP = function () {},
+        fBound = function () {
+          return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                 aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+
+    return fBound;
+  };
+}
+
+var $ = (HTMLElement.prototype.$ = function(aQuery) {
+  return this.querySelector(aQuery);
+}).bind(document);
+
+var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+  return this.querySelectorAll(aQuery);
+}).bind(document);
+
+$$.forEach = function(nodeList, fun) {
+  Array.prototype.forEach.call(nodeList, fun);
+}
+</script>
+<script>
+var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/</gm,"&lt;").replace(/>/gm,"&gt;")}function b(p){for(var o=p.firstChild;o;o=o.nextSibling){if(o.nodeName=="CODE"){return o}if(!(o.nodeType==3&&o.nodeValue.match(/\s+/))){break}}}function h(p,o){return Array.prototype.map.call(p.childNodes,function(q){if(q.nodeType==3){return o?q.nodeValue.replace(/\n/g,""):q.nodeValue}if(q.nodeName=="BR"){return"\n"}return h(q,o)}).join("")}function a(q){var p=(q.className+" "+(q.parentNode?q.parentNode.className:"")).split(/\s+/);p=p.map(function(r){return r.replace(/^language-/,"")});for(var o=0;o<p.length;o++){if(e[p[o]]||p[o]=="no-highlight"){return p[o]}}}function c(q){var o=[];(function p(r,s){for(var t=r.firstChild;t;t=t.nextSibling){if(t.nodeType==3){s+=t.nodeValue.length}else{if(t.nodeName=="BR"){s+=1}else{if(t.nodeType==1){o.push({event:"start",offset:s,node:t});s=p(t,s);o.push({event:"stop",offset:s,node:t})}}}}return s})(q,0);return o}function j(x,v,w){var p=0;var y="";var r=[];function t(){if(x.length&&v.length){if(x[0].offset!=v[0].offset){return(x[0].offset<v[0].offset)?x:v}else{return v[0].event=="start"?x:v}}else{return x.length?x:v}}function s(A){function z(B){return" "+B.nodeName+'="'+l(B.value)+'"'}return"<"+A.nodeName+Array.prototype.map.call(A.attributes,z).join("")+">"}while(x.length||v.length){var u=t().splice(0,1)[0];y+=l(w.substr(p,u.offset-p));p=u.offset;if(u.event=="start"){y+=s(u.node);r.push(u.node)}else{if(u.event=="stop"){var o,q=r.length;do{q--;o=r[q];y+=("</"+o.nodeName.toLowerCase()+">")}while(o!=u.node);r.splice(q,1);while(q<r.length){y+=s(r[q]);q++}}}}return y+l(w.substr(p))}function f(r){function o(s){return(s&&s.source)||s}function p(t,s){return RegExp(o(t),"m"+(r.cI?"i":"")+(s?"g":""))}function q(z,x){if(z.compiled){return}z.compiled=true;var u=[];if(z.k){var s={};function A(B,t){t.split(" ").forEach(function(C){var D=C.split("|");s[D[0]]=[B,D[1]?Number(D[1]):1];u.push(D[0])})}z.lR=p(z.l||hljs.IR+"(?!\\.)",true);if(typeof z.k=="string"){A("keyword",z.k)}else{for(var y in z.k){if(!z.k.hasOwnProperty(y)){continue}A(y,z.k[y])}}z.k=s}if(x){if(z.bWK){z.b="\\b("+u.join("|")+")\\b(?!\\.)\\s*"}z.bR=p(z.b?z.b:"\\B|\\b");if(!z.e&&!z.eW){z.e="\\B|\\b"}if(z.e){z.eR=p(z.e)}z.tE=o(z.e)||"";if(z.eW&&x.tE){z.tE+=(z.e?"|":"")+x.tE}}if(z.i){z.iR=p(z.i)}if(z.r===undefined){z.r=1}if(!z.c){z.c=[]}for(var w=0;w<z.c.length;w++){if(z.c[w]=="self"){z.c[w]=z}q(z.c[w],z)}if(z.starts){q(z.starts,x)}var v=[];for(var w=0;w<z.c.length;w++){v.push(o(z.c[w].b))}if(z.tE){v.push(o(z.tE))}if(z.i){v.push(o(z.i))}z.t=v.length?p(v.join("|"),true):{exec:function(t){return null}}}q(r)}function d(E,F,C){function o(r,N){for(var M=0;M<N.c.length;M++){var L=N.c[M].bR.exec(r);if(L&&L.index==0){return N.c[M]}}}function s(L,r){if(L.e&&L.eR.test(r)){return L}if(L.eW){return s(L.parent,r)}}function t(r,L){return !C&&L.i&&L.iR.test(r)}function y(M,r){var L=G.cI?r[0].toLowerCase():r[0];return M.k.hasOwnProperty(L)&&M.k[L]}function H(){var L=l(w);if(!A.k){return L}var r="";var O=0;A.lR.lastIndex=0;var M=A.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=y(A,M);if(N){v+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=A.lR.lastIndex;M=A.lR.exec(L)}return r+L.substr(O)}function z(){if(A.sL&&!e[A.sL]){return l(w)}var r=A.sL?d(A.sL,w):g(w);if(A.r>0){v+=r.keyword_count;B+=r.r}return'<span class="'+r.language+'">'+r.value+"</span>"}function K(){return A.sL!==undefined?z():H()}function J(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){x+=L;w=""}else{if(M.eB){x+=l(r)+L;w=""}else{x+=L;w=r}}A=Object.create(M,{parent:{value:A}});B+=M.r}function D(L,r){w+=L;if(r===undefined){x+=K();return 0}var M=o(r,A);if(M){x+=K();J(M,r);return M.rB?0:r.length}var N=s(A,r);if(N){if(!(N.rE||N.eE)){w+=r}x+=K();do{if(A.cN){x+="</span>"}A=A.parent}while(A!=N.parent);if(N.eE){x+=l(r)}w="";if(N.starts){J(N.starts,"")}return N.rE?0:r.length}if(t(r,A)){throw new Error('Illegal lexem "'+r+'" for mode "'+(A.cN||"<unnamed>")+'"')}w+=r;return r.length||1}var G=e[E];f(G);var A=G;var w="";var B=0;var v=0;var x="";try{var u,q,p=0;while(true){A.t.lastIndex=p;u=A.t.exec(F);if(!u){break}q=D(F.substr(p,u.index-p),u[0]);p=u.index+q}D(F.substr(p));return{r:B,keyword_count:v,value:x,language:E}}catch(I){if(I.message.indexOf("Illegal")!=-1){return{r:0,keyword_count:0,value:l(F)}}else{throw I}}}function g(s){var o={keyword_count:0,r:0,value:l(s)};var q=o;for(var p in e){if(!e.hasOwnProperty(p)){continue}var r=d(p,s,false);r.language=p;if(r.keyword_count+r.r>q.keyword_count+q.r){q=r}if(r.keyword_count+r.r>o.keyword_count+o.r){q=o;o=r}}if(q.language){o.second_best=q}return o}function i(q,p,o){if(p){q=q.replace(/^((<[^>]+>|\t)+)/gm,function(r,v,u,t){return v.replace(/\t/g,p)})}if(o){q=q.replace(/\n/g,"<br>")}return q}function m(r,u,p){var v=h(r,p);var t=a(r);if(t=="no-highlight"){return}var w=t?d(t,v,true):g(v);t=w.language;var o=c(r);if(o.length){var q=document.createElement("pre");q.innerHTML=w.value;w.value=j(o,c(q),v)}w.value=i(w.value,u,p);var s=r.className;if(!s.match("(\\s|^)(language-)?"+t+"(\\s|$)")){s=s?(s+" "+t):t}r.innerHTML=w.value;r.className=s;r.result={language:t,kw:w.keyword_count,re:w.r};if(w.second_best){r.second_best={language:w.second_best.language,kw:w.second_best.keyword_count,re:w.second_best.r}}}function n(){if(n.called){return}n.called=true;Array.prototype.map.call(document.getElementsByTagName("pre"),b).filter(Boolean).forEach(function(o){m(o,hljs.tabReplace)})}function k(){window.addEventListener("DOMContentLoaded",n,false);window.addEventListener("load",n,false)}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=m;this.initHighlighting=n;this.initHighlightingOnLoad=k;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.BE={b:"\\\\[\\s\\S]",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(q,r){var o={};for(var p in q){o[p]=q[p]}if(r){for(var p in r){o[p]=r[p]}}return o}}();hljs.LANGUAGES.ruby=function(e){var a="[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?";var j="[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?";var g={keyword:"and false then defined module in return redo if BEGIN retry end for true self when next until do begin unless END rescue nil else break undef not super class case require yield alias while ensure elsif or include"};var c={cN:"yardoctag",b:"@[A-Za-z]+"};var k=[{cN:"comment",b:"#",e:"$",c:[c]},{cN:"comment",b:"^\\=begin",e:"^\\=end",c:[c],r:10},{cN:"comment",b:"^__END__",e:"\\n$"}];var d={cN:"subst",b:"#\\{",e:"}",l:a,k:g};var i=[e.BE,d];var b=[{cN:"string",b:"'",e:"'",c:i,r:0},{cN:"string",b:'"',e:'"',c:i,r:0},{cN:"string",b:"%[qw]?\\(",e:"\\)",c:i},{cN:"string",b:"%[qw]?\\[",e:"\\]",c:i},{cN:"string",b:"%[qw]?{",e:"}",c:i},{cN:"string",b:"%[qw]?<",e:">",c:i,r:10},{cN:"string",b:"%[qw]?/",e:"/",c:i,r:10},{cN:"string",b:"%[qw]?%",e:"%",c:i,r:10},{cN:"string",b:"%[qw]?-",e:"-",c:i,r:10},{cN:"string",b:"%[qw]?\\|",e:"\\|",c:i,r:10}];var h={cN:"function",bWK:true,e:" |$|;",k:"def",c:[{cN:"title",b:j,l:a,k:g},{cN:"params",b:"\\(",e:"\\)",l:a,k:g}].concat(k)};var f=k.concat(b.concat([{cN:"class",bWK:true,e:"$|;",k:"class module",c:[{cN:"title",b:"[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?",r:0},{cN:"inheritance",b:"<\\s*",c:[{cN:"parent",b:"("+e.IR+"::)?"+e.IR}]}].concat(k)},h,{cN:"constant",b:"(::)?(\\b[A-Z]\\w*(::)?)+",r:0},{cN:"symbol",b:":",c:b.concat([{b:j}]),r:0},{cN:"symbol",b:a+":",r:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",r:0},{cN:"number",b:"\\?\\w"},{cN:"variable",b:"(\\$\\W)|((\\$|\\@\\@?)(\\w+))"},{b:"("+e.RSR+")\\s*",c:k.concat([{cN:"regexp",b:"/",e:"/[a-z]*",i:"\\n",c:[e.BE,d]}]),r:0}]));d.c=f;h.c[1].c=f;return{l:a,k:g,c:f}}(hljs);hljs.LANGUAGES.java=function(a){return{k:"false synchronized int abstract float private char boolean static null if const for true while long throw strictfp finally protected import native final return void enum else break transient new catch instanceof byte super volatile case assert short package default double public try this switch continue throws",c:[{cN:"javadoc",b:"/\\*\\*",e:"\\*/",c:[{cN:"javadoctag",b:"(^|\\s)@[A-Za-z]+"}],r:10},a.CLCM,a.CBLCLM,a.ASM,a.QSM,{cN:"class",bWK:true,e:"{",k:"class interface",i:":",c:[{bWK:true,k:"extends implements",r:10},{cN:"title",b:a.UIR}]},a.CNM,{cN:"annotation",b:"@[A-Za-z]+"}]}}(hljs);hljs.LANGUAGES.xml=function(a){var c="[A-Za-z0-9\\._:-]+";var b={eW:true,c:[{cN:"attribute",b:c,r:0},{b:'="',rB:true,e:'"',c:[{cN:"value",b:'"',eW:true}]},{b:"='",rB:true,e:"'",c:[{cN:"value",b:"'",eW:true}]},{b:"=",c:[{cN:"value",b:"[^\\s/>]+"}]}]};return{cI:true,c:[{cN:"pi",b:"<\\?",e:"\\?>",r:10},{cN:"doctype",b:"<!DOCTYPE",e:">",r:10,c:[{b:"\\[",e:"\\]"}]},{cN:"comment",b:"<!--",e:"-->",r:10},{cN:"cdata",b:"<\\!\\[CDATA\\[",e:"\\]\\]>",r:10},{cN:"tag",b:"<style(?=\\s|>|$)",e:">",k:{title:"style"},c:[b],starts:{e:"</style>",rE:true,sL:"css"}},{cN:"tag",b:"<script(?=\\s|>|$)",e:">",k:{title:"script"},c:[b],starts:{e:"<\/script>",rE:true,sL:"javascript"}},{b:"<%",e:"%>",sL:"vbscript"},{cN:"tag",b:"</?",e:"/?>",c:[{cN:"title",b:"[^ />]+"},b]}]}}(hljs);hljs.LANGUAGES.xml=function(a){var c="[A-Za-z0-9\\._:-]+";var b={eW:true,c:[{cN:"attribute",b:c,r:0},{b:'="',rB:true,e:'"',c:[{cN:"value",b:'"',eW:true}]},{b:"='",rB:true,e:"'",c:[{cN:"value",b:"'",eW:true}]},{b:"=",c:[{cN:"value",b:"[^\\s/>]+"}]}]};return{cI:true,c:[{cN:"pi",b:"<\\?",e:"\\?>",r:10},{cN:"doctype",b:"<!DOCTYPE",e:">",r:10,c:[{b:"\\[",e:"\\]"}]},{cN:"comment",b:"<!--",e:"-->",r:10},{cN:"cdata",b:"<\\!\\[CDATA\\[",e:"\\]\\]>",r:10},{cN:"tag",b:"<style(?=\\s|>|$)",e:">",k:{title:"style"},c:[b],starts:{e:"</style>",rE:true,sL:"css"}},{cN:"tag",b:"<script(?=\\s|>|$)",e:">",k:{title:"script"},c:[b],starts:{e:"<\/script>",rE:true,sL:"javascript"}},{b:"<%",e:"%>",sL:"vbscript"},{cN:"tag",b:"</?",e:"/?>",c:[{cN:"title",b:"[^ />]+"},b]}]}}(hljs);hljs.LANGUAGES.asciidoc=function(a){return{c:[{cN:"comment",b:"^/{4,}\\n",e:"\\n/{4,}$",r:10},{cN:"comment",b:"^//",e:"$",r:0},{cN:"title",b:"^\\.\\w.*$"},{b:"^[=\\*]{4,}\\n",e:"\\n^[=\\*]{4,}$",r:10},{cN:"header",b:"^(={1,6}) .+?( \\1)?$",r:10},{cN:"header",b:"^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}$",r:10},{cN:"attribute",b:"^:.+?:",e:"\\s",eE:true,r:10},{cN:"attribute",b:"^\\[.+?\\]$",r:0},{cN:"blockquote",b:"^_{4,}\\n",e:"\\n_{4,}$",r:10},{cN:"code",b:"^[\\-\\.]{4,}\\n",e:"\\n[\\-\\.]{4,}$",r:10},{b:"^\\+{4,}\\n",e:"\\n\\+{4,}$",c:[{b:"<",e:">",sL:"xml",r:0}],r:10},{cN:"bullet",b:"^(\\*+|\\-+|\\.+|[^\\n]+?::)\\s+"},{cN:"label",b:"^(NOTE|TIP|IMPORTANT|WARNING|CAUTION):\\s+",r:10},{cN:"strong",b:"\\B\\*(?![\\*\\s])",e:"(\\n{2}|\\*)",c:[{b:"\\\\*\\w",r:0}]},{cN:"emphasis",b:"\\B'(?!['\\s])",e:"(\\n{2}|')",c:[{b:"\\\\'\\w",r:0}],r:0},{cN:"emphasis",b:"_(?![_\\s])",e:"(\\n{2}|_)",r:0},{cN:"code",b:"(`.+?`|\\+.+?\\+)",r:0},{cN:"code",b:"^[ \\t]",e:"$",r:0},{cN:"horizontal_rule",b:"^'{4,}[ \\t]*$",r:10},{b:"(link:)?(http|https|ftp|file|irc|image:?):\\S+\\[.*?\\]",rB:true,c:[{b:"(link|image:?):",r:0},{cN:"link_url",b:"\\w",e:"[^\\[]+",r:0},{cN:"link_label",b:"\\[",e:"\\]",eB:true,eE:true,r:0}],r:10}]}}(hljs);hljs.LANGUAGES.javascript=function(a){return{k:{keyword:"in if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const",literal:"true false null undefined NaN Infinity"},c:[a.ASM,a.QSM,a.CLCM,a.CBLCLM,a.CNM,{b:"("+a.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[a.CLCM,a.CBLCLM,{cN:"regexp",b:"/",e:"/[gim]*",i:"\\n",c:[{b:"\\\\[\\\\/]"}]},{b:"<",e:">;",sL:"xml"}],r:0},{cN:"function",bWK:true,e:"{",k:"function",c:[{cN:"title",b:"[A-Za-z$_][0-9A-Za-z$_]*"},{cN:"params",b:"\\(",e:"\\)",c:[a.CLCM,a.CBLCLM],i:"[\"'\\(]"}],i:"\\[|%"}]}}(hljs);
+</script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
