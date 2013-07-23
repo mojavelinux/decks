@@ -21,3 +21,6 @@ Boulder & Denver JUGs, May 2013::
   * link:discover-zen-writing-asciidoc/cojugs201305/index.html[Discover the zen of writing (Ascii)Docs] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/discover-zen-writing-asciidoc.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/discover-zen-writing-asciidoc/slides.adoc[source] ]
   * link:java-enterprise-testing/cojugs201305/index.html[Reducing Java Enterprise Testing to Child's Play] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/java-enterprise-testing.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/java-enterprise-testing/slides.adoc[source], https://github.com/mojavelinux/asciidoctor-servlet-demo[demo] ]
 
+OSCON 2013::
+
+  * link:docs-workshop/oscon2013/index.html[Easier Documentation, Simpler Websites and Faster Collaboration (Workshop)]
