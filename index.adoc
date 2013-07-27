@@ -24,3 +24,4 @@ Boulder & Denver JUGs, May 2013::
 OSCON 2013::
 
   * link:docs-workshop/oscon2013/index.html[Easier Documentation, Simpler Websites and Faster Collaboration (Workshop)]
+  * link:discover-zen-writing-asciidoc/oscon2013/index.html[Discover the Zen of Writing (Ascii)Docs]
