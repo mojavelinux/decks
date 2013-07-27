@@ -8,7 +8,7 @@ writing simple sectionless documents consisting only of a preamble.
 <div class="note">
   <h5>Note</h5>
   <p>The abstract, preface, appendix, bibliography, glossary and index
-  section titles are significant (*specialsections*).</p>
+  section titles are significant (<em>specialsections</em>).</p>
 </div>
 
 ## First section
