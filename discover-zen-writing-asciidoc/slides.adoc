@@ -1,28 +1,21 @@
-[[zen-of-writing]]
+[[discover-zen-of-writing]]
 = Discover the 'zen' of writing **[subtle]##(##Ascii[subtle]##)##Doc**s
-Dan Allen <http://github.com/mojavelinux>
-v1.0.0, Jul 17, 2013
-:title: Discover the zen of writing (Ascii)Docs
-:corpname: Red Hat, Inc.
+Dan Allen <http://github.com/mojavelinux[@mojavelinux]>
+v1.1.0, Jul 26, 2013
+//:corpname: Red Hat, Inc.
 :copyright: CC BY-SA 2.0
 :website: http://asciidoctor.org
 include::attributes.conf[]
 
 ////
-TODO:
-
-- add mobile screenshot of Asciidoctor website (or other Asciidoctor-styled sample app)
-- add AsciiDoc on JavaScript slide to cover Opal, show off docgist or graphgist
-- add slide to cover stylesheet factory, "Asciidoctor Foundation"
-- add slide for *this* presentation
-
-- add link to sample asciidoc/markdown/docbook documents
-- use labeled list (perhaps horizontal) to make DocBook even more verbose
-- rework or rethink "Inside Out" slide
+Prep:
+- have live preview setup
+- have quick reference PDF handy
+- have asciidoctor.org up
 ////
 
 [.topic.intro]
-== [small]*Writing*...
+== *Writing*...
 
 [.topic.intro]
 == Write to *write*
@@ -34,9 +27,9 @@ Word processors are *sabotaging* +
 your writing
 
 [NOTE.speaker]
---
+====
 * "Word processors are the real writer's block."
---
+====
 
 == !
 
@@ -48,32 +41,46 @@ your writing
 "I was spending more time *fixing syntax errors* than I was writing the documentation."
 -- Stuart Rackham (the creator of AsciiDoc) on DocBook
 
+ifdef::longform[]
 == !
 
 "I'm still not smart enough to be able to use WYSIWYG document editors."
 -- Tomáš Šedovič
+endif::longform[]
 
 [.topic.intro]
 == Get back to the *content*
 
 [NOTE.speaker]
---
+====
 * "Content is king!"
 * "Use what you know."
---
+====
+
+== !
+
+"The enjoyment of one's tools is an essential ingredient of successful work."
+-- Donald E. Knuth
+
+[.topic.intro]
+== ``It's just 'text', mate.''
+
+[NOTE.speaker]
+====
+* "AsciiDoc is easy to read in raw form."
+* "It's also easy to proof and edit."
+* "Only requires a text editor--your favorite text editor--to read and write"
+====
 
 [.topic]
-== Lightweight markup languages
+== http://en.wikipedia.org/wiki/Lightweight_markup_language[Lightweight markup languages]
 
 [.incremental]
 * Markdown
 * Textile
 * MediaWiki
 * reStructuredText
-//* Org-mode
 * *AsciiDoc*
-
-// http://en.wikipedia.org/wiki/Lightweight_markup_language
 
 [.terminal]
 == !
@@ -81,16 +88,6 @@ your writing
 ....
 include::snippets/asciidoc-asciiart.adoc[]
 ....
-
-[.topic.intro]
-== ``It's just 'text', mate.''
-
-[NOTE.speaker]
---
-* "AsciiDoc is easy to read in raw form."
-* "It's also easy to proof and edit."
-* "Only requires a text editor--your favorite text editor--to read and write"
---
 
 == What is AsciiDoc?
 
@@ -100,12 +97,13 @@ A [light]'lightweight', yet *powerful* text-based markup language and document g
 == !
 
 [.statement]
-{sp} [mild]*Mild* punctuation image:mild.png[role="pull-right"]
+[mild]*Mild* punctuation
+image:mild.png[role="pull-right"]
 
 [NOTE.speaker]
---
+====
 * "Mild punctuation, strong impact."
---
+====
 
 [.topic.source]
 == ``Looks like what it means''
@@ -115,56 +113,8 @@ A [light]'lightweight', yet *powerful* text-based markup language and document g
 include::snippets/text-formatting.adoc[]
 ----
 
-== Output formats (i.e., backends)
-
-image::export-icon.png[role="pull-left"]
-
-[.incremental.middle.pull-right]
-* HTML 5
-* DocBook 4.5
-* PDF [detail]#fop, dblatex#
-* eBook [detail]#ePub 2, mobi#
-* slides [detail]#deck.js, dzslides, reveal.js#
-* man pages
-* custom backends
-
-== !
-
-[.elevate, {caption-off}]
-.AsciiDoc processing
-image::asciidoc-processor.png[]
-
-== Asciidoctor
-
-[.statement]
-*[script]##&Aopf;##sciidoctor* +
-A modern, open source implementation of AsciiDoc [ruby]#in Ruby#
-
-[.corner]
-image::rubygems.png[Ruby gem]
-
-[.topic]
-== Built on Asciidoctor
-
-[.scatter.incremental]
-* Java integration
-* Maven plugin
-* Gradle plugin
-* Asciidoclet
-* Guard plugin
-* JavaScript port
-* Stylesheet factory
-* Asciidoctor website =>
-
-== !
-
-[{blank-title}]
-image::asciidoctor-org-writers-guide.png[]
-
 [.topic.intro]
-== *Side* by *side*
-
-// TODO center this slide?
+== The *syntax*
 
 [.topic.source.lhs]
 == Let's compare AsciiDoc...
@@ -175,9 +125,9 @@ include::snippets/sample-asciidoc.adoc[]
 ----
 
 [NOTE.speaker]
---
+====
 * "It's plain text...I *know* this."
---
+====
 
 [.topic.source]
 == ...to DocBook
@@ -208,11 +158,11 @@ include::snippets/sample-docbook.xml[lines=45..-1]
 ----
 
 [NOTE.speaker]
---
+====
 * "I looked across the room, asked 'Are you writing in DocBook?'"
 * "'How did you know?'"
 * "'Because I can only pick out about 5 works in a see of syntax highlighted XML'"
---
+====
 
 == !
 
@@ -220,9 +170,9 @@ include::snippets/sample-docbook.xml[lines=45..-1]
 -- Dag Wieers
 
 [NOTE.speaker]
---
+====
 * "Let me rephrase that for Dag."
---
+====
 
 == !
 
@@ -230,14 +180,9 @@ include::snippets/sample-docbook.xml[lines=45..-1]
 Writing *DocBook* is just... *inhumane*
 
 [NOTE.speaker]
---
+====
 * "AsciiDoc gets us back to what's important, _writing_."
---
-
-== !
-
-"The enjoyment of one's tools is an essential ingredient of successful work."
--- Donald E. Knuth
+====
 
 == Testimonial
 
@@ -260,6 +205,11 @@ It handles a lot of use cases well, and some other cases are still possible at l
 include::snippets/sample-asciidoc.adoc[]
 ----
 
+[NOTE.speaker]
+====
+* links are written in form similar to HTML links, intuitive to us
+====
+
 [.topic.source]
 == ...to Markdown
 
@@ -268,14 +218,7 @@ include::snippets/sample-asciidoc.adoc[]
 include::snippets/sample-markdown.md[]
 ----
 
-////
-[.incremental]
---
-[.followup]
-Hmm, can't seem to cover all the requirements :(
---
-////
-
+ifdef::longform[]
 [.topic.source]
 == Oh, Markdown
 
@@ -284,6 +227,7 @@ You can't seem to cover all the requirements :(
 
 [.followup]
 You're also mixing content and presentation.
+endif::longform[]
 
 == !
 
@@ -291,9 +235,6 @@ You're also mixing content and presentation.
 Markdown : *1st-grader*
 [center connector]#::#
 Asciidoc : *PhD student*
-
-//[.topic.intro]
-//== AsciiDoc to *X*
 
 [.topic]
 == Who's doing AsciiDoc?
@@ -306,11 +247,71 @@ Asciidoc : *PhD student*
 * http://static.springsource.org/spring-xd/docs/1.0.0.M1/reference/html[Spring XD] [detail]#Manual#
 * http://www.nofluffjuststuff.com/home/magazine_subscribe[NFJS] [detail]#Magazine#
 * Authors [detail]#Books, articles#
-* Publishers [detail]#O'Reilly (Atlas)#
+* *Publishers [detail]#O'Reilly#*
 * *GitHub!*
 
 [.topic.intro]
-== *Preview* [push1]#the big picture#
+== [smaller]*Processing* [push1]#AsciiDoc#
+
+== !
+
+[.elevate, {caption-off}]
+.AsciiDoc processor
+image::asciidoc-processor.png[]
+
+== Asciidoctor
+
+[.statement]
+*[script]##&Aopf;##sciidoctor* +
+A modern, open source implementation of AsciiDoc [ruby]#in Ruby#
+
+[.corner]
+image::rubygems.png[Ruby gem]
+
+== Output formats (i.e., backends)
+
+image::export-icon.png[role="pull-left"]
+
+[.incremental.middle.pull-right]
+* HTML 5
+* DocBook 4.5
+* PDF [detail]#fop, dblatex#
+* eBook [detail]#ePub 2, mobi#
+* slides [detail]#deck.js, dzslides, reveal.js#
+* man pages
+* custom backends
+
+[.topic]
+== Built on Asciidoctor
+
+[.scatter.incremental]
+* Guard plugin
+* Java integration
+* Maven plugin
+* Gradle plugin
+* Asciidoclet
+* JavaScript port
+* Stylesheet factory
+* Asciidoctor website =>
+
+== !
+
+[{blank-title}]
+image::asciidoctor-org-writers-guide.png[]
+
+== !
+
+[.middle.stretch-y]
+image::asciidoctor-org-mobile-view.png[]
+
+[.topic]
+== Asciidoctor Stylesheet Factory
+
+[.stretch-x]
+image::asciidoctor-styles.png[]
+
+[.topic.intro]
+== *Preview* [push2]#the big picture#
 
 == !
 
@@ -318,20 +319,22 @@ Asciidoc : *PhD student*
 .GitHub supports AsciiDoc!
 image::asciidoc-github.png[]
 
-[.topic.intro]
-== '``Pull-requestable''' docs
-
 == !
 
 [{caption-off}, crole="band"]
 .Fork and edit this file
 image::pull-requestable-docs.png[]
 
+////
 == !
 
 [.elevate, {caption-off}]
 .AsciiDoc processing
 image::asciidoc-processor.png[]
+////
+
+[.topic.intro]
+== '``Pull-requestable''' docs
 
 == !
 
@@ -340,7 +343,7 @@ image::asciidoc-processor.png[]
 image::live-preview.png[]
 
 [.topic.intro]
-== AsciiDoc on *Java*
+== Asciidoctor *Java*
 
 == !
 
@@ -355,7 +358,28 @@ image::asciidoctor-java.png[]
 image::asciidoctor-java-usage.png[]
 
 [.topic.intro]
-== *Evolving* [push4_7_5]#AsciiDoc#
+== Asciidoctor.**js**
+
+[.topic]
+== Opal
+
+[.middle.relax-x, {caption-off}]
+image::opal-logo.png[Opal,420,420]
+
+== !
+
+[.elevate, {caption-off}]
+.asciidoctor.js compilation
+image::asciidoctorjs-compile.png[]
+
+== !
+
+[{caption-off}, crole="band"]
+.http://docgist.nawroth.se
+image::docgist-writers-guide.png[]
+
+[.topic.intro]
+== *Evolving* [push9]#AsciiDoc#
 
 == !
 
@@ -366,50 +390,20 @@ image::asciidoctor-java-usage.png[]
 * UI buttons [detail]#btn:[Save]#
 * Menu selections [detail]#menu:File[Open...]#
 * Keystrokes [detail]#kbd:[Ctrl+Alt+T]#
-* Revision markup [detail]#$$[-]#strikeout#$$#
+//* Revision markup [detail]#$$[-]#strikeout#$$#
+* Attribute shorthand [detail]#$$[.results%header]$$#
 
+////
 [.topic.intro]
 == [block]*Scaling* your docs
 
 [NOTE.speaker]
---
+====
 * work inside out: evolve your document
 * back to basics: it's just text mate
 * forward to publishing: drop the <>, but not the semantics
---
-
+====
 ////
-[.topic.intro]
-== Work inside out
-
-== !
-
-[.middle]
-image::inside-out.png[Work inside out]
-
-[NOTE.speaker]
---
-* "Work inside out."
---
-////
-
-== !
-
-[.statement]
-Drop the [sans]*</>*, but not the *semantics*
-
-[NOTE.speaker]
---
-* "You can drop those damn angled brackets, but you don't have to drop the semantics."
-* "You get to work with a syntax a human can actually edit, _efficiently."
-
-//
-
-* "At any point, you can convert it to DocBook as a common exchange format.
-* "DocBook is the "no lock-in" exit path for AsciiDoc."
-* "You decide AsciiDoc doesn’t work out, you can bail on it without losing a word."
-* "What's to lose?"
---
 
 [.topic]
 == Zen is...
@@ -422,12 +416,30 @@ Drop the [sans]*</>*, but not the *semantics*
 * extensible
 
 [NOTE.speaker]
---
+====
 * "AsciiDoc is easy to read in raw form."
 * "It's also easy to proof and edit."
 * "The punctuation was chosen to look like what it means."
 * "Only requires a text editor to read or write."
---
+====
+
+== !
+
+[.statement]
+Drop the [sans]*</>*, but not the *semantics*
+
+[NOTE.speaker]
+====
+* "You can drop those damn angled brackets, but you don't have to drop the semantics."
+* "You get to work with a syntax a human can actually edit, _efficiently."
+
+//^
+
+* "At any point, you can convert it to DocBook as a common exchange format.
+* "DocBook is the "no lock-in" exit path for AsciiDoc."
+* "You decide AsciiDoc doesn’t work out, you can bail on it without losing a word."
+* "What's to lose?"
+====
 
 [.topic.intro]
 == ``It's just 'text', mate''
@@ -438,7 +450,20 @@ Drop the [sans]*</>*, but not the *semantics*
 [.footer]
 {website}
 
+////
 == !
 
 [.middle]
 image::nfjs-magazine-cover.jpg[]
+////
+
+////
+TODO:
+
+- cover graphgist
+- add slide for *this* presentation
+
+- add link to sample asciidoc/markdown/docbook documents
+- use labeled list (perhaps horizontal) to make DocBook even more verbose
+- rework or rethink "Inside Out" slide
+////
