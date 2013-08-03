@@ -39,7 +39,7 @@ your writing
 == !
 
 "I was spending more time *fixing syntax errors* than I was writing the documentation."
--- Stuart Rackham (the creator of AsciiDoc) on DocBook
+-- Stuart Rackham (creator of AsciiDoc) on DocBook
 
 ifdef::longform[]
 == !
@@ -188,8 +188,9 @@ Writing *DocBook* is just... *inhumane*
 
 "I'm amazed by AsciiDoc :-)
 It handles a lot of use cases well, and some other cases are still possible at least."
--- Anders Nawroth, Neo4j project
+-- Anders Nawroth (Neo4j documentation manager)
 
+//-- Anders Nawroth, Neo4j project
 // https://groups.google.com/forum/?fromgroups=#!topic/asciidoc/SdVwBi_T_1I
 
 == !
