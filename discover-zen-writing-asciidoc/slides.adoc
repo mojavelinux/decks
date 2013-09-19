@@ -1,8 +1,7 @@
 [[discover-zen-of-writing]]
 = Discover the 'zen' of writing **[subtle]##(##Ascii[subtle]##)##Doc**s
 Dan Allen <http://github.com/mojavelinux[@mojavelinux]>
-v1.1.0, Jul 26, 2013
-//:corpname: Red Hat, Inc.
+v1.1.1, Sept 19, 2013
 :copyright: CC BY-SA 2.0
 :website: http://asciidoctor.org
 include::attributes.conf[]
@@ -15,10 +14,10 @@ Prep:
 ////
 
 [.topic.intro]
-== *Writing*...
+== Write to *write*
 
 [.topic.intro]
-== Write to *write*
+== *Writing*...
 
 == !
 
@@ -62,16 +61,6 @@ endif::longform[]
 "The enjoyment of one's tools is an essential ingredient of successful work."
 -- Donald E. Knuth
 
-[.topic.intro]
-== ``It's just 'text', mate.''
-
-[NOTE.speaker]
-====
-* "AsciiDoc is easy to read in raw form."
-* "It's also easy to proof and edit."
-* "Only requires a text editor--your favorite text editor--to read and write"
-====
-
 [.topic]
 == http://en.wikipedia.org/wiki/Lightweight_markup_language[Lightweight markup languages]
 
@@ -88,6 +77,16 @@ endif::longform[]
 ....
 include::snippets/asciidoc-asciiart.adoc[]
 ....
+
+[.topic.intro]
+== ``It's just 'text', mate.''
+
+[NOTE.speaker]
+====
+* "AsciiDoc is easy to read in raw form."
+* "It's also easy to proof and edit."
+* "Only requires a text editor--your favorite text editor--to read and write"
+====
 
 == What is AsciiDoc?
 
@@ -286,12 +285,12 @@ image::export-icon.png[role="pull-left"]
 == Built on Asciidoctor
 
 [.scatter.incremental]
-* Guard plugin
 * Java integration
 * Maven plugin
 * Gradle plugin
+* Guard plugin
 * Asciidoclet
-* JavaScript port
+* Asciidoctor.js
 * Stylesheet factory
 * Asciidoctor website =>
 
@@ -343,6 +342,16 @@ image::asciidoc-processor.png[]
 .Editing AsciiDoc with live preview
 image::live-preview.png[]
 
+== !
+
+[title="", {caption-off}]
+image::gedit-asciidoc-outline.png[]
+
+== !
+
+[title="", {caption-off}]
+image::vim-voom-asciidoc-outline.png[]
+
 [.topic.intro]
 == Asciidoctor *Java*
 
@@ -379,9 +388,15 @@ image::asciidoctorjs-compile.png[]
 .http://docgist.nawroth.se
 image::docgist-writers-guide.png[]
 
-[.topic.intro]
-== *Evolving* [push9]#AsciiDoc#
+== !
+[{caption-off}, crole="band"]
+.Asciidoctor.js live preview
+image::asciidoctorjs-chrome-extension.png[]
 
+[.topic.intro]
+== *Extending* [push9]#AsciiDoc#
+
+////
 == !
 
 [.scatter]
@@ -393,6 +408,7 @@ image::docgist-writers-guide.png[]
 * Keystrokes [detail]#kbd:[Ctrl+Alt+T]#
 //* Revision markup [detail]#$$[-]#strikeout#$$#
 * Attribute shorthand [detail]#$$[.results%header]$$#
+////
 
 ////
 [.topic.intro]
