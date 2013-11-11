@@ -1,6 +1,7 @@
 [verse, OTR]
 --
-We come to the thrilling finale of our "Tech Writing against Word" pencraft drama.
+//We come to the thrilling finale of our "Tech Writing against Word" pencraft drama.
+Get ready for another thrilling episode, "Tech Writing Against Word", of our "Documentation Chronicles" pencraft drama.
 It's man versus machine.
 Old Doc Writer, author of three books on Java and captain of the tech tutorial team, is tasked to produce another demystifying masterpiece.
 Just around the next turn, a glitchy, cumbersome word processor lies in wait.
@@ -82,8 +83,10 @@ Incredible.
 
 But, wait! What's this?
 Oh, look at that!
-He's gonna extract it directly from the code instead.
-That's surely going to save him time on the next go around.
+He's annotating the code.
+That's surely going to add some utility.
+//He's gonna extract it directly from the code instead.
+//That's surely going to save him time on the next go around.
 
 There you have it, folks.
 Thanks to AsciiDoc, our hero has discovered writing zen.
