@@ -16,7 +16,7 @@
                 <date>2013-11-11</date>
                 <authorinitials>DW</authorinitials>
                 <revremark>
-                    The first epic adventure of The Documentation Chronicles.
+                    The first epic adventure.
                 </revremark>
             </revision>
         </revhistory>
@@ -26,7 +26,7 @@
         <simpara>
           Chronicles <emphasis>inexplicable</emphasis> hazards,
           <emphasis role="strong">vicious</emphasis> beasts &amp;
-          the battle against them.
+          the battle to tame them.
         </simpara>
     </preface>
     <chapter id="_writing_without_pain">
@@ -47,12 +47,12 @@
         </itemizedlist>
         <warning>
             <simpara>
-                Beware of untested <literal>code</literal>! The
-                <indexterm><primary>Wolpertinger</primary></indexterm> will find you.
+                Beware of untested <literal>code</literal>. The
+                <indexterm><primary>Wolpertinger</primary></indexterm> will find you!
             </simpara>
         </warning>
         <programlisting language="ruby" linenumbering="unnumbered">
-            <![CDATA[puts 'Beer, the cure for the common <XML> hell.']]>
+            <![CDATA[puts 'Beer, the cure for the common <XML>-hell.']]>
         </programlisting>
     </chapter>
 </book>

@@ -1,6 +1,6 @@
 = ``The Documentation Chronicles''
 Doc Writer <doc@asciidoc.org>
-v1.0, 2013-11-11: The first epic adventure of {doctitle}.
+v1.0, 2013-11-11: The first epic adventure.
 :toc: left
 :icons: font
 
@@ -14,7 +14,7 @@ A paragraph is just a paragraph. No special syntax required.
 * Beer
 * http://devoxx.be[Devoxx]
 
-WARNING: Beware of untested `code`! The ((Wolpertinger)) will find you.
+WARNING: Beware of untested `code`. The ((Wolpertinger)) will find you!
 
 [source,ruby]
 puts 'Beer, the cure for the common <XML>-hell.'

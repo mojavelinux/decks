@@ -1,0 +1,96 @@
+= ``The Documentation Chronicles''
+Doc Writer <doc@asciidoc.org>; Lazurus het_Draeke
+v1.0, 2013-11-11: The first epic adventure.
+:description: pass:quotes[This story chronicles the _inexplicable_ hazards and *vicious* beasts a +
+team must surmount and vanquish on the journey to finding their documentation's +
+true power.]
+:toc: left
+:source-highlighter: coderay
+:icons: font
+:doctype: book
+:numbered:
+:sectanchors:
+:idprefix:
+:imagesdir: ../images
+:wolper: http://en.wikipedia.org/wiki/Wolpertinger
+:caption:
+
+{description}
+
+== A City Under Siege
+
+This journey begins one late Monday afternoon at http://devoxx.be[Devoxx].
+Our team desperately needs coffee, but none of us dare open the theater doors.
+We hear:
+
+[quote]
+``Leave and face *code dismemberment and certain death*.''
+
+[role="th right"]
+.The vicious Wolpertinger
+image::wolpertinger.jpg[Wolpertinger]
+
+During the first conference workshop, a script-addicted warlock released a plague of Wolpertingers.
+
+You may not be familiar with these {wolper}[ravenous beasts], but, trust us, they'll eat your shorts and suck the loops from your code.
+
+Since then, we'd been searching for the security crew's defensive operations manual.
+But we couldn't find it, and those DefOps werewolves still hadn't returned from their trust building retreat at icon:beer[role=yellow] Bier Central.
+They'd left last night.
+Either they'd eaten each other, or they'd fallen victim to the Wolpertingers roaming the city streets.
+See <<a_recipe_for_potion>>.
+
+_Weak light from the hallway trickled across the theater, chased by a distant scream._
+
+CAUTION: Working with werewolves leads to howling.
+
+TIP: Try training aggressive regular expressions with Pavlovian reinforcement.
+
+== The Ravages of Writing
+
+`Crystalline' XML tags relentlessly bombarded the theater.
+
+.XML tags
+[source,xml]
+----
+<author>
+  <personname>
+    <firstname>Lazarus</firstname>
+    <surname>het Draeke</surname>
+  </personname>
+  <affiliation>
+    <jobtitle>Word SWAT Team Leader</jobtitle>
+  </affiliation>
+</author>
+----
+
+=== Writing Without Pain
+
+A paragraph is just a paragraph. No special syntax required.
+
+* Coffee icon:coffee[]
+* Beer icon:beer[role=yellow]
+* http://devoxx.be[Devoxx] icon:ticket[role=blue]
+
+WARNING: Beware of untested `code`! The ((Wolpertinger)) will find you.
+
+[source,ruby]
+puts 'Beer, the cure for the common <XML>-hell.' # <1>
+
+<1> Prints message to the console
+
+== A Recipe for Potion
+
+. Two fresh Burdockian leaves
+** They must be harvested by the light of the teal moons.
+. A hair of the Wolpertinger
+. Heat
+
+=== Searching for Burdockian
+
+Crawling through the twisted understory of the Hackergarten...
+
+[appendix]
+== Habitat
+
+The habitat of the Wopertinger is a dangerous one.

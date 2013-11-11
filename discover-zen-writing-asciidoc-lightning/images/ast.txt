@@ -1,0 +1,18 @@
+@startsalt
+{
+{T
+ + Document
+ ++ Section
+ +++ Block
+ +++ Block
+ ++++ Paragraph
+ ++++ Paragraph
+ +++ Block
+ ++ Section
+ +++ Block
+ +++ Block
+ ++++ Paragraph
+ ++ Section
+}
+}
+@endsalt
