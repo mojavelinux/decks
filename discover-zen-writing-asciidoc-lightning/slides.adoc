@@ -10,14 +10,34 @@ v2.0, Sep 8, 2013
 :icons: font
 include::attributes.conf[]
 
-//== !
-//
+[.topic.intro]
+== The Documentation Chronicles
+
+``Tech Writing Against Word.''
+
+== !
+
 //[%nocontrols]
-//video::screencast.ogv[]
+video::editing-word.ogv[]
 
 
 [.topic.intro]
-== *Writing*...
+== The Documentation Chronicles
+
+``Asciidoctor saves the day!''
+
+== !
+
+//[%nocontrols]
+video::editing-asciidoc.ogv[]
+
+
+[.topic.intro]
+== The Documentation Chronicles
+
+//``Adapt or die.''
+//``Adapting to an adaptive world.''
+``The adaptive storm.''
 
 
 [.terminal]
@@ -186,6 +206,41 @@ image::export-icon.png[role=pull-left]
 * slides [detail]#deck.js, dzslides, reveal.js#
 * man pages
 * custom, you name it!
+
+
+[.topic.source]
+== Custom block macro
+
+[source,asciidoc]
+----
+[filetree]
+--
+.Contents of project
+tree:path/to/project[]
+--
+----
+
+
+[.topic.source]
+== Register block macro
+
+[source,ruby]
+----
+block_macro :tree, TreeBlockMacro
+----
+
+
+[.topic.source]
+== Block macro extension
+
+[source,ruby]
+----
+def process parent, target, attributes
+  tree = %x(tree #{target}).lines.entries[1..-1].join
+  Asciidoctor::Block.new parent, :listing, :content_model => :verbatim,
+      :source => tree, :attributes => attributes
+end
+----
 
 
 [.topic.intro]
