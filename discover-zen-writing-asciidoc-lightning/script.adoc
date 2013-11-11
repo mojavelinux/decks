@@ -1,0 +1,114 @@
+[verse]
+--
+We come to the thrilling finale of our "Tech Writing against Word" pencraft drama.
+It's man versus machine.
+Old Doc Writer, author of three books on Java and captain of the tech tutorial team, is tasked to produce another demystifying masterpiece.
+Just around the next turn, though, a glitchy, cumbersome word processor lies in wait.
+
+"Well, old fella, it's time for me to get writing again.
+I've got my notes at my left side and my bourbon on the right.
+By morning, I should have this manuscript licked."
+
+Taking a swig of his drink, he gets down to business.
+But before our prolific hero can make it through the headline, the word processor begins foiling his plans.
+
+Like Goldilocks, it seems Old Doc is trying to find a zoom that feels just right.
+Enough to see the big picture, but not so much he has to squint.
+At last, he seems to have found a setting that works for him.
+
+// format document title, format author name, use field for author name
+With a better view, he's still not happy with the look of the headline.
+He's fallen trap to the font selector.
+That's going to come back to bite him later.
+...or sooner, from the look of where he's headed.
+
+After lots of fiddling, he's finally getting into the content.
+Look at that!
+The tool appears to anticipate his next words, but doesn't seem willing to follow through with the task.
+Annoyed by the taunting, Doc dives through the labyrinth of cascading menus again to find some reprieve.
+
+Back at the helm, he opens the first section, only to find himself once again playing formatter.
+It looks like this time he's discovered the style tool.
+He circles back and fixes up his styles, polishes off some blank line debris and once again returns to writing.
+
+But distraction doesn't stay away long for Old Doc.
+He's fallen victim to the bullets and numbering formatting trap.
+We'll take this opportunity for a brief message from our sponsor.
+
+And we're back...to more peril.
+The hits just keep on coming.
+If it's not one thing, it's another.
+Doc is trying to make a warning to his reader, but perhaps he's the one who needs to be warned.
+The sun's going to be up before he completes the first page.
+
+Oh no, now he faces the herculean task of inserting source code.
+Back to the labyrinth of menus and dialog windows he goes.
+This could take days.
+It's not looking good for Old Doc Writer.
+Can the book be saved?
+
+Fear not.
+This is a job for Asciidoctor.
+Get prepared for some real action.
+
+Our hero kicks his word processor to the curb and calls up his good 'ol fashioned text editor.
+
+Here comes the headline again.
+Now followed by the byline.
+Throw in a toc for extra credit.
+By golly, look at him go!
+
+Without the distractions in his way, he's sailing over the inline markup like a true pro.
+There are no bandits laying in wait around these corners.
+
+Hold on, he's coming up on the first bulleted list.
+Does it slow him down?
+No sir-ee.
+He cuts through it like a warm knife in butter.
+
+And how about the source code?
+No problem there.
+He just pastes it right in.
+Incredible.
+
+But, wait! What's this?
+Oh, look at that!
+He's gonna extract it directly from the code instead.
+That's surely going to save him time on the next go around.
+
+There you have it, folks.
+Thanks to AsciiDoc, our hero has discovered writing zen.
+--
+
+[verse]
+--
+Ohhh, ladies and gentlemen, let me give you a little inside information.
+
+These office suites are raking you and your content over the coals.
+
+You've got tools the size of cathedrals that work in opposition of getting anything written down.
+//Then you send binary documents attached to e-mail all over the world, but is it portable?
+Portable content?
+Ha!
+
+The next generation is right around the corner, folks.
+Guess what?
+They've got computers in their back pockets.
+It's time for your content to adapt or die.
+
+Word and PowerPoint are relics of the past.
+You gotta look into the future.
+//Markup languages are lightweight.
+Lightweight markup languages are in it.
+
+Hoo ha!
+Give me some AsciiDoc.
+--
+
+...
+
+[verse]
+--
+And so, we wish you best of luck finding your writing zen with AsciiDoc.
+Thank you for coming and good night.
+--

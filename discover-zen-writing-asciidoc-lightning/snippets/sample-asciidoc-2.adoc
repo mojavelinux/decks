@@ -1,0 +1,20 @@
+= ``The Documentation Chronicles''
+Doc Writer <doc@asciidoc.org>
+v1.0, 2013-11-11: The first epic adventure of {doctitle}.
+:toc: left
+:icons: font
+
+Chronicles _inexplicable hazards_, *vicious beasts* & the battle against them.
+
+== Writing Without Pain
+
+A paragraph is just a paragraph. No special syntax required.
+
+* Coffee
+* Beer
+* http://devoxx.be[Devoxx]
+
+WARNING: Beware of untested `code`! The Wolpertinger will find you.
+
+[source,ruby]
+puts 'Beer, the cure for the common <XML> hell.'

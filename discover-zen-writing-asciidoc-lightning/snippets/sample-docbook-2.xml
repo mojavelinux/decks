@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book xmlns="http://docbook.org/ns/docbook" lang="en">
+    <bookinfo>
+        <title>&#8220;The Documentation Chronicles&#8221;</title>
+        <date>2013-11-11</date>
+        <author>
+            <firstname>Doc</firstname>
+            <surname>Writer</surname>
+            <email>doc@asciidoc.org</email>
+        </author>
+        <authorinitials>DW</authorinitials>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>2013-11-11</date>
+                <authorinitials>DW</authorinitials>
+                <revremark>
+                    The first epic adventure of The Documentation Chronicles.
+                </revremark>
+            </revision>
+        </revhistory>
+    </bookinfo>
+    <preface>
+        <title/>
+        <simpara>
+          Chronicles <emphasis>inexplicable hazards</emphasis>,
+          <emphasis role="strong">vicious beasts</emphasis> and
+          the battle against them.
+        </simpara>
+    </preface>
+    <chapter id="_writing_without_pain">
+        <title>Writing Without Pain</title>
+        <simpara>
+            A paragraph is just a paragraph. No special syntax required.
+        </simpara>
+        <itemizedlist>
+            <listitem>
+                <simpara>Coffee</simpara>
+            </listitem>
+            <listitem>
+                <simpara>Beer</simpara>
+            </listitem>
+            <listitem>
+                <simpara><ulink url="http://devoxx.be">Devoxx</ulink></simpara>
+            </listitem>
+        </itemizedlist>
+        <warning>
+            <simpara>
+                Beware of untested <literal>code</literal>! The
+                Wolpertinger will find you.
+            </simpara>
+        </warning>
+        <programlisting language="ruby" linenumbering="unnumbered">
+            <![CDATA[puts 'Beer, the cure for the common <XML> hell.']]>
+        </programlisting>
+    </chapter>
+</book>
