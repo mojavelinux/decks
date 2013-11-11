@@ -20,12 +20,13 @@ At last, he seems to have found a setting that works for him.
 // format document title, format author name, use field for author name
 With a better view, he's still not happy with the look of the headline.
 It's those darn smart quotes.
-If only he could locate the hidden switch that activates the intelligence.
+If only he could locate the hidden switch that activates their intelligence.
 He's found it!
 
 Oh no, it looks like he's fallen trap to the font selector.
 That's going to come back to bite him later.
 ...or sooner, from the look of where he's headed.
+This is a tricky road you don't want to venture down, folks.
 
 Having had enough with all the fiddling, he's finally getting into the content.
 Look at that!
@@ -33,6 +34,7 @@ The tool is anticipating his next word, but doesn't seem to want to give it up.
 Annoyed by this taunting, Doc meanders again through the labyrinth of cascading menus to find reprieve.
 
 It's stop and go back at the helm, as he lashes back and forth between writing and formatting.
+Each setting seems to stick and trip him up.
 
 ////
 He's on to the first section, only to find himself once again enticed by the options.
@@ -49,7 +51,7 @@ And we're back...to more peril.
 The hits just keep on coming.
 If it's not one thing, it's another.
 Doc is trying to make a warning to his reader, but perhaps he's the one who needs to be warned.
-The sun's going to be up before he completes the first page.
+The sun's going to be up before he completes this page.
 
 Oh no, now he faces the herculean task of inserting source code.
 Back to the labyrinth of menus and dialog windows he goes.
