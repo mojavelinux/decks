@@ -61,9 +61,9 @@ Can this project be saved?
 
 Fear not.
 This is a job for Asciidoctor.
-Get prepared for some real action.
+Get prepared for some real action now.
 
-Our hero kicks his word processor to the curb and calls up his good 'ol fashioned text editor.
+First, our hero kicks his word processor to the curb and calls up his good 'ol fashioned text editor.
 
 Here comes the headline again.
 Now followed by the byline.
