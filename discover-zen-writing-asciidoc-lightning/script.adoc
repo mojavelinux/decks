@@ -1,14 +1,14 @@
 [verse, OTR]
 --
 //We come to the thrilling finale of our "Tech Writing against Word" pencraft drama.
-Get ready for another thrilling episode, "Tech Writing Against Word", of our "Documentation Chronicles" pencraft drama.
+Get ready for another thrilling episode of our "Documentation Chronicles" pencraft drama, "Tech Writing Against Word"
 It's man versus machine.
 Old Doc Writer, author of three books on Java and captain of the tech tutorial team, is tasked to produce another demystifying masterpiece.
 Just around the next turn, a glitchy, cumbersome word processor lies in wait.
 
 "Well, old fella, it's time for me to get writing again.
 I've got my notes at my left side and my bourbon on the right.
-By morning, I should have this manuscript licked."
+By morning, I should have this manuscript licked good."
 
 Taking a swig of his drink, he gets down to business.
 But before our prolific hero can make it through the headline, the word processor begins foiling his plans.
