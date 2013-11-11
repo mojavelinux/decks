@@ -24,8 +24,8 @@
     <preface>
         <title/>
         <simpara>
-          Chronicles <emphasis>inexplicable hazards</emphasis>,
-          <emphasis role="strong">vicious beasts</emphasis> and
+          Chronicles <emphasis>inexplicable</emphasis> hazards,
+          <emphasis role="strong">vicious</emphasis> beasts &amp;
           the battle against them.
         </simpara>
     </preface>
@@ -48,7 +48,7 @@
         <warning>
             <simpara>
                 Beware of untested <literal>code</literal>! The
-                Wolpertinger will find you.
+                <indexterm><primary>Wolpertinger</primary></indexterm> will find you.
             </simpara>
         </warning>
         <programlisting language="ruby" linenumbering="unnumbered">

@@ -4,7 +4,7 @@ v1.0, 2013-11-11: The first epic adventure of {doctitle}.
 :toc: left
 :icons: font
 
-Chronicles _inexplicable hazards_, *vicious beasts* & the battle against them.
+Chronicles _inexplicable_ hazards, *vicious* beasts & the battle to tame them.
 
 == Writing Without Pain
 
@@ -14,7 +14,7 @@ A paragraph is just a paragraph. No special syntax required.
 * Beer
 * http://devoxx.be[Devoxx]
 
-WARNING: Beware of untested `code`! The Wolpertinger will find you.
+WARNING: Beware of untested `code`! The ((Wolpertinger)) will find you.
 
 [source,ruby]
-puts 'Beer, the cure for the common <XML> hell.'
+puts 'Beer, the cure for the common <XML>-hell.'
