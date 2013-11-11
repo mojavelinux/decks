@@ -57,7 +57,7 @@ Oh no, now he faces the herculean task of inserting source code.
 Back to the labyrinth of menus and dialog windows he goes.
 This could take days.
 It's not looking good for Old Doc Writer.
-Can the book be saved?
+Can this project be saved?
 
 Fear not.
 This is a job for Asciidoctor.
