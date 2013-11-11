@@ -1,11 +1,11 @@
 [[zen-of-writing]]
 = Discover the '☯' of ✍ **[subtle]##(##Ascii[subtle]##)##Doc**s
 Dan Allen <http://github.com/mojavelinux[@mojavelinux]>
-v2.0, Sep 8, 2013
+v2.0, Nov 11, 2013
 :hashtag: #DV13-asciidoctor
 :copyright: CC BY-SA 2.0
 :website: http://asciidoctor.org
-:dzslides-aspect: 16-10
+:dzslides-aspect: 16-9
 :math:
 :icons: font
 include::attributes.conf[]
@@ -78,15 +78,15 @@ include::snippets/asciidoc-asciiart.adoc[]
 ....
 
 
-== What is AsciiDoc?
+== !
 
 //[.middle]
 //A [.light]_lightweight_, yet *powerful* text-based markup language and document generator.
 
-[.middle]
---
-*AsciiDoc* => lightweight *markup* + publishing *toolchain*
---
+[.statement]
+AsciiDoc is... +
+lightweight *markup* +
+[.push2]#publishing *toolchain*#
 
 [.topic.intro]
 == ``It's just _text_, mate''
@@ -108,7 +108,7 @@ image::rubygems.png[Ruby gem,200,141]
 
 == !
 
-[.elevate, {caption-off}]
+[.relax-y.elevate, {caption-off}]
 .AsciiDoc processor
 image::asciidoc-processor.png[]
 
@@ -118,7 +118,7 @@ image::asciidoc-processor.png[]
 
 [source, asciidoc]
 ----
-include::snippets/sample-asciidoc-2.adoc[]
+include::snippets/short-sample.adoc[]
 ----
 
 
@@ -127,7 +127,7 @@ include::snippets/sample-asciidoc-2.adoc[]
 
 [source, markdown]
 ----
-include::snippets/sample-markdown-2.md[]
+include::snippets/short-sample.md[]
 ----
 
 
@@ -136,7 +136,7 @@ include::snippets/sample-markdown-2.md[]
 
 [source, xml]
 ----
-include::snippets/sample-docbook-2.xml[lines=1..20]
+include::snippets/short-sample.xml[lines=1..20]
         ...
 ----
 
@@ -147,7 +147,7 @@ include::snippets/sample-docbook-2.xml[lines=1..20]
 [source, xml]
 ----
                 ...
-include::snippets/sample-docbook-2.xml[lines=21..39]
+include::snippets/short-sample.xml[lines=21..39]
                 ...
 ----
 
@@ -158,7 +158,7 @@ include::snippets/sample-docbook-2.xml[lines=21..39]
 [source, xml]
 ----
             ...
-include::snippets/sample-docbook-2.xml[lines=40..-1]
+include::snippets/short-sample.xml[lines=40..-1]
 ----
 
 
@@ -167,18 +167,20 @@ include::snippets/sample-docbook-2.xml[lines=40..-1]
 
 [source, asciidoc]
 ----
-include::snippets/sample-asciidoc-2.adoc[]
+include::snippets/short-sample.adoc[]
 ----
 
 
 [.intro.topic]
-== *big picture* tools
+== see the *big picture*
 
 
+////
 == !
 
 [{no-title}]
 image::vim-voom-asciidoc-outline.png[]
+////
 
 
 == !
@@ -187,11 +189,20 @@ image::vim-voom-asciidoc-outline.png[]
 image::gedit-asciidoc-outline.png[]
 
 
+////
 == !
 
-[.relax-y, {caption-off}, crole=band]
-.Editing AsciiDoc with live preview
+[{caption-off}, crole=band]
+//.Editing AsciiDoc with live preview
 image::live-preview.png[]
+////
+
+
+== !
+
+[{caption-off}]
+.Document AST
+image::ast.png[]
 
 
 == Output formats (i.e., backends)
@@ -205,7 +216,7 @@ image::export-icon.png[role=pull-left]
 * eBook [detail]#ePub 2, mobi#
 * slides [detail]#deck.js, dzslides, reveal.js#
 * man pages
-* custom, you name it!
+* *custom*&ndash;you name it!
 
 
 [.topic.source]
@@ -213,11 +224,8 @@ image::export-icon.png[role=pull-left]
 
 [source,asciidoc]
 ----
-[filetree]
---
 .Contents of project
 tree:path/to/project[]
---
 ----
 
 
@@ -235,10 +243,14 @@ block_macro :tree, TreeBlockMacro
 
 [source,ruby]
 ----
-def process parent, target, attributes
-  tree = %x(tree #{target}).lines.entries[1..-1].join
-  Asciidoctor::Block.new parent, :listing, :content_model => :verbatim,
-      :source => tree, :attributes => attributes
+class TreeBlockMacro < BlockMacroProcessor
+  def process(parent, target, attributes)
+    tree = %x(tree #{target}).lines.entries[1..-1].join
+    Block.new(parent, :listing,
+        :content_model => :verbatim,
+        :source => tree,
+        :attributes => attributes)
+  end
 end
 ----
 
@@ -256,16 +268,16 @@ The [.ruby]*Ruby* Programming Language on the JVM
 
 == !
 
-[.elevate, {caption-off}]
+[{caption-off}]
 .AsciidoctorJ
-image::asciidoctor-java.png[]
+image::asciidoctor-java.png[AsciidoctorJ processor]
 
 
 == !
 
-[.elevate, {caption-off}]
-.Asciidoctor Java build plugins
-image::asciidoctor-java-usage.png[]
+[{caption-off}]
+.AsciidoctorJ build plugins
+image::asciidoctor-java-usage.png[AsciidoctorJ usage]
 
 
 == !
@@ -281,6 +293,7 @@ image::asciidoctor-java-usage.png[]
 
 [.statement]
 *Opal* +
+{zwsp} +
 A [.ruby]#Ruby# to [.javascript]#JavaScript# cross compiler
 
 [.top.corner]
@@ -289,22 +302,33 @@ image::opal-logo.png[Opal,200,200]
 
 == !
 
-[.elevate, {caption-off}]
+[.relax-y.elevate, {caption-off}]
 .asciidoctor.js compilation
 image::asciidoctorjs-compile.png[]
 
 
 == !
 
-[{caption-off}, crole="band"]
-.http://docgist.nawroth.se
-image::docgist-writers-guide.png[]
+[{caption-off}, crole=band]
+.AsciiDoc rendering on GitHub
+//image::docgist-writers-guide.png[]
+image::github-sample.png[]
 
 
 == !
+
 [{caption-off}, crole=band]
-.Asciidoctor.js live preview
-image::asciidoctorjs-chrome-extension.png[]
+.DocGist
+//image::docgist-writers-guide.png[]
+image::docgist-sample.png[]
+
+
+== !
+
+[{caption-off}, crole=band]
+.Asciidoctor.js Browser Extension
+//image::asciidoctorjs-chrome-extension.png[]
+image::chrome-sample.png[]
 
 
 [.topic.intro]
@@ -330,9 +354,15 @@ The Unicode Standard is the universal character-encoding scheme for written char
 
 == !
 
+[{caption-off}, crole=band]
+.Design Legibility & Aesthetics
+image::asciidoctor-styles.png[]
+
+
+== !
+
 [.statement]
-Drop the [.sans]*</>*, +
-{zwsp} +
+Drop the [.sans]*</>* +
 not the *semantics*
 
 
@@ -360,25 +390,4 @@ not the *semantics*
 * Speed
 * Tooling (docgist, browsers extensions)
 * Emphasize project resources; adoption; # of repos
-////
-
-////
-AsciiDoc is...
-
-text-based markup
-
-a document generator (or text processor)
-
-UTF-8 compatible
-
-an API
-
-speaking of API, runs on the JVM
-
-Atwood's law:
-Any application that can be written in JavaScript will eventually be written in JavaScript.
-
-asciidoctor.js
-
-
 ////
