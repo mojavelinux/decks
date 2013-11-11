@@ -1,9 +1,9 @@
-[verse]
+[verse, OTR]
 --
 We come to the thrilling finale of our "Tech Writing against Word" pencraft drama.
 It's man versus machine.
 Old Doc Writer, author of three books on Java and captain of the tech tutorial team, is tasked to produce another demystifying masterpiece.
-Just around the next turn, though, a glitchy, cumbersome word processor lies in wait.
+Just around the next turn, a glitchy, cumbersome word processor lies in wait.
 
 "Well, old fella, it's time for me to get writing again.
 I've got my notes at my left side and my bourbon on the right.
@@ -18,21 +18,30 @@ At last, he seems to have found a setting that works for him.
 
 // format document title, format author name, use field for author name
 With a better view, he's still not happy with the look of the headline.
-He's fallen trap to the font selector.
+It's those darn smart quotes.
+If only he could locate the hidden switch that activates the intelligence.
+He's found it!
+
+Oh no, it looks like he's fallen trap to the font selector.
 That's going to come back to bite him later.
 ...or sooner, from the look of where he's headed.
 
-After lots of fiddling, he's finally getting into the content.
+Having had enough with all the fiddling, he's finally getting into the content.
 Look at that!
-The tool appears to anticipate his next words, but doesn't seem willing to follow through with the task.
-Annoyed by the taunting, Doc dives through the labyrinth of cascading menus again to find some reprieve.
+The tool is anticipating his next word, but doesn't seem to want to give it up.
+Annoyed by this taunting, Doc meanders again through the labyrinth of cascading menus to find reprieve.
 
-Back at the helm, he opens the first section, only to find himself once again playing formatter.
+It's stop and go back at the helm, as he lashes back and forth between writing and formatting.
+
+////
+He's on to the first section, only to find himself once again enticed by the options.
 It looks like this time he's discovered the style tool.
 He circles back and fixes up his styles, polishes off some blank line debris and once again returns to writing.
+////
 
-But distraction doesn't stay away long for Old Doc.
-He's fallen victim to the bullets and numbering formatting trap.
+Distraction doesn't stay away long for Old Doc.
+On to the first section, he's fallen victim to the bullets and numbering trap.
+//He's fallen victim to the bullets and numbering formatting trap.
 We'll take this opportunity for a brief message from our sponsor.
 
 And we're back...to more peril.
@@ -80,34 +89,33 @@ There you have it, folks.
 Thanks to AsciiDoc, our hero has discovered writing zen.
 --
 
-[verse]
+[verse, Occult]
 --
 Ohhh, ladies and gentlemen, let me give you a little inside information.
 
 These office suites are raking you and your content over the coals.
 
 You've got tools the size of cathedrals that work in opposition of getting anything written down.
-//Then you send binary documents attached to e-mail all over the world, but is it portable?
+Then you stuff those binary balls of content into email and infest the web with them like a mutating virus.
 Portable content?
 Ha!
 
 The next generation is right around the corner, folks.
-Guess what?
-They've got computers in their back pockets.
+They're carrying around computers in their back pocket!
+It's an adaptive world out there.
 It's time for your content to adapt or die.
 
 Word and PowerPoint are relics of the past.
 You gotta look into the future.
-//Markup languages are lightweight.
 Lightweight markup languages are in it.
 
-Hoo ha!
 Give me some AsciiDoc.
+Hoo ha!
 --
 
 ...
 
-[verse]
+[verse, OTR]
 --
 And so, we wish you best of luck finding your writing zen with AsciiDoc.
 Thank you for coming and good night.
