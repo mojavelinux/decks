@@ -185,7 +185,7 @@ image::vim-voom-asciidoc-outline.png[]
 
 == !
 
-[{no-title}]
+[.center.relax-x, {no-title}]
 image::gedit-asciidoc-outline.png[]
 
 
@@ -232,18 +232,23 @@ tree:path/to/project[]
 [.topic.source]
 == Register block macro
 
-[source,ruby]
+[source,no-highlight]
 ----
-block_macro :tree, TreeBlockMacro
+Extensions.register do
+
+  block_macro :tree, TreeBlockMacro
+
+end
 ----
 
 
 [.topic.source]
 == Block macro extension
 
-[source,ruby]
+[source,no-highlight]
 ----
 class TreeBlockMacro < BlockMacroProcessor
+
   def process(parent, target, attributes)
     tree = %x(tree #{target}).lines.entries[1..-1].join
     Block.new(parent, :listing,
@@ -251,6 +256,7 @@ class TreeBlockMacro < BlockMacroProcessor
         :source => tree,
         :attributes => attributes)
   end
+
 end
 ----
 
