@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" lang="en">
+<bookinfo>
+<title>&#8220;The Documentation Chronicles&#8221;</title>
+<date>2013-11-11</date>
+<authorgroup>
+<author>
+<firstname>Doc</firstname>
+
+<surname>Writer</surname>
+<email>doc@asciidoc.org</email>
+</author>
+
+<author>
+<firstname>Lazurus</firstname>
+<othername>het</othername>
+<surname>Draeke</surname>
+
+</author>
+
+</authorgroup>
+<revhistory>
+<revision>
+<revnumber>1.0</revnumber>
+<date>2013-11-11</date>
+<authorinitials>DW</authorinitials>
+<revremark>The first epic adventure.</revremark>
+</revision>
+</revhistory>
+
+
+
+</bookinfo>
+<preface>
+<title></title>
+<simpara>This story chronicles the <emphasis>inexplicable</emphasis> hazards and <emphasis role="strong">vicious</emphasis> beasts a team must surmount and vanquish on the journey to finding their documentation&#8217;s true power.</simpara>
+</preface>
+
+<chapter id="a_city_under_siege">
+<title>A City Under Siege</title>
+<simpara>This journey begins one late Monday afternoon at <ulink url="http://devoxx.be">Devoxx</ulink>.
+Our team desperately needs coffee, but none of us dare open the theater doors.
+We hear:</simpara>
+<blockquote>
+  
+<simpara>&#8220;Leave and face <emphasis role="strong">code dismemberment and certain death</emphasis>.&#8221;</simpara>
+</blockquote>
+
+<figure role="th right">
+<title>The vicious Wolpertinger</title>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="../images/wolpertinger.jpg"/>
+    </imageobject>
+    <textobject><phrase>Wolpertinger</phrase></textobject>
+  </mediaobject>
+</figure>
+
+<simpara>During the first conference workshop, a script-addicted warlock released a plague of Wolpertingers.</simpara>
+<simpara>You may not be familiar with these <ulink url="http://en.wikipedia.org/wiki/Wolpertinger">ravenous beasts</ulink>, but, trust us, they&#8217;ll eat your shorts and suck the loops from your code.</simpara>
+<simpara>Since then, we&#8217;d been searching for the security crew&#8217;s defensive operations manual.
+But we couldn&#8217;t find it, and those DefOps werewolves still hadn&#8217;t returned from their trust building retreat at <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="./images/icons/beer.png"/>
+  </imageobject>
+  <textobject><phrase>beer</phrase></textobject>
+</inlinemediaobject> Bier Central.
+They&#8217;d left last night.
+Either they&#8217;d eaten each other, or they&#8217;d fallen victim to the Wolpertingers roaming the city streets.
+See <xref linkend="a_recipe_for_potion"/>.</simpara>
+<simpara><emphasis>Weak light from the hallway trickled across the theater, chased by a distant scream.</emphasis></simpara>
+<caution>
+<simpara>Working with werewolves leads to howling.</simpara>
+</caution>
+
+<tip>
+<simpara>Try training aggressive regular expressions with Pavlovian reinforcement.</simpara>
+</tip>
+
+</chapter>
+<chapter id="the_ravages_of_writing">
+<title>The Ravages of Writing</title>
+<simpara>&#8216;Crystalline&#8217; XML tags relentlessly bombarded the theater.</simpara>
+<formalpara>
+<title>XML tags</title>
+<para>
+<programlisting language="xml" linenumbering="unnumbered">&lt;author&gt;
+  &lt;personname&gt;
+    &lt;firstname&gt;Lazarus&lt;/firstname&gt;
+    &lt;surname&gt;het Draeke&lt;/surname&gt;
+  &lt;/personname&gt;
+  &lt;affiliation&gt;
+    &lt;jobtitle&gt;Word SWAT Team Leader&lt;/jobtitle&gt;
+  &lt;/affiliation&gt;
+&lt;/author&gt;</programlisting>
+</para>
+</formalpara>
+
+<section id="writing_without_pain">
+<title>Writing Without Pain</title>
+<simpara>A paragraph is just a paragraph. No special syntax required.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Coffee <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="./images/icons/coffee.png"/>
+  </imageobject>
+  <textobject><phrase>coffee</phrase></textobject>
+</inlinemediaobject></simpara>
+</listitem>
+<listitem>
+<simpara>Beer <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="./images/icons/beer.png"/>
+  </imageobject>
+  <textobject><phrase>beer</phrase></textobject>
+</inlinemediaobject></simpara>
+</listitem>
+<listitem>
+<simpara><ulink url="http://devoxx.be">Devoxx</ulink> <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="./images/icons/ticket.png"/>
+  </imageobject>
+  <textobject><phrase>ticket</phrase></textobject>
+</inlinemediaobject></simpara>
+</listitem>
+</itemizedlist>
+
+<warning>
+<simpara>Beware of untested <literal>code</literal>! The <indexterm><primary>Wolpertinger</primary></indexterm>Wolpertinger will find you.</simpara>
+</warning>
+
+<programlisting language="ruby" linenumbering="unnumbered">puts 'Beer, the cure for the common &lt;XML&gt;-hell.' <co id="CO1-1"/></programlisting>
+
+<calloutlist>
+  
+  <callout arearefs="CO1-1">
+    <para>Prints message to the console</para>
+    
+  </callout>
+  
+</calloutlist>
+
+</section>
+</chapter>
+<chapter id="a_recipe_for_potion">
+<title>A Recipe for Potion</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Two fresh Burdockian leaves</simpara>
+<itemizedlist>
+<listitem>
+<simpara>They must be harvested by the light of the teal moons.</simpara>
+</listitem>
+</itemizedlist>
+
+</listitem>
+<listitem>
+<simpara>A hair of the Wolpertinger</simpara>
+</listitem>
+<listitem>
+<simpara>Heat</simpara>
+</listitem>
+</orderedlist>
+
+<section id="searching_for_burdockian">
+<title>Searching for Burdockian</title>
+<simpara>Crawling through the twisted understory of the Hackergarten&#8230;</simpara>
+</section>
+</chapter>
+<appendix id="habitat">
+<title>Habitat</title>
+<simpara>The habitat of the Wopertinger is a dangerous one.</simpara>
+</appendix>
+<index>
+<title>Index</title>
+</index>
+</book>
