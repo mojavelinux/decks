@@ -1,8 +1,8 @@
 [[zen-of-writing]]
 = Discover the '☯' of ✍ **[subtle]##(##Ascii[subtle]##)##Doc**s
 Dan Allen <http://github.com/mojavelinux[@mojavelinux]>
-v2.0, Nov 11, 2013
-:hashtag: #DV13-asciidoctor
+v2.1, Dec 4, 2013
+:hashtag: #asciidoctor #rwx
 :copyright: CC BY-SA 2.0
 :website: http://asciidoctor.org
 :dzslides-aspect: 16-9
@@ -15,9 +15,9 @@ include::attributes.conf[]
 
 ``Tech Writing Against Word.''
 
+
 == !
 
-//[%nocontrols]
 video::editing-word.ogv[]
 
 
@@ -26,9 +26,9 @@ video::editing-word.ogv[]
 
 ``Asciidoctor saves the day!''
 
+
 == !
 
-//[%nocontrols]
 video::editing-asciidoc.ogv[]
 
 
@@ -87,6 +87,14 @@ include::snippets/asciidoc-asciiart.adoc[]
 AsciiDoc is... +
 lightweight *markup* +
 [.push2]#publishing *toolchain*#
+
+
+== !
+
+[.statement]
+[mild]*Mild* punctuation
+image:mild.png[role="pull-right"]
+
 
 [.topic.intro]
 == ``It's just _text_, mate''
@@ -198,13 +206,6 @@ image::live-preview.png[]
 ////
 
 
-== !
-
-[{caption-off}]
-.Document AST
-image::ast.png[]
-
-
 == Output formats (i.e., backends)
 
 image::export-icon.png[role=pull-left]
@@ -218,7 +219,51 @@ image::export-icon.png[role=pull-left]
 * man pages
 * *custom*&ndash;you name it!
 
+[.topic.intro]
+== Extensions
 
+
+== !
+
+[{caption-off}]
+.Document AST
+image::ast.png[]
+
+
+== !
+
+[.middle.pull-left]
+AST extensions
+
+[.incremental.middle.pull-right]
+* Preprocessor
+* Treeprocessor
+* Postprocessor
+
+
+== !
+
+
+[.middle.pull-left]
+Syntax extensions
+
+[.incremental.middle.pull-right]
+* Block
+* Block Macro
+* Inline Macro
+
+
+[.topic.intro]
+== Polyglot!
+
+[.incremental.pull-right]
+* Ruby
+* &#160; &#160; JavaScript
+* Java
+* &#160; &#160; Groovy
+* and more!
+
+////
 [.topic.source]
 == Custom block macro
 
@@ -259,6 +304,7 @@ class TreeBlockMacro < BlockMacroProcessor
 
 end
 ----
+////
 
 
 [.topic.intro]
@@ -363,6 +409,26 @@ The Unicode Standard is the universal character-encoding scheme for written char
 [{caption-off}, crole=band]
 .Design Legibility & Aesthetics
 image::asciidoctor-styles.png[]
+
+
+[.terminal.raw]
+== !
+
+....
+include::slides.adoc[depth=0, lines=1..33]
+....
+
+
+== Who's writing?
+
+[.scatter.incremental]
+* https://github.com/git/git/tree/master/Documentation[Git] [detail]#User guide, man pages#
+* https://github.com/neo4j/neo4j/tree/master/manual/src[Neo4j] [detail]#Manual, refcards#
+* http://docs.spring.io/spring/docs/4.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle[Spring Framework] [detail]#Reference#
+* https://github.com/cdi-spec/cdi/tree/master/spec[CDI] [detail]#Specification#
+* Publishers [detail]#O'Reilly, Manning, http://www.nofluffjuststuff.com/home/magazine_subscribe[NFJS Magazine]#
+* Repositories [detail]#Bintray, *GitHub!*#
+* and more!
 
 
 == !
