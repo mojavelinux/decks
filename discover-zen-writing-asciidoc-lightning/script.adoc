@@ -1,6 +1,5 @@
 [verse, OTR]
 --
-//We come to the thrilling finale of our "Tech Writing against Word" pencraft drama.
 Get ready for another thrilling episode of our "Documentation Chronicles" pencraft drama, "Tech Writing Against Word"
 It's man versus machine.
 Old Doc Writer, author of three books on Java and captain of the tech tutorial team, is tasked to produce another demystifying masterpiece.
