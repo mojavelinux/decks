@@ -847,3 +847,10 @@ ol {
 .icon-warning:before { content: "\f071"; }
 .icon-caution:before { content: "\f06d"; }
 .icon-important:before { content:"\f06a"; }
+
+.hashtag {
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
