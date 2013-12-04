@@ -326,6 +326,7 @@ Your Name
 :page-layout: base <i class="conum" data-value="2"></i><b>(2)</b>
 :showtitle: <i class="conum" data-value="3"></i><b>(3)</b>
 
+[.lead]
 {sitename} was founded by {author} during a conference workshop.
 It's quickly becoming much bigger than this humble beginning.
 
@@ -335,6 +336,9 @@ It's transformed by http://awestruct.org[Awestruct] and http://asciidoctor.org[A
 <section class="topic source"><h2>Add About link to navbar</h2><div class="listingblock"><div class="title"><code>_layouts/base.html.haml</code></div><pre class="highlight"><code class="haml">        %li.divider
           %li
             %a(href="#{site.ctx_path}/about.html") About</code></pre></div></section>
+<section class="topic source"><h2>Make it Sassy!</h2><div class="listingblock"><div class="title">Append to <code>stylesheets/app.scss</code></div><pre class="highlight"><code class="sass">.paragraph.lead &gt; p {
+  @extend %lead;
+}</code></pre></div></section>
 <section class="topic source"><h2>Clean and preview site to see changes</h2><div class="listingblock"><pre class="no-highlight"><code>$ rake clean preview</code></pre></div></section>
 <section class="topic intro"><h2><strong>Publish</strong> your site</h2></section>
 <section><p class="statement"><strong>Next</strong> <em class="icon-caret-right">&#8203;</em><br />
