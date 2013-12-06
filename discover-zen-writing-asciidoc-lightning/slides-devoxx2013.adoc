@@ -1,0 +1,465 @@
+[[zen-of-writing]]
+= Discover the '☯' of ✍ **[subtle]##(##Ascii[subtle]##)##Doc**s
+Dan Allen <http://github.com/mojavelinux[@mojavelinux]>
+v2.0, Nov 11, 2013
+:hashtag: #DV13-asciidoctor
+:copyright: CC BY-SA 2.0
+:website: http://asciidoctor.org
+:dzslides-aspect: 16-9
+:math:
+:icons: font
+include::attributes.conf[]
+
+[.topic.intro]
+== The Documentation Chronicles
+
+``Tech Writing Against Word.''
+
+
+== !
+
+video::editing-word.ogv[]
+
+
+[.topic.intro]
+== The Documentation Chronicles
+
+``Asciidoctor saves the day!''
+
+
+== !
+
+video::editing-asciidoc.ogv[]
+
+
+[.topic.intro]
+== The Documentation Chronicles
+
+//``Adapt or die.''
+//``Adapting to an adaptive world.''
+``The adaptive storm.''
+
+
+[.terminal]
+== !
+
+[subs=attributes]
+....
+include::snippets/asciidoc-asciitext.adoc[]
+....
+
+
+[.terminal]
+== !
+
+[.statement]
+Ascii Art?
+
+[indent=20]
+....
+include::snippets/asciiart-coffee.adoc[]
+....
+
+
+[.terminal]
+== !
+
+[indent=9]
+....
+include::snippets/asciiart-beer.adoc[]
+....
+
+
+[.terminal]
+== !
+
+....
+include::snippets/asciidoc-asciiart.adoc[]
+....
+
+
+== !
+
+//[.middle]
+//A [.light]_lightweight_, yet *powerful* text-based markup language and document generator.
+
+[.statement]
+AsciiDoc is... +
+lightweight *markup* +
+[.push2]#publishing *toolchain*#
+
+
+== !
+
+[.statement]
+[mild]*Mild* punctuation
+image:mild.png[role="pull-right"]
+
+
+[.topic.intro]
+== ``It's just _text_, mate''
+
+
+[.topic.intro]
+== Text, how _sublime_ ☕
+
+
+== Asciidoctor
+
+[.statement]
+*Asciidoctor* +
+A modern, open source implementation of AsciiDoc in [.ruby]#Ruby#
+
+[.corner]
+image::rubygems.png[Ruby gem,200,141]
+
+
+== !
+
+[.relax-y.elevate, {caption-off}]
+.AsciiDoc processor
+image::asciidoc-processor.png[]
+
+
+[.topic.source.lhs]
+== Let's compare AsciiDoc...
+
+[source, asciidoc]
+----
+include::snippets/short-sample.adoc[]
+----
+
+
+[.topic.source]
+== ...to Markdown
+
+[source, markdown]
+----
+include::snippets/short-sample.md[]
+----
+
+
+[.topic.source]
+== ...to DocBook
+
+[source, xml]
+----
+include::snippets/short-sample.xml[lines=1..20]
+        ...
+----
+
+
+[.topic.source]
+== ...to DocBook (and going...)
+
+[source, xml]
+----
+                ...
+include::snippets/short-sample.xml[lines=21..39]
+                ...
+----
+
+
+[.topic.source]
+== ...to DocBook (at last!)
+
+[source, xml]
+----
+            ...
+include::snippets/short-sample.xml[lines=40..-1]
+----
+
+
+[.topic.source]
+== Remember the AsciiDoc?
+
+[source, asciidoc]
+----
+include::snippets/short-sample.adoc[]
+----
+
+
+[.intro.topic]
+== see the *big picture*
+
+
+////
+== !
+
+[{no-title}]
+image::vim-voom-asciidoc-outline.png[]
+////
+
+
+== !
+
+[.center.relax-x, {no-title}]
+image::gedit-asciidoc-outline.png[]
+
+
+////
+== !
+
+[{caption-off}, crole=band]
+//.Editing AsciiDoc with live preview
+image::live-preview.png[]
+////
+
+
+== Output formats (i.e., backends)
+
+image::export-icon.png[role=pull-left]
+
+[.incremental.middle.pull-right]
+* HTML 5
+* DocBook 4.5 & 5.0
+* PDF [detail]#fop, dblatex#
+* eBook [detail]#ePub 2, mobi#
+* slides [detail]#deck.js, dzslides, reveal.js#
+* man pages
+* *custom*&ndash;you name it!
+
+[.topic.intro]
+== Extensions
+
+
+== !
+
+[{caption-off}]
+.Document AST
+image::ast.png[]
+
+
+== !
+
+[.middle.pull-left]
+AST extensions
+
+[.incremental.middle.pull-right]
+* Preprocessor
+* Treeprocessor
+* Postprocessor
+
+
+== !
+
+
+[.middle.pull-left]
+Syntax extensions
+
+[.incremental.middle.pull-right]
+* Block
+* Block Macro
+* Inline Macro
+
+
+[.topic.intro]
+== Polyglot!
+
+[.incremental.pull-right]
+* Ruby
+* &#160; &#160; JavaScript
+* Java
+* &#160; &#160; Groovy
+* and more!
+
+////
+[.topic.source]
+== Custom block macro
+
+[source,asciidoc]
+----
+.Contents of project
+tree:path/to/project[]
+----
+
+
+[.topic.source]
+== Register block macro
+
+[source,no-highlight]
+----
+Extensions.register do
+
+  block_macro :tree, TreeBlockMacro
+
+end
+----
+
+
+[.topic.source]
+== Block macro extension
+
+[source,no-highlight]
+----
+class TreeBlockMacro < BlockMacroProcessor
+
+  def process(parent, target, attributes)
+    tree = %x(tree #{target}).lines.entries[1..-1].join
+    Block.new(parent, :listing,
+        :content_model => :verbatim,
+        :source => tree,
+        :attributes => attributes)
+  end
+
+end
+----
+////
+
+
+[.topic.intro]
+== Asciidoctor *Java*
+
+
+== !
+
+image:jruby-logo.png[JRuby,356,102]
+
+The [.ruby]*Ruby* Programming Language on the JVM
+
+
+== !
+
+[{caption-off}]
+.AsciidoctorJ
+image::asciidoctor-java.png[AsciidoctorJ processor]
+
+
+== !
+
+[{caption-off}]
+.AsciidoctorJ build plugins
+image::asciidoctor-java-usage.png[AsciidoctorJ usage]
+
+
+== !
+
+"Any application that can be written in _JavaScript_ [.underline]#will eventually# be written in _JavaScript_."
+-- Atwood's law
+
+[.topic.intro]
+== Asciidoctor.**js**
+
+
+== Opal
+
+[.statement]
+*Opal* +
+{zwsp} +
+A [.ruby]#Ruby# to [.javascript]#JavaScript# cross compiler
+
+[.top.corner]
+image::opal-logo.png[Opal,200,200]
+
+
+== !
+
+[.relax-y.elevate, {caption-off}]
+.asciidoctor.js compilation
+image::asciidoctorjs-compile.png[]
+
+
+== !
+
+[{caption-off}, crole=band]
+.AsciiDoc rendering on GitHub
+//image::docgist-writers-guide.png[]
+image::github-sample.png[]
+
+
+== !
+
+[{caption-off}, crole=band]
+.DocGist
+//image::docgist-writers-guide.png[]
+image::docgist-sample.png[]
+
+
+== !
+
+[{caption-off}, crole=band]
+.Asciidoctor.js Browser Extension
+//image::asciidoctorjs-chrome-extension.png[]
+image::chrome-sample.png[]
+
+
+[.topic.intro]
+== *Unicode* compliant++
+
+[NOTE.speaker]
+--
+Don't let the "Ascii" in AsciiDoc fool you.
+AsciiDoc and Asciidoctor have full unicode support.
+
+The Unicode Standard is the universal character-encoding scheme for written characters and text.
+--
+
+[.topic]
+== Symbol party!
+
+[.incremental.scatter.big]
+* icon:twitter[]
+* [.gray]#&#x2708;#
+* [.black]#☃#?
+* math:[E = mc^2]
+
+
+== !
+
+[{caption-off}, crole=band]
+.Design Legibility & Aesthetics
+image::asciidoctor-styles.png[]
+
+
+[.terminal.raw]
+== !
+
+....
+include::slides.adoc[depth=0, lines=1..33]
+....
+
+
+== Who's writing?
+
+[.scatter.incremental]
+* https://github.com/git/git/tree/master/Documentation[Git] [detail]#User guide, man pages#
+* https://github.com/neo4j/neo4j/tree/master/manual/src[Neo4j] [detail]#Manual, refcards#
+* http://docs.spring.io/spring/docs/4.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle[Spring Framework] [detail]#Reference#
+* https://github.com/cdi-spec/cdi/tree/master/spec[CDI] [detail]#Specification#
+* Publishers [detail]#O'Reilly, Manning, http://www.nofluffjuststuff.com/home/magazine_subscribe[NFJS Magazine]#
+* Repositories [detail]#Bintray, *GitHub!*#
+* and more!
+
+
+== !
+
+[.statement]
+Drop the [.sans]*</>* +
+not the *semantics*
+
+
+[.topic.intro]
+== ``It's just _text_, mate''
+
+
+[.topic.ending, hrole=name]
+== Experience writing zen!
+
+
+[.footer]
+{website}
+
+
+////
+.Talk Points
+* Similar to Markdown, but much more comprehensive and consistent
+* API, not just a syntax (use filetree or social? as example)
+* Runs on the JVM or in the browser
+* Native extension mechanism (not just at the periphery, no duct tape)
+* Source code embedding (highlight, shift indent, callouts); Cross references, intra and inter-document; UTF-8
+* Processing pipeline (fopub)
+* Elegance, legibility, adaptive output (show mobile phone)
+* Speed
+* Tooling (docgist, browsers extensions)
+* Emphasize project resources; adoption; # of repos
+////
