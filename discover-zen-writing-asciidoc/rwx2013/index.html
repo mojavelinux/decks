@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en" class="aspect-16-9">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="Asciidoctor 1.5.0.preview, dzslides backend" />
+<title>Discover the ☯ of ✍ (Ascii)Docs</title>
+<meta name="author" content="Dan Allen" />
+<meta name="copyright" content="CC BY-SA 2.0" />
+<meta name="presdate" content="Dec 4, 2013" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,200,300" />
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" />
+<style>
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+
+pre code {
+  display: block; padding: 0.5em;
+  background: #272822;
+}
+
+pre .tag,
+pre .tag .title,
+pre .keyword,
+pre .literal,
+pre .strong,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: #F92672;
+}
+
+pre code {
+  color: #DDD;
+}
+
+pre code .constant,
+pre .asciidoc .code {
+	color: #66D9EF;
+}
+
+pre .code,
+pre .class .title,
+pre .header {
+	color: white;
+}
+
+pre .link_label,
+pre .attribute,
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+	color: #BF79DB;
+}
+
+pre .link_url,
+pre .tag .value,
+pre .string,
+pre .bullet,
+pre .subst,
+pre .title,
+pre .emphasis,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: #A6E22E;
+}
+
+pre .comment,
+pre .java .annotation,
+pre .smartquote,
+pre .blockquote,
+pre .horizontal_rule,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #75715E;
+}
+
+pre .keyword,
+pre .literal,
+pre .css .id,
+pre .phpdoc,
+pre .title,
+pre .header,
+pre .haskell .type,
+pre .vbscript .built_in,
+pre .sql .aggregate,
+pre .rsl .built_in,
+pre .smalltalk .class,
+pre .diff .header,
+pre .chunk,
+pre .winutils,
+pre .bash .variable,
+pre .apache .tag,
+pre .tex .special,
+pre .request,
+pre .status {
+  font-weight: bold;
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
+}
+/*
+ Theme: Stormy
+ Fonts: Yanone Kaffeesatz, Cedarville Cursive
+
+ Style class:
+ .title = Use on title slide
+ .intro = Use on intro slides, use h1 heading (or h2 heading) for topic name
+ .recap = Use on recap slides, use h1 heading (or h2 heading) for topic name, h2 and h3 in an hgroup for summary
+ .source = Use on source code slide, put source in <pre><code> (requires highlight.js for syntax highlighting)
+ .ending = Use on final slide, use h2 heading for message
+ .statement = Use on a paragraph to make it a statement, vertically centered
+ .middle = Use on any element to vertically center it
+ 
+ Color Palette:
+ 
+ Name           Hex
+ =====================
+ Eggshell .... #F1F2EC
+ Red ......... #FF4342
+ Light green . #D5EE5E
+ Green ....... #87A660
+ Light blue .. #43C5F1
+ Blue ........ #3899BF
+ Purple ...... #6C5482
+ Light gray .. #D5D5D5
+ Gray ........ #797979
+ Dark Gray ... #6A6A61
+ Black ....... #000000
+
+ Light Cloud   #DDDCC5
+ Grey          #958976
+ Dark grey     #6A6A61
+ Navy          #1D2326
+ Fuschia       #611427
+*/
+
+html, .view body {
+  background: #333333 url(../../images/gray-noise.png) repeat;
+  counter-reset: slideidx;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+body, .view section {
+  background-color: #F1F2EC;
+  font-size: 17px;
+  line-height: 1;
+}
+
+section, .view head > title {
+}
+
+.view section:after {
+  counter-increment: slideidx;
+  content: counter(slideidx, decimal-leading-zero);
+  position: absolute;
+  bottom: -1.5em;
+  right: .5em;
+  color: #FFFFFF;
+  font-size: 3em;
+}
+
+.view head > title {
+  color: #FFFFFF;
+  text-align: center;
+  margin: .5em 0 .25em;
+  line-height: 1;
+  font-size: 3em;
+}
+
+.view section[aria-selected] {
+  border: 5px #FFFFFF solid;
+}
+
+section:not(.title) {
+  padding: 50px;
+}
+
+section.title h1 {
+  font-size: 6em;
+  color: #1D2326;
+  position: relative;
+  top: 40%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0 50px; /* quick hack to fix overruns */
+}
+
+section.title footer {
+  font-weight: 200;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 30px 50px;
+}
+
+section.title .subtitle {
+  display: block;
+  margin-top: 50px;
+}
+
+section.topic h2 {
+  color: #958976;
+  font-size: 2.5em;
+  margin-bottom: .5em;
+  margin-top: -.5em;
+}
+
+section.tilt {
+  -moz-transform:rotate(-4deg);
+  -o-transform:rotate(-4deg);
+  -webkit-transform:rotate(-4deg);
+}
+
+section.tilt h2 {
+  margin-top: -40px;
+}
+
+section.intro, section.terminal {
+  background-color: #1D2326;
+}
+
+section.intro h1,
+section.intro h2 {
+  color: #DDDCC5;
+  text-transform: lowercase;
+  line-height: .7em;
+  text-align: left;
+  font-size: 4.4em;
+}
+
+section.intro.alt h1,
+section.intro.alt h2 {
+  text-align: right;
+}
+
+section.intro h1 strong,
+section.intro h2 strong {
+  color: #D5EE5E;
+  font-size: 1.51em;
+  line-height: .8em;
+}
+
+section.terminal pre.literal {
+  color: #D5EE5E;
+  font-size: .75em;
+}
+
+section.secret {
+  background-color: #958976;
+}
+
+section.secret p {
+  color: #DDDCC5;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+section.secret strong {
+  color: #43C5F1;
+  font-size: 2em;
+  display: block;
+  line-height: .8em;
+}
+
+section.recap > h1,
+section.recap > h2 {
+  margin: 0;
+  text-transform: uppercase;
+  color: #87A660;
+  font-size: 2em;
+  border: 15px solid #87A660;
+  border-radius: 20px;
+  position: absolute;
+  right: -25px;
+  top: 5px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+section.recap hgroup h2 {
+  color: #958976;
+  text-transform: uppercase;
+  font-size: 4.4em;
+}
+
+section.recap hgroup h3 {
+  color: #611427;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+section.recap hgroup .invert h2 {
+  font-size: 3em;
+}
+
+section.recap hgroup .invert h3 {
+  font-size: 4.4em;
+}
+
+section.question p {
+  text-align: right;
+  font-size: 3em;
+}
+
+section.question p strong {
+  display: block;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: .8em;
+}
+
+section.ending {
+  background-color: #43C5F1;
+}
+
+section.ending > h2 {
+  color: #F1F2EC;
+  font-size: 4.4em;
+  text-transform: lowercase;
+}
+
+section.ending > h2.name {
+  text-transform: none;
+  top: 40%;
+}
+
+section.ending footer,
+section.ending p.footer {
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 40px 0;
+  font-size: 3em;
+  text-align: center;
+  color: #43C5F1;
+  font-weight: 700;
+  top: 55%;
+  margin: 0;
+}
+
+.aspect-16-10 section.ending footer,
+.aspect-16-10 section.ending p.footer {
+  height: 26%;
+}
+
+h1 {
+  font-size: 4.4em;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h3 {
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section ul {
+  list-style: none;
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #43C5F1;
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+section ul.variants {
+  margin-top: 150px; /* half height (250px) - 100px to account for padding */
+}
+
+section ul.split > li {
+  width: 50%;
+}
+
+section ul.split > li:nth-of-type(2n),
+section ul.scatter > li:nth-of-type(2n) {
+  float: right;
+}
+
+section ul.split > li:nth-of-type(2n - 1),
+section ul.scatter > li:nth-of-type(2n - 1) {
+  float: left;
+}
+
+section ul.scatter > li:nth-of-type(2n) {
+  clear: left;
+  text-align: right;
+}
+
+section ul.scatter > li:nth-of-type(2n - 1) {
+  clear: right;
+}
+
+section .graffiti {
+  font-family: 'Cedarville Cursive', cursive;
+  text-transform: none;
+  font-weight: normal;
+  color: #6A6A61;
+  text-align: left;
+  line-height: 1.5;
+}
+
+section .graffiti strong,
+section .graffiti em {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+section dt {
+  font-size: 3em;
+  color: #611427;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+
+section dd {
+  color: #958976;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: 2em;
+  font-size: 2em;
+}
+
+section dt:nth-of-type(2n),
+section dd:nth-of-type(2n) {
+  text-align: right;
+}
+
+section p {
+  color: #958976;
+  font-weight: 700;
+  font-size: 3.5em;
+}
+
+section p.revision {
+  font-family: 'Cedarville Cursive';
+  font-weight: normal;
+  color: #6A6A61;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.insert:before {
+  display: inline-block;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  content: "^";
+  margin-right: 10px;
+}
+
+section p.expression {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8em;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  -webkit-transform-origin: 0% 15%;
+  -moz-transform-origin: 0% 15%;
+  -o-transform-origin: 0% 15%;
+  transform-origin: 0% 15%;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+}
+
+section p.follow-up {
+  /*color: #D5EE5E;*/
+  color: #958976;
+  font-weight: 700;
+  font-size: 2em;
+  margin-top: -.5em;
+  padding-left: 3px;
+}
+
+section p.point {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 2.8em;
+  text-align: right;
+  font-weight: 700;
+}
+
+section em {
+  color: #611427;
+  font-style: normal;
+}
+
+section em .light {
+  font-weight: 300;
+}
+
+section.intro em {
+  color: #D5EE5E;
+}
+
+section strong {
+  color: #611427;
+}
+
+strong .block {
+  padding-right: 1000px;
+}
+
+/*
+strong .block:after {
+  display: table;
+  content: " ";
+}*/
+
+section del {
+  color: #6A6A61;
+}
+
+section p del span {
+  color: #958976;
+  font-weight: 700;
+}
+
+.sans {
+  font-family: sans-serif;
+}
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: -10px 2em 0 2em;
+  border-left: 5px solid #ccc;
+}
+
+blockquote:before {
+  color: #611427;
+  content: '\201C';
+  font-size: 8em;
+  font-weight: 700;
+  float: left;
+  margin-left: -.6em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+section blockquote p {
+  color: #1D2326;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: .5em;
+  font-style: italic;
+  font-size: 3.5em;
+}
+
+blockquote p em {
+  font-style: italic;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0.1em;
+}
+
+blockquote cite {
+  font-size: 1.5em;
+  display: block;
+  line-height: 1.8;
+  color: #87A660;
+  font-style: normal;
+  margin-top: .25em;
+  padding-bottom: .25em;
+}
+
+blockquote cite:before {
+  content: '\2014 \00A0';
+}
+
+figure > a,
+figure > a > img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+figure > img.elevate {
+  top: -5%;
+}
+
+figure > img.fit {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+figure > img.relax-y {
+  height: auto;
+  top: auto;
+  margin: auto 0;
+}
+
+figure > img.relax-x {
+  width: auto;
+}
+
+figcaption {
+  font-size: 3em;
+  /*color: #000000;*/
+  color: #611427;
+  font-weight: 700;
+  text-align: right;
+  position: absolute;
+  bottom: .4em;
+  right: .6em;
+  width: 100%;
+}
+
+figcaption.left {
+  right: 0;
+  left: .6em;
+  text-align: left;
+}
+
+figcaption.invert {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000;
+}
+
+figcaption.band {
+  /*color: #611427;*/
+  right: 0;
+  text-align: left;
+  background-color: rgba(255, 255, 255, .75);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  padding-left: .5em;
+  line-height: 1.5em;
+  padding-bottom: .05em;
+  bottom: 1em;
+}
+
+section.title footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40px;
+  background-color: #F3F4F8;
+  border-top: 1px solid #CCC;
+}
+
+section.source {
+  /*background-color: #272822;*/
+  background-color: #000000;
+  padding: 30px !important;
+}
+
+section.source h2 {
+  margin: 0 .5em .5em 0;
+  color: #DDDCC5;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+section.source.lhs h2 {
+  text-align: left;
+}
+
+section.source div.title {
+  color: #958976;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: .3em;
+  padding-left: 1px;
+}
+
+section pre code {
+  font-family: "DejaVu Sans Mono", "Droid Sans Mono", Menlo, Monaco, "Courier New", monospace;
+  font-size: .9em;
+  line-height: 1.2;
+  background: rgba(255,255,255,.075);
+  border: 1px solid rgba(255,255,255,.2);
+  margin-bottom: 1em;
+}
+
+.middle,
+.statement,
+section.intro > h1,
+section.intro > h2,
+section.recap > hgroup, 
+section.ending > h2,
+section > dl,
+section > ul.graffiti,
+section > p {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+section p.statement strong {
+  font-size: 3em;
+  line-height: .75em;
+}
+
+img.middle {
+  display: block;
+  margin: 0 auto;
+}
+
+img.corner {
+  position: absolute;
+  right: 2em;
+  bottom: 2em;
+}
+
+img.top.corner {
+  position: absolute;
+  right: 2em;
+  bottom: auto;
+  top: 2em;
+}
+
+img.stretch-x {
+  width: 100%;
+}
+
+img.stretch-y {
+  height: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.auto-width {
+  width: auto !important;
+}
+
+span.detail {
+  font-size: .6em;
+  color: #958976;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.mild {
+  color: #87A660;
+}
+
+/* Incremental elements */
+
+/* By default, visible */
+.incremental > * {
+  opacity: .5;
+}
+
+/* The current item */
+.incremental > *[aria-selected] {
+  /* bug in Chrome makes it jump when opacity goes to 1 */
+  opacity: .99;
+}
+
+/* The items to-be-selected */
+.incremental > *[aria-selected] ~ * {
+  opacity: 0;
+}
+
+.view .incremental {
+  visibility: visible;
+}
+
+.view .incremental * {
+  opacity: 1 !important;
+}
+
+/* The progressbar, at the bottom of the slides, show the global
+   progress of the presentation. */
+#progress-bar {
+  height: 2px;
+  background: #AAA;
+}
+
+/* TODO: merge the overrides below into the sheet */
+section.title h1 {
+  font-size: 4em;
+  line-height: 1.1;
+}
+
+section.title h1 strong {
+  font-size: 3em;
+  font-style: italic;
+}
+
+#zen-of-writing section.title h1 strong {
+  display: inline-block;
+  margin-left: -.15em;
+  padding-right: .05em;
+}
+
+section.title h1 strong .subtle {
+  font-weight: 300;
+  color: #CCC;
+}
+
+section.title h1 em {
+  /*font-style: italic;*/
+  color: #878660;
+}
+
+section.intro h1 strong,
+section.intro h2 strong {
+  font-size: 3.5em;
+}
+
+section p {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+section p.middle,
+section p.statement {
+  font-size: 3em;
+}
+
+section p.follow-up {
+  margin-top: 0;
+}
+
+section > p {
+  position: static;
+  top: 0;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+section pre.literal {
+  font-size: .8em;
+  font-weight: bold;
+}
+
+section pre code {
+  white-space: pre-wrap;
+}
+
+section pre:nth-of-type(2):not(.continue) code {
+  font-size: .8em;
+  line-height: 1.4;
+}
+
+section ul {
+  text-transform: none;
+  text-align: left;
+/*  font-size: 1.5em;*/
+  line-height: 1.1;
+}
+
+section ul ul {
+  font-size: .8em;
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+
+section.fit {
+  padding: 50px 0;
+  -moz-transition: none;
+}
+
+section.fit > img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.colist {
+  color: #DDDCC5;
+}
+
+.intro .small {
+  font-size: .5em;
+}
+
+.intro .smaller {
+  font-size: 2.5em;
+}
+section:not(.topic) > h2 { display: none;}
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+details {
+  display: none;
+}
+/* default aspect is 4:3 */
+body {
+  width: 800px;
+  height: 600px;
+  margin-left: -400px;
+  margin-top: -300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  display: none;
+}
+.aspect-16-10 body {
+  height: 500px; 
+  margin-top: -250px;
+}
+.aspect-16-9 body {
+  height: 450px; 
+  margin-top: -225px;
+}
+.view body {
+  position: static;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: visible;
+  overflow-x: hidden;
+  /* undo Dz.onresize */
+  transform: none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  -o-transform: none !important;
+  -ms-transform: none !important;
+}
+.view head, .view head > title {
+  display: block;
+}
+section {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.view section {
+  pointer-events: auto;
+  position: static;
+  width: 800px;
+  height: 600px;
+  margin: -150px -200px;
+  float: left;
+  transform: scale(.4);
+  -moz-transform: scale(.4);
+  -webkit-transform: scale(.4);
+  -o-transform: scale(.4);
+  -ms-transform: scale(.4);
+}
+.view.aspect-16-10 section {
+  height: 500px;
+  margin-top: -125px;
+  margin-bottom: -125px;
+}
+.view.aspect-16-9 section {
+  height: 450px;
+  margin-top: -112px;
+  margin-bottom: -113px;
+}
+.view section > * {
+  pointer-events: none;
+}
+section[aria-selected] {
+  pointer-events: auto;
+}
+html {
+  overflow: hidden;
+}
+html.view {
+  overflow: visible;
+}
+body.loaded {
+  display: block;
+}
+.incremental {
+  visibility: hidden;
+}
+.incremental[active] {
+  visibility: visible;
+}
+#progress-bar {
+  bottom: 0;
+  position: absolute;
+  -moz-transition: width 400ms linear 0s;
+  -webkit-transition: width 400ms linear 0s;
+  -ms-transition: width 400ms linear 0s;
+  transition: width 400ms linear 0s;
+}
+.view #progress-bar {
+  display: none;
+}
+figure {
+  width: 100%;
+  height: 100%;
+}
+figure > * {
+  position: absolute;
+}
+figure > img, figure > video, figure > embed {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slide flipping */
+
+/* Previous */
+section {
+  opacity: 0;
+}
+.view section {
+  opacity: 1;
+}
+/* Current */
+section[aria-selected] {
+  opacity: 1;
+}
+/* Next */
+section[aria-selected] ~ section {
+  opacity: 0;
+}
+.view section[aria-selected] ~ section {
+  opacity: 1;
+}
+/* Fade slide transition */
+/* opacity is set by core styles */
+section {
+  -moz-transition: opacity 450ms ease-out 0ms;
+  -webkit-transition: opacity 450ms ease-out 0ms;
+  -ms-transition: opacity 450ms ease-out 0ms;
+  transition: opacity 450ms ease-out 0ms;
+}
+</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['\\(','\\)']],
+    displayMath: [['\\[','\\]']],
+    ignoreClass: 'nomath|nolatexmath'
+  },
+  asciimath2jax: {
+    delimiters: [['\\$','\\$']],
+    ignoreClass: 'nomath|noasciimath'
+  }
+});</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script type="text/javascript">document.addEventListener('DOMContentLoaded', MathJax.Hub.TypeSet)</script>
+<style>
+body, .view section {
+  font-size: 16px;
+}
+section.terminal pre.literal {
+  font-size: .8em;
+}
+figcaption.band {
+  font-size: 2.5em;
+  color: #6a6a6a;
+  text-align: right;
+  padding-right: .5em;
+  border-radius: 10px 0 0 0;
+  bottom: 0;
+  width: auto;
+}
+section.terminal pre.literal {
+  font-size: .8em;
+  line-height: .92;
+}
+section pre code {
+  font-size: .85em;
+}
+figure > img.elevate {
+  top: -20%;
+}
+.push1 {
+  padding-left: 0.5em;
+}
+.push2 {
+  padding-left: 1em;
+}
+.push4 {
+  padding-left: 2.25em;
+}
+.push9 {
+  padding-left: 4.5em;
+}
+span.connector {
+  display: block;
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
+p.statement .script {
+  letter-spacing: 3px;
+}
+.ruby {
+  color: #A30C00;
+}
+.hashtag {
+  position: absolute;
+  left: .5em;
+  bottom: .5em;
+  font-size: .5em;
+  font-weight: bold;
+}
+.email {
+  position: absolute;
+  right: .5em;
+  bottom: .5em;
+  font-size: .5em;
+  font-weight: bold;
+}
+.black {
+  color: black;
+}
+.gray {
+  color: gray;
+}
+.big {
+  font-size: 5em;
+}
+.underline {
+  text-decoration: underline;
+}
+figure > img.center {
+  left: auto;
+}
+section.terminal.raw {
+  padding: 25px; 
+}
+section.terminal.raw pre.literal {
+  font-size: .7em;
+  color: #d5d5d5;
+  line-height: 1.1em;
+  font-weight: normal;
+}
+</style>
+</head>
+<body id="zen-of-writing">
+<section class="title"><h1>Discover the <em>☯</em> of ✍ <strong><span class="subtle">(</span>Ascii<span class="subtle">)</span>Doc</strong>s</h1><footer><span class="author">Dan Allen</span> <span class="email"><a href="http://github.com/mojavelinux">@mojavelinux</a></span><span class="hashtag">#asciidoctor #rwx</span></footer></section>
+<section class="topic intro"><h2>The Documentation Chronicles</h2><p>&#8220;Tech Writing Against Word.&#8221;</p></section>
+
+<section><figure><video src="images/editing-word.ogv" controls="">Your browser does not support the video tag.</video><figcaption></figcaption></figure></section>
+
+<section class="topic intro"><h2>The Documentation Chronicles</h2><p>&#8220;Asciidoctor saves the day!&#8221;</p></section>
+
+<section><figure><video src="images/editing-asciidoc.ogv" controls="">Your browser does not support the video tag.</video><figcaption></figcaption></figure></section>
+
+<section class="topic intro"><h2>The Documentation Chronicles</h2><p>&#8220;The adaptive storm.&#8221;</p></section>
+
+<section class="terminal"><div class="literalblock"><pre class="literal"> &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+ &#8203;
+       .o.                           o8o   o8o  oooooooooo.
+      .888.                          `"'   `"'  `888'   `Y8b
+     .8"888.      .oooo.o  .ooooo.  oooo  oooo   888      888  .ooooo.   .ooooo.
+    .8' `888.    d88(  "8 d88' `"Y8 `888  `888   888      888 d88' `88b d88' `"Y8
+   .88ooo8888.   `"Y88b.  888        888   888   888      888 888   888 888
+  .8'     `888.  o.  )88b 888   .o8  888   888   888     d88' 888   888 888   .o8
+ o88o     o8888o 8""888P' `Y8bod8P' o888o o888o o888bood8P'   `Y8bod8P' `Y8bod8P'</pre></div></section>
+
+<section class="terminal"><p class="statement">Ascii Art?</p>
+<div class="literalblock"><pre class="literal">                                     (
+                                       )     (
+                                ___...(-------)-....___
+                            .-""       )    (          ""-.
+                      .-'``'|-._             )         _.-|
+                     /  .--.|   `""---...........---""`   |
+                    :  :    |                             |
+                    :  :    |                             |
+                     \  \   |   _  _  __ __ __ __         |
+                      `- `- |  / `/ \|_ |_ |_ |_  _|_ _|_ |
+                        `-_`|  \_,\_/|  |  |__|__  |   |  |
+                            \                             /
+                             \                           /
+                              \                         /
+                               \                       /
+                                `-.__             __.-'
+                                   ) ""---...---"" (
+                                   `"--...___...--"`</pre></div></section>
+
+<section class="terminal"><div class="literalblock"><pre class="literal">         .===================================================================.
+         ||                                                                 ||
+         ||    __   _    __   __  __   __          __   ..        __        ||
+         ||   |__  /_\  |__) |__ |__) /  \ |\  /| |__) |  | |__/ |__ |\ |   ||
+         ||   |   /   \ |  \ |   |  \ \__/ | \/ | |    |__| |  \ |__ | \|   ||
+         ||                                                                 ||
+         ||                                                                 ||
+         ||                            ___                                  ||
+         ||                          .'   '.                                ||
+         ||                         /       \           oOoOo               ||
+         ||                        |         |       ,==|||||               ||
+         ||                         \       /       _|| |||||               ||
+         ||                          '.___.'    _.-'^|| |||||               ||
+         ||                        __/_______.-'     '==HHHHH               ||
+         ||                   _.-'` /                   """""               ||
+         ||                .-'     /   oOoOo                                ||
+         ||                `-._   / ,==|||||                                ||
+         ||                    '-/._|| |||||                                ||
+         ||                     /  ^|| |||||                                ||
+         ||                    /    '==HHHHH                                ||
+         ||                   /________"""""                                ||
+         ||                   `\       `\                                   ||
+         ||                     \        `\   /                             ||
+         ||                      \         `\/                              ||
+         ||                      /                                          ||
+         ||                     /                                           ||
+         ||                    /_____                                       ||
+         ||                                                                 ||
+         ||                                                                 ||
+         '==================================================================='</pre></div></section>
+
+<section class="terminal"><div class="literalblock"><pre class="literal">                                           +yyyyyyyyyyyyyyyyyyyyyyo-
+                                          `yNNNNNNNNNNNNNNNNNNNNNMMMNo`
+                                        -:::::::::::::::::::::::`.:dMMN-
+                                      oNMMMMMMMMMMMMMMMMMMMMMMMMMd/ sMMN`
+                                     oMMm+:::::::::::::::::::::+MMM: NMM-
+                                     sMMs                       MMMo NMM-
+                                     sMMs                       MMMo NMM-
+                                     sMMs `mMMMMMMMMMMMMMMMMMd  MMMo NMM-
+                                     sMMs  `++++++++++++++++/`  MMMo NMM-
+                                     sMMs `mMMMMMMMMMMMMMMMMMd  MMMo NMM-
+                                     sMMs  .+++++++++++++++++`  MMMo NMM-
+                                     sMMs `dmmmmmmmmmmmmmmmmmh  MMMo NMM-
+                                     sMMs  ://///////////////.  MMMo NMM-
+                                     sMMs `hmmmmmmmmmmmmmmmmms  MMMo NMM-
+                                     sMMs  //////////////////-  MMMo NMM-
+                                     sMMs `yddddddddddddddddds  MMMo NMM-
+                                     sMMs  /yyyyyyyyyyyyyyyys/  MMMo NMM-
+                                     sMMs `ohhhhhhhhhhhhhhhhho  MMMo NMM-
+                                     sMMs                       MMMo dMN.
+                                     sMMs                       MMMo  .`
+                                     :MMMdhhhhhhhhhhhhhhhhhhhhhdMMN.
+                                      .shmmmmmmmmmmmmmmmmmmmmmmmho.
+
+
+
+
+       .o.                           o8o   o8o  oooooooooo.
+      .888.                          `"'   `"'  `888'   `Y8b
+     .8"888.      .oooo.o  .ooooo.  oooo  oooo   888      888  .ooooo.   .ooooo.
+    .8' `888.    d88(  "8 d88' `"Y8 `888  `888   888      888 d88' `88b d88' `"Y8
+   .88ooo8888.   `"Y88b.  888        888   888   888      888 888   888 888
+  .8'     `888.  o.  )88b 888   .o8  888   888   888     d88' 888   888 888   .o8
+ o88o     o8888o 8""888P' `Y8bod8P' o888o o888o o888bood8P'   `Y8bod8P' `Y8bod8P'</pre></div></section>
+
+<section><p class="statement">AsciiDoc is&#8230;<br />
+lightweight <strong>markup</strong><br />
+<span class="push2">publishing <strong>toolchain</strong></span></p></section>
+
+<section><p class="statement"><strong class="mild">Mild</strong> punctuation
+<span class="image pull-right"><img src="images/mild.png" alt="mild" /></span></p></section>
+
+<section class="topic intro"><h2>&#8220;It&#8217;s just <em>text</em>, mate&#8221;</h2></section>
+
+<section class="topic intro"><h2>Text, how <em>sublime</em> ☕</h2></section>
+
+<section><p class="statement"><strong>Asciidoctor</strong><br />
+A modern, open source implementation of AsciiDoc in <span class="ruby">Ruby</span></p>
+<img class="corner" src="images/rubygems.png" alt="Ruby gem" width="200" height="141" /></section>
+
+<section><figure><img class="relax-y elevate" src="images/asciidoc-processor.png" alt="asciidoc processor" /><figcaption>AsciiDoc processor</figcaption></figure></section>
+
+<section class="topic source lhs"><h2>Let&#8217;s compare AsciiDoc&#8230;</h2><div class="listingblock"><pre class="highlight"><code class="asciidoc">= ``The Documentation Chronicles''
+Doc Writer &lt;doc@asciidoc.org&gt;
+v1.0, 2013-11-11: The first epic adventure.
+:toc: left
+:icons: font
+
+Chronicles _inexplicable_ hazards, *vicious* beasts &amp; the battle to tame them.
+
+== Writing Without Pain
+
+A paragraph is just a paragraph. No special syntax required.
+
+* Coffee
+* Beer
+* http://devoxx.be[Devoxx]
+
+WARNING: Beware of untested `code`. The ((Wolpertinger)) will find you!
+
+[source,ruby]
+puts 'Beer, the cure for the common &lt;XML&gt;-hell.'</code></pre></div></section>
+
+<section class="topic source"><h2>&#8230;to Markdown</h2><div class="listingblock"><pre class="highlight"><code class="markdown"># "The Documentation Chronicles"
+
+Chronicles _inexplicable_ hazards, **vicious** beasts &amp; the battle to tame them.
+
+## Writing Without Pain
+
+A paragraph is just a paragraph. No special syntax required.
+
+* Coffee
+* Beer
+* [http://devoxx.be](Devoxx)
+
+&lt;div class="warning"&gt;
+  &lt;h5&gt;Warning&lt;/h5&gt;
+  &lt;p&gt;Beware of untested &lt;code&gt;code&lt;/code&gt;. The Wolpertinger will find you!&lt;/p&gt;
+&lt;/div&gt;
+
+{% highlight ruby %}
+puts 'Beer, the cure for the common &lt;XML&gt;-hell.'
+{% endhighlight %}</code></pre></div></section>
+
+<section class="topic source"><h2>&#8230;to DocBook</h2><div class="listingblock"><pre class="highlight"><code class="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"&gt;
+&lt;book xmlns="http://docbook.org/ns/docbook" lang="en"&gt;
+    &lt;bookinfo&gt;
+        &lt;title&gt;&amp;#8220;The Documentation Chronicles&amp;#8221;&lt;/title&gt;
+        &lt;date&gt;2013-11-11&lt;/date&gt;
+        &lt;author&gt;
+            &lt;firstname&gt;Doc&lt;/firstname&gt;
+            &lt;surname&gt;Writer&lt;/surname&gt;
+            &lt;email&gt;doc@asciidoc.org&lt;/email&gt;
+        &lt;/author&gt;
+        &lt;authorinitials&gt;DW&lt;/authorinitials&gt;
+        &lt;revhistory&gt;
+            &lt;revision&gt;
+                &lt;revnumber&gt;1.0&lt;/revnumber&gt;
+                &lt;date&gt;2013-11-11&lt;/date&gt;
+                &lt;authorinitials&gt;DW&lt;/authorinitials&gt;
+                &lt;revremark&gt;
+                    The first epic adventure.
+                &lt;/revremark&gt;
+        ...</code></pre></div></section>
+
+<section class="topic source"><h2>&#8230;to DocBook (and going&#8230;)</h2><div class="listingblock"><pre class="highlight"><code class="xml">                ...
+            &lt;/revision&gt;
+        &lt;/revhistory&gt;
+    &lt;/bookinfo&gt;
+    &lt;preface&gt;
+        &lt;title/&gt;
+        &lt;simpara&gt;
+          Chronicles &lt;emphasis&gt;inexplicable&lt;/emphasis&gt; hazards,
+          &lt;emphasis role="strong"&gt;vicious&lt;/emphasis&gt; beasts &amp;amp;
+          the battle to tame them.
+        &lt;/simpara&gt;
+    &lt;/preface&gt;
+    &lt;chapter id="_writing_without_pain"&gt;
+        &lt;title&gt;Writing Without Pain&lt;/title&gt;
+        &lt;simpara&gt;
+            A paragraph is just a paragraph. No special syntax required.
+        &lt;/simpara&gt;
+        &lt;itemizedlist&gt;
+            &lt;listitem&gt;
+                &lt;simpara&gt;Coffee&lt;/simpara&gt;
+                ...</code></pre></div></section>
+
+<section class="topic source"><h2>&#8230;to DocBook (at last!)</h2><div class="listingblock"><pre class="highlight"><code class="xml">            ...
+            &lt;/listitem&gt;
+            &lt;listitem&gt;
+                &lt;simpara&gt;Beer&lt;/simpara&gt;
+            &lt;/listitem&gt;
+            &lt;listitem&gt;
+                &lt;simpara&gt;&lt;ulink url="http://devoxx.be"&gt;Devoxx&lt;/ulink&gt;&lt;/simpara&gt;
+            &lt;/listitem&gt;
+        &lt;/itemizedlist&gt;
+        &lt;warning&gt;
+            &lt;simpara&gt;
+                Beware of untested &lt;literal&gt;code&lt;/literal&gt;. The
+                &lt;indexterm&gt;&lt;primary&gt;Wolpertinger&lt;/primary&gt;&lt;/indexterm&gt; will find you!
+            &lt;/simpara&gt;
+        &lt;/warning&gt;
+        &lt;programlisting language="ruby" linenumbering="unnumbered"&gt;
+            &lt;![CDATA[puts 'Beer, the cure for the common &lt;XML&gt;-hell.']]&gt;
+        &lt;/programlisting&gt;
+    &lt;/chapter&gt;
+&lt;/book&gt;</code></pre></div></section>
+
+<section class="topic source"><h2>Remember the AsciiDoc?</h2><div class="listingblock"><pre class="highlight"><code class="asciidoc">= ``The Documentation Chronicles''
+Doc Writer &lt;doc@asciidoc.org&gt;
+v1.0, 2013-11-11: The first epic adventure.
+:toc: left
+:icons: font
+
+Chronicles _inexplicable_ hazards, *vicious* beasts &amp; the battle to tame them.
+
+== Writing Without Pain
+
+A paragraph is just a paragraph. No special syntax required.
+
+* Coffee
+* Beer
+* http://devoxx.be[Devoxx]
+
+WARNING: Beware of untested `code`. The ((Wolpertinger)) will find you!
+
+[source,ruby]
+puts 'Beer, the cure for the common &lt;XML&gt;-hell.'</code></pre></div></section>
+
+<section class="intro topic"><h2>see the <strong>big picture</strong></h2></section>
+
+<section><figure><img class="center relax-x" src="images/gedit-asciidoc-outline.png" alt="gedit asciidoc outline" /><figcaption></figcaption></figure></section>
+
+<section><img class="pull-left" src="images/export-icon.png" alt="export icon" />
+<ul class="incremental middle pull-right"><li>HTML 5</li><li>DocBook 4.5 &amp; 5.0</li><li>PDF <span class="detail">fop, dblatex</span></li><li>eBook <span class="detail">ePub 2, mobi</span></li><li>slides <span class="detail">deck.js, dzslides, reveal.js</span></li><li>man pages</li><li><strong>custom</strong>&ndash;you name it!</li></ul></section>
+
+<section class="topic intro"><h2>Extensions</h2></section>
+
+<section><figure><img src="images/ast.png" alt="ast" /><figcaption>Document AST</figcaption></figure></section>
+
+<section><p class="middle pull-left">AST extensions</p>
+<ul class="incremental middle pull-right"><li>Preprocessor</li><li>Treeprocessor</li><li>Postprocessor</li></ul></section>
+
+<section><p class="middle pull-left">Syntax extensions</p>
+<ul class="incremental middle pull-right"><li>Block</li><li>Block Macro</li><li>Inline Macro</li></ul></section>
+
+<section class="topic intro"><h2>Polyglot!</h2><ul class="incremental pull-right"><li>Ruby</li><li>&#160; &#160; JavaScript</li><li>Java</li><li>&#160; &#160; Groovy</li><li>and more!</li></ul></section>
+
+<section class="topic intro"><h2>Asciidoctor <strong>Java</strong></h2></section>
+
+<section><p><span class="image"><img src="images/jruby-logo.png" alt="JRuby" width="356" height="102" /></span></p>
+<p>The <strong class="ruby">Ruby</strong> Programming Language on the JVM</p></section>
+
+<section><figure><img src="images/asciidoctor-java.png" alt="AsciidoctorJ processor" /><figcaption>AsciidoctorJ</figcaption></figure></section>
+
+<section><figure><img src="images/asciidoctor-java-usage.png" alt="AsciidoctorJ usage" /><figcaption>AsciidoctorJ build plugins</figcaption></figure></section>
+
+<section><blockquote><p>Any application that can be written in <em>JavaScript</em> <span class="underline">will eventually</span> be written in <em>JavaScript</em>.</p><br /><cite>Atwood's law</cite></blockquote></section>
+
+<section class="topic intro"><h2>Asciidoctor.<strong>js</strong></h2></section>
+
+<section><p class="statement"><strong>Opal</strong><br />
+&#8203;<br />
+A <span class="ruby">Ruby</span> to <span class="javascript">JavaScript</span> cross compiler</p>
+<img class="top corner" src="images/opal-logo.png" alt="Opal" width="200" height="200" /></section>
+
+<section><figure><img class="relax-y elevate" src="images/asciidoctorjs-compile.png" alt="asciidoctorjs compile" /><figcaption>asciidoctor.js compilation</figcaption></figure></section>
+
+<section><figure><img src="images/github-sample.png" alt="github sample" /><figcaption class="band">AsciiDoc rendering on GitHub</figcaption></figure></section>
+
+<section><figure><img src="images/docgist-sample.png" alt="docgist sample" /><figcaption class="band">DocGist</figcaption></figure></section>
+
+<section><figure><img src="images/chrome-sample.png" alt="chrome sample" /><figcaption class="band">Asciidoctor.js Browser Extension</figcaption></figure></section>
+
+<section><figure><img src="images/asciidoctor-websockets.png" alt="asciidoctor websockets" /><figcaption class="band">Asciidoctor + WebSockets</figcaption></figure></section>
+
+<section class="topic intro"><h2><strong>Unicode</strong> compliant++</h2><details><details open=""><summary>Notes</summary><p>Don&#8217;t let the "Ascii" in AsciiDoc fool you.
+AsciiDoc and Asciidoctor have full unicode support.</p>
+<p>The Unicode Standard is the universal character-encoding scheme for written characters and text.</p></details></details></section>
+
+<section class="topic"><h2>Symbol party!</h2><ul class="incremental scatter big"><li><span class="icon"><i class="icon-twitter"></i></span></li><li><span class="gray">&#x2708;</span></li><li><span class="black">☃</span>?</li><li>\$E = mc^2\$</li></ul></section>
+
+<section><figure><img src="images/asciidoctor-styles.png" alt="asciidoctor styles" /><figcaption class="band">Design Legibility &amp; Aesthetics</figcaption></figure></section>
+
+<section class="terminal raw"><div class="literalblock"><pre class="literal">[[zen-of-writing]]
+= Discover the '☯' of ✍ **[subtle]##(##Ascii[subtle]##)##Doc**s
+Dan Allen &lt;http://github.com/mojavelinux[@mojavelinux]&gt;
+v2.1, Dec 4, 2013
+:hashtag: #asciidoctor #rwx
+:copyright: CC BY-SA 2.0
+:website: http://asciidoctor.org
+:dzslides-aspect: 16-9
+:math:
+:icons: font
+include::attributes.conf[]
+
+[.topic.intro]
+== The Documentation Chronicles
+
+``Tech Writing Against Word.''
+
+
+== !
+
+video::editing-word.ogv[]
+
+
+[.topic.intro]
+== The Documentation Chronicles
+
+``Asciidoctor saves the day!''
+
+
+== !
+
+video::editing-asciidoc.ogv[]</pre></div></section>
+
+<section><ul class="scatter incremental"><li><a href="https://github.com/git/git/tree/master/Documentation">Git</a> <span class="detail">User guide, man pages</span></li><li><a href="https://github.com/neo4j/neo4j/tree/master/manual/src">Neo4j</a> <span class="detail">Manual, refcards</span></li><li><a href="http://docs.spring.io/spring/docs/4.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle">Spring Framework</a> <span class="detail">Reference</span></li><li><a href="https://github.com/cdi-spec/cdi/tree/master/spec">CDI</a> <span class="detail">Specification</span></li><li>Publishers <span class="detail">O&#8217;Reilly, Manning, <a href="http://www.nofluffjuststuff.com/home/magazine_subscribe">NFJS Magazine</a></span></li><li>Repositories <span class="detail">Bintray, <strong>GitHub!</strong></span></li><li>and more!</li></ul></section>
+
+<section><p class="statement">Drop the <strong class="sans">&lt;/&gt;</strong><br />
+not the <strong>semantics</strong></p></section>
+
+<section class="topic intro"><h2>&#8220;It&#8217;s just <em>text</em>, mate&#8221;</h2></section>
+
+<section class="topic ending"><h2 class="name">Experience writing zen!</h2><p class="footer"><a href="http://asciidoctor.org">http://asciidoctor.org</a></p></section>
+<script>
+//   __  __  __       .  __   ___  __
+//  |  \  / /__` |    | |  \ |__  /__`
+//  |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+//
+var Dz = {
+  remoteWindows: [],
+  idx: -1,
+  step: 0,
+  html: null,
+  slides: null,
+  progressBar : null,
+  params: {
+    autoplay: "1"
+  }
+};
+
+Dz.init = function() {
+  document.body.className = "loaded";
+  this.slides = Array.prototype.slice.call($$("body > section"));
+  this.progressBar = $("#progress-bar");
+  if (!this.progressBar) {
+    this.progressBar = document.createElement('div');
+    this.progressBar.id = 'progress-bar';
+    document.body.appendChild(this.progressBar);
+  }
+  this.html = document.body.parentNode;
+  this.setupParams();
+  this.onhashchange();
+  this.setupTouchEvents();
+  this.onresize();
+  this.setupView();
+}
+
+Dz.setupParams = function() {
+  var p = window.location.search.substr(1).split('&');
+  p.forEach(function(e, i, a) {
+    var keyVal = e.split('=');
+    Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+  });
+// Specific params handling
+  if (!+this.params.autoplay)
+    $$.forEach($$("video"), function(v){ v.controls = true });
+}
+
+Dz.onkeydown = function(aEvent) {
+  // skip keystrokes in a content editable region
+  if (aEvent.target.isContentEditable) {
+    return;
+  }
+
+  // Don't intercept keyboard shortcuts
+  if (aEvent.altKey
+    || aEvent.ctrlKey
+    || aEvent.metaKey
+    || aEvent.shiftKey) {
+    return;
+  }
+  if ( aEvent.keyCode == 37 // left arrow
+    || aEvent.keyCode == 38 // up arrow
+    || aEvent.keyCode == 33 // page up
+    || aEvent.keyCode == 8 // backspace
+    || aEvent.keyCode == 75 // k
+  ) {
+    aEvent.preventDefault();
+    this.back();
+  }
+  else if ( aEvent.keyCode == 39 // right arrow
+    || aEvent.keyCode == 40 // down arrow
+    || aEvent.keyCode == 34 // page down
+    || aEvent.keyCode == 32 // space
+    || aEvent.keyCode == 74 // j
+  ) {
+    aEvent.preventDefault();
+    this.forward();
+  }
+  else if (aEvent.keyCode == 35) { // end
+    aEvent.preventDefault();
+    this.goEnd();
+  }
+  else if (aEvent.keyCode == 36) { // home
+    aEvent.preventDefault();
+    this.goStart();
+  }
+  else if (aEvent.keyCode == 80) { // p
+    aEvent.preventDefault();
+    this.toggleContent();
+  }
+  else if (aEvent.keyCode == 70) { // f
+    aEvent.preventDefault();
+    this.goFullscreen();
+  }
+  else if (aEvent.keyCode == 79) { // o
+    aEvent.preventDefault();
+    this.toggleView();
+  }
+}
+
+/* Touch Events */
+
+Dz.setupTouchEvents = function() {
+  var orgX, newX;
+  var tracking = false;
+
+  var db = document.body;
+  db.addEventListener("touchstart", start.bind(this), false);
+  db.addEventListener("touchmove", move.bind(this), false);
+
+  function start(aEvent) {
+    aEvent.preventDefault();
+    tracking = true;
+    orgX = aEvent.changedTouches[0].pageX;
+  }
+
+  function move(aEvent) {
+    if (!tracking) return;
+    newX = aEvent.changedTouches[0].pageX;
+    if (orgX - newX > 100) {
+      tracking = false;
+      this.forward();
+    } else {
+      if (orgX - newX < -100) {
+        tracking = false;
+        this.back();
+      }
+    }
+  }
+}
+
+Dz.setupView = function() {
+  document.body.addEventListener("click", function ( e ) {
+    if (!Dz.html.classList.contains("view")) return;
+    if (!e.target || e.target.nodeName != "SECTION") return;
+
+    Dz.html.classList.remove("view");
+    Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+  }, false);
+}
+
+/* Adapt the size of the slides to the window */
+
+Dz.onresize = function() {
+  var db = document.body;
+  var sx = db.clientWidth / window.innerWidth;
+  var sy = db.clientHeight / window.innerHeight;
+  var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+  db.style.MozTransform = transform;
+  db.style.WebkitTransform = transform;
+  db.style.OTransform = transform;
+  db.style.msTransform = transform;
+  db.style.transform = transform;
+}
+
+Dz.getDetails = function(aIdx) {
+  var s = $("section:nth-of-type(" + aIdx + ")");
+  var d = s.$("details");
+  return d ? d.innerHTML : "";
+}
+
+Dz.getAspect = function() {
+  var match = document.documentElement.className.match(/\baspect-([0-9]+)-([0-9]+)\b/)
+  if (match)
+    return match[1] + ":" + match[2];
+  return "4:3";
+}
+
+Dz.onmessage = function(aEvent) {
+  var argv = aEvent.data.split(" "), argc = argv.length;
+  argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+  var win = aEvent.source;
+  if (argv[0] === "REGISTER" && argc === 1) {
+    this.remoteWindows.push(win);
+    this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+    this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    return;
+  }
+  if (argv[0] === "BACK" && argc === 1)
+    this.back();
+  if (argv[0] === "FORWARD" && argc === 1)
+    this.forward();
+  if (argv[0] === "START" && argc === 1)
+    this.goStart();
+  if (argv[0] === "END" && argc === 1)
+    this.goEnd();
+  if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+    this.toggleContent();
+  if (argv[0] === "SET_CURSOR" && argc === 2)
+    window.location.hash = "#" + argv[1];
+  if (argv[0] === "GET_CURSOR" && argc === 1)
+    this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+  if (argv[0] === "GET_NOTES" && argc === 1)
+    this.postMsg(win, "NOTES", this.getDetails(this.idx));
+  if (argv[0] === "GET_ASPECT" && argc === 1)
+    this.postMsg(win, "ASPECT", this.getAspect());
+}
+
+Dz.toggleContent = function() {
+  // If a Video is present in this new slide, play it.
+  // If a Video is present in the previous slide, stop it.
+  var s = $("section[aria-selected]");
+  if (s) {
+    var video = s.$("video");
+    if (video) {
+      if (video.ended || video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  }
+}
+
+Dz.setCursor = function(aIdx, aStep) {
+  // If the user change the slide number in the URL bar, jump
+  // to this slide.
+  aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+  window.location.hash = "#" + aIdx + aStep;
+}
+
+Dz.onhashchange = function() {
+  var cursor = window.location.hash.split("#"),
+      newidx = 1,
+      newstep = 0;
+  if (cursor.length == 2) {
+    newidx = ~~cursor[1].split(".")[0];
+    newstep = ~~cursor[1].split(".")[1];
+    if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+      newstep = 0;
+      newidx++;
+    }
+  }
+  this.setProgress(newidx, newstep);
+  if (newidx != this.idx) {
+    this.setSlide(newidx);
+  }
+  if (newstep != this.step) {
+    this.setIncremental(newstep);
+  }
+  for (var i = 0; i < this.remoteWindows.length; i++) {
+    this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+  }
+}
+
+Dz.back = function() {
+  if (this.idx == 1 && this.step == 0) {
+    return;
+  }
+  if (this.step == 0) {
+    this.setCursor(this.idx - 1,
+                   this.slides[this.idx - 2].$$('.incremental > *').length);
+  } else {
+    this.setCursor(this.idx, this.step - 1);
+  }
+}
+
+Dz.forward = function() {
+  if (this.idx >= this.slides.length &&
+      this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      return;
+  }
+  if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+    this.setCursor(this.idx + 1, 0);
+  } else {
+    this.setCursor(this.idx, this.step + 1);
+  }
+}
+
+Dz.goStart = function() {
+  this.setCursor(1, 0);
+}
+
+Dz.goEnd = function() {
+  var lastIdx = this.slides.length;
+  var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+  this.setCursor(lastIdx, lastStep);
+}
+
+Dz.toggleView = function() {
+  this.html.classList.toggle("view");
+
+  if (this.html.classList.contains("view")) {
+    $("section[aria-selected]").scrollIntoView(true);
+  }
+}
+
+Dz.setSlide = function(aIdx) {
+  this.idx = aIdx;
+  var old = $("section[aria-selected]");
+  var next = $("section:nth-of-type("+ this.idx +")");
+  if (old) {
+    var oldIncremental = old.$('.incremental > *[aria-selected]')
+    if (oldIncremental) {
+      oldIncremental.removeAttribute('aria-selected');
+    }
+    old.removeAttribute("aria-selected");
+    var video = old.$("video");
+    if (video) {
+      video.pause();
+    }
+  }
+  if (next) {
+    next.setAttribute("aria-selected", "true");
+    var video = next.$("video");
+    if (video && !!+this.params.autoplay) {
+      video.play();
+    }
+  } else {
+    // That should not happen
+    this.idx = -1;
+    // console.warn("Slide doesn't exist.");
+  }
+}
+
+Dz.setIncremental = function(aStep) {
+  this.step = aStep;
+  var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+  if (old) {
+    old.removeAttribute('aria-selected');
+  }
+  var incrementals = $$('.incremental');
+  if (this.step <= 0) {
+    $$.forEach(incrementals, function(aNode) {
+      aNode.removeAttribute('active');
+    });
+    return;
+  }
+  var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+  if (next) {
+    next.setAttribute('aria-selected', true);
+    next.parentNode.setAttribute('active', true);
+    var found = false;
+    $$.forEach(incrementals, function(aNode) {
+      if (aNode != next.parentNode)
+        if (found)
+          aNode.removeAttribute('active');
+        else
+          aNode.setAttribute('active', true);
+      else
+        found = true;
+    });
+  } else {
+    setCursor(this.idx, 0);
+  }
+  return next;
+}
+
+Dz.goFullscreen = function() {
+  var html = $('html'),
+      requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+  if (requestFullscreen) {
+    requestFullscreen.apply(html);
+  }
+}
+
+Dz.setProgress = function(aIdx, aStep) {
+  var slide = $("section:nth-of-type("+ aIdx +")");
+  if (!slide)
+    return;
+  var steps = slide.$$('.incremental > *').length + 1,
+      slideSize = 100 / (this.slides.length - 1),
+      stepSize = slideSize / steps;
+  this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+}
+
+Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+  aMsg = [aMsg];
+  for (var i = 2; i < arguments.length; i++)
+    aMsg.push(encodeURIComponent(arguments[i]));
+  aWin.postMessage(aMsg.join(" "), "*");
+}
+
+function init() {
+  Dz.init();
+  window.onkeydown = Dz.onkeydown.bind(Dz);
+  window.onresize = Dz.onresize.bind(Dz);
+  window.onhashchange = Dz.onhashchange.bind(Dz);
+  window.onmessage = Dz.onmessage.bind(Dz);
+}
+
+window.onload = init;
+
+// Helpers
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function (oThis) {
+
+    // closest thing possible to the ECMAScript 5 internal IsCallable
+    // function 
+    if (typeof this !== "function")
+    throw new TypeError(
+      "Function.prototype.bind - what is trying to be fBound is not callable"
+    );
+
+    var aArgs = Array.prototype.slice.call(arguments, 1),
+        fToBind = this,
+        fNOP = function () {},
+        fBound = function () {
+          return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                 aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+
+    return fBound;
+  };
+}
+
+var $ = (HTMLElement.prototype.$ = function(aQuery) {
+  return this.querySelector(aQuery);
+}).bind(document);
+
+var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+  return this.querySelectorAll(aQuery);
+}).bind(document);
+
+$$.forEach = function(nodeList, fun) {
+  Array.prototype.forEach.call(nodeList, fun);
+}
+var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/</gm,"&lt;").replace(/>/gm,"&gt;")}function b(p){for(var o=p.firstChild;o;o=o.nextSibling){if(o.nodeName=="CODE"){return o}if(!(o.nodeType==3&&o.nodeValue.match(/\s+/))){break}}}function h(p,o){return Array.prototype.map.call(p.childNodes,function(q){if(q.nodeType==3){return o?q.nodeValue.replace(/\n/g,""):q.nodeValue}if(q.nodeName=="BR"){return"\n"}return h(q,o)}).join("")}function a(q){var p=(q.className+" "+(q.parentNode?q.parentNode.className:"")).split(/\s+/);p=p.map(function(r){return r.replace(/^language-/,"")});for(var o=0;o<p.length;o++){if(e[p[o]]||p[o]=="no-highlight"){return p[o]}}}function c(q){var o=[];(function p(r,s){for(var t=r.firstChild;t;t=t.nextSibling){if(t.nodeType==3){s+=t.nodeValue.length}else{if(t.nodeName=="BR"){s+=1}else{if(t.nodeType==1){o.push({event:"start",offset:s,node:t});s=p(t,s);o.push({event:"stop",offset:s,node:t})}}}}return s})(q,0);return o}function j(x,v,w){var p=0;var y="";var r=[];function t(){if(x.length&&v.length){if(x[0].offset!=v[0].offset){return(x[0].offset<v[0].offset)?x:v}else{return v[0].event=="start"?x:v}}else{return x.length?x:v}}function s(A){function z(B){return" "+B.nodeName+'="'+l(B.value)+'"'}return"<"+A.nodeName+Array.prototype.map.call(A.attributes,z).join("")+">"}while(x.length||v.length){var u=t().splice(0,1)[0];y+=l(w.substr(p,u.offset-p));p=u.offset;if(u.event=="start"){y+=s(u.node);r.push(u.node)}else{if(u.event=="stop"){var o,q=r.length;do{q--;o=r[q];y+=("</"+o.nodeName.toLowerCase()+">")}while(o!=u.node);r.splice(q,1);while(q<r.length){y+=s(r[q]);q++}}}}return y+l(w.substr(p))}function f(r){function o(s){return(s&&s.source)||s}function p(t,s){return RegExp(o(t),"m"+(r.cI?"i":"")+(s?"g":""))}function q(z,x){if(z.compiled){return}z.compiled=true;var u=[];if(z.k){var s={};function A(B,t){t.split(" ").forEach(function(C){var D=C.split("|");s[D[0]]=[B,D[1]?Number(D[1]):1];u.push(D[0])})}z.lR=p(z.l||hljs.IR+"(?!\\.)",true);if(typeof z.k=="string"){A("keyword",z.k)}else{for(var y in z.k){if(!z.k.hasOwnProperty(y)){continue}A(y,z.k[y])}}z.k=s}if(x){if(z.bWK){z.b="\\b("+u.join("|")+")\\b(?!\\.)\\s*"}z.bR=p(z.b?z.b:"\\B|\\b");if(!z.e&&!z.eW){z.e="\\B|\\b"}if(z.e){z.eR=p(z.e)}z.tE=o(z.e)||"";if(z.eW&&x.tE){z.tE+=(z.e?"|":"")+x.tE}}if(z.i){z.iR=p(z.i)}if(z.r===undefined){z.r=1}if(!z.c){z.c=[]}for(var w=0;w<z.c.length;w++){if(z.c[w]=="self"){z.c[w]=z}q(z.c[w],z)}if(z.starts){q(z.starts,x)}var v=[];for(var w=0;w<z.c.length;w++){v.push(o(z.c[w].b))}if(z.tE){v.push(o(z.tE))}if(z.i){v.push(o(z.i))}z.t=v.length?p(v.join("|"),true):{exec:function(t){return null}}}q(r)}function d(E,F,C){function o(r,N){for(var M=0;M<N.c.length;M++){var L=N.c[M].bR.exec(r);if(L&&L.index==0){return N.c[M]}}}function s(L,r){if(L.e&&L.eR.test(r)){return L}if(L.eW){return s(L.parent,r)}}function t(r,L){return !C&&L.i&&L.iR.test(r)}function y(M,r){var L=G.cI?r[0].toLowerCase():r[0];return M.k.hasOwnProperty(L)&&M.k[L]}function H(){var L=l(w);if(!A.k){return L}var r="";var O=0;A.lR.lastIndex=0;var M=A.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=y(A,M);if(N){v+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=A.lR.lastIndex;M=A.lR.exec(L)}return r+L.substr(O)}function z(){if(A.sL&&!e[A.sL]){return l(w)}var r=A.sL?d(A.sL,w):g(w);if(A.r>0){v+=r.keyword_count;B+=r.r}return'<span class="'+r.language+'">'+r.value+"</span>"}function K(){return A.sL!==undefined?z():H()}function J(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){x+=L;w=""}else{if(M.eB){x+=l(r)+L;w=""}else{x+=L;w=r}}A=Object.create(M,{parent:{value:A}})}function D(L,r){w+=L;if(r===undefined){x+=K();return 0}var N=o(r,A);if(N){x+=K();J(N,r);return N.rB?0:r.length}var O=s(A,r);if(O){var M=A;if(!(M.rE||M.eE)){w+=r}x+=K();do{if(A.cN){x+="</span>"}B+=A.r;A=A.parent}while(A!=O.parent);if(M.eE){x+=l(r)}w="";if(O.starts){J(O.starts,"")}return M.rE?0:r.length}if(t(r,A)){throw new Error('Illegal lexem "'+r+'" for mode "'+(A.cN||"<unnamed>")+'"')}w+=r;return r.length||1}var G=e[E];f(G);var A=G;var w="";var B=0;var v=0;var x="";try{var u,q,p=0;while(true){A.t.lastIndex=p;u=A.t.exec(F);if(!u){break}q=D(F.substr(p,u.index-p),u[0]);p=u.index+q}D(F.substr(p));return{r:B,keyword_count:v,value:x,language:E}}catch(I){if(I.message.indexOf("Illegal")!=-1){return{r:0,keyword_count:0,value:l(F)}}else{throw I}}}function g(s){var o={keyword_count:0,r:0,value:l(s)};var q=o;for(var p in e){if(!e.hasOwnProperty(p)){continue}var r=d(p,s,false);r.language=p;if(r.keyword_count+r.r>q.keyword_count+q.r){q=r}if(r.keyword_count+r.r>o.keyword_count+o.r){q=o;o=r}}if(q.language){o.second_best=q}return o}function i(q,p,o){if(p){q=q.replace(/^((<[^>]+>|\t)+)/gm,function(r,v,u,t){return v.replace(/\t/g,p)})}if(o){q=q.replace(/\n/g,"<br>")}return q}function m(r,u,p){var v=h(r,p);var t=a(r);if(t=="no-highlight"){return}var w=t?d(t,v,true):g(v);t=w.language;var o=c(r);if(o.length){var q=document.createElement("pre");q.innerHTML=w.value;w.value=j(o,c(q),v)}w.value=i(w.value,u,p);var s=r.className;if(!s.match("(\\s|^)(language-)?"+t+"(\\s|$)")){s=s?(s+" "+t):t}r.innerHTML=w.value;r.className=s;r.result={language:t,kw:w.keyword_count,re:w.r};if(w.second_best){r.second_best={language:w.second_best.language,kw:w.second_best.keyword_count,re:w.second_best.r}}}function n(){if(n.called){return}n.called=true;Array.prototype.map.call(document.getElementsByTagName("pre"),b).filter(Boolean).forEach(function(o){m(o,hljs.tabReplace)})}function k(){window.addEventListener("DOMContentLoaded",n,false);window.addEventListener("load",n,false)}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=m;this.initHighlighting=n;this.initHighlightingOnLoad=k;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.BE={b:"\\\\[\\s\\S]",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.REGEXP_MODE={cN:"regexp",b:/\//,e:/\/[gim]*/,i:/\n/,c:[this.BE,{b:/\[/,e:/\]/,r:0,c:[this.BE]}]};this.inherit=function(q,r){var o={};for(var p in q){o[p]=q[p]}if(r){for(var p in r){o[p]=r[p]}}return o}}();hljs.LANGUAGES.ruby=function(e){var a="[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?";var j="[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?";var g={keyword:"and false then defined module in return redo if BEGIN retry end for true self when next until do begin unless END rescue nil else break undef not super class case require yield alias while ensure elsif or include"};var c={cN:"yardoctag",b:"@[A-Za-z]+"};var k=[{cN:"comment",b:"#",e:"$",c:[c]},{cN:"comment",b:"^\\=begin",e:"^\\=end",c:[c],r:10},{cN:"comment",b:"^__END__",e:"\\n$"}];var d={cN:"subst",b:"#\\{",e:"}",l:a,k:g};var i=[e.BE,d];var b=[{cN:"string",b:"'",e:"'",c:i,r:0},{cN:"string",b:'"',e:'"',c:i,r:0},{cN:"string",b:"%[qw]?\\(",e:"\\)",c:i},{cN:"string",b:"%[qw]?\\[",e:"\\]",c:i},{cN:"string",b:"%[qw]?{",e:"}",c:i},{cN:"string",b:"%[qw]?<",e:">",c:i,r:10},{cN:"string",b:"%[qw]?/",e:"/",c:i,r:10},{cN:"string",b:"%[qw]?%",e:"%",c:i,r:10},{cN:"string",b:"%[qw]?-",e:"-",c:i,r:10},{cN:"string",b:"%[qw]?\\|",e:"\\|",c:i,r:10}];var h={cN:"function",bWK:true,e:" |$|;",k:"def",c:[{cN:"title",b:j,l:a,k:g},{cN:"params",b:"\\(",e:"\\)",l:a,k:g}].concat(k)};var f=k.concat(b.concat([{cN:"class",bWK:true,e:"$|;",k:"class module",c:[{cN:"title",b:"[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?",r:0},{cN:"inheritance",b:"<\\s*",c:[{cN:"parent",b:"("+e.IR+"::)?"+e.IR}]}].concat(k)},h,{cN:"constant",b:"(::)?(\\b[A-Z]\\w*(::)?)+",r:0},{cN:"symbol",b:":",c:b.concat([{b:j}]),r:0},{cN:"symbol",b:a+":",r:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",r:0},{cN:"number",b:"\\?\\w"},{cN:"variable",b:"(\\$\\W)|((\\$|\\@\\@?)(\\w+))"},{b:"("+e.RSR+")\\s*",c:k.concat([{cN:"regexp",b:"/",e:"/[a-z]*",i:"\\n",c:[e.BE,d]}]),r:0}]));d.c=f;h.c[1].c=f;return{l:a,k:g,c:f}}(hljs);hljs.LANGUAGES.xml=function(a){var c="[A-Za-z0-9\\._:-]+";var b={eW:true,r:0,c:[{cN:"attribute",b:c,r:0},{b:'="',rB:true,e:'"',c:[{cN:"value",b:'"',eW:true}]},{b:"='",rB:true,e:"'",c:[{cN:"value",b:"'",eW:true}]},{b:"=",c:[{cN:"value",b:"[^\\s/>]+"}]}]};return{cI:true,c:[{cN:"pi",b:"<\\?",e:"\\?>",r:10},{cN:"doctype",b:"<!DOCTYPE",e:">",r:10,c:[{b:"\\[",e:"\\]"}]},{cN:"comment",b:"<!--",e:"-->",r:10},{cN:"cdata",b:"<\\!\\[CDATA\\[",e:"\\]\\]>",r:10},{cN:"tag",b:"<style(?=\\s|>|$)",e:">",k:{title:"style"},c:[b],starts:{e:"</style>",rE:true,sL:"css"}},{cN:"tag",b:"<script(?=\\s|>|$)",e:">",k:{title:"script"},c:[b],starts:{e:"<\/script>",rE:true,sL:"javascript"}},{b:"<%",e:"%>",sL:"vbscript"},{cN:"tag",b:"</?",e:"/?>",r:0,c:[{cN:"title",b:"[^ /><]+"},b]}]}}(hljs);hljs.LANGUAGES.markdown=function(a){return{c:[{cN:"header",b:"^#{1,3}",e:"$"},{cN:"header",b:"^.+?\\n[=-]{2,}$"},{b:"<",e:">",sL:"xml",r:0},{cN:"bullet",b:"^([*+-]|(\\d+\\.))\\s+"},{cN:"strong",b:"[*_]{2}.+?[*_]{2}"},{cN:"emphasis",b:"\\*.+?\\*"},{cN:"emphasis",b:"_.+?_",r:0},{cN:"blockquote",b:"^>\\s+",e:"$"},{cN:"code",b:"`.+?`"},{cN:"code",b:"^    ",e:"$",r:0},{cN:"horizontal_rule",b:"^-{3,}",e:"$"},{b:"\\[.+?\\]\\(.+?\\)",rB:true,c:[{cN:"link_label",b:"\\[.+\\]"},{cN:"link_url",b:"\\(",e:"\\)",eB:true,eE:true}]}]}}(hljs);hljs.LANGUAGES.java=function(a){return{k:"false synchronized int abstract float private char boolean static null if const for true while long throw strictfp finally protected import native final return void enum else break transient new catch instanceof byte super volatile case assert short package default double public try this switch continue throws",c:[{cN:"javadoc",b:"/\\*\\*",e:"\\*/",c:[{cN:"javadoctag",b:"(^|\\s)@[A-Za-z]+"}],r:10},a.CLCM,a.CBLCLM,a.ASM,a.QSM,{cN:"class",bWK:true,e:"{",k:"class interface",eE:true,i:":",c:[{bWK:true,k:"extends implements",r:10},{cN:"title",b:a.UIR}]},a.CNM,{cN:"annotation",b:"@[A-Za-z]+"}]}}(hljs);hljs.LANGUAGES.xml=function(a){var c="[A-Za-z0-9\\._:-]+";var b={eW:true,r:0,c:[{cN:"attribute",b:c,r:0},{b:'="',rB:true,e:'"',c:[{cN:"value",b:'"',eW:true}]},{b:"='",rB:true,e:"'",c:[{cN:"value",b:"'",eW:true}]},{b:"=",c:[{cN:"value",b:"[^\\s/>]+"}]}]};return{cI:true,c:[{cN:"pi",b:"<\\?",e:"\\?>",r:10},{cN:"doctype",b:"<!DOCTYPE",e:">",r:10,c:[{b:"\\[",e:"\\]"}]},{cN:"comment",b:"<!--",e:"-->",r:10},{cN:"cdata",b:"<\\!\\[CDATA\\[",e:"\\]\\]>",r:10},{cN:"tag",b:"<style(?=\\s|>|$)",e:">",k:{title:"style"},c:[b],starts:{e:"</style>",rE:true,sL:"css"}},{cN:"tag",b:"<script(?=\\s|>|$)",e:">",k:{title:"script"},c:[b],starts:{e:"<\/script>",rE:true,sL:"javascript"}},{b:"<%",e:"%>",sL:"vbscript"},{cN:"tag",b:"</?",e:"/?>",r:0,c:[{cN:"title",b:"[^ /><]+"},b]}]}}(hljs);hljs.LANGUAGES.asciidoc=function(a){return{c:[{cN:"comment",b:"^/{4,}\\n",e:"\\n/{4,}$",r:10},{cN:"comment",b:"^//",e:"$",r:0},{cN:"title",b:"^\\.\\w.*$"},{b:"^[=\\*]{4,}\\n",e:"\\n^[=\\*]{4,}$",r:10},{cN:"header",b:"^(={1,5}) .+?( \\1)?$",r:10},{cN:"header",b:"^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}$",r:10},{cN:"attribute",b:"^:.+?:",e:"\\s",eE:true,r:10},{cN:"attribute",b:"^\\[.+?\\]$",r:0},{cN:"blockquote",b:"^_{4,}\\n",e:"\\n_{4,}$",r:10},{cN:"code",b:"^[\\-\\.]{4,}\\n",e:"\\n[\\-\\.]{4,}$",r:10},{b:"^\\+{4,}\\n",e:"\\n\\+{4,}$",c:[{b:"<",e:">",sL:"xml",r:0}],r:10},{cN:"bullet",b:"^(\\*+|\\-+|\\.+|[^\\n]+?::)\\s+"},{cN:"label",b:"^(NOTE|TIP|IMPORTANT|WARNING|CAUTION):\\s+",r:10},{cN:"strong",b:"\\B\\*(?![\\*\\s])",e:"(\\n{2}|\\*)",c:[{b:"\\\\*\\w",r:0}]},{cN:"emphasis",b:"\\B'(?!['\\s])",e:"(\\n{2}|')",c:[{b:"\\\\'\\w",r:0}],r:0},{cN:"emphasis",b:"_(?![_\\s])",e:"(\\n{2}|_)",r:0},{cN:"smartquote",b:"``.+?''",r:10},{cN:"smartquote",b:"`.+?'",r:10},{cN:"code",b:"(`.+?`|\\+.+?\\+)",r:0},{cN:"code",b:"^[ \\t]",e:"$",r:0},{cN:"horizontal_rule",b:"^'{3,}[ \\t]*$",r:10},{b:"(link:)?(http|https|ftp|file|irc|image:?):\\S+\\[.*?\\]",rB:true,c:[{b:"(link|image:?):",r:0},{cN:"link_url",b:"\\w",e:"[^\\[]+",r:0},{cN:"link_label",b:"\\[",e:"\\]",eB:true,eE:true,r:0}],r:10}]}}(hljs);hljs.LANGUAGES.javascript=function(a){return{k:{keyword:"in if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const",literal:"true false null undefined NaN Infinity"},c:[a.ASM,a.QSM,a.CLCM,a.CBLCLM,a.CNM,{b:"("+a.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[a.CLCM,a.CBLCLM,a.REGEXP_MODE,{b:/</,e:/>;/,sL:"xml"}],r:0},{cN:"function",bWK:true,e:/{/,k:"function",c:[{cN:"title",b:/[A-Za-z$_][0-9A-Za-z$_]*/},{cN:"params",b:/\(/,e:/\)/,c:[a.CLCM,a.CBLCLM],i:/["'\(]/}],i:/\[|%/}]}}(hljs);
+</script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
