@@ -33,4 +33,4 @@ RWX 2013::
 
 OSCON 2014::
 
-  * link:tapping-into-ruby-from-jvm/oscon2014/index.html[Tapping into Ruby from the JVM]
+  * link:tapping-into-ruby-from-jvm/oscon2014/index.html[Tapping into Ruby from the JVM] [ https://dl.dropboxusercontent.com/u/29402588/slides/oscon2014/tapping-into-ruby-from-jvm.pdf[pdf] ]
