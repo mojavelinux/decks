@@ -1,0 +1,493 @@
+= Tapping into *Ruby* from the *JVM*
+Dan Allen <@mojavelinux>
+v1.0, Jul 22, 2014
+:copyright: CC BY-SA 2.0
+:imagesdir: images
+:figure-caption!:
+:source-highlighter: highlightjs
+:dzslides-style: truffle
+:dzslides-aspect: 16-9
+//:dzslides-fonts: family=Comfortaa:400
+//:dzslides-fonts: family=Sansita+One:400
+:dzslides-fonts: family=Racing+Sans+One:400
+:dzslides-transition: none
+:dzslides-highlight: default
+
+////
+This talk is as much about Ruby tapping into the JVM as it is about tapping into Ruby from the JVM.
+In fact, it's really about how well the two integrate and the impact this integration has made on my project and career.
+JRuby changed my life and I want to share it with you.
+100,000 of lines of last few year, no IDE
+////
+
+== !
+
+[.canvas]
+image::ruby-on-tap.png[]
+
+[.source]
+== Concise, tight logic
+
+[source,ruby]
+----
+if options.fetch :squash, true
+  result.shift && @lineno += 1 while (top = result[0]) && top.empty?
+  result.pop while (bot = result[-1]) && bot.empty?
+end
+----
+
+[.source]
+== DSLs _FTW!_
+
+[source,ruby]
+----
+block {
+  named :shout
+  on_context :paragraph
+  parse_content_as :simple
+  name_attributes 'vol'
+  process &-> (parent, reader, attrs) {
+    volume = ((attrs.delete 'vol') || 1).to_i
+    create_paragraph parent, (reader.lines.map {|line|
+        line.upcase.gsub /\.(?= |$)/, '!' * volume }), attrs
+  }
+}
+----
+
+== !
+
+[.canvas]
+image::ruby-on-tap.png[]
+
+////
+
+[.subject]
+== Why Ruby?
+
+== Feels Natural
+
+// "a language that feels natural to programmers"
+
+== Productive
+
+// 100,000 of lines of last few year, no IDE
+
+== RubyGems.org
+
+// 12,000 gems over 10,000 downloads
+
+== Write Once, Run Anywhere
+
+[.subject]
+== Why the JVM?
+
+== !
+
+[.incremental]
+* High performance
+* Real threading
+* Libraries++
+* Polyglot host
+* Platform independent
+
+////
+
+== _JVM_, at your service
+
+== !
+
+[.incremental.split]
+* Runtime
+* GC
+* JIT
+* Native threads / thread pools
+* `invokedynamic`
+//* Built-in profiler
+
+// * Ruby runs faster on the JVM
+//   - JRuby passed MRI performance in 1.1 using JIT & AOT compilation
+// * JRuby makes concurrency easy
+// * Good relationship between Ruby & Java language devs (influence of JRuby)
+// * Ruby runs a lot of other places
+
+// invoke dynamic allows dynamic languages to plug directly into JVM; optimize like statically-typed language
+
+[.subject]
+== What's _JRuby_?
+
+// current version: 1.7.13, 9000 in active development
+// 1.8.7, 1.9.3 and 2.1 compliance modes
+// 
+
+[.ruby]
+== !
+
+// one of many
+
+[.facets]
+* MRI
+* JRuby
+* Rubinius
+* RubyMotion
+* Ruboto
+* Opal
+
+== !
+
+[.incremental.text-center.middle]
+* Ruby
+* Java
+* *Ruby in Java!*
+
+// Embed Ruby interpreter into any Java application
+// You don't need no Ruby installation
+
+// Ruby in, bytecode out
+// Just a jar
+
+[.source]
+== JIT _in Action_
+
+.$HOME/.jrubyrc
+[source,properties]
+----
+jit.threshold=10
+jit.logging=true
+----
+
+[source,bash]
+----
+$ jruby -J-server bench.rb
+----
+
+....
+JITCompiler: done jitting:Asciidoctor::Parser.store_attribute
+    at ...lib/asciidoctor/parser.rb:2084
+JITCompiler: done jitting:Asciidoctor::Parser.sanitize_attribute_name
+    at ...lib/asciidoctor/parser.rb:2679
+....
+
+[.tweet]
+== !
+
+++++
+<blockquote class="twitter-tweet" lang="en"><p>Shout out to JRuby, powering most of Travis CI for the better of three years now!</p>&mdash; Mathias Meyer (@roidrage) <a href="https://twitter.com/roidrage/statuses/459992291093250048">April 26, 2014</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+++++
+
+[.subject]
+== JRuby: _2 ways_
+
+== !
+
+[.incremental.middle.text-center]
+* jruby CLI
+* JRuby Embed API
+
+[bgcolor=transparent]
+== !
+
+[.fit.fill-y]
+image::keep-calm-use-jruby-jruby-colors.png[]
+
+== !
+
+[.canvas]
+image::asciidoctor-java-integration.png[]
+
+== !
+
+[ditaa.fit,build-plugins,scale=2]
+....
++-------------------+------------------+
+|                   |                  |
+|                   |                  |
+|   Gradle Plugin   |   Maven Plugin   |
+|       c141        |       c047       |
+|                   |                  |
++-------------------+------------------+
+|                                      |
+|              AsciidoctorJ            |
+|                 c404                 |
++-------------------+------------------+
+|                                      |
+|                                      |
+|              Asciidoctor             |
+|                 c500                 |
+|                                      |
++-------------------+------------------+
+....
+
+[bgcolor=transparent]
+== !
+
+[.fit.middle]
+image::room-views.jpg[]
+
+== !
+
+[graphviz.canvas,java-ruby-interop,svg]
+....
+digraph g {
+  bgcolor="#00000000"
+  dpi=300
+  rankdir=LR
+  java [shape=box, label=Java, style=filled, fillcolor="#4F044F", fontcolor="#F5F5F5", fontname="Liberation Sans", penwidth=.5]
+  ruby [shape=box, label=Ruby, style=filled, fillcolor="#570000", fontcolor="#F5F5F5", fontname="Liberation Sans", penwidth=.5]
+  edge [arrowsize=.5, penwidth=.5, label="Powerful\nBidirectional\nInterop", fontname="Liberation Sans", fontsize=6, dir=both]
+  java -> ruby
+}
+....
+
+== !
+
+// Integration Points
+
+// * Evaluate Ruby script
+// * Pass data to Ruby
+// * Retrieve result from Ruby (and create instance)
+// * Call Ruby method
+// * Convert objects across bridge
+// * Implement Java interface in Ruby
+// * Call methods on Java objects in Ruby
+// * Instantiate Java objects in Ruby
+// * Check Java types and inheritence in Ruby
+// * Java native extension
+
+[.canvas]
+image::dual-citizenship-passports.jpg[]
+
+// Ruby as JVM citizen
+// Ruby as Java citizen
+
+== !
+
+[.canvas]
+.Ruby Red Bridge
+image::redbridge.jpg[]
+
+== !
+
+[.incremental]
+* ScriptEngineManager
+* Lookup in directory
+* Handled by library
+
+// depends on whether your project uses other scripting languages or whether you need multiple Ruby environments per JVM
+
+[.source]
+== Running Ruby _inside Java_
+
+[source,java]
+----
+import org.jruby.embed.ScriptingContainer;
+...
+ScriptingContainer container = new ScriptingContainer();
+container.runScriptlet("puts 'Hello from Ruby!'");
+----
+
+....
+Hello from Ruby!
+....
+
+== Feeding the _Engine_
+
+== !
+
+[.text-center.incremental.middle]
+* String
+* Reader
+* Classpath entry
+* Absolute path
+
+[.source]
+== Passing Data _to Ruby_
+
+[source,java]
+----
+ScriptingContainer container = new ScriptingContainer();
+container.put("message", "Hello from Ruby!");
+container.runScriptlet("puts message");
+----
+
+....
+Hello from Ruby!
+....
+
+[.source]
+== Returning Data _from Ruby_
+
+[source,java]
+----
+ScriptingContainer container = new ScriptingContainer();
+container.put("message", "Hello from Java with help from Ruby!");
+IRubyObject result = container.runScriptlet("message.upcase");
+System.out.println(result);
+----
+
+....
+HELLO FROM JAVA WITH HELP FROM RUBY!
+....
+
+== !
+
+[.canvas]
+image::wooden-duck-2.jpg[]
+
+[.source]
+== “Wooden Duck Typing”
+
+[source,java]
+----
+ScriptingContainer container = new ScriptingContainer();
+Ruby runtime = container.getProvider().getRuntime();
+
+String script = "require 'asciidoctor'\nAsciidoctor"
+IRubyObject result = (IRubyObject) container.runScriptlet(script);
+Asciidoctor asciidoctor = JavaEmbedUtils
+    .rubyToJava(runtime, result, Asciidoctor.class);
+
+String html = asciidoctor.convert_file("sample.adoc");
+----
+
+== !
+
+[.canvas]
+image::wolf-sheep-16-9.jpg[]
+
+[bgcolor=transparent]
+== !
+
+[.fit]
+image::giving-tree-quilt.jpg[]
+// one community, many threads
+// connections
+
+== Where the _Gems_ At?
+
+== !
+
+[.scatter]
+* JRUBY_HOME
+* GEM_HOME
+* JAR classpath
+
+// Classpath / Loadpath Unification
+
+[.source]
+== Loading _from a JAR_
+
+.gems.jar
+....
+gems/
+  specifications/
+    asciidoctor-1.5.0.gemspec
+  gems/
+    asciidoctor-1.5.0/
+      lib/
+        asciidoctor.rb
+        asciidoctor/
+....
+
+[source,java]
+----
+container.runScriptlet("require 'asciidoctor'")
+----
+
+[.subject]
+== _Herding_ JRuby
+
+// * Direct
+// * RVM / rubyenv
+// * Maven
+
+[.source]
+== Installing JRuby _using RVM_
+
+[source,bash]
+----
+$ \curl -sSL "https://get.rvm.io" > rvm-install.sh
+  bash rvm-install.sh -s latest
+  rvm install jruby
+  rvm use jruby
+  jruby --version
+----
+
+....
+jruby 1.7.13 (1.9.3p392) 2014-06-24 43f133c
+....
+
+[.text-right]
+image:rvm-logo.png[width=200]
+
+== Packaging & Deployment
+
+== !
+
+* RubyGem
+* JAR
+* Warbler [.ie]#jar, war#
+* Torquebox [.ie]#rack, rails#
+* and more...
+
+// Deploying with JRuby - Pragmatic Bookshelf
+
+== Distribution
+
+== !
+
+[.incremental.scatter]
+* Plain ol‘ *RubyGem* [.eg]#RubyGems.org,{nbsp}Bintray*#
+* Plain ol‘ *JAR* [.eg]#Maven{nbsp}Central,{nbsp}Bintray#
+
+== !
+
+[ditaa.fit.middle,gems-via-maven]
+....
++---------+  +----------------------+  +--------------+
+|{d}      |  |{io}                  |  |{s}           |
+| pom.xml |->| TorqueBox Proxy Repo |->| RubyGems.org |
+|         |  |c141                  |  |c500          |
++---------+  +----------------------+  +--------------+
+....
+
+== Tricky Bits
+
+== !
+
+* Symbols
+* Type checking
+* Concurrency
+* Shared state
+* Sparse documentation
+
+// remember to think about your caller!
+
+// Ruby world still growing up
+
+[.tweet]
+== !
+
+++++
+<blockquote class="twitter-tweet" lang="en"><p>JRuby 9000 is starting to shape up. Finishing Ruby 2.1 features, wiring up the new JIT, big overhaul of encodings and IO. Preview soonish.</p>&mdash; Charles Nutter (@headius) <a href="https://twitter.com/headius/statuses/485842997469118464">July 6, 2014</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+++++
+
+== _Truffle_: JRuby, 28x as fast!
+
+//New JVM tech that's extremely promising for dynamic language performance
+//
+//* Truffle AST interpreter framework
+//* Graal JIT compiler
+
+// transformations based on semantic analysis
+// optimizations *before* generating bytecode
+
+[bgcolor=transparent]
+== !
+
+[.fit.fill-y]
+image::keep-calm-use-jruby-jruby-colors.png[]
+
+[.ending]
+== _Thanks!_
