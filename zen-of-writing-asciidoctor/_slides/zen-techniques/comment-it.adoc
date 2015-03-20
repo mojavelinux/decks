@@ -1,0 +1,14 @@
+[#comment-it]
+== #2: Comment it
+
+[source]
+----
+// ignore this line
+
+////
+drop
+this
+whole
+section
+////
+----

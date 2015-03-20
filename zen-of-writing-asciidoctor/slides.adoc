@@ -1,0 +1,56 @@
+= Discover the _Zen_ of Writing with *Asciidoctor*
+Dan Allen <http://github.com/mojavelinux[@mojavelinux]>
+v1.0.0, 2015-03-09
+// TODO nice to use inline and/or block macro syntax (:title-slide-background-image: image:scriptorium-bw.jpg[size=cover])
+:title-slide-background-image: scriptorium.jpg
+:title-slide-background-size: cover
+include::_slides/_metadata.adoc[]
+include::_slides/_settings.adoc[]
+
+include::_slides/stuck.adoc[]
+
+include::_slides/encounter.adoc[]
+
+include::_slides/converse.adoc[]
+
+include::_slides/text.adoc[]
+
+include::_slides/twitter-input.adoc[]
+
+include::_slides/docs-puzzle.adoc[]
+
+include::_slides/ordeal-quote.adoc[]
+
+include::_slides/why.adoc[]
+
+include::_slides/structure.adoc[]
+
+include::_slides/its-complex.adoc[]
+
+include::_slides/houss.adoc[]
+
+include::_slides/bad.adoc[]
+
+include::_slides/wrong-way.adoc[]
+
+include::_slides/good.adoc[]
+
+include::_slides/asciidoc-sample.adoc[]
+
+include::_slides/docs-as-code.adoc[]
+
+include::_slides/asciidoc-intro.adoc[]
+
+include::_slides/what-asciidoc-enables.adoc[]
+
+include::_slides/syntax-tour.adoc[]
+
+include::_slides/balance.adoc[]
+
+include::_slides/tools.adoc[]
+
+include::_slides/zen-techniques.adoc[]
+
+include::_slides/concluding-quotes.adoc[]
+
+include::_slides/cred.adoc[]

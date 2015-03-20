@@ -1,0 +1,22 @@
+[#asciidoc-intro%notitle]
+== AsciiDoc vs Asciidoctor
+
+[.compare, cols=2]
+|===
+a|
+icon:file-text[role=illuminate]
+
+[discrete.proper]
+=== AsciiDoc
+
+syntax
+
+a|
+icon:wrench[role=illuminate]
+
+[discrete.proper]
+=== Asciidoctor
+
+parser + tools
+// ~ 50 repositories
+|===

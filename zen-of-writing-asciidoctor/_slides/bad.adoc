@@ -1,0 +1,5 @@
+[#bad]
+== &#x2717;
+
+//How _not_ to write docs...
+Bad

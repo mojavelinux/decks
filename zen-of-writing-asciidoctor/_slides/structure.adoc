@@ -1,0 +1,17 @@
+[#structure]
+== A: Structure
+
+// Again notice that “Why Gradle?” is a question
+// Phrase your outlines using questions, then go back and switch them to statements when you're done
+====
+* Why Gradle?
+** Broad Platform Support
+*** Java & JVM languages
+*** Android's build system
+*** ...
+** Robust Dependency Management
+*** Straightforward dependencies
+*** ...
+** Powerful Yet Concise Logic
+*** ...
+====

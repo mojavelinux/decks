@@ -1,0 +1,16 @@
+[.topic]
+== Zen techniques
+
+//:leveloffset: +1
+
+include::zen-techniques/sentence-per-line.adoc[]
+
+include::zen-techniques/comment-it.adoc[]
+
+include::zen-techniques/couch-read.adoc[]
+
+include::zen-techniques/curl-your-quotes.adoc[]
+
+include::zen-techniques/dry-attributes.adoc[]
+
+//:leveloffset: -1

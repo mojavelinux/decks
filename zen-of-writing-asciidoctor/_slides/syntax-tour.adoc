@@ -1,0 +1,26 @@
+[#syntax-tour.topic]
+== Syntax tour
+
+//:leveloffset: +1
+
+include::syntax-tour/paragraphs.adoc[]
+
+include::syntax-tour/headings.adoc[]
+
+include::syntax-tour/lists.adoc[]
+
+include::syntax-tour/inline-formatting.adoc[]
+
+include::syntax-tour/links.adoc[]
+
+include::syntax-tour/fenced-blocks.adoc[]
+
+include::syntax-tour/source-code.adoc[]
+
+include::syntax-tour/admonitions.adoc[]
+
+include::syntax-tour/multimedia.adoc[]
+
+include::syntax-tour/macros.adoc[]
+
+//:leveloffset: -1

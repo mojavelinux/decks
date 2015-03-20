@@ -1,0 +1,8 @@
+// Notice that “What’s happening?” is a question.
+// This is important.
+// We'll talk about this later.
+[#twitter-input%notitle]
+== Twitter taps into the power of the question
+
+[.ui-window]
+image::whats-happening.png[What's happening?, width=70%]

@@ -1,0 +1,9 @@
+== Macros
+
+.Inline macro
+[source]
+<name>:<target>[<attributes>]
+
+.Block macro
+[source]
+<name>::<target>[<attributes>]

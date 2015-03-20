@@ -1,0 +1,9 @@
+[%notitle]
+== What AsciiDoc enables
+
+[.emblems]
+icon:keyboard-o[]:: edit
+icon:eye[]:: read
+icon:git[]:: version
+icon:share-square-o[]:: share
+icon:flask[]:: convert

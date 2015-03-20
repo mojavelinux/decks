@@ -1,0 +1,33 @@
+[#javax, data-background-image=evil-minion.png, data-background-size=35%, data-background-position='-5% center', data-background-transition=zoom]
+== !
+
+[source.push-right,xml]
+----
+<class accessibility="public"
+    name="HelloWorld">
+  <annonymousBlock>
+    <method type="static"
+        accessibility="public"
+        inheritability="final"
+        name="main">
+      <arguments>
+        <variableArguments name="args"
+            type="java.lang.String"/>
+      </arguments>
+      <annonymousBlock>
+         <methodCall method="println"
+             object="java.lang.System.out">
+             <argument value="Hello World!"
+                 type="java.lang.String"/>
+         </methodCall>
+      </annonymousBlock>
+    </method>
+  </annonymousBlock>
+</class>
+----
+
+[#ygwyg, data-background-image=evil-minion.png, data-background-size=35%, data-background-position='-5% center', data-background-transition=zoom]
+== !
+
+[.push-right]
+image::ygwyg.jpg[]

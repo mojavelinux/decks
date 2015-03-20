@@ -1,0 +1,9 @@
+== Paragraphs
+
+[source]
+----
+No special markup is required.
+A paragraph is just consecutive lines of text.
+
+To start a paragraph, offset it by a blank line.
+----

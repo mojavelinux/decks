@@ -1,0 +1,25 @@
+// TODO add happy Allen here?
+[#asciidoc-sample]
+== AsciiDoc, c'est bon !
+
+[source,subs=-callouts]
+....
+= Getting Started with Java
+Author Name
+
+Here's your first Java application.
+
+.HelloWorld.java
+[source,java]
+----
+public class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, world!"); <1>
+  }
+}
+----
+<1> Prints "Hello, world!" to the console.
+
+Compile this source to a class file using `javac`.
+Then, run the compiled class file using `java`.
+....

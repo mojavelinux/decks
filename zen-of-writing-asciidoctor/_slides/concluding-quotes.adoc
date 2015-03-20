@@ -1,0 +1,18 @@
+[#author-quotes.topic]
+== Authors {heart} Asciidoctor
+
+== !
+
+"I find going back to Markdown akin to trading in utensils and eating with my hands."
+-- Greg Turnquist, author of Learning Spring Boot
+
+== !
+
+//[quote, Scott Chacon, author of Pro Git]
+[quote]
+I can do truly amazing things with my AsciiDoc source book
+
+== !
+
+"...this has very serious and interesting implications for the publishing industry as a whole."
+-- Scott Chacon, author of Pro Git

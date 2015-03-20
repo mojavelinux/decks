@@ -1,0 +1,5 @@
+[#converse.light-canvas%notitle]
+== We're excited to share information with others
+
+[.contain]
+image::talking.svg[Telling someone something]

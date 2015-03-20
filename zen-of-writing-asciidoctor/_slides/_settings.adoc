@@ -1,0 +1,19 @@
+:revealjs_transition: fade
+:revealjs_controls: false
+:revealjs_progress: false
+:revealjs_history: true
+:revealjs_slidenumber: true
+:revealjs_customtheme: poang.css
+//:source-highlighter: highlightjs
+:icons: font
+:imagesdir: images
+//:idprefix: id-
+:idprefix:
+:idseparator: -
+:heart: pass:[&#10084;]
+:minus: pass:m[icon:minus[]]
+// FIXME we want the title-background attributes over the doctitle!
+:source-language: no-highlight
+:color-accent: #b81652
+:color-highlight: #71ebf4
+:topic-background-color: {color-accent}

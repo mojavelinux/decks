@@ -1,0 +1,21 @@
+[%notitle]
+== Balancing syntax and semantics
+
+[.lead%hardbreaks]
+Limit the markup you _have_ to type,
+not the markup you _can_ type.
+
+// Goes beyond other lightweight documentation languages such as Markdown by satisfying even the most advanced semantics and publishing requirements
+// “_efficiently_ _encode_ the (essential) information (inside the content)”
+
+[#extend]
+== Extend it!
+
+[%step]
+* Custom syntax (`+issue:<id>[]+`)
+* Custom converters (PDF, reveal.js, ...)
+* AST transforms
+
+// AsciiDoc is an input, does not dictate an output
+// separation of content and presentation
+// This is really where Asciidoctor comes in and shines

@@ -1,0 +1,8 @@
+== Admonitions
+
+[source]
+----
+NOTE: For your info.
+
+IMPORTANT: Don't forget!
+----

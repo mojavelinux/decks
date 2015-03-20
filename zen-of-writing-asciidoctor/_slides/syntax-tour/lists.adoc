@@ -1,0 +1,24 @@
+== Lists
+
+[cols=2]
+|===
+a|
+.Unordered
+[source]
+----
+* item 1
+** sub-item
+* item 2
+* item 3
+----
+
+a|
+.Ordered
+[source]
+----
+. item 1
+.. sub-item
+. item 2
+. item 3
+----
+|===

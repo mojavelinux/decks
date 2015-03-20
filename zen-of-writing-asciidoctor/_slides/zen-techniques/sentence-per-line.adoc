@@ -1,0 +1,20 @@
+////
+Benefits:
+- better for diffing; avoids reflows
+- encourages shorter sentences
+- clearly see your points, like a bulleted list
+- easy to rearrange sentences
+- easy to temporarily disable sentences
+- also use this for cells in table row
+- ...
+////
+[#sentence-per-line]
+== #1: Sentence per line
+
+[.text-left.size-3x%hardbreaks]
+//{minus} {minus} {minus} {minus} {minus} {minus} {minus} {minus}.
+//{minus} {minus} {minus} {minus}.
+//{minus} {minus} {minus} {minus} {minus} {minus}.
+⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃.
+⁃⁃⁃⁃⁃⁃.
+⁃⁃⁃⁃⁃⁃⁃⁃⁃.

@@ -1,0 +1,24 @@
+== Inline formatting
+
+[cols=2]
+|===
+a|
+[source]
+----
+*bold*
+
+_italic_
+
+`<code>`
+
+[role]#custom#
+----
+a|
+*bold*
+
+_italic_
+
+`<code>`
+
+[role]#custom#
+|===

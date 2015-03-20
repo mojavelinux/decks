@@ -1,0 +1,5 @@
+[#ordeal-quote%notitle]
+== One author's advice about writing
+
+"Writing is a #$%@! ordeal."
+-- Martijn Dashorst, author of Wicket in Action

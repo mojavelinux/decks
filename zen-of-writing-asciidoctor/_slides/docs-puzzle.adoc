@@ -1,0 +1,5 @@
+[#docs-puzzle.light-canvas%notitle]
+== Yet writing documentation puzzles us
+
+[.contain]
+image::docs.svg[A puzzled look when thinking about writing]

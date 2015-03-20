@@ -1,0 +1,5 @@
+[#stuck%notitle]
+== How writing can make us feel
+
+[.cover]
+image::stuck.jpg[Goose with head between bars (aka Jacques)]

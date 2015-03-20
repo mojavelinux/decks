@@ -1,0 +1,5 @@
+[#text.light-canvas%notitle]
+== Texting is as easy as speaking
+
+[.contain]
+image::texting.svg[Texting with someone]

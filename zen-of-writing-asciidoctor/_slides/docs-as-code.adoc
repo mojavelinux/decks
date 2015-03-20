@@ -1,0 +1,10 @@
+[#docs-ne-code]
+== Docs ≠ Code ?
+
+//[#no.interjection]
+//== Non !
+
+[#docs-eq-code]
+== Docs [illuminate]#=# Code !
+
+// Treat docs as code!! (add additional slide?)

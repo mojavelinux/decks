@@ -1,0 +1,25 @@
+== Links
+
+[cols=2]
+|===
+a|
+[source]
+----
+http://google.com
+
+http://google.com[Google]
+
+See <<syntax>>
+
+<<syntax,Take a tour>>
+----
+
+a|
+http://google.com
+
+http://google.com[Google]
+
+See <<syntax>>
+
+<<syntax,Take a tour>>
+|===

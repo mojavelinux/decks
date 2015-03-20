@@ -1,0 +1,97 @@
+[.topic]
+== Tools
+
+//:leveloffset: +1
+
+[#github.proper]
+== icon:github[] GitHub
+
+[%hardbreaks]
+{plus}
+gists
+{plus}
+_gitbook.io_
+
+[#github-rendering%notitle]
+== AsciiDoc rendered on GitHub
+
+[.contain]
+image::github-asciidoc.jpg[README for the AsciiDoc Chrome Extension rendered on GitHub]
+
+[#docgist-rendering%notitle]
+== AsciiDoc rendered on DocGist
+
+[.contain]
+image::docgist.jpg[README for the AsciiDoc Chrome Extension rendered in DocGist]
+
+[#normal-diff%notitle]
+== AsciiDoc normal diff
+
+[.contain]
+image::code-diff.png[Normal diff of AsciiDoc content on GitHub]
+
+[#rich-diff%notitle]
+== AsciiDoc rich diff
+
+[.contain]
+image::rich-diff.png[Rich diff of AsciiDoc content on GitHub]
+
+// TODO mention HubPress?
+== Editing & live preview
+
+[#asciidoctor-chrome-extension%notitle]
+== Asciidoctor Chrome Extension
+
+[.contain]
+image::asciidoctor-chrome-extension.jpg[Asciidoctor.js Live Preview in Chrome Web Store]
+
+[#atom-asciidoc-preview.light-canvas%notitle]
+== AsciiDoc Preview in Atom
+
+[.contain]
+image::atom-asciidoc-preview.jpg[AsciiDoc Preview in Atom]
+
+== Build automation
+
+[.proper]
+== build.gradle
+
+[source]
+----
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+  }
+}
+
+apply plugin: 'org.asciidoctor.convert'
+
+asciidoctor {
+  attributes toc: 'left', icons: 'font'
+}
+----
+
+[.proper]
+== +issue:<id>[]+
+
+[source]
+----
+asciidoctor {
+  extensions {
+    inlinemacro (name: 'issue') { parent, target, attrs ->
+      options = [
+        type: ':link', 
+        target: "http://issues/browse/${target}".toString()
+      ]
+      createInline(parent, 'anchor',
+        target, attrs, options).render()
+    }
+  }    
+}
+----
+
+//:leveloffset: -1

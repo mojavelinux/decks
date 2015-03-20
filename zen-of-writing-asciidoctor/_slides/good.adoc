@@ -1,0 +1,5 @@
+[#good]
+== &#x2713;
+
+//How we [illuminate]#could# be writing docs...
+Good

@@ -1,0 +1,13 @@
+== Multimedia
+
+.Image
+[source]
+image::tux.png[Tux,265,314]
+
+.Video
+[source]
+video::SCZF6I-Rc4I[youtube,853,480]
+
+.Icon
+[source]
+icon:heart[2x]
