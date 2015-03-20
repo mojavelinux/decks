@@ -13,7 +13,7 @@ A collection of HTML 5-based presentation slide decks from my past speaking enga
 
 DevNexus 2015::
 
-  * link:zen-of-writing-asciidoctor/devnexus2015/index.html[Discover the Zen of Writing with Asciidoctor] [ https://dl.dropboxusercontent.com/u/29402588/slides/devnexus2015/zen-of-writing-with-asciidoctor.pdf[pdf] ]
+  * link:zen-of-writing-asciidoctor/devnexus2015/index.html[Discover the Zen of Writing with Asciidoctor] [ https://dl.dropboxusercontent.com/u/29402588/slides/devnexus2015/zen-of-writing-asciidoctor.pdf[pdf] ]
 
 == 2014
 
