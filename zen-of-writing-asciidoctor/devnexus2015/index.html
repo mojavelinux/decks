@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Dan Allen" />
+<meta name="copyright" content="CC BY-SA 2.0" />
+<title>Discover the Zen of Writing with Asciidoctor</title>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/css/reveal.css" rel="stylesheet" />
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+/**
+ * Poang theme for reveal.js.
+ *
+ * Based on the league theme from reveal.js (copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se)
+ *
+ * Copyright (C) 2015 Dan Allen
+ */
+body {
+  background-color: #2b2b2b;
+}
+
+.reveal {
+  font-family: "Lato", sans-serif;
+  font-size: 2.25rem;
+  font-weight: normal;
+  color: #eee;
+}
+
+::selection {
+  color: #fff;
+  background: #ff5e99;
+  text-shadow: none;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #eee;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  /*word-wrap: break-word;*/
+}
+
+.reveal h1 {
+  /*font-size: 3.052em;*/
+  font-size: 2.441em;
+  /*text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);*/
+  font-weight: 300;
+  /*text-transform: none;*/
+  text-align: left;
+}
+
+.reveal h1 + p {
+  text-align: right;
+}
+
+.reveal h1 strong {
+  /*font-size: 1.25em;*/
+  font-size: 1.563em;
+  color: #71ebf4;
+  line-height: 1;
+}
+
+.reveal h2 {
+  font-size: 1.953em;
+}
+
+.reveal h3 {
+  font-size: 1.563em;
+}
+
+.reveal h4 {
+  font-size: 1.25em;
+}
+
+.reveal h5 {
+  font-size: 1em;
+}
+
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote,
+.reveal q {
+  quotes: none;
+}
+
+/* FIXME quotes won't work for blockquotes with paragraph content */
+.reveal blockquote::before,
+.reveal blockquote::after {
+  font-size: 1.1em;
+  line-height: 0.8em;
+  color: #71ebf4;
+}
+
+.reveal blockquote::before {
+  content: '“';
+  padding-right: 0.1ex;
+}
+
+.reveal blockquote::after {
+  content: '”';
+  padding-left: 0.1ex;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  /*background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);*/
+  font-size: 4.5rem;
+  width: 100%;
+  line-height: 1.1;
+  word-spacing: 0.25ex;
+  letter-spacing: -0.025ex;
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 1.575rem;
+  font-family: Inconsolata, monospace;
+  line-height: 1.3;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+  font-size: 0.9em;
+}
+
+.reveal pre code {
+  font-size: 1em;
+  display: block;
+  padding: 0.5ex;
+  overflow: auto;
+  /*max-height: 500px;*/
+  word-wrap: normal;
+  /*
+  background: #3f3f3f;
+  color: #dcdcdc;
+  */
+  color: #2b2b2b;
+  /*background: #eee;*/
+  background: #f9fcfc;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+}
+
+.reveal sub {
+  vertical-align: sub;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+.reveal a {
+  color: #13daec;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: #71ebf4;
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #0d9ba5;
+}
+
+.reveal section img {
+  margin: 15px 0px;
+  /*background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #eee;*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal .imageblock.ui-window img {
+  border-radius: 5px;
+}
+
+.reveal a img {
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover img {
+  /*background: rgba(255, 255, 255, 0.2);
+  border-color: #13DAEC;*/
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #13daec;
+}
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #13daec;
+}
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #13daec;
+}
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #13daec;
+}
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #71ebf4;
+}
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #71ebf4;
+}
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #71ebf4;
+}
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #71ebf4;
+}
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.reveal .progress span {
+  background: #13daec;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+.reveal .slide-number {
+  color: #13daec;
+}
+
+.reveal i.fa {
+  font-family: FontAwesome;
+  font-style: normal;
+}
+
+.reveal .listingblock pre code {
+  max-height: 600px;
+}
+
+.reveal h2 + .listingblock pre code {
+  max-height: 500px;
+}
+
+.reveal .push-right {
+  width: 75%;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.listingblock.push-right pre {
+  width: 100%;
+}
+
+td.valign-top {
+  vertical-align: top;
+}
+
+/* FIXME a bit of a hack */
+.reveal .icon.illuminate {
+  color: #71ebf4;
+  margin-bottom: 0.2em;
+  font-size: 5rem;
+  display: inline-block;
+}
+
+.tableblock.emblems td.tableblock,
+.tableblock.icons td.tableblock {
+  text-align: center;
+}
+
+.tableblock.emblems .icon,
+.tableblock.icons .icon {
+  color: #71ebf4;
+  display: inline-block;
+  font-size: 5rem;
+  height: 2em;
+  width: 2em;
+  line-height: 2;
+  border: 2px solid #eee;
+  color: #71ebf4;
+  border-radius: 2em;
+  margin-bottom: 0.2em;
+}
+
+.tableblock.compare td.tableblock {
+  text-align: center;
+}
+
+.tableblock.compare td:first-of-type {
+  border-right: 1px solid #eee;
+}
+
+.reveal .proper * {
+  text-transform: none;
+}
+
+/* FIXME a bit of a hack */
+.title-subtitle {
+  text-align: left;
+}
+
+.title-subtitle .subtitle {
+  text-transform: none;
+  font-size: 1.25em;
+  margin-top: -0.5em;
+  font-weight: normal;
+}
+
+.text-left {
+  text-align: left;
+  display: inline-block;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.reveal .size-3x {
+  font-size: 3em;
+}
+
+.reveal .illuminate,
+/*.reveal section.illuminate h2,*/
+.reveal section.interjection h2 {
+  color: #71ebf4;
+}
+
+.reveal .light {
+  font-weight: 300;
+}
+
+.reveal .lead p {
+  font-size: 1.25em;
+  line-height: 1.5;
+  /*font-weight: 300;*/
+}
+
+.reveal .title {
+  text-align: center;
+}
+
+.reveal .exampleblock {
+  display: inline-block;
+  border-radius: 1ex;
+  padding: 0 0.75em;
+  font-size: 0.7em;
+  /*
+  border: 1px solid #eee;
+  color: #dcdcdc;
+  */
+  color: #3f3f3f;
+  background-color: #dcdcdc;
+}
+
+ul.no-bullet {
+  margin: 0;
+  text-align: center;
+}
+
+ul.no-bullet li {
+  list-style: none;
+}
+</style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/lib/css/zenburn.css" rel="stylesheet" />
+<script type="text/javascript">document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section data-background-image="images/scriptorium.jpg" data-background-size="cover"><h1>Discover the <em>Zen</em> of Writing with <strong>Asciidoctor</strong></h1><p><small>Dan Allen - <a href="http://github.com/mojavelinux">@mojavelinux</a></small></p></section>
+<section id="stuck" data-background-image="images/stuck.jpg" data-background-size="cover"><h2 hidden="hidden">How writing can make us feel</h2>&nbsp;</section>
+<section id="encounter" class="light-canvas" data-background-image="images/face-to-face.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">An encounter triggers our instinct to communicate</h2>&nbsp;</section>
+<section id="converse" class="light-canvas" data-background-image="images/talking.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">We&#8217;re excited to share information with others</h2>&nbsp;</section>
+<section id="text" class="light-canvas" data-background-image="images/texting.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">Texting is as easy as speaking</h2>&nbsp;</section>
+<section id="twitter-input"><h2 hidden="hidden">Twitter taps into the power of the question</h2><div class="imageblock ui-window"><div class="content"><img src="images/whats-happening.png" alt="What's happening?" width="70%" /></div></div></section>
+<section id="docs-puzzle" class="light-canvas" data-background-image="images/docs.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">Yet writing documentation puzzles us</h2>&nbsp;</section>
+<section id="ordeal-quote"><h2 hidden="hidden">One author&#8217;s advice about writing</h2><div class="quoteblock"><blockquote>Writing is a #$%@! ordeal.</blockquote><div class="attribution">&#8212; Martijn Dashorst, author of Wicket in Action</div></div></section>
+<section id="why" class="interjection"><h2>Q: Pourquoi ?</h2></section>
+<section id="structure"><h2>A: Structure</h2><div class="exampleblock"><div class="content"><div class="ulist"><ul><li><p>Why Gradle?</p><div class="ulist"><ul><li><p>Broad Platform Support</p><div class="ulist"><ul><li><p>Java &amp; JVM languages</p></li><li><p>Android&#8217;s build system</p></li><li><p>&#8230;&#8203;</p></li></ul></div></li><li><p>Robust Dependency Management</p><div class="ulist"><ul><li><p>Straightforward dependencies</p></li><li><p>&#8230;&#8203;</p></li></ul></div></li><li><p>Powerful Yet Concise Logic</p><div class="ulist"><ul><li><p>&#8230;&#8203;</p></li></ul></div></li></ul></div></li></ul></div></div></div></section>
+<section id="its-complex"><h2>Status: <span class="light">It&#8217;s</span> complex</h2><div class="ulist no-bullet"><ul class="no-bullet"><li class="fragment"><p>Yet we fabricate even more barriers.</p></li><li class="fragment"><p><span class="illuminate">Let&#8217;s fix that.</span></p></li></ul></div></section>
+<section id="houss" class="light-canvas" data-background-image="images/houss.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">HOÜSS</h2>&nbsp;</section>
+<section id="bad"><h2>&#x2717;</h2><div class="paragraph"><p>Bad</p></div></section>
+<section data-background-image="images/evil-minion.png" data-background-size="35%" data-background-position="-5% center" data-background-transition="zoom"><h2 hidden="hidden">Untitled</h2><div class="listingblock push-right"><div class="content"><pre class="highlight"><code class="xml language-xml">&lt;class accessibility="public"
+    name="HelloWorld"&gt;
+  &lt;annonymousBlock&gt;
+    &lt;method type="static"
+        accessibility="public"
+        inheritability="final"
+        name="main"&gt;
+      &lt;arguments&gt;
+        &lt;variableArguments name="args"
+            type="java.lang.String"/&gt;
+      &lt;/arguments&gt;
+      &lt;annonymousBlock&gt;
+         &lt;methodCall method="println"
+             object="java.lang.System.out"&gt;
+             &lt;argument value="Hello World!"
+                 type="java.lang.String"/&gt;
+         &lt;/methodCall&gt;
+      &lt;/annonymousBlock&gt;
+    &lt;/method&gt;
+  &lt;/annonymousBlock&gt;
+&lt;/class&gt;</code></pre></div></div></section>
+<section data-background-image="images/evil-minion.png" data-background-size="35%" data-background-position="-5% center" data-background-transition="zoom"><h2 hidden="hidden">Untitled</h2><div class="imageblock push-right"><div class="content"><img src="images/ygwyg.jpg" alt="ygwyg" /></div></div></section>
+<section id="good"><h2>&#x2713;</h2><div class="paragraph"><p>Good</p></div></section>
+<section id="asciidoc-sample"><h2>AsciiDoc, c&#8217;est bon !</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">= Getting Started with Java
+Author Name
+
+Here's your first Java application.
+
+.HelloWorld.java
+[source,java]
+----
+public class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, world!"); &lt;1&gt;
+  }
+}
+----
+&lt;1&gt; Prints "Hello, world!" to the console.
+
+Compile this source to a class file using `javac`.
+Then, run the compiled class file using `java`.</code></pre></div></div></section>
+<section id="docs-ne-code"><h2>Docs ≠ Code ?</h2></section>
+<section id="docs-eq-code"><h2>Docs <span class="illuminate">=</span> Code !</h2></section>
+<section id="asciidoc-intro"><h2 hidden="hidden">AsciiDoc vs Asciidoctor</h2><table class="tableblock frame-all grid-all compare" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><span class="icon illuminate"><i class="fa fa-file-text"></i></span></p></div>
+<h3 id="asciidoc" class="discrete proper">AsciiDoc</h3>
+<div class="paragraph"><p>syntax</p></div></div></td><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><span class="icon illuminate"><i class="fa fa-wrench"></i></span></p></div>
+<h3 id="asciidoctor" class="discrete proper">Asciidoctor</h3>
+<div class="paragraph"><p>parser + tools</p></div></div></td></tr></tbody></table></section>
+<section id="what-asciidoc-enables"><h2 hidden="hidden">What AsciiDoc enables</h2><table class="tableblock emblems"><tbody><tr><td class="tableblock"><p class="tableblock"><span class="icon"><i class="fa fa-keyboard-o"></i></span><span>edit</span></p></td><td class="tableblock"><p class="tableblock"><span class="icon"><i class="fa fa-eye"></i></span><span>read</span></p></td><td class="tableblock"><p class="tableblock"><span class="icon"><i class="fa fa-git"></i></span><span>version</span></p></td><td class="tableblock"><p class="tableblock"><span class="icon"><i class="fa fa-share-square-o"></i></span><span>share</span></p></td><td class="tableblock"><p class="tableblock"><span class="icon"><i class="fa fa-flask"></i></span><span>convert</span></p></td></tr></tbody></table></section>
+<section id="syntax-tour" class="topic" data-background-color="#b81652"><h2>Syntax tour</h2></section>
+<section id="paragraphs"><h2>Paragraphs</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">No special markup is required.
+A paragraph is just consecutive lines of text.
+
+To start a paragraph, offset it by a blank line.</code></pre></div></div></section>
+<section id="headings"><h2>Headings</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">= Document Title
+
+== Section Level 1
+
+=== Section Level 2
+
+==== Section Level 3
+
+===== Section Level 4
+
+====== Section Level 5
+
+= Section Level 0 (book doctype only)</code></pre></div></div></section>
+<section id="lists"><h2>Lists</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="title">Unordered</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">* item 1
+** sub-item
+* item 2
+* item 3</code></pre></div></div></div></td><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="title">Ordered</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">. item 1
+.. sub-item
+. item 2
+. item 3</code></pre></div></div></div></td></tr></tbody></table></section>
+<section id="inline-formatting"><h2>Inline formatting</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">*bold*
+
+_italic_
+
+`&lt;code&gt;`
+
+[role]#custom#</code></pre></div></div></div></td><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><strong>bold</strong></p></div>
+<div class="paragraph"><p><em>italic</em></p></div>
+<div class="paragraph"><p><code>&lt;code&gt;</code></p></div>
+<div class="paragraph"><p><span class="role">custom</span></p></div></div></td></tr></tbody></table></section>
+<section id="links"><h2>Links</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">http://google.com
+
+http://google.com[Google]
+
+See &lt;&lt;syntax&gt;&gt;
+
+&lt;&lt;syntax,Take a tour&gt;&gt;</code></pre></div></div></div></td><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><a href="http://google.com" class="bare">http://google.com</a></p></div>
+<div class="paragraph"><p><a href="http://google.com">Google</a></p></div>
+<div class="paragraph"><p>See <a href="#syntax">[syntax]</a></p></div>
+<div class="paragraph"><p><a href="#syntax">Take a tour</a></p></div></div></td></tr></tbody></table></section>
+<section id="fenced-blocks"><h2>“Fenced” blocks</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:33%" /><col style="width:66%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>--</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">open</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>----, ```</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">listing, source</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>....</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">literal</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>====</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">example, admonition</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>****</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">sidebar</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>____, ""</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">quote</p></td></tr></tbody></table></section>
+<section id="source-code"><h2>Source code</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">:source-highlighter: coderay
+
+[source,java]
+----
+public class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, world!"); &lt;1&gt;
+  }
+}
+----
+&lt;1&gt; Prints "Hello, world!" to the console.</code></pre></div></div></section>
+<section id="admonitions"><h2>Admonitions</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">NOTE: For your info.
+
+IMPORTANT: Don't forget!</code></pre></div></div></section>
+<section id="multimedia"><h2>Multimedia</h2><div class="listingblock"><div class="title">Image</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">image::tux.png[Tux,265,314]</code></pre></div></div>
+<div class="listingblock"><div class="title">Video</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">video::SCZF6I-Rc4I[youtube,853,480]</code></pre></div></div>
+<div class="listingblock"><div class="title">Icon</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">icon:heart[2x]</code></pre></div></div></section>
+<section id="macros"><h2>Macros</h2><div class="listingblock"><div class="title">Inline macro</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">&lt;name&gt;:&lt;target&gt;[&lt;attributes&gt;]</code></pre></div></div>
+<div class="listingblock"><div class="title">Block macro</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">&lt;name&gt;::&lt;target&gt;[&lt;attributes&gt;]</code></pre></div></div></section>
+<section id="balancing-syntax-and-semantics"><h2 hidden="hidden">Balancing syntax and semantics</h2><div class="paragraph lead"><p>Limit the markup you <em>have</em> to type,<br />
+not the markup you <em>can</em> type.</p></div></section>
+<section id="extend"><h2>Extend it!</h2><div class="ulist"><ul><li class="fragment"><p>Custom syntax (<code>issue:&lt;id&gt;[]</code>)</p></li><li class="fragment"><p>Custom converters (PDF, reveal.js, &#8230;&#8203;)</p></li><li class="fragment"><p>AST transforms</p></li></ul></div></section>
+<section id="tools" class="topic" data-background-color="#b81652"><h2>Tools</h2></section>
+<section id="github" class="proper"><h2><span class="icon"><i class="fa fa-github"></i></span> GitHub</h2><div class="paragraph"><p>&#43;<br />
+gists<br />
+&#43;<br />
+<em>gitbook.io</em></p></div></section>
+<section id="github-rendering" data-background-image="images/github-asciidoc.jpg" data-background-size="contain"><h2 hidden="hidden">AsciiDoc rendered on GitHub</h2>&nbsp;</section>
+<section id="docgist-rendering" data-background-image="images/docgist.jpg" data-background-size="contain"><h2 hidden="hidden">AsciiDoc rendered on DocGist</h2>&nbsp;</section>
+<section id="normal-diff" data-background-image="images/code-diff.png" data-background-size="contain"><h2 hidden="hidden">AsciiDoc normal diff</h2>&nbsp;</section>
+<section id="rich-diff" data-background-image="images/rich-diff.png" data-background-size="contain"><h2 hidden="hidden">AsciiDoc rich diff</h2>&nbsp;</section>
+<section id="editing-live-preview"><h2>Editing &amp; live preview</h2></section>
+<section id="asciidoctor-chrome-extension" data-background-image="images/asciidoctor-chrome-extension.jpg" data-background-size="contain"><h2 hidden="hidden">Asciidoctor Chrome Extension</h2>&nbsp;</section>
+<section id="atom-asciidoc-preview" class="light-canvas" data-background-image="images/atom-asciidoc-preview.jpg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">AsciiDoc Preview in Atom</h2>&nbsp;</section>
+<section id="build-automation"><h2>Build automation</h2></section>
+<section id="build-gradle" class="proper"><h2>build.gradle</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+  }
+}
+
+apply plugin: 'org.asciidoctor.convert'
+
+asciidoctor {
+  attributes toc: 'left', icons: 'font'
+}</code></pre></div></div></section>
+<section id="issue-id" class="proper"><h2>issue:&lt;id&gt;[]</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">asciidoctor {
+  extensions {
+    inlinemacro (name: 'issue') { parent, target, attrs -&gt;
+      options = [
+        type: ':link',
+        target: "http://issues/browse/${target}".toString()
+      ]
+      createInline(parent, 'anchor',
+        target, attrs, options).render()
+    }
+  }
+}</code></pre></div></div></section>
+<section id="zen-techniques" class="topic" data-background-color="#b81652"><h2>Zen techniques</h2></section>
+<section id="sentence-per-line"><h2>#1: Sentence per line</h2><div class="paragraph text-left size-3x"><p>⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃.<br />
+⁃⁃⁃⁃⁃⁃.<br />
+⁃⁃⁃⁃⁃⁃⁃⁃⁃.</p></div></section>
+<section id="comment-it"><h2>#2: Comment it</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">// ignore this line
+
+////
+drop
+this
+whole
+section
+////</code></pre></div></div></section>
+<section id="couch-read"><h2>#3: Couch read</h2><div class="imageblock"><div class="content"><img src="images/couch-read.jpg" alt="couch read" /></div></div></section>
+<section id="curl-your-quotes"><h2>#4: “Curl your quotes”</h2></section>
+<section id="dry-attributes"><h2>#5: <em>DRY</em>, use attributes&#8230;&#8203;</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">:uri-project: http://example.org
+
+Find out more about {uri-project}[project name].</code></pre></div></div></section>
+<section id="include-fragments"><h2>and include fragments</h2><div class="listingblock"><div class="title">Shared content</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">include::{uri-macros}/how_to_complete_this_guide.adoc[]</code></pre></div></div>
+<div class="listingblock"><div class="title">Testable source code</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">[source,groovy]
+----
+include::build.gradle[tag=repositories]
+----</code></pre></div></div></section>
+<section id="author-quotes" class="topic" data-background-color="#b81652"><h2>Authors &#10084; Asciidoctor</h2></section>
+<section><h2 hidden="hidden">Untitled</h2><div class="quoteblock"><blockquote>I find going back to Markdown akin to trading in utensils and eating with my hands.</blockquote><div class="attribution">&#8212; Greg Turnquist, author of Learning Spring Boot</div></div></section>
+<section><h2 hidden="hidden">Untitled</h2><div class="quoteblock"><blockquote>I can do truly amazing things with my AsciiDoc source book</blockquote></div></section>
+<section><h2 hidden="hidden">Untitled</h2><div class="quoteblock"><blockquote>&#8230;&#8203;this has very serious and interesting implications for the publishing industry as a whole.</blockquote><div class="attribution">&#8212; Scott Chacon, author of Pro Git</div></div></section>
+<section id="illustration-cred"><h2>Illustration cred</h2><div class="paragraph"><p>Sarah White (<span class="illuminate">@carbonfray</span>)</p></div></section></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/js/reveal.js"></script>
+<script type="text/javascript">
+Reveal.initialize({
+  controls: false,
+  progress: false,
+  slideNumber: false,
+  history: true,
+  keyboard: true,
+  overview: true,
+  center: true,
+  touch: true,
+  loop: false,
+  rtl: false,
+  fragments: true,
+  embedded: false,
+  autoSlide: 0,
+  autoSlideStoppable: true,
+  mouseWheel: false,
+  hideAddressBar: true,
+  previewLinks: false,
+  transition: Reveal.getQueryHash().transition || 'fade',
+  transitionSpeed: 'default',
+  backgroundTransition: 'fade',
+  viewDistance: 3,
+  parallaxBackgroundImage: '',
+  parallaxBackgroundSize: '',
+  dependencies: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});
+</script>
+</body>
+</html>

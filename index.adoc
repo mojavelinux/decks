@@ -2,35 +2,45 @@
 Dan Allen <http://twitter.com/mojavelinux[@mojavelinux]>
 :title: Dan Allen's Slide Decks
 :description: A collection of HTML 5-based presentation slide decks from my past speaking engagements.
-:stylesheet: /home/dallen/projects/asciidoctor/themes.asciidoctor.org/stylesheets/rubygems.css
+//:stylesheet: /home/dallen/projects/asciidoctor/themes.asciidoctor.org/stylesheets/rubygems.css
 :linkcss!:
 :docinfo:
 :sectids!:
 
 A collection of HTML 5-based presentation slide decks from my past speaking engagements.
 
-== {empty}
+== 2015
 
-Rich Web Experience, Nov 2012::
+DevNexus 2015::
 
-  * link:asciidoc-with-pleasure/rwx2012/index.html[Drop the angled brackets. Write (Ascii)Docs with pleasure!] [ https://github.com/mojavelinux/decks/blob/master/asciidoc-with-pleasure/slides.asciidoc[source] ]
-  * link:awestruct-git/rwx2012/index.html[Bake your HTML5 website with Awestruct and publish it with git] [ https://github.com/mojavelinux/decks/blob/master/awestruct-git/slides.asciidoc[source] ]
+  * link:zen-of-writing-asciidoctor/devnexus2015/index.html[Discover the Zen of Writing with Asciidoctor] [ https://dl.dropboxusercontent.com/u/29402588/slides/devnexus2015/zen-of-writing-with-asciidoctor.pdf[pdf] ]
 
-Boulder & Denver JUGs, May 2013::
+== 2014
 
-  * link:discover-zen-writing-asciidoc/cojugs201305/index.html[Discover the zen of writing (Ascii)Docs] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/discover-zen-writing-asciidoc.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/discover-zen-writing-asciidoc/slides.adoc[source] ]
-  * link:java-enterprise-testing/cojugs201305/index.html[Reducing Java Enterprise Testing to Child's Play] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/java-enterprise-testing.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/java-enterprise-testing/slides.adoc[source], https://github.com/mojavelinux/asciidoctor-servlet-demo[demo] ]
+OSCON 2014::
 
-OSCON 2013::
+  * link:tapping-into-ruby-from-jvm/oscon2014/index.html[Tapping into Ruby from the JVM] [ https://dl.dropboxusercontent.com/u/29402588/slides/oscon2014/tapping-into-ruby-from-jvm.pdf[pdf] ]
 
-  * link:docs-workshop/oscon2013/index.html[Easier Documentation, Simpler Websites and Faster Collaboration (Workshop)]
-  * link:discover-zen-writing-asciidoc/oscon2013/index.html[Discover the Zen of Writing (Ascii)Docs]
+== 2013
 
 RWX 2013::
 
   * link:docs-workshop/rwx2013/index.html[Easier Documentation, Simpler Websites and Faster Collaboration]
   * link:discover-zen-writing-asciidoc/rwx2013/index.html[Discover the Zen of Writing (Ascii)Docs]
 
-OSCON 2014::
+OSCON 2013::
 
-  * link:tapping-into-ruby-from-jvm/oscon2014/index.html[Tapping into Ruby from the JVM] [ https://dl.dropboxusercontent.com/u/29402588/slides/oscon2014/tapping-into-ruby-from-jvm.pdf[pdf] ]
+  * link:docs-workshop/oscon2013/index.html[Easier Documentation, Simpler Websites and Faster Collaboration (Workshop)]
+  * link:discover-zen-writing-asciidoc/oscon2013/index.html[Discover the Zen of Writing (Ascii)Docs]
+
+Boulder & Denver JUGs, May 2013::
+
+  * link:discover-zen-writing-asciidoc/cojugs201305/index.html[Discover the zen of writing (Ascii)Docs] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/discover-zen-writing-asciidoc.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/discover-zen-writing-asciidoc/slides.adoc[source] ]
+  * link:java-enterprise-testing/cojugs201305/index.html[Reducing Java Enterprise Testing to Child's Play] [ https://dl.dropboxusercontent.com/u/29402588/slides/cojugs201305/java-enterprise-testing.pdf[pdf], https://github.com/mojavelinux/decks/blob/master/java-enterprise-testing/slides.adoc[source], https://github.com/mojavelinux/asciidoctor-servlet-demo[demo] ]
+
+== 2012
+
+Rich Web Experience, Nov 2012::
+
+  * link:asciidoc-with-pleasure/rwx2012/index.html[Drop the angled brackets. Write (Ascii)Docs with pleasure!] [ https://github.com/mojavelinux/decks/blob/master/asciidoc-with-pleasure/slides.asciidoc[source] ]
+  * link:awestruct-git/rwx2012/index.html[Bake your HTML5 website with Awestruct and publish it with git] [ https://github.com/mojavelinux/decks/blob/master/awestruct-git/slides.asciidoc[source] ]
