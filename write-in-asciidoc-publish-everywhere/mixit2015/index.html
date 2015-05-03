@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="author" content="Dan Allen" /><meta name="copyright" content="CC BY-SA 2.0" /><title>Write in AsciiDoc, Publish Everywhere</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="styles/poang.css" id="theme" /><link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script type="text/javascript">document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section data-background-image="images/background.jpg"><h1>Write in <strong>AsciiDoc</strong>, Publish <strong>Everywhere</strong></h1><p class="authors"><small class="author"><span class="name">Dan Allen</span><span class="email"><a href="https://twitter.com/mojavelinux">@mojavelinux</a></span></small></p></section><section id="stuck" data-background-image="images/stuck.jpg" data-background-size="cover"><h2 hidden="hidden">How writing can make us feel</h2>&nbsp;</section>
+<section id="greet" class="light-canvas" data-background-image="images/greeting.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">An encounter triggers our instinct to communicate</h2>&nbsp;</section>
+<section id="talk" class="light-canvas" data-background-image="images/talking.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">We&#8217;re excited to share information with others</h2>&nbsp;</section>
+<section id="text" class="light-canvas" data-background-image="images/texting.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">Texting is as easy as speaking</h2>&nbsp;</section>
+<section id="tweet"><h2 hidden="hidden">Twitter taps into the power of the question</h2><div class="imageblock ui-window"><div class="content"><img src="images/whats-happening.png" alt="What's happening?" width="75%" /></div></div></section>
+<section id="docs-puzzle" class="light-canvas" data-background-image="images/docs.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">Yet writing documentation puzzles us</h2>&nbsp;</section>
+<section id="ordeal-quote"><h2 hidden="hidden">One author&#8217;s advice about writing</h2><div class="imageblock"><div class="content"><img src="images/martijn-dashorst-headshot.jpg" alt="Martijn Dashorst" width="256" height="256" /></div></div>
+<div class="quoteblock"><blockquote>Writing is a #$%@! ordeal.</blockquote><div class="attribution">&#8212; Martijn Dashorst, author of Wicket in Action</div></div></section>
+<section id="pourquoi" class="interjection"><h2>Pourquoi ?</h2></section>
+<section id="houss" class="light-canvas" data-background-image="images/houss.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">HOÜSS</h2>&nbsp;</section>
+<section id="bad"><h2>&#x2717;</h2><div class="paragraph"><p>Bad</p></div></section>
+<section data-background-image="images/evil-minion.png" data-background-size="35%" data-background-position="-5% center" data-background-transition="zoom"><h2 hidden="hidden">Untitled</h2><div class="listingblock push-right condense"><div class="content"><pre class="highlight"><code class="xml language-xml">&lt;class accessibility="public"
+    name="HelloWorld"&gt;
+  &lt;annonymousBlock&gt;
+    &lt;method type="static"
+        accessibility="public"
+        inheritability="final"
+        name="main"&gt;
+      &lt;arguments&gt;
+        &lt;variableArguments name="args"
+            type="java.lang.String"/&gt;
+      &lt;/arguments&gt;
+      &lt;annonymousBlock&gt;
+         &lt;methodCall method="println"
+             object="java.lang.System.out"&gt;
+             &lt;argument value="Hello World!"
+                 type="java.lang.String"/&gt;
+         &lt;/methodCall&gt;
+      &lt;/annonymousBlock&gt;
+    &lt;/method&gt;
+  &lt;/annonymousBlock&gt;
+&lt;/class&gt;</code></pre></div></div></section>
+<section id="good"><h2>&#x2713;</h2><div class="paragraph"><p>Good</p></div></section>
+<section id="docs-eq-code"><h2>Docs <span class="illuminate">=</span> Code !</h2></section>
+<section id="asciidoc-intro"><h2 hidden="hidden">AsciiDoc vs Asciidoctor</h2><table class="tableblock frame-all grid-all compare" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><span class="icon illuminate"><i class="fa fa-file-text"></i></span></p></div>
+<h3 id="asciidoc" class="discrete proper">AsciiDoc</h3>
+<div class="paragraph"><p>syntax</p></div></div></td><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><span class="icon illuminate"><i class="fa fa-wrench"></i></span></p></div>
+<h3 id="asciidoctor" class="discrete proper">Asciidoctor</h3>
+<div class="paragraph"><p>parser + tools</p></div></div></td></tr></tbody></table></section>
+<section id="fundamentals"><h2 hidden="hidden">Fundamentals for creating documentation</h2><table class="tableblock emblems"><tbody><tr><td class="tableblock"><p class="tableblock fragment"><span class="icon"><i class="fa fa-eye"></i></span><span>read</span></p></td><td class="tableblock"><p class="tableblock fragment"><span class="icon"><i class="fa fa-keyboard-o"></i></span><span>edit</span></p></td><td class="tableblock"><p class="tableblock fragment"><span class="icon"><i class="fa fa-git"></i></span><span>version</span></p></td><td class="tableblock"><p class="tableblock fragment"><span class="icon"><i class="fa fa-share-square-o"></i></span><span>share</span></p></td><td class="tableblock"><p class="tableblock fragment"><span class="icon"><i class="fa fa-flask"></i></span><span>convert</span></p></td></tr></tbody></table></section>
+<section id="publier-partout-1" data-background-image="images/publier-partout.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">Écrire en AsciiDoc. Publier Partout !</h2>&nbsp;</section>
+<section id="syntax" class="topic" data-background-color="#1aacc7"><h2>Syntax</h2></section>
+<section id="asciidoc-sample"><h2>AsciiDoc, c&#8217;est bon !</h2><div class="listingblock condense"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">= Getting Started with Java
+Author Name &lt;author@example.org&gt;
+
+Here's your first Java application.
+
+.HelloWorld.java
+[source,java]
+----
+public class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, world!"); &lt;1&gt;
+  }
+}
+----
+&lt;1&gt; Prints "Hello, world!" to the console.
+
+Compile this source to a class file using `javac`.
+Finally, run the compiled class file using `java`.</code></pre></div></div></section>
+<section id="asciidoc-sample-rendered"><h2>AsciiDoc, c&#8217;est bon !</h2><div class="imageblock"><div class="content"><img src="images/asciidoc-sample.png" alt="asciidoc sample" /></div></div></section>
+<section id="tenets"><h2 hidden="hidden">Tenets</h2><div class="ulist no-bullet lead"><ul class="no-bullet"><li class="fragment"><p>Concise</p></li><li class="fragment"><p>Consistent</p></li><li class="fragment"><p>Semantic</p></li></ul></div></section>
+<section id="paragraphs"><h2>Paragraphs</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">No special markup is required.
+A paragraph is just consecutive lines of text.
+
+To start a paragraph, offset it by a blank line.</code></pre></div></div></section>
+<section id="headings"><h2>Headings</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">= Document Title
+
+== Section Level 1
+
+=== Section Level 2
+
+==== Section Level 3
+
+===== Section Level 4
+
+====== Section Level 5
+
+= Section Level 0 (book doctype only)</code></pre></div></div></section>
+<section id="lists"><h2>Lists</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="title">Unordered</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">* item 1
+** sub-item
+* item 2
+* item 3</code></pre></div></div></div></td><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="title">Ordered</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">. item 1
+.. sub-item
+. item 2
+. item 3</code></pre></div></div></div></td></tr></tbody></table></section>
+<section id="inline-formatting"><h2>Inline formatting</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">*bold*
+
+_italic_
+
+`&lt;code&gt;`
+
+[delete]#custom#</code></pre></div></div></div></td><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><strong>bold</strong></p></div>
+<div class="paragraph"><p><em>italic</em></p></div>
+<div class="paragraph"><p><code>&lt;code&gt;</code></p></div>
+<div class="paragraph"><p><span class="delete">custom</span></p></div></div></td></tr></tbody></table></section>
+<section id="links"><h2>Links</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><div><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">http://google.com
+
+http://google.com[Google]
+
+See &lt;&lt;syntax&gt;&gt;
+
+&lt;&lt;syntax,Syntax tour&gt;&gt;</code></pre></div></div></div></td><td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><a href="http://google.com" class="bare">http://google.com</a></p></div>
+<div class="paragraph"><p><a href="http://google.com">Google</a></p></div>
+<div class="paragraph"><p>See <a href="#syntax">Syntax</a></p></div>
+<div class="paragraph"><p><a href="#syntax">Syntax tour</a></p></div></div></td></tr></tbody></table></section>
+<section id="fenced-blocks"><h2>“Fenced” blocks</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:40%" /><col style="width:60%" /></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>--</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">open</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>----, ```, ....</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">listing, source, literal</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>====</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">example, admonition</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>****</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">sidebar</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>____, ""</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">quote</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock"><code>////</code></p></td><td class="tableblock halign-left valign-top"><p class="tableblock">comment</p></td></tr></tbody></table></section>
+<section id="source-code"><h2>Source code</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">:source-highlighter: coderay
+
+[source,java]
+----
+public class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, world!"); &lt;1&gt;
+  }
+}
+----
+&lt;1&gt; Prints "Hello, world!" to the console.</code></pre></div></div></section>
+<section id="notes"><h2>Notes</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">NOTE: For your info.
+
+WARNING: I wouldn't do that.
+
+IMPORTANT: Don't forget!</code></pre></div></div></section>
+<section id="macros"><h2>Macros</h2><div class="hdlist"><table><colgroup><col style="width:15%;" /><col style="width:85%;" /></colgroup><tr><td class="hdlist1">Inline</td><td class="hdlist2"><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">&lt;name&gt;:&lt;target&gt;[&lt;attributes&gt;]</code></pre></div></div></td></tr><tr><td class="hdlist1">Block</td><td class="hdlist2"><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">&lt;name&gt;::&lt;target&gt;[&lt;attributes&gt;]</code></pre></div></div></td></tr></table></div></section>
+<section id="multimedia"><h2>Multimedia</h2><div class="hdlist"><table><colgroup><col style="width:15%;" /><col style="width:75%;" /></colgroup><tr><td class="hdlist1">Image</td><td class="hdlist2"><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">image::tux.png[Tux,265,314]</code></pre></div></div></td></tr><tr><td class="hdlist1">Icon</td><td class="hdlist2"><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">icon:heart[2x]</code></pre></div></div></td></tr><tr><td class="hdlist1">Video</td><td class="hdlist2"><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">video::SCZF6I-Rc4I[youtube,853,480]</code></pre></div></div></td></tr></table></div></section>
+<section id="extend"><h2>Extend!</h2><div class="ulist"><ul><li class="fragment"><p>Custom converters <span class="atten">(PDF, reveal.js, &#8230;&#8203;)</span></p></li><li class="fragment"><p>Custom syntax <span class="atten">(<code>issue:&lt;id&gt;[]</code>)</span></p></li><li class="fragment"><p>AST transforms</p></li></ul></div></section>
+<section id="extension-example"><h2>Extension example</h2><div class="listingblock condense"><div class="title"><code>issue:&lt;id&gt;[]</code></div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">asciidoctor {
+  extensions {
+    inline_macro (name: 'issue') { parent, id, attrs -&gt;
+      issues_uri = parent.getAttr('uri-issues')
+      options = [
+        type: ':link',
+        target: "${issues_uri}/${id}".toString()
+      ]
+      createInline(parent, 'anchor',
+          target, attrs, options).render()
+    }
+  }
+}</code></pre></div></div></section>
+<section id="tools" class="topic" data-background-color="#1aacc7"><h2>Tools</h2></section>
+<section id="github" class="proper"><h2>AsciiDoc <span class="icon"><i class="fa fa-github"></i></span> GitHub</h2></section>
+<section id="fork-and-fix" data-background-image="images/fork-and-fix.png" data-background-size="contain"><h2 hidden="hidden">Fork and fix</h2>&nbsp;</section>
+<section id="normal-diff" data-background-image="images/code-diff.png" data-background-size="contain"><h2 hidden="hidden">AsciiDoc normal diff</h2>&nbsp;</section>
+<section id="rich-diff" data-background-image="images/rich-diff.png" data-background-size="contain"><h2 hidden="hidden">AsciiDoc rich diff</h2>&nbsp;</section>
+<section id="chrome-asciidoc-preview" data-background-image="images/chrome-asciidoc-preview.jpg" data-background-size="contain"><h2 hidden="hidden">Live AsciiDoc Preview in Chrome</h2>&nbsp;</section>
+<section id="atom-package" class="light-canvas" data-background-image="images/atom-asciidoc-preview.jpg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">AsciiDoc Preview in Atom</h2>&nbsp;</section>
+<section id="adoc-editor" class="light-canvas" data-background-image="images/adoc-editor-screenshots.png" data-background-color="#ffffff" data-background-size="contain" data-background-position="top"><h2 hidden="hidden">Adoc Editor</h2>&nbsp;</section>
+<section id="hubpress" class="light-canvas" data-background-image="images/hubpress-screenshot.jpg" data-background-color="#ffffff" data-background-size="cover" data-background-position="top"><h2 hidden="hidden">HubPress.io</h2>&nbsp;</section>
+<section id="writing-techniques" class="topic" data-background-color="#1aacc7"><h2><em>Zen</em> writing techniques</h2></section>
+<section id="sentence-per-line"><h2>#1: Sentence per line</h2><div class="paragraph text-left size-3x"><p>⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃.<br />
+⁃⁃⁃⁃⁃⁃.<br />
+⁃⁃⁃⁃⁃⁃⁃⁃⁃.</p></div></section>
+<section id="comments"><h2>#2: Comments</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">// ignore this line
+
+////
+drop
+this
+whole
+section
+////</code></pre></div></div></section>
+<section id="couch-read" class="masked" data-background-image="images/couch-read.jpg" data-background-size="cover"><h2>#3: Couch read</h2>&nbsp;</section>
+<section id="dry-attributes"><h2>#4: D.R.Y. Attributes</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">:uri-project: http://example.org
+
+Find out more about {uri-project}[project name].</code></pre></div></div></section>
+<section id="includes"><h2>and includes</h2><div class="listingblock"><div class="title">Shared content</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">include::{uri-macros}/how_to_complete_this_guide.adoc[]</code></pre></div></div>
+<div class="listingblock"><div class="title"><em>Testable</em> source code</div><div class="content"><pre class="highlight"><code class="no-highlight language-no-highlight">[source,groovy]
+----
+include::build.gradle[tag=repositories]
+----</code></pre></div></div></section>
+<section id="answer-a-question"><h2>#5: Answer a question</h2><div class="imageblock ui-window"><div class="content"><img src="images/what-does-it-do.png" alt="What does it do?" width="75%" /></div></div></section>
+<section id="author-quotes" class="topic" data-background-color="#1aacc7"><h2>Authors <span class="icon"><i class="fa fa-heart"></i></span> Asciidoctor</h2></section>
+<section><h2 hidden="hidden">Untitled</h2><div class="imageblock"><div class="content"><img src="images/scott-chacon-headshot.png" alt="Scott Chacon" width="256" height="256" /></div></div>
+<div class="quoteblock"><blockquote>I can do truly amazing things with my AsciiDoc source.</blockquote><div class="attribution">&#8212; Scott Chacon, author of Pro Git</div></div></section>
+<section id="publier-partout-2" data-background-image="images/publier-partout.svg" data-background-color="#ffffff" data-background-size="contain"><h2 hidden="hidden">Écrire en AsciiDoc. Publier Partout !</h2>&nbsp;</section>
+<section id="illustrations-by"><h2>Illustrations by</h2><div class="paragraph"><p>Sarah White (<a href="https://twitter.com/carbonfray">@carbonfray</a>)</p></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script type="text/javascript">// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: false,
+  // Display a presentation progress bar
+  progress: false,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, blood, league, moon, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'league',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'fade',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } }
+  ]
+});</script></body></html>
