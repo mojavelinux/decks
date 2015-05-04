@@ -12,7 +12,8 @@ A collection of HTML 5-based presentation slide decks from my past speaking enga
 == 2015
 
 Mix-IT 2015::
-  * link:write-in-asciidoc-publish-everywhere/mixit2015/index.html[Write in AsciiDoc, Publish Everywhere]
+
+  * link:write-in-asciidoc-publish-everywhere/mixit2015/index.html[Write in AsciiDoc, Publish Everywhere] [ https://dl.dropboxusercontent.com/u/29402588/slides/mixit2015/write-in-asciidoc-publish-everywhere.pdf[pdf] ]
 
 DevNexus 2015::
 
